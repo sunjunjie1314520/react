@@ -1,17 +1,43 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+
 import reportWebVitals from './reportWebVitals';
 
+// 引入工具插件
+import { composeWithDevTools } from 'redux-devtools-extension';
+
+import { createStore, applyMiddleware } from 'redux';
+
+import { Provider } from 'react-redux';
+
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+
+import thunk from "redux-thunk";
+
+import reducer from './reducers';
+
+import router from './routers/index';
+
+import './style/css/style.css';
+
+const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)))
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+	<React.StrictMode>
+		<Provider store={store}>
+			<Router>
+				<Switch>
+					{
+					router.map((v, k)=>{
+						return <Route key={k} path={v.path} exact={v.exact} component={v.component} ></Route>
+					})
+					}
+					<Redirect to="/404" />
+				</Switch>
+			</Router>
+		</Provider>
+	</React.StrictMode>,
+	document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

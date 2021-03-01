@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+div,
+p,
+span,
+li,
+ul,
+h1,
+h2,
+h3 {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+li {
+  list-style-type: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  width: 130px;
+  height: 45px;
+  color: #fff;
+  transition: 0.2s cubic-bezier(0.86, 0.02, 0.1, 1.01);
+  cursor: pointer;
+}
+.c1 {
+  background: #f00;
+}
+.c1:active {
+  background: #ccc;
+}
+.c2 {
+  background: #008000;
+}
+.c2:active {
+  background: #ccc;
+}
+.input-wrap input {
+  height: 36px;
+  width: 50%;
+  font-size: 18px;
+}
