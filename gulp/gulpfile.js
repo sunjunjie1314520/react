@@ -210,7 +210,7 @@ function convertHandle(content){
                 if( config.replace =='rem'){
                     return '1px'
                 }else{
-                    return '.5px'
+                    return '1px'
                 }
             }
             return number <= config.min ? `${number}${config.query}` : unitHandle(number)

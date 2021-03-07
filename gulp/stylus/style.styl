@@ -1,24 +1,3282 @@
-﻿button
-    border none
-    outline none
-    width 130px
-    height 45px
-    color #fff
-    transition .2s cubic-bezier(0.86, 0.02, 0.1, 1.01)
-    cursor pointer
+﻿@import "fn.styl"
+
+
+@font-face
+    font-family "myfont" 
+    src url("../fonts/DIN_Alternate_Bold.ttf")
+
+lan=#0799FB
+bor1=#cdcdcd
+bor2=#95989a
+
+scrollY()
+    overflow-y auto
     
-.c1
-    background red
-    &:active
-        background #ccc
+scrollbar()
+    &::-webkit-scrollbar
+        width 0px
+        height 0px
+        display none
+        opacity 0
 
-.c2
-    background green
-    &:active
-        background #ccc
+body
+    background #eee
+    // overflow hidden
+    &.padding
+        padding 15px 25px 0
+        float 0
+    &.open
+        // .main-left
+            // width 47px
+        .nav
+            back('50c217c64fdff578c303d5832eb2b52a_20x100.png')
+        // .main-right
+        .main-left
+            width 47px
+            .logo
+                text-align center
+                img
+                    width 38px
+                    margin 25px 0 0
+            ul
+                li
+                    &:hover
+                        .small-mode
+                            display block
+                    h2
+                        padding-left 0
+                        text-align center
+                        var
+                            display none
+                        i
+                            margin-right 0
+                    .slide-sub
+                        display none !important
 
-.input-wrap
+.ico-huo
+    back1('ic1.png')
+    
+.ico-xiao
+    back1('ic3.png')
+
+.ico-ke
+    back1('ic2.png')
+    
+.ico-ku
+    back1('ic4.png')
+    
+.ico-shou
+    back1('ic5.png')
+
+.ico-cai
+    back1('ic6.png')
+
+.ico-jue
+    back1('ic9.png')
+
+.ico-ping
+    back1('ic7.png')
+    
+.ico-jing
+    back1('ic8.png')
+
+.ico-ding
+    back1('ic10.png')
+    
+.ico-ying
+    back1('ic11.png')
+    
+.ico-fu
+    back1('ic12.png')
+
+.ico-xin
+    back1('ic13.png')
+    
+.ico-ji
+    back1('ic14.png')
+    
+.ico-xi
+    back1('ic15.png')
+
+// END 左侧图标
+
+.ico-per
+    back1('8919177b580497505355942d80ecff97_18x18.png')
+
+.ico-email
+    back1('4cb00163d5eda02726e6cd97c04de104_18x12.png')
+    
+.ico-quit
+    back1('27f6ac22dc73fe41be9eb9c3a9d7e5fa_18x16.png')
+    
+.main-left
+    width 200px
+    background #2e363f
+    float left
+    height 100vh
+    position relative
+    flex-shrink 0
+    .nav
+        transition .3s
+        cursor pointer
+        width 16px
+        height 100px
+        center 2
+        right -16px
+        back('6d5b24b3f7b124ed7943218ca8acb288_20x100.png')
+    .logo
+        height 80px
+        overflow hidden
+        background #1f262d
+        text-align center
+        border-bottom 1px solid #181818
+        img
+            margin-top 10px
+            margin 10px 67.5px 0
+    ul
+        opacity 1
+        border-bottom 1px solid #37414b
+        float 0
+        heightC 80px
+        padding-bottom 20px
+        scrollY 1
+        &::-webkit-scrollbar
+            width 0px
+            height 0px
+            display none
+            opacity 0
+        li
+            width 100%
+            border-bottom 1px solid #1f262d
+            border-top 1px solid #37414b
+            position relative
+            float left
+            &.acti
+            &:hover
+                h2
+                    background #27A9E3
+                    transition all .15s ease
+                    .ico-huo
+                        back1('ic1-1.png')
+                    .ico-xiao
+                        back1('ic3-1.png')
+                    .ico-ke
+                        back1('ic2-1.png')
+                    .ico-ku
+                        back1('ic4-1.png')
+                    .ico-shou
+                        back1('ic5-1.png')
+                    .ico-cai
+                        back1('ic6-1.png')
+                    .ico-xin
+                        back1('ic13-1.png')
+                    .ico-jue
+                        back1('ic9-1.png')
+                    .ico-ji
+                        back1('ic14-1.png')
+                    .ico-xi
+                        back1('ic15-1.png')
+                    var
+                        color #fff
+            h2
+                cursor pointer
+                padding-left 30px
+                float left
+                width 100%
+                i
+                    position relative
+                    // widthZ 18px
+                    height 45px
+                    width 18px
+                    margin-right 20px
+                    // margin-top -2px
+                    float left
+                var
+                    float left
+                    color #888
+                    line-height 45px
+                    font-size 15px
+                    
+            .slide-sub
+                background #1f262d
+                height 0
+                overflow hidden
+                float left
+                width 100%
+                transition all .2s ease
+                a
+                    padding-left 42px
+                    color #888888
+                    display block
+                    heightL 38px
+                    &:hover
+                        background #e4e4e5
+                    &.acti
+                        color #fff
+                        background #28b779
+                        position relative
+                        &:after
+                            z-index 1
+                            content ""
+                            center 2
+                            top 50%
+                            right 0
+                            width 0px
+                            height 0px
+                            border-right 10px solid #fff
+                            border-bottom 8px solid transparent
+                            border-top 8px solid transparent
+                            border-left 8px solid transparent
+
+            // 2
+            .small-mode
+                position absolute
+                background #27A9E3
+                left 100%
+                top 0
+                width 150px
+                z-index 10
+                display none
+                a
+                    color #fff
+                    display block
+                    padding 10px 20px
+                    border-top solid 1px #48b8ea
+                    &:hover
+                        background rgba(#fff, .3)
+                        transition .15s
+
+.main-right
+    // widthC 220px
+    flex-grow 1
+    flex-shrink 1
+    .head
+        background #1f262d
+        height 40px
+        ul
+            float right
+            border-left 1px solid #000
+            li
+                font-size 12px
+                transition .2s
+                border-left 1px solid #2e363f
+                border-right 1px solid #000
+                float left
+                &:last-child
+                    border-right none
+                &:hover
+                    background #000
+                    .ico-per
+                        back 'ico1.png'
+                    .ico-email
+                        back 'ico2.png'
+                    .ico-quit
+                        back 'ico3.png'
+                    a
+                        color #fff
+                a
+                    transition .2s
+                    line-height 40px
+                    color #888
+                    display block
+                    padding 0 25px
+                    i
+                        width 18px
+                        height 18px
+                        margin-top -2px
+                    var
+                        color #fff
+                        background #d85940
+                        display inline-block
+                        padding 3px 6px
+                        margin-left 5px
+                        line-height 1
+                        border-radius 5px
+                    span
+                        margin-left 4px
+        .fl
+            margin-left 15px
+            a
+                color #555
+                line-height 40px
+    .page-tabs
+        background #fff
+        height 40px
+        float left
+        width 100%
+        .tabs-wrap
+            a
+                margin-top 6px
+                height 34px
+                float left
+                padding 0 20px
+                color #555555
+                position relative
+                margin-left 3px
+                line-height 34px
+                background #eee
+                border-radius 6px 6px 0 0
+                font-size 14px
+                cursor pointer
+                transition .2s
+                i
+                    position absolute
+                    border-radius 30px
+                    right 1px
+                    top 1px
+                    line-height 1
+                    cursor pointer
+                    padding 0 3px
+                    &:hover
+                        background #d85940
+                &:hover
+                    color #fff
+                    background #9f9f9f
+                &.acti
+                    color #fff
+                    background #9f9f9f
+                    &:after
+                        content ''
+                        position absolute
+                        background #28b779
+                        left 0
+                        bottom 0
+                        width 100%
+                        height 3px
+    .iframe
+        width 100%
+        // height 850px
+        padding 15px 25px 0
+        float left
+        iframe
+            float left
+            padding 0
+            margin 0
+            width 100%
+            height 100%
+
+.title
+    border-bottom 1px solid #bcbebf
+    height 49px
+    background #eeeeee
+    padding-right 12px
+    h2
+        float left
+        .ico-inten
+            float left
+            border-right 1px solid #95989a
+            box-sizing border-box
+            width 40px
+            height 39px
+            back1("icon144.png")
+        .ico-inten1
+            float left
+            border-right 1px solid #95989a
+            box-sizing border-box
+            width 40px
+            height 39px
+            back1("icon68.png")
+        .ico-inten2
+            float left
+            border-right 1px solid #95989a
+            box-sizing border-box
+            width 40px
+            height 39px
+            back1("icon127.png")
+        var
+            line-height 48px
+            font-size 16px
+            float left
+            font-weight bold
+            color #555
+            margin-left 18px
+    .fr
+        margin-topV 48px 32px
+        a
+            transition .2s
+            color #fff
+            float left
+            text-align center
+            width 120px
+            heightL 32px
+            margin-left 20px
+            &.a1
+                background #888888
+            &.a2
+                background #28b779
+            &.a3
+                background #d85940
+            &.a4
+                background #ffb848
+            &.a5
+                background #27a9e3
+
+.intention-list
+    background #fff
+    border 1px solid bor1
+    float left		
+    width 100%
+.pages
+    text-align center
+    margin-top 7px
+    background #eee
+    float left
+    width 100%
+    .wrap
+        float left
+        width 100%
+        > span
+            font-weight bold
+            margin-left 5px
+            float left
+            line-height 22px
+        a
+            height 26px
+            float left
+            line-height 26px
+            padding 0 10px
+            background #fff
+            border 1px solid #cdcdcd
+            color #898989
+            transition .2s
+            font-size 13px
+            font-weight bold
+            border-radius 3px
+            margin-left 5px
+            ml 0
+            &.nolink
+                background #dddddd
+                cursor no-drop
+            &:not(.nolink):hover
+            &:not(.nolink).curr
+                background #27a9e3
+                color #fff
+                border-color #27a9e3
+        p
+            float left
+            height 25px
+            margin-left 25px
+            span
+                float left
+                line-height 26px
+                color #898989
+                font-weight bold
+                
+            input
+                height 26px
+                border 1px solid bor1
+                width 50px
+                text-align center
+                float left
+                color #555
+                border-radius 3px
+                transition .3s
+                &:focus
+                    border-color lan
+                    box-shadow 0 0 6px rgba(lan, .4)
+
+            button
+                float left
+                width 35px
+                color #898989
+                background #fff
+                height 25px
+                border 1px solid bor1
+                margin-left 5px
+                transition .2s
+                border-radius 3px
+                &:hover
+                    background #27a9e3
+                    color #fff
+                    border-color #27a9e3
+                    
+        
+.pub-fun
+    background #eeeeee
+    height 39px
+    line-height 38px
+    border-bottom 1px solid #cdcdcd
+    a
+        cursor pointer
+        float left
+        width 6.25%
+        text-align center
+        border-right 1px solid #cdcdcd
+        color #555555
+        transition .2s
+        &:hover
+            background #f9f9f9
+        i
+            width 22px
+            height 21px
+            margin-right 5px
+            margin-top -4px
+    .ico-da
+        back1('icon1.png')
+        
+    .ico-dao
+        back1('icon21.png')
+    
+    .ico-ming
+        back1('icon3.png')
+        
+    .ico-tiao
+        back1('icon27.png')
+        
+    .ico-she
+        back1('icon28.png')
+        
+    .ico-cha
+        back1('icon17.png')
+    
+    .ico-fu
+        back1('icon22.png')
+    
+    .ico-ka
+        back1('icon24.png')
+    
+    .ico-quan
+        back1('icon8.png')
+        
+    .ico-shan
+        back1('icon32.png')
+    
+    .ico-ting
+        back1('icon31.png')
+        
+    .ico-qi
+        back1('icon15.png')
+
+    .ico-xin1
+        width 18px
+        height 16px
+        back1 'icon4.png'
+        
+.function-wrap
+    border-top none
+    border 1px solid #cdcdcd
+    dt 1
+
+.sales-list
+    margin-top 15px
+    background #fff
+    overflow-x auto
+    border 1px solid #cdcdcd
+    float 0
+    .sales-bar
+        min-width 1625px
+    .sp1
+        width 59px
+    .sp2
+        width 165px
+    .sp3
+        width 117px
+    .sp4
+        width 117px
+    .sp5
+        width 120px
+    .sp6
+        width 108px
+    .sp7
+        width 108px
+    .sp8
+        width 108px
+    .sp8
+        width 104px
+    .sp9
+        width 104px
+    .sp10
+        width 94px
+    .sp11
+        width 189px
+    .sp12
+        width 102px
+    .sp13
+        width 131px
+    .sp14
+        width 100px
+        
+    .head
+        border-bottom 1px solid #cdcdcd
+        background #eee
+        height 40px
+        span
+            font-weight bold
+            line-height 39px
+            text-align center
+            float left
+            border-left 1px solid #cdcdcd
+            border-leftN()
+            color #888
+            
+    ul
+        border-top none
+        float 0
+        li
+            width 100%
+            height 40px
+            border-top 1px solid #e6e6e6
+            border-topN()
+            span
+                float left
+            .sp1
+                margin-topV 40px 15px
+                text-align center
+            b
+                float left
+                line-height 48px
+                color #555
+                margin-left 80px
+                font-weight normal
+
+
+
+.archives-type
+    border 1px solid #cdcdcd
+    height 546px
+    width 220px
+    float left
+    ul
+        background #f9f9f9
+        height calc(100% - 39px)
+        scrollY 1
+        scrollbar 1
+        li
+            width 100%
+            line-height 35px
+            &:hover
+                a
+                    background #e0e0e0
+                    color #0799fb
+            a
+                transition .2s
+                display block
+                color #888
+                font-size 13px
+                padding-left 12px
+                ov 1
+                i
+                    margin-topV 40px 18px
+                    float left
+                    width 18px
+                    height 18px
+                    margin-right 8px
+                // .ico-i0
+                //     back1('00eaeac67718e9d72db3718fc0c2b1f2_18x18.png')
+                // .ico-i1
+                //     back1('bd707202b63db9393a37f2eba0a2dfa2_18x18.png')
+                // .ico-i2
+                //     back1('c41addaed6edc2ba6861b071048055f3_18x18.png')
+                // .ico-i3
+                //     back1('8dee3869dc3cbc2d272d7bd266aacc76_18x18.png')
+                // .ico-i4
+                //     back1('a58f1892ea779a0c7da739fcd03b6a54_18x18.png')
+.archives-right
+    widthC 235px
+    .archives-list
+        margin-top 20px
+        background #fff
+        overflow-x auto
+        float 0
+        border 1px solid #cdcdcd
+        .archives-bar
+            min-width 1360px
+        .sp1
+            width 59px
+        .sp2
+            width 135px
+        .sp3
+            width 165px
+        .sp4
+            width 69px
+        .sp5
+            width 180px
+        .sp6
+            width 140px
+        .sp7
+            width 148px
+        .sp8
+            width 146px
+        .sp8
+            width 293px
+        .sp9
+            width 162px
+            
+        .head
+            border-bottom 1px solid #cdcdcd
+            background #eee
+            heightL 40px
+            span
+                font-weight bold
+                line-height 48px
+                text-align center
+                float left
+                border-left 1px solid #95989a
+                border-leftN()
+                color #555555
+        ul
+            border-top none
+            float 0
+            li
+                width 100%
+                height 40px
+                line-height 39px
+                border-bottom 1px solid #e6e6e6
+                span
+                    float left
+                b
+                    float left
+                    line-height 48px
+                    color #555
+                    margin-left 80px
+                    font-weight normal
+            .checked
+                background #ececec
+            .total
+                background #cee6f1
+
+
+.seacrh
+    float right
+    width 50%
+    margin-topV 49px 33px
+    height 33px
+    background #fff
+    max-width 660px
     input
-        height 36px
-        width 50%
-        font-size 18px
+        border 1px solid #cdcdcd
+        border-right none
+        float left
+        widthC 100px
+        height 100%
+        line-height 31px
+        padding 0 10px 0 30px
+        background url(../img/554f152585fd4e9622dcd68c4a132db5_16x15.png) 10px center no-repeat
+        inputW #ccc
+    button
+        transition .2s
+        width 120px
+        height 32px
+        color #fff
+        background #27a9e3
+        ls 10px
+
+.panorama-list
+    border 1px solid #95989a
+    .tabs
+        height 48px
+        border-bottom 1px solid #95989a
+        a
+            color #888
+            float left
+            width 100px
+            line-height 47px
+            height 47px
+            text-align center
+            border-right 1px solid #95989a
+            transition .2s
+            &:hover
+            &.acti
+                background #f9f9f9
+                position relative
+                color #555
+                &:after
+                    transition .2s
+                    content ''
+                    position absolute
+                    left 0
+                    width 100%
+                    bottom -1px
+                    background #f9f9f9
+                    height 1px
+
+// 客户全貌表格
+
+.panorama-table
+    margin-top 20px
+    border 1px solid #cdcdcd
+    background #fff
+    overflow-x auto
+    .panorama-bar
+        min-width 1618px
+    .sp1
+        width 59px
+    .sp2
+        width 125px
+    .sp3
+        width 147px
+    .sp4
+        width 137px
+    .sp5
+        width 160px
+    .sp6
+        width 58px
+    .sp7
+        width 89px
+    .sp8
+        width 118px
+    .sp9
+        width 89px
+    .sp10
+        width 84px
+    .sp11
+        width 101px
+    .sp12
+        width 118px
+    .sp13
+        width 243px
+    .sp14
+        width 90px
+    b
+        heightL 49px
+        background #eeeeee
+        display block
+        border-bottom 1px solid #cdcdcd
+        span
+            text-align center
+            color #555
+            float left
+            border-left 1px solid #b9babc
+        .sp1
+            border-left none
+    ul
+        heightC 435px
+        li
+            height 49px
+            width 100%
+            border-bottom 1px solid #cdcdcd
+            span
+                float left
+            .sp1
+                label
+                    padding 0 10px
+                    float left
+                    margin-topV 48px 15px
+
+            &:last-child
+                .sp2
+                    em
+                        font-size 15px
+                        color #555555
+                        width 128px
+                        dm()
+                        text-align right
+                        line-height 48px
+
+
+// 销售订单
+
+.xiaoshow
+    border 1px solid bor1
+    float left
+    width 100%
+    .item-fun
+        border-bottom: 1px solid bor1
+        float left
+        width 100%
+        a
+            float: left;
+            line-height: 38px
+            width: 6.25%;
+            text-align: center;
+            border-right: 1px solid bor1
+            font-size: 14px
+            color: #555;
+            -webkit-transition: .2s;
+            -o-transition: .2s;
+            transition: .2s;
+            &:hover
+                background: #f9f9f9;
+
+            .i1
+                backp 'icon1.png' 20px
+            .i2
+                backp 'icon2.png' 20px
+            .i3
+                backp 'icon3.png' 20px
+            .i4
+                backp 'icon4.png' 20px
+            .i5
+                backp 'icon5.png' 20px
+            .i6
+                backp 'icon6.png' 20px
+            .i7
+                backp 'icon7.png' 20px
+            .i8
+                backp 'icon8.png' 20px
+            .i9
+                backp 'icon9.png' 20px
+            .i10
+                backp 'icon10.png' 20px
+            .i11
+                backp 'icon11.png' 20px
+            .i12
+                backp 'icon12.png' 20px
+            .i13
+                backp 'icon13.png' 20px
+            .i14
+                backp 'icon14.png' 20px
+            .i15
+                backp 'icon15.png' 20px
+            .i16
+                backp 'icon16.png' 20px
+            .i18
+                backp 'icon18.png' 20px
+            .i19
+                backp 'icon19.png' 20px
+            .i20
+                backp 'icon20.png' 20px
+            .i21
+                backp '66d83_15x15.png' 20px
+            .i26
+                backp 'icon26.png' 20px
+            .i29
+                backp 'icon29.png' 20px
+            .i30
+                backp 'f5630_18x18.png' 20px
+
+.xiaoshow .pub-table ul li label {
+  color: #0799fb;
+}
+
+.xiaoshow .pub-table ul li .input-wrap input.in1 {
+  width: -webkit-calc(100% - 68px);
+  width: calc(100% - 68px);
+}
+.xiaoshow .pub-table ul li .input-wrap input.in2 {
+  width: -webkit-calc(100% - 68px);
+  width: calc(100% - 68px);
+}
+
+.xiaoshow .pub-table ul li .input-wrap i {
+  float: right;
+  cursor: pointer;
+  width 28px
+  height: 25px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.xiaoshow .pub-table ul li .input-wrap .add {
+  float: left;
+  color: #555;
+  border-right: 1px solid #cdcdcd;
+  border-left: solid 1px #cdcdcd;
+  width: 40px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  background: #eee;
+  flex-shrink 0
+}
+.xiaoshow .pub-table ul li .input-wrap .quzheng {
+  float: right;
+  color: #555;
+  border-left: solid 1px #cdcdcd;
+  width: 68px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  background: #eee;
+}
+.xiaoshow .pub-table ul li .input-wrap .ico-sp0 {
+  background: #eee url("../img/icon60.png") center no-repeat;
+}
+.xiaoshow .pub-table ul li .input-wrap .ico-sp1 {
+  background: #eee url("../img/icon62.png") center no-repeat;
+}
+.xiaoshow .pub-table ul li .input-wrap .ico-sp2 {
+  background: #eee url("../img/icon61.png") center no-repeat;
+}
+.xuhao {
+  border: 1px solid #cdcdcd;
+  margin-top: 15px;
+  width: 100%;
+  background: #fff;
+  overflow-x: auto;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+}
+.xuhao .ovf {
+  min-width: 1600px;
+}
+.xuhao var {
+  font-style: normal;
+}
+
+.xuhao .sp0 {
+  width: 70px;
+  text-align left
+}
+.xuhao .sp1 {
+  width: 128px;
+}
+.xuhao .sp2 {
+  width: 128px;
+}
+.xuhao .sp3 {
+  width: 138px;
+}
+.xuhao .sp4 {
+  width: 158px;
+}
+.xuhao .sp5 {
+  width: 50px;
+}
+.xuhao .sp6 {
+  width: 90px;
+}
+.xuhao .sp7 {
+  width: 110px;
+}
+.xuhao .sp8 {
+  width: 110px;
+}
+.xuhao .sp9 {
+  width: 80px;
+}
+.xuhao .sp10 {
+  width: 70px;
+}
+.xuhao .sp11 {
+  width: 138px;
+}
+.xuhao .sp12 {
+  width: 230px;
+}
+.xuhao .sp13 {
+  width: 100px;
+}
+.xuhao .ico-menu {
+  width: 14px;
+  height: 14px;
+  margin-right 6px
+  margin-top -4px
+  background: url("../img/icon65.png") center top no-repeat;
+  -webkit-background-size: cover;
+          background-size: cover;
+}
+.xuhao h3 {
+  height: 40px;
+  line-height: 40px;
+  font-size: 13px;
+  background: #eee;
+  color: #888888;
+  border-bottom: 1px solid #cdcdcd;
+}
+.xuhao h3 span {
+  float: left;
+  border-left: 1px solid #cdcdcd;
+  height: 100%;
+  text-align: center;
+}
+.xuhao h3 span.sp0
+    text-align center
+
+.xuhao h3 span:first-child {
+  border-left: none;
+}
+.xuhao ul li {
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 14px;
+  color: #555;
+}
+
+.xuhao ul li:hover {
+  background: #f9f9f9;
+}
+.xuhao ul li span {
+  float: left;
+}
+
+.add-wrap {
+    float 0
+    margin-top 7px
+}
+.add-wrap .fl {
+  background: #fff;
+  border: 1px solid #cdcdcd;
+  border-radius: 3px;
+}
+.add-wrap .fl a
+    cursor pointer
+    text-align: center;
+    color: #555;
+    font-weight: bold;
+    text-align: center;
+    float: left;
+    width: 75px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 12px;
+    border-left: 1px solid #c0c1c3;
+    var
+        &.i1
+            backp 'icon50.png' 18px
+        &.i2
+            backp 'icon51.png' 18px
+        &.i3
+            backp 'icon53.png' 18px
+
+.add-wrap .fl a:hover{
+  background: #eeeeee;
+}
+.add-wrap .fl a:first-child {
+  border-left: none;
+}
+.add-wrap .fl a img {
+  margin-right: 3px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+.add-wrap .cg-next {
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    height: 30px;
+    padding: 0 8px 0;
+}
+.add-wrap .cg-next a
+  float: left;
+  height: 30px;
+  color: #888;
+  background: #eee;
+  border: 1px solid #cdcdcd;
+  border-radius 3px
+  padding: 0 6px;
+  font-size: 12px;
+  margin: 0 2px;
+  &:hover
+      background-color: #f9f9f9;
+  var
+    display inline-block
+    height 100%
+    line-height 30px
+    &.a1
+        backp 'icon54.png' 19px
+    &.a2
+        backp 'icon56.png' 19px
+    &.a3
+        backp 'icon57.png' 19px true
+    &.a4
+        backp 'icon55.png' 19px true
+
+.add-wrap .ri-down{
+  float: right;
+}
+
+.add-wrap .ri-down .ico-down{
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url('../img/4fa57e0c8e24695858f6465aa77242f5_18x18.png');
+  cursor: pointer;
+  margin-top: 8px;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+}
+
+.add-wrap .ri-down .ico-down.acti{
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.biao
+    display none
+    background #f9f9f9
+    padding 1px 0 10px
+    margin-top 8px
+    border 1px solid #cdcdcd
+    float 0
+    padding-right 3%
+    ul
+        li
+            width 25%
+            margin-top 10px
+            display flex
+            span
+                float left
+                font-size 14px
+                text-align right
+                color #888
+                width 115px
+                line-height 25px
+            input
+                height 25px
+                flex-grow 1
+                line-height 25px
+                border 1px solid #cdcdcd
+                padding 0 6px
+                &:focus
+                    border-color #0799FB
+
+// 图片导购
+
+.picture-right
+    widthC 235px
+    .picture-guide
+        border 1px solid bor1
+        background #fff
+        float left
+        width 100%
+        .pub-tit
+            p
+                a.a1
+                    letter-spacing: 0
+
+.picture-guide-item
+    background #f9f9f9
+    float 0
+    border 1px solid #cdcdcd
+    margin-top 15px
+    ul
+        padding-right 15px
+        li
+            width 248px
+            border 1px solid #cdcdcd
+            margin-left 15px
+            margin-top 15px
+            &:last-child
+                margin-bottom 15px
+            &:hover
+                border-color #d85940
+                .text
+                    strong
+                        border-color #d85940
+                        a
+                            display block
+            .pict
+                height 192px
+                text-align center
+                position relative
+                background #fff
+                span
+                    position absolute
+                    color #fff
+                    z-index 1
+                    font-style italic
+                    top 0
+                    padding 4px 6px
+                    font-size 12px
+                    &.fl
+                        left 0
+                        background #d85940
+                    &.fr
+                        right 0
+                        background #28b779
+            .text
+                border-top 1px solid #e6e6e6
+                background #f6f6f6
+                text-align center
+                padding-bottom 10px
+                p
+                    margin-top 6px
+                    font-size 13px
+                    color #555555
+                    font-weight bold
+                span
+                    color #888
+                    display block
+                    margin-top 5px
+                    &.sp1
+                        font-size 13px
+                strong
+                    position relative
+                    dm()
+                    width 90%
+                    padding 5px 0
+                    border 1px solid #e2927b
+                    border-radius 3px
+                    margin-top 5px
+                    a
+                        abs(0)
+                        text-align center
+                        background #da542e
+                        color #fff
+                        font-weight normal
+
+                        var
+                            center 3
+                    b
+                        font-size 15px
+                        color #da542e
+                    del
+                        color #555
+                        font-weight normal
+
+@media screen and (max-width:1920px)
+    .picture-right .picture-guide-item ul li
+        width calc(16.666% - 15px)
+
+@media screen and (max-width:1600px)
+    .picture-right .picture-guide-item ul li
+        width calc(20% - 15px)
+
+@media screen and (max-width:1400px)
+    .picture-right .picture-guide-item ul li
+        width calc(24% - 15px)
+
+@media screen and (max-width:1260px)
+    .picture-right .picture-guide-item ul li
+        width calc(25% - 15px)
+
+
+.customer-case
+    background #f9f9f9
+    border 1px solid #cdcdcd
+    float left
+    width 100%
+
+.case-item
+    float 0
+    background #f9f9f9
+    border 1px solid #cdcdcd
+    margin-top 15px
+    .auto-height
+        padding-left 20px
+        padding-right 20px
+        padding-bottom 20px
+        min-height 600px
+    ul
+        position relative
+        float left
+        width 100%
+        li
+            margin-top 20px
+            background #fff
+            position absolute
+            transition .15s
+            border-radius 5px
+            overflow hidden
+            &:hover
+                box-shadow 0 10px 15px #c6c6c6
+            &.acti
+                border 1px solid #0799fb
+            .pict
+                position relative
+                img
+                    width 100%
+                p
+                    position absolute
+                    bottom 0
+                    left 0
+                    width 100%
+                    heightL 36px
+                    background rgba(#555,.5)
+                    color #fff
+                    padding 0 4%
+                    a
+                        position relative
+                        cursor pointer
+                        color #fff
+                        margin-left 20px
+                        &.active
+                            .i1
+                                animation dada 1s both
+                            .ico-zang
+                                back1('6b248b6e206648ae6aec4978b3f282b9_18x16.png')
+                            .ico-cang
+                                back1('b020b035ef2821f604450350eba2ceb4_1024x1024.png')
+                    i
+                        widthZ 18px
+                        margin-right 6px
+                        margin-top -2px
+                        &.i1
+                            top 11px
+                            position absolute
+                    .ico-zang
+                        back1('c998ad2b254da33abb095863cc141781_18x16.png')
+                    .ico-cang
+                        back1('36c260a1aff8e65be8543223f190513e_18x18.png')
+            .text
+                padding 15px 15px
+                p
+                    line-height 1.8
+                    font-size 12px
+                    color #888
+                    padding-top 8px
+                .sp1
+                    font-size 14px
+            .ctcase
+                dt 1
+                padding-bottom 15px
+                padding-left 8px
+
+                a
+                    float: left;
+                    height: 26px;
+                    background: #ddd;
+                    line-height: 26px;
+                    border-radius: 3px;
+                    padding: 0 10px;
+                    font-size: 12px;
+                    color: #888;
+                    margin: 0 8px;
+                    
+
+@keyframes dada
+    0%
+        transform scale(1)
+    100%
+        transform scale(2)
+        opacity 0
+
+.sale-alert
+    position absolute
+    left 10%
+    background #eee
+    .sp1
+        width 53px
+    .sp2
+        width 111px
+    .sp3
+        width 127px
+    .sp4
+        width 147px
+    .sp5
+        width 170px
+    .sp6
+        width 159px
+    .sp7
+        width 120px
+    .sp8
+        width 59px
+    .sp9
+        width 88px
+    .sp10
+        width 134px
+    .sp11
+        width 110px
+    .sale-alert-table
+        ul
+            height 400px
+            li
+                span
+                    input
+                        margin-top 11px
+                        margin-left 12px
+            
+.picture-alert
+    position absolute
+    width 80%
+    left 10%
+    background #fff
+    padding 15px
+    height 80vh
+    .close
+        top 0
+        right 0
+        z-index 1
+        position absolute
+    .pict
+        height 100%
+        float left
+        width 70%
+        border 1px solid bor1
+        overflow hidden
+        text-align center
+        img
+            height 100%
+            max-width 100%
+            max-height 100%
+            
+    .small
+        height 100%
+        width 29%
+        float right
+        position relative
+        overflow-y auto			
+        ul
+            height 100%
+            li
+                mt 0
+                margin-top 17px
+                width 100%
+                height calc(25% - 13px)
+                border 1px solid bor1
+                overflow hidden
+                text-align center
+                img
+                    height 100%
+                    max-width 100%
+                    max-height 100%
+                    overflow hidden
+                    text-align center
+                    
+
+.ico-info
+    back ('icon114.png')
+
+.ico-info.a1
+    back ('icon112.png')
+
+.archives-alert
+    width 800px
+    position absolute
+    .two-wrap
+        border-bottom 1px solid bor1
+.btn-wrap
+    dt 1
+    padding 17px 0
+    background #eeeeee
+    height 28px
+    text-align center
+    a
+        display inline-block
+        width 98px
+        heightL 28px
+        color #fff
+        margin-left 15px
+        transition .2s
+        &.a1
+            background #888
+        &.a2
+            background #27a9e3
+        &.a3
+            background #28b779
+        &.a4
+            background #ffb848
+        &.a5
+            background #d85940
+                
+.ico-close
+    back1('e1548f190b3ad794508f9911a5ef3ced_15x15.png')
+    width 20px
+    height 20px
+    margin-right 5px
+    cursor pointer
+    ro 1
+    float right
+    margin-top 5px
+    &:hover
+        back1('7469b9253fd7ef88db7a5bbfc0c0507f_15x15.png')
+        background-color #d85940
+        
+.case-scroll
+    height 85vh
+    position absolute
+    width 90%
+    left 5%
+    .ico-close
+        position absolute
+        right 0
+        top 0
+        z-index 1
+    .pos
+        position absolute
+        cursor pointer
+        center 2
+        &.prev
+            left 0
+        &.next
+            right 0
+    .wrap
+        width 94%
+        background #fff
+        height 100%
+        margin 0 auto
+        position relative
+        overflow hidden
+        ul
+            height 100%
+            display flex
+            li
+                background #ccc
+                height 100%
+                text-align center
+                flex-shrink 0
+                img
+                    height 100%
+
+.ico-up
+    back1('591660c9951616ef043ce496b5c3be10_14x16.png')
+    
+.case-alert
+    position absolute
+    width 80%
+    left 10%
+    .wrap
+        background #f9f9f9
+        padding 20px
+        dt 1
+        border-bottom 1px solid #cdcdcd
+        .fl-wrap
+            overflow hidden
+            height 397px
+            background #fff
+            width calc(100% - 305px)
+            float left
+            border 1px solid bor1
+            text-align center
+            img
+                height 100%
+        .pub-table
+            float right
+            width 295px
+            padding-right 0
+            padding-bottom 0
+            ul
+                margin-top 0
+                li
+                    margin-left 0
+                    width 100%
+                    mt 0
+                    a
+                        float right
+                        background #eeeeee
+                        width 30px
+                        text-align center
+                        font-size 12px
+                        position relative
+                        heightL 25px
+                        input
+                            opacity 0
+                            abs()
+                .input-wrap
+                    .in1
+                        width calc(100% - 60px) !important
+                    .upload
+                        width 60px !important
+        .xin
+            margin-top 10px
+            float left
+            color #888
+            .ico-xin1
+                margin-right 10px
+                margin-top -3px
+
+
+// 公告通知
+.notice-left
+    float left
+    width 35%
+    border 1px solid #cdcdcd
+    .pub-row-style
+        border none
+        .table-head
+            border-top 1px solid #cdcdcd
+        ul
+            height calc(100vh - 239px)
+    .pub-table
+        padding-right 25px
+        
+.notice-right
+    float right
+    width calc(100% - 35% - 15px)
+    overflow-y auto
+    min-height 571px
+    background #f9f9f9
+    &.bor
+        border 1px solid #cdcdcd
+        .box1
+            border none
+    .box1
+        border 1px solid #cdcdcd
+        margin-bottom 15px
+        float left
+        width 100%
+        .pub-table
+            padding-right 25px
+        label
+            margin-top 9px
+            float left
+            margin-left 80px
+        .editer
+            border-top 1px solid #cdcdcd
+            padding 16px 15px 0
+            width 100%
+            float left
+            .summernote
+                float left
+                width 100%
+                height 500px
+                display flex
+                flex-direction column
+                .w-e-text-container
+                    flex-grow 1
+            img
+                max-width 100%
+        #txtDiv a
+            box-sizing content-box
+        .look
+            button
+                padding 5px 10px
+        .edit-text
+            padding 0 15px
+            background #f9f9f9
+            float left
+            width 100%
+            margin-top 10px
+            .box
+                dt 1
+                padding-top 15px
+                p
+                    border-top 1px dashed #cdcdcd
+                    padding-top 10px
+                    color #555
+            .file-list
+                float left
+                margin-top 6px
+                .ico-file
+                    width 11px
+                    height 19px
+                    float left
+                    back1('a15cec84371672c2f665e300246492c6_11x19.png')
+                p
+                    float left
+                    color #888
+                    span
+                        margin-left 10px
+                        a
+                            border-radius 3px
+                            display inline-block
+                            margin-left 10px
+                            color #fff
+                            padding 4px 10px
+                            font-size 12px
+                            &.a0
+                                background #27A9E3
+                            &.a1
+                                background #d85940
+        .negotiation
+            padding 15px
+            background #F9F9F9
+            border-top 1px solid #cdcdcd
+            dt 1
+            h2
+                span
+                    color #888
+                    font-size 13px
+                    line-height 19px
+                    margin-left 10px
+                b
+                    float left
+                    line-height 18px
+                    font-size 14px
+                    color #555
+                    backp '谈判.png' 28px
+                    margin-top: 2px
+            textarea
+                height 100%
+                width 100%
+                border 1px solid #cdcdcd
+                padding 10px
+                margin-top 12px
+                background #fff
+                inputW #aeb6ac
+                line-height 1.8
+                letter-spacing 1px
+                border-radius 5px
+                transition .15s
+                &:focus
+                    border-color lan
+                    box-shadow 0 0 10px rgba(lan, .4)
+            button
+                float right
+                width 98px
+                height 28px
+                color #fff
+                background #888888
+                position relative
+                top -6px
+                
+    .box2
+        background #f9f9f9
+        border 1px solid #cdcdcd
+        
+        .limitheight
+            height 520px
+            overflow-y auto
+            padding-bottom 15px
+
+        .follow-up-record
+            padding 15px
+            border-bottom 1px solid #cdcdcd
+            dt 1
+            &:last-of-type
+                border-bottom none
+                padding-bottom 0
+            h2
+                position relative
+                font-size 13px
+                float left
+                width 100%
+            span
+                color #888
+                margin-left 10px
+                line-height 19px
+                font-size 13px
+            b
+                color #555
+                float left
+                height 18px
+                line-height 19px
+                &.b1
+                    backp '方案.png' 28px
+                &.b2
+                    backp '跟进.png' 28px
+                &.b3
+                    backp '建议.png' 28px
+                &.b4
+                    backp '介绍.png' 28px
+                &.b5
+                    backp '意向.png' 28px
+     
+            .text
+                padding 12px 5px 0
+                border-top 1px dotted #AEBDC8
+                margin-top 12px
+                background #f9f9f9
+                letter-spacing 1px
+                float left
+                width 100%
+            p
+                line-height 1.7
+                color #888
+                &:hover
+                    color lan
+            var
+                border 1px solid #0799fb
+                display inline-block
+                padding 5px 10px
+                font-size 14px
+                color #0799fb
+                center 1
+                margin-top -6px
+                border-radius 3px
+                &:hover
+                    background lan
+                    color #fff
+
+        .negotiation
+            border-bottom 1px solid #cdcdcd
+            padding 15px
+            dt 1
+            display none
+            background #EBF8F8
+            h2
+                position relative
+                font-size 15px
+                color #888
+                img
+                    margin-right 15px
+                    margin-top -6px
+                span
+                    color #888
+                    font-size 15px
+            textarea
+                height 80px
+                width 100%
+                padding 10px
+                margin-top 15px
+                inputW #aeb6ac
+                border 1px solid #cdcdcd
+                &:focus
+                    background #e0f1da
+                    border 1px solid #cdddca
+            label
+                width 187px
+                center 1
+            button
+                float right
+                width 98px
+                height 28px
+                color #fff
+                background #888888
+                position relative
+                top -6px
+                
+        
+
+// public-----------------------------------------------------------------------------------------------------------------
+
+// 下拉选择图标
+.pub-down
+    back1('cfb391352cae207007126574d3af01ad_14x9.png')
+    background-color #eee
+    border-radius 0 3px 3px 0
+    
+// 搜索图标
+.pub-search
+    back1('icon61.png')
+    background-color #eee
+    border-radius 0 3px 3px 0
+
+// 复选框
+.pub-check
+    font-size 14px
+    color #555555
+    text-align left
+    &.ml0
+        input
+            margin-left 5px
+            margin-right 5px
+    input
+        float left
+        appearance none
+        width 13px
+        height 13px
+        border 1px solid #95989a
+        margin-right 10px
+        margin-left 12px
+        margin-top 13px
+        &:checked
+            back1("5003cae23d5ff6f3e9926c7b18833972_15x15.png")
+// 复选框2
+.pub-check1
+    font-size 14px
+    color #888
+    cursor pointer
+    height 27px
+    display inline-block
+    line-height 27px
+    input
+        margin-right 6px
+        margin-top 6px
+        float left
+        appearance none
+        width 15px
+        height 15px
+        border 1px solid #95989a
+        border-radius 3px
+        &:checked
+            border none
+            back1("5db8dc06dba60ad4406d1e4307ceff97_18x18.png")
+
+.ml40
+    margin-left 40px
+
+// 按钮组
+.pub-delete-btn
+    a
+        padding 0 5px
+        heightL 26px
+        border 1px solid #cdcdcd
+        background #eee
+        color #888
+        text-align center
+        float left
+        margin-left 20px
+        cursor pointer
+        ml 0
+        position relative
+        border-radius 3px
+        input
+            cursor pointer
+            abs 1
+            opacity 0
+        i
+            width 18px
+            height 16px
+            margin-top -3px
+            margin-right 5px
+            &.ico-i1
+                back1('folder-upload-fill.png')
+            &.ico-i2
+                back1('folder-upload-fill.png')
+
+// 边框颜色
+.pub-borderColor
+    .input-wrap
+        border-color lan !important
+        box-shadow 0 0 6px rgba(lan, .4)
+        transition .3s
+    
+// 星号
+.pub-asterisk
+    color #d85940
+    position absolute
+    font-size 18px
+    line-height 30px
+    font-weight bold
+    right -16px
+
+// 公用表格设置
+.pub-table
+    padding-right 25px
+    padding-bottom 15px
+    background #f9f9f9
+    float left
+    width 100%
+    ul
+        margin-top 5px
+        li
+            width 23%
+            margin-left 2%
+            margin-top 10px
+            height 27px
+            float left
+            p
+                height 27px
+                width 100%
+                padding-left 55px
+                label
+                    max-width 50%
+                    heightL 27px
+                    ov 1
+                    input
+                        margin-topV 27px 18px
+            > span
+                font-size 13px
+                color #888
+                width 91px
+                float left
+                text-align right
+                height 27px
+                line-height 27px
+            .input-wrap
+                background #fff
+                position relative
+                border 1px solid #cdcdcd
+                height 27px
+                widthC 91px
+                float right
+                border-radius 3px
+                display flex
+                .input
+                    flex-grow 1
+                    flex-shrink 1
+                input[type="text"]
+                    // widthC 28px
+                    height 25px
+                    padding 0 10px
+                    float left
+                    border none
+                    inputW #ccc
+                    border-radius 3px
+                    width 100%
+                    // &.sel
+                    //     widthC 90px
+                    // &.two-input
+                    //     width calc(100% - 60px) !important
+                button
+                    float right
+                    height 25px
+                    width 28px
+                    flex-shrink 0
+            &.li0
+                width 64%
+            &.li1
+                width 48%
+            &.li2
+                width 98%
+            &.li3
+                width 96%
+            &.li4
+                width 73%
+            &.li5
+                width 31%
+            &.li6
+                width 32%
+            &.li7
+                width 97%
+            &.li8
+                width 32%
+            &.li12
+                width 29%
+    
+// 表格外观----------------------------------------------
+.pub-row-style
+    border 1px solid bor1
+    margin-top 15px
+    position relative
+    float 0
+    .table-head
+        background #eee
+        height 39px
+        border-bottom 1px solid bor1
+        overflow hidden
+        span
+            text-align center
+            float left
+            heightL 39px
+            font-weight bold
+            color #888
+            border-left 1px solid bor1
+            border-leftN()
+            
+    .table-row
+        height 360px
+        overflow auto
+        float 0
+        background #fff
+        &.pub-first-center
+            ul
+                li
+                    span
+                        &:first-child
+                            text-align center !important
+        .edit
+            -webkit-user-modify: read-write-plaintext-only;
+        
+        &.a2
+            height 248px
+        ul
+            float 0
+            li
+                width 100%
+                border-bottom 1px solid #e6e6e6
+                height 40px
+                line-height 39px
+                color #555
+                font-size 14px
+                transition .15s
+                &:hover
+                    background-color rgba(#ccc, .15)
+                span
+                    text-align center
+                    float left
+                    var
+                        line-height 1
+                        display block
+                        width 100%
+                        text-align center
+                        outline none
+                    &:first-child
+                        text-align left
+                &:last-child
+                    margin-bottom 20px
+    
+    
+// 下拉框选择
+.pub-drop-down
+    display none
+    position absolute
+    z-index 10002
+    background #fff
+    border 1px solid bor1
+    width 100%
+    box-sizing content-box
+    top 26px
+    left -1px
+    box-shadow 0 2px 5px rgba(#000,.1)
+    border-top none
+    max-height 450px
+    overflow-y auto
+    span
+        display block
+        heightL 32px
+        padding 0 10px
+        cursor pointer
+        transition .2s
+        &:hover
+        &.acti
+            background lan
+            color #fff
+
+.auto-height
+    overflow-y scroll
+
+// 复选框背景色		
+.pub-table-back
+    transition .2s
+    background #E0E0E0 !important
+    
+// 表格最后一行背景色
+.pub-last-back
+    background #c8e1eb !important
+    
+// 标题栏
+.pub-tit
+    border-bottom 1px solid bor1
+    height 39px
+    background #eeeeee
+    line-height 38px
+    font-weight bold
+    color #555555
+    font-size 14px
+    padding-right 25px
+    .fl
+        min-width 74%
+    .cursor
+        cursor pointer
+    &.no-border
+        border-bottom none
+    i
+        float left
+        width 40px
+        height 39px
+        border-right 1px solid bor1
+        margin-right 15px
+    .ico-type
+        back1('icon106.png')
+        
+    .ico-menu
+        back1('icon70.png')
+        
+    .ico-xuan
+        back1('a9f79fa057b27b051a6870c1c166dc94_15x15.png')
+        
+    .ico-genjin
+        back1('2b0aefba6067afacfca5b63cfd7f8f7d_18x20.png')
+    
+    .ico-newgenjin
+        back1('9411dc199d3eaf984e85d31aca82ce5b_20x20.png')
+        
+    .ico-kehu
+        back1('b5f03822736f3769b3073b8ef9a67e6c_20x14.png')
+    
+    .ico-notice
+        back1('a1d33c829fbc48ccb0d450d28a90382d_18x20.png')
+    p
+        // margin-right 25px
+        float right
+        font-weight normal
+        font-size 13px
+        margin-top 6px
+        a
+            text-align center
+            float left
+            width 100px
+            height 26px
+            line-height 27px
+            color #fff
+            margin-left 15px
+            transition .2s
+            cursor pointer
+            border-radius 3px
+            letter-spacing 10px
+            text-indent 10px
+            em
+                background-color #fff
+                color #28b779
+                margin-left 5px
+                padding 0 2px
+            &.a1
+                background #28b779
+                hover #fff #139E61
+            &.a2
+                background #27a9e3
+                hover #fff #52BAE8
+    .fr
+        font-weight normal
+        margin-top 6px
+        a
+            font-size 13px
+            color #fff
+            text-align center
+            width 88px
+            height 26px
+            line-height 27px
+            letter-spacing 10px
+            text-indent 10px
+            float left
+            margin-left 15px
+            ml 0
+            transition .2s
+            border-radius 3px
+ 
+            &.a1
+                background #d85940
+                &:hover
+                    background #D3462A
+            &.a2
+                background #28b779
+                &:hover
+                    background #139E61
+            &.a3
+                background #ffb848
+                &:hover
+                    background #F3A318
+            &.a4
+                background #27a9e3
+                &:hover
+                    background #0E97D3
+            &.a5
+                background #888
+                &:hover
+                    background #707070
+            &.a6
+                background #27a9e3
+                &:hover
+                    background #0E97D3
+            &.w100
+                width 100px
+            &.let
+                letter-spacing 0
+                text-indent 0
+            &.ordinary
+                width 148px
+                letter-spacing 0
+                text-indent 0
+            em
+                background-color #fff
+                color #28b779
+                margin-left 5px
+                padding 0 2px
+
+
+// 弹窗最外层		
+.pub-shadow
+    display none
+    position fixed
+    z-index 1
+    left 0
+    top 0
+    width 100%
+    height 100%
+    background rgba(#888,.5)
+
+// 问号
+.pub-wen
+    margin-right 25px
+    float right
+    a
+        display block
+        margin-topV 40px 24px
+        img
+            width 24px
+// 日期
+.J-datepicker-day
+    input
+        width 100% !important
+        border none
+    .ant-picker
+        border none
+        backico('0dd1256af24122475ea4d8822811f748_28x25.png',0px)
+        box-shadow none
+        svg
+            display none
+        
+// 含
+.select-down
+    width 60px
+    float left
+    position relative
+    h2
+        cursor pointer
+        font-size 14px
+        text-align center
+        heightL 25px
+        border-right 1px solid #cdcdcd
+    .box
+        display none
+        z-index 1
+        position absolute
+        left 0
+        top 26px
+        width 100%
+        background #fff
+        box-shadow 0 0 10px rgba(#000,.2)
+        span
+            cursor pointer
+            line-height 30px
+            height 30px
+            display block
+            text-align center
+            hover #fff lan
+            
+// 大缩略图
+.pub-small
+    li
+        &:not(.pub-last-back)
+            height 95px !important
+            span
+                &:nth-child(1)
+                    margin-top 26px
+                    text-align left
+                &:nth-child(2)
+                    margin-top 8px
+                    var
+                        display block
+                        width 118px
+                        height 78px
+                        border 1px solid #e6e6e6
+                        border-radius 5px
+                &:nth-child(3)
+                    margin-top 8px
+                    height 78px
+                    display flex
+                    align-items center
+                    var
+                        word-break break-all
+                        text-align center
+                    
+for i in 30..250
+    span.sp{i}
+        width i*1px
+
+// 送货安排
+
+.ico-delivery
+    back1('25ad85501d29e567817d16b8c6f6fcb9_20x12.png')
+
+.ico-salesslip
+    back1('5403ed68e7491b83bd3008b87f5e4e7c_14x20.png')
+    
+.notice-right
+    &.bg-none
+        background none
+    .box3
+        border 1px solid #d5d5d5
+        float left
+        width 100%
+        .pub-table
+            label
+                float left
+                margin-left 90px
+    .box4
+        background #fff	
+        margin-top 15px
+        border 1px solid #d5d5d5
+        float left
+        width 100%
+
+    .box5
+        margin-top 15px
+        float 0
+        background #fff
+        ul
+            float 0
+
+// 收款单
+.ico-receivables
+    back1('e408b46d25e98144301553df6fe160a6_20x20.png')
+
+
+.left-wrappr
+    float left
+    width 35%
+    
+.right-wrapper
+    float right
+    width calc(100% - 35% - 15px)
+    
+.pub-bor-fl
+    float 0
+    border 1px solid bor1
+    &.no-border
+        border-bottom none
+
+// 03.06
+
+.tips-wrapper
+    background: #fff
+    width: 600px
+    height: 450px
+    position: relative
+
+.tips-wrapper .tips-text
+    margin-top: 68px
+    text-align: center
+
+.tips-wrapper .tips-text b
+    display: block
+    font-size: 18px
+    color: #888
+    margin-top: 50px
+    font-weight: normal
+
+.tips-wrapper .tips-text p
+    text-align: center
+    font-size: 24px
+    color: #555
+    margin-top: 15px
+
+.tips-wrapper .tip-btn-group
+    text-align: center
+    border-top: 1px solid #cdcdcd
+    background: #eee
+    padding: 16px 0
+    position: absolute
+    left: 0
+    width: 100%
+    bottom: 0
+
+.tips-wrapper .tip-btn-group a
+    width: 98px
+    height: 28px
+    line-height: 28px
+    color: #fff
+    display: inline-block
+    letter-spacing: 10px
+    text-indent: 10px
+    margin: 0 8px
+
+.tips-wrapper .tip-btn-group a.a1
+    background: #28b779
+
+.tips-wrapper .tip-btn-group a.a2
+    background: #888
+
+.tips-wrapper .tip-btn-group a.a3
+    background: #feaf27
+
+.pub-nav
+    display: table
+    width: 100%
+
+.pub-nav a
+    float: left
+    border-right: 1px solid #cdcdcd
+    height: 38px
+    line-height: 38px
+    padding: 0 25px
+    color: #888
+    -webkit-transition: 0.2s
+    -o-transition: 0.2s
+    transition: 0.2s
+
+.pub-nav a:hover
+    background: #fff
+
+.pub-nav a i
+    width: 20px
+    margin-right: 6px
+    height: 100%
+
+.tree
+    float left
+    border-top 1px solid #cdcdcd
+    width 100%
+    background #fff
+
+.tree .ico-file3
+    width 12px
+    height 16px
+    background url("../img/6aaad094459d5937_12x16.png") center no-repeat
+    margin-right 9px
+    float left
+
+.tree .ico-file1
+    background: url("../img/fb4ad3f08ade108b_18x17.png") center no-repeat
+
+.tree .ico-file2
+    width: 18px
+    height: 18px
+    margin-right: 7px
+    background: url("../img/f7103d7f4df89323_18x18.png") center no-repeat
+
+.tree input
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    width: 15px
+    height: 15px
+    border: 1px solid #95989a
+    float: left
+    margin-right: 12px
+
+.tree input:checked
+    background: url("../img/2761c1747225b417_9x10.png") center no-repeat
+
+.tree .ico-show
+    float: left
+    background: url("../img/42ef17c00ffe287e_18x18.png") center no-repeat
+    margin-right: 10px
+    width: 18px
+    height: 18px
+    margin-top: -1px
+
+.tree .set-manage
+    float: left
+    border: 1px solid #cdcdcd
+    width: 97.2%
+    height: 94.5%
+    margin: 15px 0 0 15px
+    padding: 30px 0 0 30px
+
+.tree .set-manage ul li
+    width: 100%
+    margin-bottom: 20px
+
+.tree .set-manage ul li.acti .ico-show
+    background: url("../img/76e9585e8b0da890_18x18.png") center no-repeat
+
+.tree .set-manage ul li h2
+    font-weight: bold
+    color: #555
+    font-size: 14px
+
+.tree .set-manage ul li .one
+    padding-left: 55px
+    padding-top: 12px
+    float: left
+    width: 100%
+    position: relative
+
+.tree .set-manage ul li .one h3
+    color: #888
+    position: relative
+    float: left
+    width: 100%
+    font-size 13px
+
+.tree .set-manage ul li .one h3:after
+    content: ''
+    position: absolute
+    border-left: 1px dotted #a3a6a7
+    left: 7px
+    top: -14px
+    width: 1px
+    height: 13px
+
+.tree .set-manage ul li .one .two
+    padding-left: 25px
+    position: relative
+    float: left
+
+.tree .set-manage ul li .one .two:after
+    content: ''
+    position: absolute
+    border-left: 1px dotted #a3a6a7
+    left: 7px
+    top: 0
+    width: 1px
+    height: 99%
+
+.tree .set-manage ul li .one .two p
+    float: left
+    width: 100%
+    margin-top: 13px
+    color: #888
+    position: relative
+
+.tree .set-manage ul li .one .two p:after
+    content: ''
+    position: absolute
+    height: 1px
+    width: 18px
+    left: -18px
+    top: 8px
+    border-top: 1px dotted #a3a6a7
+
+.tree .set-manage ul li .one .two p var
+    float: left
+    margin-top: 1px
+    line-height: 16px
+
+.goods
+    width: 67%
+    display: table
+    position: absolute
+    background: #f9f9f9
+
+.goods .box-one
+    display: table
+    width: 100%
+
+.goods .box-one .fl-wrap
+    float: left
+    width: 60%
+
+.goods .box-one .fl-wrap .pub-table
+    padding-bottom: 0
+    padding-right: 15px
+
+.goods .box-one .fr-wrap
+    float: right
+    width: 40%
+    margin-top: 15px
+    padding-right: 15px
+
+.goods .box-one .fr-wrap .pict
+    height: 290px
+    line-height: 290px
+    border: 1px solid #cdcdcd
+    position: relative
+    overflow: hidden
+    text-align: center
+
+.goods .box-one .fr-wrap .pict img
+    height: 100%
+    margin-top: -5px
+
+.goods .box-one .fr-wrap .pict i
+    width: 62px
+    height: 62px
+    position: absolute
+
+.goods .box-one .fr-wrap .pict .ico-shou
+    left: 0
+    top: 0
+    background: url("../img/f6d4aded028a2f5a_62x62.png") center no-repeat
+
+.goods .box-one .fr-wrap .pict .ico-chuan
+    right: 0
+    bottom: 0
+    background: url("../img/664ec702549c92be_62x62.png") center no-repeat
+
+.goods .box-one .fr-wrap .scroll
+    float: left
+    width: 100%
+    margin-top: 10px
+    position: relative
+    height: 97px
+
+.goods .box-one .fr-wrap .scroll .pos
+    position: absolute
+    top: 50%
+    -webkit-transform: translate(0, -50%)
+    -ms-transform: translate(0, -50%)
+    transform: translate(0, -50%)
+    width: 17px
+    height: 30px
+    z-index: 1
+    cursor: pointer
+
+.goods .box-one .fr-wrap .scroll .pos.next
+    right: 10px
+    background: url("../img/4981ae770eb2af4b_17x30.png") center no-repeat
+
+.goods .box-one .fr-wrap .scroll ul
+    margin-left: -9px
+
+.goods .box-one .fr-wrap .scroll ul li
+    cursor: pointer
+    width: 110px
+    height: 97px
+    line-height: 97px
+    text-align: center
+    border: 1px solid #cdcdcd
+    margin-left: 9px
+    overflow: hidden
+
+.goods .box-one .fr-wrap .scroll ul li img
+    width: 100%
+    margin-top: -5px
+
+.goods .set-config
+    display: table
+    width: 100%
+    border-top: 1px solid #cdcdcd
+    border-bottom: 1px solid #cdcdcd
+    margin-top: 10px
+    padding: 15px 0
+
+.goods .set-config .fl
+    width: 65%
+    text-align: center
+
+.goods .set-config .fl label
+    margin: 0 15px
+
+.goods .set-config .fr
+    width: 35%
+    text-align: center
+
+.goods .set-config .fr a
+    cursor: pointer
+    display: inline-block
+    line-height: 27px
+    border: 1px solid #cdcdcd
+    color: #888
+    padding: 0 10px
+    margin-right: 15px
+
+.goods .set-config .fr a i
+    width: 30px
+    height: 25px
+    float: left
+
+.goods .set-config .fr a .ico-i1
+    background: url("../img/67f12864e0b04923_18x16.png") center no-repeat
+
+.goods .set-config .fr a .ico-i2
+    background: url("../img/57661ab287d7d69f_12x18.png") center no-repeat
+
+.goods .set-config .fr a .ico-i3
+    background: url("../img/73045bc1f0793a12_16x16.png") center no-repeat
+
+.goods .btn-group
+    text-align: center
+    display: table
+    width: 100%
+    background: #eee
+    padding: 17px 0
+
+.goods .btn-group a
+    width: 98px
+    height: 28px
+    line-height: 28px
+    color: #fff
+    display: inline-block
+    margin: 0 15px
+
+.goods .btn-group a.c1
+    background: #888
+
+.goods .btn-group a.c2
+    background: #27a9e3
+
+.goods .btn-group a.c3
+    background: #28b779
+
+.goods .btn-group a.c4
+    background: #ffb848
+
+.index-fun
+    float left
+    width 100%
+    border-bottom 1px solid rgb(149, 152, 154)
+
+.index-fun ul li
+    width 18.25%
+    text-align center
+    padding 10px 0
+    margin-bottom 10px
+    position relative
+    transition 0.15s
+    float left
+    &:hover
+        background #555 !important
+
+.index-fun ul li:nth-child(5n+1)
+    margin-left: 0
+
+.index-fun ul li:after
+    content: ''
+    width: 10px
+    height: 100%
+    background: #eee
+    position: absolute
+    left: 0
+    top: 0
+
+.index-fun ul li:nth-child(5n+1):after
+    display: none
+
+.index-fun ul li.w1
+    width 27%
+
+.index-fun ul li a
+    display block
+    color #fff
+
+.index-fun ul li.c1
+    background #27a9e3
+
+.index-fun ul li.c2
+    background #28b779
+
+.index-fun ul li.c3
+    background #ffb848
+
+.index-fun ul li.c4
+    background #da542e
+
+.index-fun ul li.c5
+    background #2255a4
+
+.index-fun ul li.c6
+    background #f74d4d
+
+.index-fun ul li span
+    display block
+    margin-top 8px
+
+.index-fun ul li i
+    width 22px
+    height 22px
+
+.index-fun ul li .ico-i1
+    background: url("../img/170470102496cd35_22x22.png") center no-repeat
+
+.index-fun ul li .ico-i2
+    background: url("../img/a06eef16e4c9e252_22x22.png") center no-repeat
+
+.index-fun ul li .ico-i3
+    background: url("../img/dc77664494c902a4_22x22.png") center no-repeat
+
+.index-fun ul li .ico-i4
+    background: url("../img/203d1e2ba94565da_22x22.png") center no-repeat
+
+.index-fun ul li .ico-i5
+    background: url("../img/752380e640915082_21x22.png") center no-repeat
+
+.index-fun ul li .ico-i6
+    background: url("../img/e665d62a466eeef3_22x17.png") center no-repeat
+
+.index-fun ul li .ico-i7
+    background: url("../img/f9f8c1261569597e_22x21.png") center no-repeat
+
+.index-fun ul li .ico-i8
+    background: url("../img/0ca1ff128e395cf0_22x22.png") center no-repeat
+
+.index-fun ul li .ico-i9
+    background: url("../img/b0186f5d5fa37e1a_22x22.png") center no-repeat
+
+.index-fun ul li .ico-i10
+    background: url("../img/6c90f736fd211519_22x22.png") center no-repeat
+
+.model
+    border-top 1px solid #fff
+    float left
+    width 100%
+    ul
+        display flex
+        .wrap
+            flex 1 1
+            &:nth-child(2)
+                margin-left 15px
+.model ul li
+    margin-top 15px
+    border 1px solid #cdcdcd
+    width 100%
+    float left
+    &.no-border
+        border-bottom none
+
+.model ul li:nth-child(2n+1)
+    margin-left: 0
+
+.model ul li .model-content
+    float left
+    width 100%
+    
+.model ul li .model-content h3
+    height 30px
+    line-height 30px
+    border-bottom 1px solid #cdcdcd
+    font-size 13px
+
+.model ul li .model-content h3 span
+    float left
+    color #888
+    text-align center
+
+.model ul li .model-content h3 span.sp1
+    width 58.625%
+    border-right: 1px solid #cdcdcd
+
+.model ul li .model-content h3 span.sp2
+    width 17.625%
+    border-right: 1px solid #cdcdcd
+
+.model ul li .model-content h3 span.sp3
+    width 23.5%
+
+.model ul li .model-content dl
+    float left
+    width 100%
+    background #fff
+    overflow-y auto
+
+.model ul li .model-content dl dd
+    height 35px
+    float left
+    width 100%
+    transition .15s
+    &:hover
+        background #f9f9f9
+        span
+            color #0799fb
+
+.model ul li .model-content dl dd:last-child
+    border-bottom: none
+
+.model ul li .model-content dl dd span
+    line-height 35px
+    float left
+    transition .15s
+
+.model ul li .model-content dl dd span.sp1
+    width 58.62500000000001%
+    padding 0 20px
+
+.model ul li .model-content dl dd span.sp2
+    width 17.625%
+    text-align center
+
+.model ul li .model-content dl dd span.sp3
+    width 23.5%
+    text-align center
+
+.accounting
+    border 1px solid bor1
+    .retreat
+        height 59px
+        border-bottom 1px solid bor1
+        background #fff
+        .box
+            padding-left 97px
+            padding-top 15px
+            a
+                margin-top -2px
+            p
+                display inline-block
+                margin 0 5px
+                color #555555
+                input
+                    height 28px
+                    border 1px solid bor1
+                    color #0903f9
+                    padding 0 5px
+                    margin 0 5px
+    .text
+        dt 1
+        padding 20px
+        background #fff
+        b
+            font-size 15px
+            color #888888
+            margin-bottom 15px
+            display block
+        p
+            color #888888
+            line-height 1.8
+
+.way-sheet
+    .fl-layout
+        float left
+        width 35%
+        border 1px solid bor1
+    .fr-layout
+        float right
+        .zaitu
+            border 1px solid bor1
+        .zaitu-record
+            border 1px solid bor1
+            dt 1
+            background #fff
+            margin-top 15px
+            padding 15px
+            .fl
+                width 100px
+                font-size 15px
+                color #888888
+                text-align right
+                padding-top 16px
+            .fr
+                widthC 100px
+                border 1px solid bor1
+                padding 0 15px
+                ul
+                    padding-left 15px
+                    position relative
+                    float 0
+                    &:after
+                        content ''
+                        position absolute
+                        width 1px
+                        height 78%
+                        top 20px
+                        background #ccc
+                        left 0
+                    li
+                        height 50px
+                        line-height 49px
+                        border-top 1px dashed bor1
+                        border-topN 1
+                        color #888888
+                        width 100%
+                        position relative
+                        &.acti
+                            &:after
+                                width 27px
+                                height 27px
+                                back('60a47_27x27.png')
+                                left -28px
+                                top 11px
+                        &:after
+                            content ''
+                            position absolute
+                            width 8px
+                            height 8px
+                            background bor1
+                            left -18px
+                            border-radius 50px
+                            top 19px
+                            z-index 3
+
+
+
+// 图片目录
+.picture-path
+    float left
+    border solid 1px bor1
+    width 240px
+    .box
+        background #f9f9f9
+        // overflow hidden
+        overflow-y auto
+        height 765px
+        float left
+        width 100%
+        ul
+            padding 0 14px
+            li
+                margin-top 15px
+                background #d9d9d9
+                height 140px
+                overflow hidden
+                display flex
+                align-items center
+                justify-content center
+                &:last-child
+                    margin-bottom 15px
+                img
+                    width 100%
+
+.picture-list
+    widthC 255px
+    .pict-main
+        background #f9f9f9
+        border 1px solid bor1
+        margin-top 15px
+        padding 15px
+        height 660px
+        float left
+        width 100%
+        > .fl
+            widthC 284px
+            position relative
+            height 100%
+            overflow hidden
+            i
+                position absolute
+                z-index 1
+                left 16px
+                top 14px
+                cursor pointer
+            img
+                width 100%
+                height 100%
+        > .fr
+            width 270px
+            scrollY()
+            height 100%
+            .picture-guide-item
+                width 248px
+                border none
+                margin-top 0
+                ul
+                    li
+                        margin-left 0
+                        mt 0
+
+.pub-height
+    li
+        height auto !important
+.ner-box
+    width 100%
+    padding 0 1%
+    margin 0 auto 15px
+    padding-top 15px
+    border-top 1px solid #e6e6e6
+    overflow-x auto
+    .box
+        border 1px solid #e6e6e6
+        border-top none
+        width 1520px
+    dl
+        border-top 1px solid #e6e6e6
+        width 100%
+        height 34px
+        span
+            text-align center !important
+            color #888888
+            line-height 33px
+            height 33px
+            &:last-child
+                border-left 1px solid #e6e6e6
+                a
+                    border 1px solid #e6e6e6
+                    border-radius 5px
+                    display inline-block
+                    line-height 1.6
+                    font-size 12px
+                    padding 0 5px
+                    color #888
+                    vertical-align top
+                    margin-top 6px
+
+.server-dan
+    width 100%
+    float left
+    .fl-layout
+        float left
+        width calc(100% - 474px - 15px)
+    .fr-layout
+        float right
+        width 474px
+        margin-top 15px
+        background #fff
+        border 1px solid bor1
+        .pub-row-style
+            margin-top 0
+            border none
+        .pub-tit
+            padding-right 10px
+            .fr
+                margin-top 0
+                margin-right 0
+                line-height 27px
+                button
+                    width 68px
+                    height 27px
+                    background #f5f5f5
+                    border 1px solid bor1
+                    border-radius 3px
+                    margin-top 6px
+                    margin-left 5px
+                    span
+                        margin-right 6px
+                        color #ccc
+                        margin-top -5px
+                    .ico-del
+                        back('delete-bin-fill.png')
+                        width 12px
+                        height 16px
+                    .ico-upload
+                        back('image-add-fill.png')
+                        width 18px
+                        height 16px
+        .wrap
+            overflow initial
+            position relative
+            .pict
+                min-height 100px
+                border 1px solid bor1
+                position absolute
+                left 10px
+                right 10px
+                top 10px
+                bottom 128px
+                overflow hidden
+                img
+                    min-height 100%
+            .box
+                margin-top 10px
+                overflow hidden
+                position absolute
+                left 10px
+                right 10px
+                bottom 10px
+                ul
+                    display flex
+                    li
+                        flex-shrink 0
+                        background #f6f6f6
+                        height 108px
+                        border 1px solid bor1
+                        overflow hidden
+                        text-align center
+                        img
+                            height 100%
+.chuli
+    border 1px solid bor1
+    dt 1
+    margin-top 15px
+    background #fff
+    .textarea
+        padding 10px
+        padding-top 0
+    textarea
+        padding 10px
+        height 97px
+        border solid 1px bor1
+        width 100%
+        inputW #888888
+
+
+// @media screen and (max-width:1260px)
+    

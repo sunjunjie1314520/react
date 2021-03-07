@@ -1,17 +1,15 @@
 import React, { Component } from 'react'
 
-import Demo from './pages/Demo';
+import Home from './pages/Home';
 
-import 'antd/dist/antd.css';
-
-import './App.styl';
+// import 'antd/dist/antd.css';
 
 export default class App extends Component {
+	
 	render() {
-		console.log(this.props);
 		return (
-			<div className="container">
-				<Demo />
+			<div className="app">
+				<Home />
 			</div>
 		)
 	}

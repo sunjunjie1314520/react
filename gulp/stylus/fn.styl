@@ -1,0 +1,269 @@
+
+back(FileName,size=cover,dir=img)
+	background url(../dir/FileName) center top no-repeat
+	background-size size
+	
+back1(FileName,iswrap=false,width='auto')
+	if iswrap
+		background url(../img/FileName) center/width no-repeat
+	else
+		background url(../img/FileName) center no-repeat
+
+backico(FileName,Fwidth)
+	background url(../img/FileName) 'calc(100% - %s) center no-repeat' % Fwidth
+
+backp(FileName, pl=0px, is_right=false)
+	if is_right
+		background url(../img/FileName) right center no-repeat
+		padding-right pl
+	else
+		background url(../img/FileName) left center no-repeat
+		padding-left pl
+	
+
+fixed()
+	z-index 3
+	position fixed
+	left 0
+	top 0
+	width 100%
+	height 100%
+	background-color rgba(#000,arguments[1])
+	if arguments[0]==1
+		display block
+	else
+		display none
+
+widthC(width)
+	width 'calc(100% - %s)' % width
+	float right unless @float
+
+margin-topC(height)
+	margin-top 'calc((100vh - %s)/2)' % height
+
+margin-topV(height,ohei)
+	margin-top ((height - ohei) /2)
+	
+heightL(height)
+	height height
+	line-height height
+
+heightC(height)
+	height 'calc((100vh - %s))' % height
+		
+backgroundL(a=#f60,b=#f0f,f=top)
+	background -webkit-linear-gradient(f,a,b)
+
+dt()
+	display table
+	width 100%
+
+float(v)
+	if v==0
+		float left
+		width 100%
+	else
+		float v
+abs(v=1)
+	if v==0
+		display none
+	position absolute
+	left 0
+	top 0
+	width 100%
+	height 100%
+	
+widthZ(val)
+	width val
+	height val
+	
+inputW(color=#a9a9a9)
+	&::-webkit-input-placeholder
+		color color
+
+fc()
+	position relative
+	&:first-child
+		&:after
+			display none
+		&:before
+			display none
+			
+border-topN()
+	&:first-child
+		border-top none
+		
+border-leftN()
+	&:first-child
+		border-left none
+
+dm()
+	display block
+	margin 0 auto
+	
+
+mt(v,t=-1,b=-1)
+	if t>0
+		&:nth-child(n+{t})
+			margin-top v
+	else
+		if b>0
+			&:nth-last-child(n+{b})
+				margin-top v
+		else
+			&:nth-of-type(1)
+				margin-top v
+	
+
+			
+pl(v)
+	&:first-child
+		padding-left v
+
+ml(v,t=-1)
+	if t>=0
+		&:nth-child({t}n+1)
+			margin-left v
+	else
+		&:nth-of-type(1)
+			margin-left v
+			
+ac(fontColor,back=transparent,Ele=null)
+	if Ele
+		&.acti
+			{Ele}
+				color fontColor
+				background-color back
+	else
+		&.acti
+			border-color back
+			color fontColor
+			background-color back
+
+pos(v)
+	position absolute
+	top 50%
+	&.prev
+		left v
+	&.next
+		right v
+
+hover(color,back=transparent,obj=null)
+	if obj
+		transition .2s
+		{obj}
+			transition .2s
+		&:hover
+			background back
+			{obj}
+				transition .2s
+				border-color back
+				color color
+	else
+		transition .2s
+		&:hover
+			color color
+			border-color back
+			background back
+			
+
+even(marginLeft)
+	&:nth-child(even)
+		margin-left marginLeft
+
+// 偶数右浮动
+fre()
+	&:nth-child(even)
+		float right
+	
+center(v)
+	position absolute
+	if v==1
+		left 50%
+		transform translate(-50%,0)
+	if v==2
+		top 50%
+		transform translate(0,-50%)
+	if v==3
+		left 50%
+		top 50%
+		transform translate(-50%,-50%)
+		
+
+
+displayC(v=1)
+	display block
+	text-align center
+	if v!=1
+		margin-top v
+		
+ov(num)
+	if num==1
+		white-space nowrap
+	else
+		-webkit-line-clamp num
+		display:-webkit-box;
+		word-wrap:break-word;
+
+	overflow: hidden;
+	-ms-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	-webkit-box-orient:vertical;
+	
+//背景透明
+backgroundR(Color,Alpha)
+	background rgba(Color,Alpha)
+
+last()
+	&:last-child
+		border-bottom none
+
+focus(color)
+	transition .2s
+	&:focus
+		border-color color
+
+check(filename,img='img')
+	&:checked
+		background url('../'+img+'/'+filename)
+		border none
+
+//设置ico图标
+backgroundI(filename,width)
+	background url("../img/"+filename) center/width no-repeat
+	
+fd()
+	overflow hidden
+	img
+		transition .3s
+	&:hover
+		img
+			transform scale(1.1)
+lca()
+	&:last-child
+		width auto
+
+ro()
+	transition .3s
+	cursor pointer
+	&:hover
+		transform rotate(180deg)
+ls(v)
+	text-indent v
+	letter-spacing v
+	
+opacity(v)
+	opacity v
+	filter unquote('alpha(opacity=%s)' % (v*100))
+
+bt()
+	border 1px solid transparent	
+
+//小程序
+
+background-imageS(FileName,size=cover,dir=img)
+	path=match('\w{36,}\.(?:png|jpg)',""+FileName)
+	background url('../'+dir/path) center top no-repeat
+	background-size size
+
+
