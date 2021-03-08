@@ -782,6 +782,21 @@ body.open .main-left ul li .slide-sub {
   height: 18px;
   margin-right: 8px;
 }
+.archives-type ul li a .ico-i0 {
+  background: url("../img/ico-10.png") center no-repeat;
+}
+.archives-type ul li a .ico-i1 {
+  background: url("../img/ico-11.png") center no-repeat;
+}
+.archives-type ul li a .ico-i2 {
+  background: url("../img/ico-12.png") center no-repeat;
+}
+.archives-type ul li a .ico-i3 {
+  background: url("../img/ico-13.png") center no-repeat;
+}
+.archives-type ul li a .ico-i4 {
+  background: url("../img/ico-14.png") center no-repeat;
+}
 .archives-right {
   width: calc(100% - 235px);
   float: right;
@@ -2024,12 +2039,11 @@ body.open .main-left ul li .slide-sub {
 .notice-right .box1 .editer .summernote {
   float: left;
   width: 100%;
-  height: 500px;
-  display: flex;
-  flex-direction: column;
 }
-.notice-right .box1 .editer .summernote .w-e-text-container {
-  flex-grow: 1;
+.notice-right .box1 .editer .summernote .w-e-text-container p {
+  word-wrap: break-word;
+  word-break: normal;
+  word-break: break-all;
 }
 .notice-right .box1 .editer img {
   max-width: 100%;

@@ -661,16 +661,16 @@ body
                     width 18px
                     height 18px
                     margin-right 8px
-                // .ico-i0
-                //     back1('00eaeac67718e9d72db3718fc0c2b1f2_18x18.png')
-                // .ico-i1
-                //     back1('bd707202b63db9393a37f2eba0a2dfa2_18x18.png')
-                // .ico-i2
-                //     back1('c41addaed6edc2ba6861b071048055f3_18x18.png')
-                // .ico-i3
-                //     back1('8dee3869dc3cbc2d272d7bd266aacc76_18x18.png')
-                // .ico-i4
-                //     back1('a58f1892ea779a0c7da739fcd03b6a54_18x18.png')
+                .ico-i0
+                    back1('ico-10.png')
+                .ico-i1
+                    back1('ico-11.png')
+                .ico-i2
+                    back1('ico-12.png')
+                .ico-i3
+                    back1('ico-13.png')
+                .ico-i4
+                    back1('ico-14.png')
 .archives-right
     widthC 235px
     .archives-list
@@ -1697,11 +1697,17 @@ body
             .summernote
                 float left
                 width 100%
-                height 500px
-                display flex
-                flex-direction column
+                // display flex
+                // flex-direction column
+                // .w-e-toolbar
+                    // flex-shrink 0
                 .w-e-text-container
-                    flex-grow 1
+                    p
+                        word-wrap break-word
+                        word-break normal
+                        word-break break-all
+                    // flex-grow 1
+                    // flex-shrink 1
             img
                 max-width 100%
         #txtDiv a

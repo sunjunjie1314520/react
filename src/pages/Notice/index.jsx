@@ -39,7 +39,12 @@ export default class index extends Component {
         
         // 编辑器
         const editor = new E("#summernote")
+        editor.config.uploadImgServer = '/upload-img'
         editor.create()
+
+        var dom = document.querySelector('.w-e-text-container')
+        console.log(dom);
+        dom.style.height = '450px'
     }
 
     render() {
@@ -119,7 +124,8 @@ export default class index extends Component {
                     </div>
                 </div>
 
-                <div className="notice-right bor">
+
+                <WrapHeight className="notice-right bor" bottom={15}>
                     <div className="box1">
                         <h2 className="pub-tit">
                             <i className="ico-font57"></i>
@@ -138,7 +144,7 @@ export default class index extends Component {
                         </div>
 
                     <div className="editer">
-                        <WrapHeight className="summernote" id="summernote" bottom={106}></WrapHeight>
+                        <div className="summernote" id="summernote"></div>
                     </div>
 
                     <div className="edit-text">
@@ -156,7 +162,7 @@ export default class index extends Component {
                         </div>
                     </div>
                     </div>
-                </div>
+                </WrapHeight>
             </div>
         )
     }
