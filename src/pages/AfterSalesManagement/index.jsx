@@ -2,7 +2,7 @@ import React, { Component, createRef } from 'react'
 
 import Pager from '../../components/Pager';
 
-import Input from '../../components/Input';
+import { DropDown } from '../../components/UI';
 
 import { offsetTop } from '../../utils';
 
@@ -107,7 +107,7 @@ export default class index extends Component {
                                 </div>
                             </li>
 
-                            <Input index={index1} type="down" required items={down1} onChange={this.change1}>制单人</Input>
+                            <DropDown index={index1} type="down" required items={down1} onChange={this.change1}>制单人</DropDown>
                             {/* <li>
                                 <span>：</span>
                                 <div className="input-wrap">
@@ -150,7 +150,7 @@ export default class index extends Component {
                             </li>
 
 
-                            <Input index={index2} type="down" required items={down2} onChange={this.change2}>投诉类别</Input>
+                            <DropDown index={index2} required items={down2} onChange={this.change2}>投诉类别</DropDown>
 
                             {/* <li>
                                 <span>投诉类别：</span>
@@ -197,13 +197,13 @@ export default class index extends Component {
                                     <var className="pub-asterisk">*</var>
                                 </div>
                             </li>		
-                        <li className="li2">
-                                <span>服务说明：</span>
-                                <div className="input-wrap">
-                                    <input type="text" />
-                                    <var className="pub-asterisk">*</var>
-                                </div>
-                        </li>	
+                            <li className="li2">
+                                    <span>服务说明：</span>
+                                    <div className="input-wrap">
+                                        <input type="text" />
+                                        <var className="pub-asterisk">*</var>
+                                    </div>
+                            </li>	
                             <li className="li2">
                                 <span>备注：</span>
                                 <div className="input-wrap">

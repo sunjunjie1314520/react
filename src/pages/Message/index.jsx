@@ -1,15 +1,9 @@
 import React, { Component, createRef } from 'react'
 
 import { DatePicker } from 'antd';
+import {Input, DropDown, Frame, ContainDown} from '../../components/UI';
 
 import { offsetTop } from '../../utils';
-
-import WrapHeight from '../../components/WrapHeight';
-
-import Input, { InputPub } from '../../components/Input';
-
-import ContainDown from '../../components/ContainDown';
-
 export default class index extends Component {
 
 	constructor(){
@@ -55,23 +49,23 @@ export default class index extends Component {
 
 			<div className="pub-table">
 				<ul>
-					<InputPub title="消息主题" width="98%" value={this.state.fields2} model={(v)=>this.setState({fields2: v})}></InputPub>
-					<InputPub title="接收人" width="48%" value={this.state.fields3} model={(v)=>this.setState({fields3: v})}>
+					<Input title="消息主题" width="98%" value={this.state.fields2} model={(v)=>this.setState({fields2: v})}></Input>
+					<Input title="接收人" width="48%" value={this.state.fields3} model={(v)=>this.setState({fields3: v})}>
 						<button className="pub-search"></button>
-					</InputPub>
+					</Input>
 
-					<Input width="48%" items={this.state.items2} index={this.state.index3} onChange={(index)=> this.setState({index3: index})}>是否已读</Input>
+					<DropDown width="48%" items={this.state.items2} index={this.state.index3} onChange={(index)=> this.setState({index3: index})}>是否已读</DropDown>
 
 					<li className="li1">
 						<span>发送日期：</span>
-						<div className="input-wrap J-datepicker-day right">
+						<div className="DropDown-wrap J-datepicker-day right">
 							<ContainDown Select={(v)=>this.setState({t1: v})}></ContainDown>
 							<DatePicker bordered={false}></DatePicker>
 						</div>
 					</li>
 					<li className="li1">
 						<span>发送日期：</span>
-						<div className="input-wrap J-datepicker-day right">
+						<div className="DropDown-wrap J-datepicker-day right">
 							<ContainDown Select={(v)=>this.setState({t2: v})}></ContainDown>
 							<DatePicker bordered={false}></DatePicker>
 						</div>
@@ -145,16 +139,16 @@ export default class index extends Component {
 				</h2>
 				<div className="pub-table">
 					<ul>
-						<InputPub title="消息主题" width="64%" value={this.state.fields1} required model={(v)=>this.setState({fields1: v})}></InputPub>
-						<InputPub title="接收人" width="32%" value={this.state.fields4} required model={(v)=>this.setState({fields4: v})}>
+						<Input title="消息主题" width="64%" value={this.state.fields1} required model={(v)=>this.setState({fields1: v})}></Input>
+						<Input title="接收人" width="32%" value={this.state.fields4} required model={(v)=>this.setState({fields4: v})}>
 							<button type="button" onClick={()=> alert(`搜索【${this.state.fields4}】中...`)} className="pub-search"></button>
-						</InputPub>
+						</Input>
 					</ul>
 				</div>
 
-				<WrapHeight className="negotiation" bottom={120}>
+				<Frame className="negotiation" bottom={120}>
 					<textarea name="" className="a2" placeholder="Enter Text..."></textarea>
-				</WrapHeight>
+				</Frame>
 
 				<div className="edit-text">
 					<div className="box a1">

@@ -2,11 +2,9 @@ import React, { Component } from 'react'
 
 import img1 from '../../style/img/99094e75cd9e0bf20b699ccc6dae832b_510x360.jpg'
 
-import Input, { InputPub } from '../../components/Input';
+import {Input, DropDown, Frame } from '../../components/UI';
 
 import Pager from '../../components/Pager';
-
-import WrapHeight from '../../components/WrapHeight';
 
 export default class index extends Component {
 
@@ -45,13 +43,13 @@ export default class index extends Component {
                     </h2>
                     <div className="pub-table">
                         <ul>
-                            <Input items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>案例类型</Input>
+                            <DropDown items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>案例类型</DropDown>
                             
-                            <Input items={this.state.items2} index={this.state.index2} onChange={(index)=> this.setState({index2: index})}>户型</Input>
+                            <DropDown items={this.state.items2} index={this.state.index2} onChange={(index)=> this.setState({index2: index})}>户型</DropDown>
 
-                            <InputPub title="项目名称" value={this.state.name} model={(v)=>this.setState({name: v})}></InputPub>
+                            <Input title="项目名称" value={this.state.name} model={(v)=>this.setState({name: v})}></Input>
 
-                            <Input items={this.state.items3} index={this.state.index3} onChange={(index)=> this.setState({index3: index})}>排序方式</Input>
+                            <DropDown items={this.state.items3} index={this.state.index3} onChange={(index)=> this.setState({index3: index})}>排序方式</DropDown>
    
                         </ul>
                     </div>
@@ -59,7 +57,7 @@ export default class index extends Component {
                 
                 <div className="clearfix">
                     <div className="case-item">
-                        <WrapHeight className="auto-height" bottom={41}>
+                        <Frame className="auto-height" bottom={41}>
                             <ul>
                                 <li>
                                     <div className="pict">
@@ -81,7 +79,7 @@ export default class index extends Component {
                                     </div>
                                 </li>
                             </ul>
-                        </WrapHeight>
+                        </Frame>
                     </div>
                 </div>
 

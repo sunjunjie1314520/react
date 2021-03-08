@@ -1,8 +1,8 @@
 import React, { Component, createRef } from 'react'
 
-import { offsetTop } from '../../utils';
+import { Input } from '../../components/UI';
 
-import Input from '../../components/Input';
+import { offsetTop } from '../../utils';
 
 export default class index extends Component {
     constructor(){
@@ -35,10 +35,9 @@ export default class index extends Component {
 
                         <div className="pub-table">
                             <ul>
-
-                                <Input type="search" width="98%">商场/仓库</Input>
-                                <Input type="default" width="48%">用户编码</Input>
-                                <Input type="default" width="48%">用户名称</Input>
+                                <Input width="98%">商场/仓库</Input>
+                                <Input width="48%">用户编码</Input>
+                                <Input width="48%">用户名称</Input>
                             </ul>
                         </div>
 
@@ -174,10 +173,7 @@ export default class index extends Component {
                                 </ul>
                             </div>
                         </div>
-
                     </div>
-
-                    
                 </div>
             </>
         )

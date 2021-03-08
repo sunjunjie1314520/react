@@ -1,7 +1,8 @@
 import React, { Component, createRef } from 'react'
 
 import Pager from '../../components/Pager';
-import Input, { InputPub } from '../../components/Input';
+
+import {Input, DropDown } from '../../components/UI';
 
 import { offsetTop } from '../../utils';
 
@@ -69,7 +70,7 @@ export default class index extends Component {
                     <div className="pub-table">
                         <ul>
 
-                            <InputPub title="销售单号" value={this.state.danhao} methods={(v)=> this.setState({danhao: v})}><i className="ico-sp0"></i></InputPub>
+                            <Input title="销售单号" value={this.state.danhao} methods={(v)=> this.setState({danhao: v})}><i className="ico-sp0"></i></Input>
 
                             {/* <li>
                                 <span>：</span>
@@ -94,13 +95,13 @@ export default class index extends Component {
                             </li>
                             <li></li>
 
-                            <InputPub title="客户" value={this.state.kehu} methods={(v)=> this.setState({kehu: v})}>
+                            <Input title="客户" value={this.state.kehu} methods={(v)=> this.setState({kehu: v})}>
                                 <a className="add" href="/" title="">新增</a>
                                 <button className="pub-search"></button>
-                            </InputPub>
+                            </Input>
               
                             
-                            <InputPub title="客户编码" value={this.state.bianhao} methods={(v)=> this.setState({bianhao: v})}></InputPub>
+                            <Input title="客户编码" value={this.state.bianhao} methods={(v)=> this.setState({bianhao: v})}></Input>
 
                             {/* <input type="text" className="a2" /> */}
                             <li>
@@ -123,10 +124,9 @@ export default class index extends Component {
                                 </div>
                             </li>
 
-                            <Input index={index1} items={down1} onChange={this.change1}>销售商场</Input>
+                            <DropDown index={index1} items={down1} onChange={this.change1}>销售商场</DropDown>
 
-                            <Input type="down" index={index2} items={down2} onChange={this.change2}>销售员</Input>
-  
+                            <DropDown type="down" index={index2} items={down2} onChange={this.change2}>销售员</DropDown>
 
                             <li>
                                 <span>合计金额：</span>

@@ -2,21 +2,31 @@ import React, { Component, createRef } from 'react'
 
 import { offsetTop } from '../../utils';
 
+import {Input, DropDown, Frame } from '../../components/UI';
+
 export default class index extends Component {
 
     constructor(){
         super()
         this.left_layout = createRef()
-        this.right_layout = createRef()
-        this.state = {}
+
+        this.state = {
+            items1: ['1', '2', '3'],
+            index1: 0,
+
+            items2: ['潜在客户', '咨询介绍', '初步意向', '正常跟进','方案报价', '商务谈价', '成交开单', '流失作废'],
+            index2: 0,
+            index4: 0,
+
+            items3: ['最近一周', '最近一月', '最近三月', '最近半年'],
+            index3: 0,
+        }
     }
     
     componentDidMount(){
         let w_hei = window.innerHeight
         let off_top = offsetTop(this.left_layout.current)
         this.left_layout.current.style.height = (w_hei - off_top - 15) +'px'
-        let off_top1 = offsetTop(this.right_layout.current)
-        this.right_layout.current.style.height = (w_hei - off_top1 - 14) +'px'
     }
 
     render() {
@@ -35,58 +45,16 @@ export default class index extends Component {
 
                         <div className="pub-table">
                             <ul>
-                                <li className="li2">
-                                    <span>商场：</span>
-                                    <div className="input-wrap">
-                                        <input type="text" name="" />
-                                        <button className="pub-search"></button>
-                                    </div>
-                                </li>
-                                <li className="li1">
-                                    <span>客户名称：</span>
-                                    <div className="input-wrap">
-                                        <input type="text" name="" />
-                                        <button className="pub-search"></button>
-                                    </div>
-                                </li>
-                                <li className="li1">
-                                    <span>跟进人：</span>
-                                    <div className="input-wrap">
-                                        <input type="text" name="" />
-                                        <button className="pub-down"></button>
-                                        
-                                    </div>
-                                </li>
-                                <li className="li1">
-                                    <span>跟进阶段：</span>
-                                    <div className="input-wrap">
-                                        <input type="text" name="" />
-                                        <button className="pub-down"></button>
-                                        <div className="pub-drop-down">
-                                            <span>潜在客户</span>
-                                            <span>咨询介绍</span>
-                                            <span>初步意向</span>
-                                            <span>正常跟进</span>
-                                            <span>方案报价</span>
-                                            <span>商务谈价</span>
-                                            <span>成交开单</span>
-                                            <span>流失作废</span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li className="li1">
-                                    <span>跟进期间：</span>
-                                    <div className="input-wrap">
-                                        <input type="text" name="" />
-                                        <button className="pub-down"></button>
-                                        <div className="pub-drop-down">
-                                            <span>最近一周</span>
-                                            <span>最近一月</span>
-                                            <span>最近三月</span>
-                                            <span>最近半年</span>
-                                        </div>
-                                    </div>
-                                </li>
+                                <Input width="98%" title="商场"><button className="pub-search"></button></Input>
+                                
+                                <Input width="48%" title="客户名称"><button className="pub-search"></button></Input>
+
+                                <DropDown width="48%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>跟进人</DropDown>
+                                
+                                <DropDown width="48%" items={this.state.items2} index={this.state.index2} onChange={(index)=> this.setState({index2: index})}>跟进阶段</DropDown>
+                                
+                                <DropDown width="48%" items={this.state.items3} index={this.state.index3} onChange={(index)=> this.setState({index3: index})}>跟进期间</DropDown>
+
                             </ul>
                         </div>
 
@@ -100,7 +68,7 @@ export default class index extends Component {
                                     <span className="sp120">跟进日期</span>
                                 </div>
                             </div>
-                                <div className="table-row auto-table pub-first-center" ref={this.left_layout}>
+                            <div className="table-row auto-table pub-first-center" ref={this.left_layout}>
                                     <ul>
                                         <li>
                                             <span className="sp50">
@@ -136,7 +104,7 @@ export default class index extends Component {
                                             <span className="sp50">
                                             <label className="pub-check a1">7</label>
                                             </span>
-                                    </li>
+                                        </li>
                                 </ul>
                             </div>   
                         </div>
@@ -156,39 +124,16 @@ export default class index extends Component {
 
                         <div className="pub-table">
                             <ul>
-                                <li className="li5">
-                                    <span>客户名称：</span>
-                                    <div className="input-wrap">
-                                        <input type="text" placeholder="新客户请直接选择" />
-                                        <button type="button" className="pub-search"></button>
-                                        <var className="pub-asterisk">*</var>
-                                    </div>
-                                </li>
-                                <li className="li5">
-                                    <span>跟进阶段：</span>
-                                    <div className="input-wrap">
-                                        <input type="text" name="" />
-                                        <button type="button" className="pub-down"></button>
-                                        <div className="pub-drop-down">
-                                            <span>潜在客户</span>
-                                            <span>咨询介绍</span>
-                                            <span>初步意向</span>
-                                            <span>正常跟进</span>
-                                            <span>方案报价</span>
-                                            <span>商务谈价</span>
-                                            <span>成交开单</span>
-                                            <span>流失作废</span>
-                                        </div>
-                                        <var className="pub-asterisk">*</var>
-                                    </div>
-                                </li>
-                                <li className="li6">
-                                    <span>下次跟进：</span>
-                                    <div className="input-wrap J-datepicker-day right">
-                                        <input type="text" className="c-datepicker-data-input only-date" />
-                                        <var className="pub-asterisk">*</var>
-                                    </div>
-                                </li>
+             
+                                <Input width="31%" title="客户名称" required>
+                                    <button type="button" className="pub-search"></button>
+                                </Input>
+
+                                <DropDown width="31%" items={this.state.items2} index={this.state.index4} onChange={(index)=> this.setState({index4: index})}>跟进阶段</DropDown>
+
+                                <Input width="32%" title="下次跟进" required>
+                                    <button type="button" className="pub-search"></button>
+                                </Input>                     
                             </ul>
                         </div>
 
@@ -200,7 +145,6 @@ export default class index extends Component {
                             </h2>
                             <textarea name="" placeholder="Enter Text..."></textarea>
                         </div>
-
                     </div>
                     
                     <div className="box2">
@@ -212,7 +156,9 @@ export default class index extends Component {
                                 <a className="a4" href="/" title="">建议</a>
                             </div>
                         </h2>
-                        <div className="limitheight auto-table" ref={this.right_layout}>
+
+
+                        <Frame className="limitheight" bottom={14}>
 
                             <div className="follow-up-record">
                                 <h2><b className="b1">方案报价</b> <span>李先生-13510668888</span><var>方案报价：￥168,359.00</var><span className="fr">东方鱼薇 2019-08-06 / 10:16</span></h2>
@@ -266,7 +212,7 @@ export default class index extends Component {
                                     <p>因此，加州众议院决定，积极支持加州与中国之间为增进互利经济机会继续保持协调合作，增加互利经济机会，并在人文交往、贸易、气候变化、教育、旅游、科技、创新和绿色发展等领域加强实质性合作。因此，加州众议院决定，积极支持加州与中国之间为增进互利经济机会继续保持协调合作，增加互利经济机会，并在人文交往、贸易、气候变化、教育、旅游、科技、创新和绿色发展等领域加强实质性合作。</p>
                                 </div>
                             </div>
-                        </div>
+                        </Frame>
                     </div>
                 </div>
             </div>

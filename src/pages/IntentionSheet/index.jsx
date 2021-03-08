@@ -2,7 +2,7 @@ import React, { Component, createRef } from 'react'
 
 import Pager from '../../components/Pager';
 
-import Input from '../../components/Input';
+import { Input } from '../../components/UI';
 
 import { offsetTop } from '../../utils';
 

@@ -2,12 +2,9 @@ import React, { Component, createRef } from 'react'
 
 import Pager from '../../components/Pager';
 
-import WrapHeight from '../../components/WrapHeight';
-import Input, { InputPub } from '../../components/Input';
-
+import {Input, DropDown, Frame } from '../../components/UI';
 
 import { offsetTop } from '../../utils';
-
 
 export default class index extends Component {
 
@@ -37,7 +34,7 @@ export default class index extends Component {
     render() {
         return (
             <div>
-                <WrapHeight className="archives-type" bottom={7}>
+                <Frame className="archives-type" bottom={7}>
                     <div className="pub-tit">
                         <i className="ico-type"></i>
                         货品类别
@@ -85,7 +82,7 @@ export default class index extends Component {
                         <li><a href="/" title="">39-箱包/衣物Bags,Clothing</a></li>
                         <li><a href="/" title="">40-珠宝/玉器Jewellery,Jade</a></li>
                     </ul>
-                </WrapHeight>
+                </Frame>
 
                 <div className="archives-right">
                     <div className="function-wrap">
@@ -100,12 +97,12 @@ export default class index extends Component {
                         </div>	
                         <div className="pub-table">
                             <ul>
-                                <InputPub title="货品编码" value={this.state.fields1} model={(v)=>this.setState({fields1: v})}></InputPub>
-                                <InputPub title="型号" value={this.state.fields2} model={(v)=>this.setState({fields2: v})}></InputPub>
-                                <InputPub title="品牌系列" value={this.state.fields3} model={(v)=>this.setState({fields3: v})}>
+                                <Input title="货品编码" value={this.state.fields1} model={(v)=>this.setState({fields1: v})}></Input>
+                                <Input title="型号" value={this.state.fields2} model={(v)=>this.setState({fields2: v})}></Input>
+                                <Input title="品牌系列" value={this.state.fields3} model={(v)=>this.setState({fields3: v})}>
                                     <button className="pub-search"></button>
-                                </InputPub>
-                                <Input items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>货品状态</Input>
+                                </Input>
+                                <DropDown items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>货品状态</DropDown>
                             </ul>
                         </div>
                     </div>

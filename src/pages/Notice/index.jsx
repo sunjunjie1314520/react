@@ -1,12 +1,10 @@
 import React, { Component, createRef } from 'react'
 
-import WrapHeight from '../../components/WrapHeight';
+import E from "wangeditor"
 
-import Input, { InputPub } from '../../components/Input';
+import {Input, DropDown, Frame} from '../../components/UI';
 
 import { offsetTop } from '../../utils';
-
-import E from "wangeditor"
 
 export default class index extends Component {
 
@@ -61,14 +59,14 @@ export default class index extends Component {
                     
                     <div className="pub-table">
                         <ul>
-                            <InputPub title="公告通知" width="98%" value={this.state.fields2} model={(v)=>this.setState({fields2: v})}></InputPub>
-                            <InputPub title="发布人" width="48%" value={this.state.fields3} model={(v)=>this.setState({fields3: v})}>
+                            <Input title="公告通知" width="98%" value={this.state.fields2} model={(v)=>this.setState({fields2: v})}></Input>
+                            <Input title="发布人" width="48%" value={this.state.fields3} model={(v)=>this.setState({fields3: v})}>
                                 <button className="pub-search"></button>
-                            </InputPub>
+                            </Input>
 
-                            <Input width="48%" items={this.state.items1} index={this.state.index2} onChange={(index)=> this.setState({index2: index})}>类型</Input>
-                            <Input width="48%" items={this.state.items2} index={this.state.index3} onChange={(index)=> this.setState({index3: index})}>是否已读</Input>
-                            <Input width="48%" items={this.state.items3} index={this.state.index4} onChange={(index)=> this.setState({index4: index})}>发布期间</Input>
+                            <DropDown width="48%" items={this.state.items1} index={this.state.index2} onChange={(index)=> this.setState({index2: index})}>类型</DropDown>
+                            <DropDown width="48%" items={this.state.items2} index={this.state.index3} onChange={(index)=> this.setState({index3: index})}>是否已读</DropDown>
+                            <DropDown width="48%" items={this.state.items3} index={this.state.index4} onChange={(index)=> this.setState({index4: index})}>发布期间</DropDown>
                         </ul>
                     </div>
 
@@ -125,7 +123,7 @@ export default class index extends Component {
                 </div>
 
 
-                <WrapHeight className="notice-right bor" bottom={15}>
+                <Frame className="notice-right bor" bottom={15}>
                     <div className="box1">
                         <h2 className="pub-tit">
                             <i className="ico-font57"></i>
@@ -138,8 +136,8 @@ export default class index extends Component {
                         </h2>
                         <div className="pub-table">
                             <ul>
-                                <InputPub title="公告通知" width="64%" value={this.state.fields1} required model={(v)=>this.setState({fields1: v})}></InputPub>
-                                <Input width="32%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})} required>类型</Input>
+                                <Input title="公告通知" width="64%" value={this.state.fields1} required model={(v)=>this.setState({fields1: v})}></Input>
+                                <DropDown width="32%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})} required>类型</DropDown>
                             </ul>
                         </div>
 
@@ -162,7 +160,7 @@ export default class index extends Component {
                         </div>
                     </div>
                     </div>
-                </WrapHeight>
+                </Frame>
             </div>
         )
     }

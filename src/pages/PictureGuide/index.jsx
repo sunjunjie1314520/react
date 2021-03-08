@@ -3,7 +3,7 @@ import React, { Component, createRef } from 'react'
 import img1 from '../../style/img/506c0a676c6df69a4a3c7ecbcc827116_162x180.png';
 
 import Pager from '../../components/Pager';
-import Input from '../../components/Input';
+import { Input } from '../../components/UI';
 
 import { offsetTop } from '../../utils';
 
