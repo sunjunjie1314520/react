@@ -26,6 +26,9 @@ import DeliveryArrangement from '../pages/DeliveryArrangement';
 import Receipt from '../pages/Receipt';
 import AfterSalesManagement from '../pages/AfterSalesManagement';
 
+
+import Abc from '../pages/Abc';
+
 const router = [
 	{
 		path: '/home',
@@ -126,6 +129,11 @@ const router = [
 				path: '/after-sales-management',
 				exact: false,
 				component: AfterSalesManagement,
+			},
+			{
+				path: '/abc',
+				exact: false,
+				component: Abc,
 			},
 			{
 				path: '/*',

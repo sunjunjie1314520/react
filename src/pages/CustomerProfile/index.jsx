@@ -20,7 +20,6 @@ export default class index extends Component {
             fields1: '1',
             fields2: '2',
 
-
             show1: false,
 
             fields: [
@@ -144,7 +143,7 @@ export default class index extends Component {
     render() {
         return (
             <>
-                <Frame className="archives-type" bottom={7}>
+                <Frame className="archives-type" bottom={0}>
                     <h2 className="pub-tit">
                         <i className="ico-type"></i>
                         客户类别
@@ -157,7 +156,7 @@ export default class index extends Component {
                         <li><a href="/" title=""><i className="ico-i4"></i>重要客户 VIP</a></li>
                     </ul>
                 </Frame>
-                
+
                 <div className="archives-right">
                     <div className="function-wrap">
                         <div className="pub-fun">
@@ -172,23 +171,26 @@ export default class index extends Component {
                         </div>
                         <div className="pub-table">
                             <ul>
-                                <Input placeholder="客户编码" title="客户编码" value={this.state.fields1} required model={(v)=>this.setState({fields1: v})}></Input>
-                                <Input placeholder="手机/电话" title="手机/电话" value={this.state.fields2} required model={(v)=>this.setState({fields2: v})}></Input>
+                                <Input title="客户编码" value={this.state.fields1} model={(v)=>this.setState({fields1: v})} required></Input>
+                                <Input title="手机/电话" value={this.state.fields2} model={(v)=>this.setState({fields2: v})}></Input>
+
                                 <DropDown items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>归属商场</DropDown>
                                 <DropDown items={this.state.items2} index={this.state.index2} onChange={(index)=> this.setState({index2: index})}>建立人</DropDown>
                             </ul>
                         </div>
                     </div>
-                    
+
                     {/* 表格 */}
                     <Table fields={this.state.fields} bottom={42}>
                         {
                             this.state.data.map((v, k)=>{
                                 return (
                                     <li key={k} className={v.check ? 'pub-table-back': ''}>
-                                        <Box w={this.state.fields[0].width}><label className="pub-check"><input onChange={(e)=>this.checkHandle(e.target.checked, k)} checked={v.check} type="checkbox" />{k}</label></Box>
-                                        <Box w={this.state.fields[1].width}>asdf</Box>
-                                        <Box w={this.state.fields[2].width}>65464654</Box>
+                                        <Box w={this.state.fields[0].width}><label className="pub-check">
+                                            <input onChange={(e)=>this.checkHandle(e.target.checked, k)} checked={v.check} type="checkbox" />{k}</label>
+                                        </Box>
+                                        <Box w={this.state.fields[1].width}>111</Box>
+                                        <Box w={this.state.fields[2].width}>2222</Box>
                                         <Box w={this.state.fields[3].width}>65464654</Box>
                                         <Box w={this.state.fields[4].width}>65464654</Box>
                                         <Box w={this.state.fields[5].width}>65464654</Box>
@@ -228,7 +230,6 @@ export default class index extends Component {
                                 <span className="ico-close" onClick={(e)=>{e.preventDefault(); this.setState({show1: false})}}></span> 
                             </div>
                         </div>
-                        
                         <div className="two-wrap">
                             <div className="pub-table">
                                 <ul>
