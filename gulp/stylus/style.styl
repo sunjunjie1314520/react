@@ -1521,16 +1521,19 @@ body
                     
 
 .ico-info
-    back ('icon114.png')
+    back1 ('icon114.png')
 
 .ico-info.a1
-    back ('icon112.png')
+    back1 ('icon112.png')
 
 .archives-alert
     width 800px
     position absolute
+    animation up 200ms cubic-bezier(0.2, 0.51, 0.66, 1.32)
     .two-wrap
         border-bottom 1px solid bor1
+        float left
+        width 100%
 .btn-wrap
     dt 1
     padding 17px 0
@@ -1544,16 +1547,27 @@ body
         color #fff
         margin-left 15px
         transition .2s
+        border-radius 3px
         &.a1
             background #888
+            &:hover
+                background #707070
         &.a2
             background #27a9e3
+            &:hover
+                background #0E97D3
         &.a3
             background #28b779
+            &:hover
+                background #139E61
         &.a4
             background #ffb848
+            &:hover
+                background #F3A318
         &.a5
             background #d85940
+            &:hover
+                background #D3462A
                 
 .ico-close
     back1('e1548f190b3ad794508f9911a5ef3ced_15x15.png')
@@ -1563,7 +1577,8 @@ body
     cursor pointer
     ro 1
     float right
-    margin-top 5px
+    margin-top 2px
+    border-radius 3px
     &:hover
         back1('7469b9253fd7ef88db7a5bbfc0c0507f_15x15.png')
         background-color #d85940
@@ -2327,7 +2342,8 @@ body
                 color #28b779
                 margin-left 5px
                 padding 0 2px
-
+    &.add
+        padding-right 0
 
 // 弹窗最外层		
 .pub-shadow
@@ -2338,7 +2354,7 @@ body
     top 0
     width 100%
     height 100%
-    background rgba(#888,.5)
+    background rgba(#000, .6)
 
 // 问号
 .pub-wen

@@ -79,42 +79,42 @@ export default class index extends Component {
                                 </div>
                             </div>
                             <div className="table-row auto-table pub-first-center" ref={this.left_layout}>
-                                    <ul>
-                                        <li>
-                                            <span className="sp50">
-                                            <label className="pub-check a1">1</label>
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <span className="sp50">
-                                            <label className="pub-check a1">2</label>
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <span className="sp50">
-                                            <label className="pub-check a1">3</label>
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <span className="sp50">
-                                            <label className="pub-check a1">4</label>
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <span className="sp50">
-                                            <label className="pub-check a1">5</label>
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <span className="sp50">
-                                            <label className="pub-check a1">6</label>
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <span className="sp50">
-                                            <label className="pub-check a1">7</label>
-                                            </span>
-                                        </li>
+                                <ul>
+                                    <li>
+                                        <span className="sp50">
+                                        <label className="pub-check a1">1</label>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span className="sp50">
+                                        <label className="pub-check a1">2</label>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span className="sp50">
+                                        <label className="pub-check a1">3</label>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span className="sp50">
+                                        <label className="pub-check a1">4</label>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span className="sp50">
+                                        <label className="pub-check a1">5</label>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span className="sp50">
+                                        <label className="pub-check a1">6</label>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span className="sp50">
+                                        <label className="pub-check a1">7</label>
+                                        </span>
+                                    </li>
                                 </ul>
                             </div>   
                         </div>

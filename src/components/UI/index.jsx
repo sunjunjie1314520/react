@@ -245,4 +245,46 @@ class ContainDown extends Component {
     }
 }
 
-export { Input, DropDown, Frame, ContainDown, DateTime }
+
+class Move extends Component{
+
+    constructor(){
+        super()
+        this.move = createRef()
+    }
+    static propTypes = {
+        model: PropTypes.bool
+    }
+
+    static defaultProps = {
+        model: false,
+    }
+
+    componentDidMount(){
+        
+    }
+
+    componentDidUpdate(){
+        
+        if(this.props.model){
+            let w = window.innerWidth
+            let h = window.innerHeight
+            const firstChild = this.move.current.firstChild
+            let height = firstChild.offsetHeight
+            let width = firstChild.offsetWidth
+            console.log(w, width, height);
+            firstChild.style.left = (w-width)/2 + 'px'
+            firstChild.style.top = (h-height)/2 + 'px'
+        }
+    }
+
+    render(){
+        return (
+            <div className="pub-shadow" style={{display: this.props.model ? 'block': 'none'}} ref={this.move}>
+                {this.props.children}
+            </div>
+        )
+    }
+}
+
+export { Input, DropDown, Frame, ContainDown, DateTime, Move }

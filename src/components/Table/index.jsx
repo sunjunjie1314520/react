@@ -26,6 +26,7 @@ export default class index extends Component {
             width: width
         })
     }
+
     scroll(e){
         let left = e.target.scrollLeft
         e.target.previousElementSibling.scrollLeft = left
@@ -67,41 +68,7 @@ export default class index extends Component {
                     </div>
                     <div className="table-row" ref={this.table} onScroll={this.scroll}>
                         <ul style={{minWidth: `${width}px`}}>
-                            <li>
-                                <span className="sp60">
-                                    <label className="pub-check"><input type="checkbox" />1</label>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp60">
-                                    <label className="pub-check"><input type="checkbox" />2</label>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp60">
-                                    <label className="pub-check"><input type="checkbox" />3</label>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp60">
-                                    <label className="pub-check"><input type="checkbox" />4</label>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp60">
-                                    <label className="pub-check"><input type="checkbox" />5</label>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp60">
-                                    <label className="pub-check"><input type="checkbox" />6</label>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp60">
-                                    <label className="pub-check"><input type="checkbox" />7</label>
-                                </span>
-                            </li>
+                            {this.props.children}
                         </ul>
                     </div>
                 </div>
@@ -109,3 +76,17 @@ export default class index extends Component {
         )
     }
 }
+
+
+class Box extends Component {
+    render() {
+        const { w } = this.props
+        return (
+            <span style={{width: `${w}px`}}>
+                {this.props.children}
+            </span>
+        )
+    }
+}
+
+export {Box}

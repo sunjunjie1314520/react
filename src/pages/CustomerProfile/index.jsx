@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-import { Input, DropDown, Frame } from '../../components/UI';
+import { Input, DropDown, Frame, Move } from '../../components/UI';
 
 import Pager from '../../components/Pager';
 
-import Table from '../../components/Table';
+import Table, {Box} from '../../components/Table';
 
 export default class index extends Component {
     constructor(){
@@ -19,6 +19,9 @@ export default class index extends Component {
 
             fields1: '1',
             fields2: '2',
+
+
+            show1: false,
 
             fields: [
                 {
@@ -106,9 +109,38 @@ export default class index extends Component {
                     name: '备注',
                 },
             ],
+
+            data: [
+                {
+                    id: 1,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+                {
+                    id: 2,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+                {
+                    id: 3,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+                {
+                    id: 4,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+            ]
         }
     }
-    
+    checkHandle(check, k){
+        const {data} = this.state
+        data[k].check = check
+        this.setState({
+            data: data
+        })
+    }
     render() {
         return (
             <>
@@ -129,7 +161,7 @@ export default class index extends Component {
                 <div className="archives-right">
                     <div className="function-wrap">
                         <div className="pub-fun">
-                            <a title="" className="a2" href="/"><i className="ico-xin1"></i>新建</a>
+                            <a title="" onClick={(e)=>{e.preventDefault(); this.setState({show1: true})}} className="a2" href="/"><i className="ico-xin1"></i>新建</a>
                             <a href="/" title="" className="a2"><i className="ico-fu"></i>复制</a>
                             <a title="" className="a2" href="/"><i className="ico-ka"></i>卡片</a>
                             <a href="/" title="" className="a2"><i className="ico-quan"></i>全貌</a>
@@ -149,7 +181,37 @@ export default class index extends Component {
                     </div>
                     
                     {/* 表格 */}
-                    <Table fields={this.state.fields} bottom={42}></Table>
+                    <Table fields={this.state.fields} bottom={42}>
+                        {
+                            this.state.data.map((v, k)=>{
+                                return (
+                                    <li key={k} className={v.check ? 'pub-table-back': ''}>
+                                        <Box w={this.state.fields[0].width}><label className="pub-check"><input onChange={(e)=>this.checkHandle(e.target.checked, k)} checked={v.check} type="checkbox" />{k}</label></Box>
+                                        <Box w={this.state.fields[1].width}>asdf</Box>
+                                        <Box w={this.state.fields[2].width}>65464654</Box>
+                                        <Box w={this.state.fields[3].width}>65464654</Box>
+                                        <Box w={this.state.fields[4].width}>65464654</Box>
+                                        <Box w={this.state.fields[5].width}>65464654</Box>
+                                        <Box w={this.state.fields[6].width}>asdf</Box>
+                                        <Box w={this.state.fields[7].width}>65464654</Box>
+                                        <Box w={this.state.fields[8].width}>65464654</Box>
+                                        <Box w={this.state.fields[9].width}>65464654</Box>
+                                        <Box w={this.state.fields[10].width}>65464654</Box>
+                                        <Box w={this.state.fields[11].width}>65464654</Box>
+                                        <Box w={this.state.fields[12].width}>65464654</Box>
+                                        <Box w={this.state.fields[13].width}>65464654</Box>
+                                        <Box w={this.state.fields[14].width}>65464654</Box>
+                                        <Box w={this.state.fields[15].width}>65464654</Box>
+                                        <Box w={this.state.fields[16].width}>65464654</Box>
+                                        <Box w={this.state.fields[17].width}>65464654</Box>
+                                        <Box w={this.state.fields[18].width}>65464654</Box>
+                                        <Box w={this.state.fields[19].width}>65464654</Box>
+                                        <Box w={this.state.fields[20].width}>65464654</Box>
+                                    </li>
+                                )
+                            })
+                        }
+                    </Table>
 
                     {/* 分页 */}
                     <Pager></Pager>
@@ -157,31 +219,22 @@ export default class index extends Component {
                 </div>
 
                 {/* 弹窗 */}
-                <div className="pub-shadow">
+                <Move model={this.state.show1}>
                     <div className="archives-alert move-obj">
                         <div className="pub-tit add">
-                            <i className="ico-info"></i>
-                            <em className="ico-info"></em> 客户信息
-                        <div className="fr">
-                        <span className="ico-close"></span> 
-                    </div>
-                    </div>
+                                <i className="ico-info"></i>
+                                <em className="ico-info"></em> 客户信息
+                            <div className="fr">
+                                <span className="ico-close" onClick={(e)=>{e.preventDefault(); this.setState({show1: false})}}></span> 
+                            </div>
+                        </div>
+                        
                         <div className="two-wrap">
                             <div className="pub-table">
                                 <ul>
-                                    <li className="li1">
-                                        <span>客户编码：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" name="" />
-                                        </div>
-                                    </li>
-                                    <li className="li1">
-                                        <span>客户名称：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" name="" />
-                                            <var className="pub-asterisk a1">*</var>
-                                        </div>
-                                    </li>
+                                    <Input title="客户编码" width="48%" value={this.state.field1} required model={(v)=>this.setState({field1: v})}></Input>
+                                    <Input title="客户名称" width="48%" value={this.state.field1} required model={(v)=>this.setState({field1: v})} required></Input>
+          
                                     <li className="li1">
                                         <span>性别：</span>
                                         <div className="input-wrap">
@@ -209,19 +262,10 @@ export default class index extends Component {
                                             <var className="pub-asterisk">*</var>
                                         </div>
                                     </li>
-                                    <li className="li1">
-                                        <span>手机：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" name="" />
-                                            <var className="pub-asterisk a1">*</var>
-                                        </div>
-                                    </li>
-                                    <li className="li1">
-                                        <span>电话：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" name="" />
-                                        </div>
-                                    </li>
+
+                                    <Input title="手机" width="48%" value={this.state.field1} required model={(v)=>this.setState({field1: v})} required></Input>
+                                    <Input title="电话" width="48%" value={this.state.field1} required model={(v)=>this.setState({field1: v})}></Input>
+
                                     <li className="li2">
                                         <span>地址：</span>
                                         <div className="input-wrap">
@@ -240,6 +284,7 @@ export default class index extends Component {
                                 </ul>
                             </div>
                         </div>
+
                         <div className="two-wrap">
                             <div className="pub-table">
                                 <ul>
@@ -350,7 +395,7 @@ export default class index extends Component {
                             <a href="/" className="a4" title="">保 存</a>
                         </div>
                     </div>
-                </div>
+                </Move>
             </>
         )
     }
