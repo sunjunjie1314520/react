@@ -233,8 +233,8 @@ export default class index extends Component {
                         <div className="two-wrap">
                             <div className="pub-table">
                                 <ul>
-                                    <Input title="客户编码" width="48%" value={this.state.field1} required model={(v)=>this.setState({field1: v})}></Input>
-                                    <Input title="客户名称" width="48%" value={this.state.field1} required model={(v)=>this.setState({field1: v})} required></Input>
+                                    <Input title="客户编码" width="48%" value={this.state.field1} model={(v)=>this.setState({field1: v})} required></Input>
+                                    <Input title="客户名称" width="48%" value={this.state.field1} model={(v)=>this.setState({field1: v})} required></Input>
           
                                     <li className="li1">
                                         <span>性别：</span>
@@ -264,8 +264,8 @@ export default class index extends Component {
                                         </div>
                                     </li>
 
-                                    <Input title="手机" width="48%" value={this.state.field1} required model={(v)=>this.setState({field1: v})} required></Input>
-                                    <Input title="电话" width="48%" value={this.state.field1} required model={(v)=>this.setState({field1: v})}></Input>
+                                    <Input title="手机" width="48%" value={this.state.field1} model={(v)=>this.setState({field1: v})} required></Input>
+                                    <Input title="电话" width="48%" value={this.state.field1} model={(v)=>this.setState({field1: v})} required></Input>
 
                                     <li className="li2">
                                         <span>地址：</span>
