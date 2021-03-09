@@ -5,21 +5,23 @@
 # this.a1.current.offsetTop
 
 
-componentDidMount(){
-    let w_hei = window.innerHeight
-    let off_top = offsetTop(this.left_layout.current)
-    this.left_layout.current.style.height = (w_hei - off_top - 16) +'px'
-}
+```javascript
+    componentDidMount(){
+        let w_hei = window.innerHeight
+        let off_top = offsetTop(this.left_layout.current)
+        this.left_layout.current.style.height = (w_hei - off_top - 16) +'px'
+    }
+```
 
 import { offsetTop } from '../../utils';
 
 # 启动服务器
 npm run start
 # 编译
-cd gulp
+cd gulp  
 gulp
 
-# 创建页面 rcc =》 Tab
+# 创建页面 快捷方法 rcc => 按Tab键
 
 # 先引入后使用------------------------------
 
