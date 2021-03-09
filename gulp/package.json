@@ -21,5 +21,8 @@
     "gulp-stylus": "^2.7.0",
     "iconv-lite": "^0.6.2",
     "minimist": "^1.2.5"
+  },
+  "dependencies": {
+    "gulp-cli": "^2.3.0"
   }
 }
