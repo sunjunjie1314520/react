@@ -1,40 +1,27 @@
-import React, { Component, createRef } from 'react'
+import React, { Component } from 'react'
 
 import img1 from '../../style/img/506c0a676c6df69a4a3c7ecbcc827116_162x180.png';
 
 import Pager from '../../components/Pager';
-import { Input } from '../../components/UI';
 
-import { offsetTop } from '../../utils';
+import {Input, DropDown, Frame } from '../../components/UI';
 
 export default class index extends Component {
     constructor(){
         super()
         this.state = {
-            down1: ['按货品型号', '按货品价格', '按品牌系列', '按新品上市', '按货品类别', '按货品特价'],
+            items1: ['按货品型号', '按货品价格', '按品牌系列', '按新品上市', '按货品类别', '按货品特价'],
             index1: 0,
+
+            field1:'',
+            field2: '',
         }
-        this.left_layout = createRef()
-        this.rihgt_layout = createRef()
     }
     
-    componentDidMount(){
-        let w_hei = window.innerHeight
-        let off_top = offsetTop(this.left_layout.current)
-        this.left_layout.current.style.height = (w_hei - off_top - 15) +'px'
-        let off_top1 = offsetTop(this.rihgt_layout.current)
-        this.rihgt_layout.current.style.height = (w_hei - off_top1 - 42 - 8) +'px'
-    }
-
-    change = (index) => {
-        this.setState({index1: index})
-    }
-
     render() {
-        const { down1, index1 } = this.state
         return (
             <>
-                <div className="archives-type" ref={this.left_layout}>
+                <Frame className="archives-type" bottom={7}>
                     <h2 className="pub-tit">
                         <i className="ico-type"></i>
                         货品类别
@@ -82,7 +69,7 @@ export default class index extends Component {
                         <li><a href="/" title="">39-箱包/衣物Bags,Clothing</a></li>
                         <li><a href="/" title="">40-珠宝/玉器Jewellery,Jade</a></li>
                     </ul>
-                </div>
+                </Frame>
                 
                 <div className="picture-right">
                     <div className="picture-guide">
@@ -96,16 +83,16 @@ export default class index extends Component {
                         </h2>
                         <div className="pub-table">
                             <ul>
-                                <Input type="default" width="48%" placeholder="请输入货品型号或品牌系列查询">搜索</Input>
-                                <Input type="search" placeholder="请输入客户手机号" required>客户手机号</Input>
-                                <Input type="down" items={down1} index={index1} onChange={this.change}>排序方式</Input>
+                                <Input title="搜索" width="48%" value={this.state.field1}></Input>
+                                <Input title="客户手机号" value={this.state.field2} required></Input>
+                                <DropDown items={this.state.items1} index={this.state.index1} onChange={(index) => this.setState({index1: index})}>排序方式</DropDown>
                             </ul>
                         </div>
                     </div>
                     
                     <div className="clearfix">
-                        <div className="picture-guide-item">
-                            <ul className="auto-height" ref={this.rihgt_layout}>
+                        <Frame className="picture-guide-item" bottom={40}>
+                            <ul>
                                 <li>
                                     <div className="pict">
                                         <span className="fl">SALE</span>
@@ -363,9 +350,10 @@ export default class index extends Component {
                                     </div>
                                 </li>
                             </ul>
-                        </div>
+                        </Frame>
                     </div>
                     
+                    {/* 分页器 */}
                     <Pager></Pager>
                     
                 </div>

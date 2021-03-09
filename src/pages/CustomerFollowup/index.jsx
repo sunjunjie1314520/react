@@ -20,6 +20,12 @@ export default class index extends Component {
 
             items3: ['最近一周', '最近一月', '最近三月', '最近半年'],
             index3: 0,
+
+            market: '',
+            name: '',
+
+            cusname: '',
+            next_up: '',
         }
     }
     
@@ -45,9 +51,13 @@ export default class index extends Component {
 
                         <div className="pub-table">
                             <ul>
-                                <Input width="98%" title="商场"><button className="pub-search"></button></Input>
+                                <Input width="98%" title="商场" value={this.state.market} model={(v)=>this.setState({market: v})}>
+                                    <button className="pub-search"></button>
+                                </Input>
                                 
-                                <Input width="48%" title="客户名称"><button className="pub-search"></button></Input>
+                                <Input width="48%" title="客户名称" value={this.state.name} model={(v)=>this.setState({name: v})}>
+                                    <button className="pub-search"></button>
+                                </Input>
 
                                 <DropDown width="48%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>跟进人</DropDown>
                                 
@@ -125,15 +135,15 @@ export default class index extends Component {
                         <div className="pub-table">
                             <ul>
              
-                                <Input width="31%" title="客户名称" required>
+                                <Input width="31%" title="客户名称" required value={this.state.cusname} model={(v)=>this.setState({cusname: v})}>
                                     <button type="button" className="pub-search"></button>
                                 </Input>
 
                                 <DropDown width="31%" items={this.state.items2} index={this.state.index4} onChange={(index)=> this.setState({index4: index})}>跟进阶段</DropDown>
 
-                                <Input width="32%" title="下次跟进" required>
+                                <Input width="32%" title="下次跟进" required value={this.state.next_up} model={(v)=>this.setState({next_up: v})}>
                                     <button type="button" className="pub-search"></button>
-                                </Input>                     
+                                </Input>           
                             </ul>
                         </div>
 

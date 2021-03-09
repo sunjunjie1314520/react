@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import { offsetTop } from '../../utils';
 
-
+import { DatePicker } from 'antd';
 
 class Input extends Component {
 
@@ -15,7 +15,9 @@ class Input extends Component {
     static defaultProps = {
         title: '默认标题',
         value: '-',
-        placeholder: '请输入...'
+        placeholder: '',
+        ltr: false,
+        split: false,
     }
 
     constructor(props){
@@ -43,9 +45,62 @@ class Input extends Component {
                 <span>{this.props.title}：</span>
                 <div className="input-wrap">
                     {/* 输入框 */}
+                    {
+                        this.props.ltr ? this.props.children : ''
+                    }
+                    {
+                        this.props.split ? this.props.children[0] : ''
+                    }
                     <input placeholder={this.props.placeholder} type="text" name="" onBlur={this.blur} onChange={(e)=>this.props.model(e.target.value)} onFocus={this.focus} ref={this.input} value={this.props.value}  />
                     {/* 主体内容 */}
+                    {
+                        this.props.ltr ? '' : this.props.split ? this.props.children[1] : this.props.children
+                    }
+                    {/* 必填项 */}
+                    {this.props.required ? <var className="pub-asterisk">*</var> : ''}
+                </div>
+            </li>
+        )
+    }
+}
+
+
+class DateTime extends Component {
+
+    static propTypes = {
+        model: PropTypes.func.isRequired
+    }
+
+    static defaultProps = {
+        title: '默认标题',
+    }
+
+    constructor(props){
+        super(props)
+        this.input = createRef()
+        this.state = {
+            active: false,
+        }
+    }
+
+    focus = () =>{
+        this.setState({active: true})
+    }
+
+    blur = () =>{
+        this.setState({active: false})
+        console.log(this.props.value);
+    }
+
+    render() {
+        const { active } = this.state
+        return (
+            <li className={active ? 'pub-borderColor' : ''} style={{width: this.props.width}}>
+                {/* 标题 */}
+                <span>{this.props.title}：</span>
+                <div className="input-wrap J-datepicker-day">
                     {this.props.children}
+                    <DatePicker bordered={false} onFocus={this.focus} onBlur={this.blur} onChange={(e, string)=>this.props.model(string)}></DatePicker>
                     {/* 必填项 */}
                     {this.props.required ? <var className="pub-asterisk">*</var> : ''}
                 </div>
@@ -116,7 +171,9 @@ class Frame extends Component {
     constructor(props){
         super(props)
         this.wrapper = createRef()
-        this.state = { }
+        this.state = {
+            height: null,
+        }
     }
     
     componentDidMount(){
@@ -124,6 +181,15 @@ class Frame extends Component {
         let w_hei = window.innerHeight
         let off_top = offsetTop(this.wrapper.current)
         this.wrapper.current.style.height = `${w_hei - off_top - bottom}px`
+        this.setState({
+            height: w_hei - off_top
+        })
+    }
+
+    componentDidUpdate(){
+        const { bottom } = this.props
+        const { height } = this.state
+        this.wrapper.current.style.height = `${height - bottom}px`
     }
 
     render() {
@@ -179,4 +245,4 @@ class ContainDown extends Component {
     }
 }
 
-export { Input, DropDown, Frame, ContainDown }
+export { Input, DropDown, Frame, ContainDown, DateTime }

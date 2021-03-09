@@ -2,9 +2,7 @@ import React, { Component, createRef } from 'react'
 
 import Pager from '../../components/Pager';
 
-import { Input } from '../../components/UI';
-
-import { offsetTop } from '../../utils';
+import { Input, DropDown, Frame } from '../../components/UI';
 
 export default class index extends Component {
 
@@ -12,35 +10,21 @@ export default class index extends Component {
         super()
         this.left_layout = createRef()
         this.state = {
-            down1: ['11111', '22222'],
+            items1: ['天虹购物广场', '百佳购物广场'],
             index1: 0,
-            down2: ['3333', '44444'],
-            index2: 0
+
+            items2: ['张三', '李四', '王五'],
+            index2: 0,
+
+            items3: ['最近三天', '最近一周', '最近一月', '最近一季', '最近半年'],
+            index3: 0,
+
+            phone: ''
         }
     }
 
-    componentDidMount(){
-        let w_hei = window.innerHeight
-        let off_top = offsetTop(this.left_layout.current)
-        this.left_layout.current.style.height = (w_hei - off_top - 45) +'px'
-    
-    }
-
-    change1 = (index) => {
-        this.setState({
-            index1: index
-        })
-    }
-
-    // 更换制单人
-    change2 = (index) => {
-        this.setState({
-            index2: index
-        })
-    }
-
     render() {
-        const {down1, index1, down2, index2} = this.state
+
         return (
             <>   
                 <div className="intention-list">
@@ -57,25 +41,10 @@ export default class index extends Component {
                     </h2>
                     <div className="pub-table">
                         <ul>
-                            <Input type="search">客户手机号</Input>
-                            <Input type="down" index={index1} items={down1} onChange={this.change1}>商场</Input>
-                            <Input type="down" index={index2} items={down2} onChange={this.change2}>制单人</Input>
-
-                            <li>
-                                <span>添加期间：</span>
-                                <div className="input-wrap">
-                                    <input type="text" name="" />
-                                    <button className="pub-down" type="submit"></button>
-                                    <div className="pub-drop-down">
-                                        <span>最近三天</span>
-                                        <span>最近一周</span>
-                                        <span>最近一月</span>
-                                        <span>最近一季</span>
-                                        <span>最近半年</span>
-                                    </div>
-                                </div>
-                            </li>
-                            
+                            <Input title="客户手机号" value={this.state.phone} model={(v)=> this.setState({phone: v})}></Input>
+                            <DropDown index={this.state.index1} items={this.state.items1} onChange={(index)=> this.setState({index1: index})}>商场</DropDown>
+                            <DropDown index={this.state.index2} items={this.state.items2} onChange={(index)=> this.setState({index2: index})}>制单人</DropDown>
+                            <DropDown index={this.state.index3} items={this.state.items3} onChange={(index)=> this.setState({index3: index})}>添加期间</DropDown>                            
                         </ul>
                     </div>
                 </div>
@@ -99,7 +68,8 @@ export default class index extends Component {
                             <span className="sp120">添加日期</span>
                         </div>
                     </div>
-                    <div className="table-row auto-height pub-small" ref={this.left_layout}>
+
+                    <Frame className="table-row pub-small" bottom={42}>
                         <ul>
                             <li>
                                 <span className="sp65">
@@ -160,10 +130,11 @@ export default class index extends Component {
                                 </span>
                             </li>
                         </ul>
-                    </div>
+                    </Frame>
                 </div>
 
                 <Pager></Pager>
+
             </>
         )
     }

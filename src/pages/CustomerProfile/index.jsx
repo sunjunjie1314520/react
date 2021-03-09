@@ -18,7 +18,94 @@ export default class index extends Component {
             index2: 2,
 
             fields1: '1',
-            fields2: '2'
+            fields2: '2',
+
+            fields: [
+                {
+                    width: 60,
+                    name: '序号',
+                },
+                {
+                    width: 120,
+                    name: '客户编码',
+                },
+                {
+                    width: 120,
+                    name: '客户名称',
+                },
+                {
+                    width: 120,
+                    name: '性别',
+                },
+                {
+                    width: 120,
+                    name: '客户类别',
+                },
+                {
+                    width: 150,
+                    name: '手机',
+                },
+                {
+                    width: 150,
+                    name: '电话',
+                },
+                {
+                    width: 150,
+                    name: '地址',
+                },
+                {
+                    width: 150,
+                    name: '归属商场',
+                },
+                {
+                    width: 150,
+                    name: '出生年月',
+                },
+                {
+                    width: 150,
+                    name: '客户来源',
+                },
+                {
+                    width: 120,
+                    name: '客户来源',
+                },
+                {
+                    width: 150,
+                    name: '微信/QQ',
+                },
+                {
+                    width: 130,
+                    name: '邮箱',
+                },
+                {
+                    width: 130,
+                    name: '职业',
+                },
+                {
+                    width: 130,
+                    name: '工作单位',
+                },
+                {
+                    width: 130,
+                    name: '楼盘名称',
+                },
+                {
+                    width: 130,
+                    name: '户型',
+                },
+                {
+                    width: 130,
+                    name: '喜好风格',
+                },
+                {
+                    width: 130,
+                    name: '性格特征',
+                },
+                {
+                    width: 200,
+                    name: '备注',
+                },
+            ],
         }
     }
     
@@ -38,6 +125,7 @@ export default class index extends Component {
                         <li><a href="/" title=""><i className="ico-i4"></i>重要客户 VIP</a></li>
                     </ul>
                 </Frame>
+                
                 <div className="archives-right">
                     <div className="function-wrap">
                         <div className="pub-fun">
@@ -52,21 +140,16 @@ export default class index extends Component {
                         </div>
                         <div className="pub-table">
                             <ul>
-
                                 <Input placeholder="客户编码" title="客户编码" value={this.state.fields1} required model={(v)=>this.setState({fields1: v})}></Input>
-
                                 <Input placeholder="手机/电话" title="手机/电话" value={this.state.fields2} required model={(v)=>this.setState({fields2: v})}></Input>
-
                                 <DropDown items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>归属商场</DropDown>
-
                                 <DropDown items={this.state.items2} index={this.state.index2} onChange={(index)=> this.setState({index2: index})}>建立人</DropDown>
-
                             </ul>
                         </div>
                     </div>
                     
                     {/* 表格 */}
-                    <Table></Table>
+                    <Table fields={this.state.fields} bottom={42}></Table>
 
                     {/* 分页 */}
                     <Pager></Pager>

@@ -24,6 +24,8 @@ componentDidMount(){
 }
 
 # 输入框
-    <Input title="公告通知" width="64%" value={this.state.fields1} required model={(v)=>this.setState({fields1: v})}></Input>
+    <Input title="公告通知" width="64%" value={this.state.field1} required model={(v)=>this.setState({field1: v})}></Input>
 # 下拉选择
     <DropDown width="32%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})} required>类型</DropDown>
+# 时间器
+    <DateTime title="送货日期" model={(v)=> this.setState({time1: v})} required></DateTime>

@@ -1,19 +1,31 @@
 import React, { Component, createRef } from 'react'
 
+import { Input, DropDown, Frame } from '../../components/UI';
 
-import { offsetTop } from '../../utils';
+import Pager from '../../components/Pager';
 
 export default class index extends Component {
 
     constructor(props){
         super(props)
         this.left_layout = createRef()
-        this.state = {}
-    }
-    componentDidMount(){
-        let w_hei = window.innerHeight
-        let off_top = offsetTop(this.left_layout.current)
-        this.left_layout.current.style.height = (w_hei - off_top - 45) +'px'
+        this.state = {
+            field1: '1',
+            field2: '2',
+            field3: '3',
+            
+            items1: ['内部货品Internal Goods', '其他家具Other furniture'],
+            index1: 0,
+
+            items2: ['1222', '333'],
+            index2: 0,
+
+            items3: ['asdf64', '4545'],
+            index3: 0,
+
+            c1: true,
+            c2: false,
+        }
     }
     
     render() {
@@ -30,113 +42,26 @@ export default class index extends Component {
                     </h2>
                     <div className="pub-table">
                         <ul>
-                            <li>
-                                <span>货品编码：</span>
-                                <div className="input-wrap">
-                                    <input name="" type="text" className="a2" />
-                                </div>
-                            </li>
-                            <li>
-                                <span>品名/型号：</span>
-                                <div className="input-wrap">
-                                    <input name="" type="text" className="a2" />
-                                </div>
-                            </li>
-                            <li>
-                                <span>货品类别：</span>
-                                <div className="input-wrap">
-                                    <input type="text" name="" />
-                                    <button className="pub-down"></button>
-                                    <div className="pub-drop-down">
-                                        <span>内部货品Internal Goods</span>
-                                        <span>其他家具Other furniture</span>
-                                        <span>综合类others</span>
-                                        <span>沙发Sofa</span>
-                                        <span>茶几coffee table</span>
-                                        <span>电视柜TV cabinet</span>
-                                        <span>展示柜/酒柜Showcase wine cabinet</span>
-                                        <span>玄关Console</span>
-                                        <span>餐桌/吧台Dining table,Bar counter</span>
-                                        <span>餐椅/吧椅Side chair,Bar Stool</span>
-                                        <span>边柜/边桌Side board</span>
-                                        <span>床Bed</span>
-                                        <span>床头柜Night Table</span>
-                                        <span>床尾凳Bench</span>
-                                        <span>休闲椅Other Chairs</span>
-                                        <span>妆凳/脚凳Dressing Chair</span>
-                                        <span>妆台/妆柜DressingTable,Cabinet</span>
-                                        <span>衣柜Clothing Cabinet</span>
-                                        <span>斗柜Chest</span>
-                                        <span>书桌Writing Desk</span>
-                                        <span>书椅Writing Chair</span>
-                                        <span>书柜Bookcase</span>
-                                        <span>床垫Matress</span>
-                                        <span>镜Mirror</span>
-                                        <span>架Shelf</span>
-                                        <span>灯/烛台Lighting,Candle holder</span>
-                                        <span>画/相框Painting,Photo Frame</span>
-                                        <span>毯Carpet</span>
-                                        <span>抱枕Cushion</span>
-                                        <span>床上用品Bedclothes</span>
-                                        <span>茶餐用具Plate,Cup,Bowl etc.</span>
-                                        <span>玻璃水晶Crystal,Glass</span>
-                                        <span>树脂/陶瓷Resin,Ceramics</span>
-                                        <span>花/果/树/植Flower,fruit,Tree,Plant</span>
-                                        <span>钟表/首饰Clock/Jewelry</span>
-                                        <span>公仔/玩具Doll,Toy</span>
-                                        <span>工艺精品Artware</span>
-                                        <span>窗帘Curtain</span>
-                                        <span>屏风Screen</span>
-                                        <span>箱包/衣物Bags,Clothing</span>
-                                        <span>珠宝/玉器Jewellery,Jade</span>
-                                    </div>
-                                </div>
-                            </li>
+                            <Input title="货品编码" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
+                            <Input title="品名/型号" value={this.state.field2} model={(v)=>this.setState({field2: v})}></Input>
+
+
+                            <DropDown items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>货品类别</DropDown>
+
                             <li>
                                 <p>
                                     <label className="pub-check1 fl" title="库存为零不显示">
-                                        <input type="checkbox" />库存为零不显示
+                                        <input type="checkbox" checked={this.state.c1} onChange={(e)=>this.setState({c1: e.target.checked})}/>库存为零不显示
                                     </label>
                                     <label className="pub-check1 fr" title="停产停售不显示">
-                                        <input type="checkbox" />停产停售不显示
+                                        <input type="checkbox" checked={this.state.c2} onChange={(e)=>this.setState({c2: e.target.checked})}/>停产停售不显示
                                     </label>
                                 </p>
                             </li>
-                            <li>
-                                <span>品牌：</span>
-                                <div className="input-wrap">
-                                    <input type="text" name="" />
-                                    <button className="pub-search"></button>
-                                </div>
-                            </li>
-                            <li>
-                                <span>系列：</span>
-                                <div className="input-wrap">
-                                    <input type="text" name="" />
-                                    <button className="pub-down"></button>
-                                    <div className="pub-drop-down">
-                                        <span>李白</span>
-                                        <span>李诚</span>
-                                        <span>李世琳</span>
-                                        <span>李家欣</span>
-                                        <span>李蒙</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li className="li1">
-                                <span>商场/仓库：</span>
-                                <div className="input-wrap">
-                                    <input type="text" name="" />
-                                    <button className="pub-down"></button>
-                                    <div className="pub-drop-down">
-                                        <span>李白</span>
-                                        <span>李诚</span>
-                                        <span>李世琳</span>
-                                        <span>李家欣</span>
-                                        <span>李蒙</span>
-                                    </div>
-                                </div>
-                            </li>
+
+                            <Input title="品牌" value={this.state.field3} model={(v)=>this.setState({field3: v})}><button className="pub-search"></button></Input>
+                            <DropDown items={this.state.items2} index={this.state.index2} onChange={(index)=> this.setState({index2: index})}>系列</DropDown>
+                            <DropDown width="48%" items={this.state.items3} index={this.state.index3} onChange={(index)=> this.setState({index3: index})}>商场/仓库</DropDown>
                         </ul>
                     </div>
                 </div>
@@ -163,7 +88,7 @@ export default class index extends Component {
                             <span className="sp120">有效数</span>
                         </div>
                     </div>
-                        <div className="table-row auto-height pub-small" ref={this.left_layout}>
+                    <Frame className="table-row pub-small" bottom={42}>
                         <ul>
                             <li>
                                 <span className="sp65">
@@ -222,29 +147,11 @@ export default class index extends Component {
                                 </span>
                             </li>
                         </ul>
-                    </div>
+                    </Frame>
                 </div>
 
-                <div className="pages">
-                    <div className="wrap">
-                        <a className="nolink" title="" href="/">上一页</a>
-                        <a href="/" title="">1</a>
-                        <a href="/" title="">2</a>
-                        <a className="curr" href="/" title="">3</a>
-                        <a href="/" title="">4</a>
-                        <a href="/" title="">5</a>
-                        <a href="/" title="">6</a>
-                        <a href="/" title="">7</a>
-                        <span>...</span>
-                        <a href="/" title="">下一页</a>
-                        <a href="/" title="">50</a>
-                        <p>
-                            <span>跳转到：</span>
-                            <input type="text" name="" />
-                            <button>GO</button>
-                        </p>
-                    </div>
-                </div>
+                {/* 分页 */}
+                <Pager></Pager>
             </>
         )
     }

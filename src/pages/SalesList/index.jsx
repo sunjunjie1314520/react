@@ -2,20 +2,18 @@ import React, { Component, createRef } from 'react'
 
 import Pager from '../../components/Pager';
 
-import { offsetTop } from '../../utils';
+import { Input, Frame, ContainDown } from '../../components/UI';
 
 export default class index extends Component {
 
     constructor(props){
         super(props)
         this.left_layout = createRef()
-        this.state = {}
-    }
-
-    componentDidMount(){
-        let w_hei = window.innerHeight
-        let off_top = offsetTop(this.left_layout.current)
-        this.left_layout.current.style.height = (w_hei - off_top - 45) +'px'
+        this.state = {
+            field1: '123',
+            field2: '456',
+            index1: 0,
+        }
     }
 
     render() {
@@ -32,151 +30,38 @@ export default class index extends Component {
                     </div>
                     <div className="pub-table">
                         <ul>
-                            <li>
-                                <span>销售单号：</span>
-                                <div className="input-wrap">
-                                    <div className="select-down">
-                                        <h2>含</h2>
-                                        <div className="box">
-                                            <span>含</span>
-                                            <span>=</span>
-                                            <span>≠</span>
-                                            <span>&gt;</span>
-                                            <span>&lt;</span>
-                                            <span>≥</span>
-                                            <span>≤</span>
-                                        </div>
-                                    </div>
-                                    <input type="text" className="sel a2" name="" />
-                                </div>
-                            </li>
-                            <li>
-                                <span>销售商场：</span>
-                                <div className="input-wrap">
-                                    <div className="select-down">
-                                        <h2>含</h2>
-                                        <div className="box">
-                                            <span>含</span>
-                                            <span>=</span>
-                                            <span>≠</span>
-                                            <span>&gt;</span>
-                                            <span>&lt;</span>
-                                            <span>≥</span>
-                                            <span>≤</span>
-                                        </div>
-                                    </div>
-                                    <input type="text" className="sel a2" />
-                                </div>
-                            </li>
-                            <li>
-                                <span>销售日期：</span>
-                                <div className="input-wrap J-datepicker-day right">
-                                    <div className="select-down">
-                                        <h2>≥</h2>
-                                        <div className="box">
-                                            <span>含</span>
-                                            <span>=</span>
-                                            <span>≠</span>
-                                            <span>&gt;</span>
-                                            <span>&lt;</span>
-                                            <span>≥</span>
-                                            <span>≤</span>
-                                        </div>
-                                    </div>
-                                    <input type="text" className="two-input" />
-                                </div>
-                            </li>
-                            <li>
-                                <span>销售日期：</span>
-                                <div className="input-wrap J-datepicker-day right">
-                                    <div className="select-down">
-                                        <h2>≤</h2>
-                                        <div className="box">
-                                            <span>含</span>
-                                            <span>=</span>
-                                            <span>≠</span>
-                                            <span>&gt;</span>
-                                            <span>&lt;</span>
-                                            <span>≥</span>
-                                            <span>≤</span>
-                                        </div>
-                                    </div>
-                                    <input type="text" className="two-input" />			
-                                </div>	
-                            </li>
-                            <li>
-                                <span>货品编码：</span>
-                                <div className="input-wrap">
-                                    <div className="select-down">
-                                        <h2>含</h2>
-                                        <div className="box">
-                                            <span>含</span>
-                                            <span>=</span>
-                                            <span>≠</span>
-                                            <span>&gt;</span>
-                                            <span>&lt;</span>
-                                            <span>≥</span>
-                                            <span>≤</span>
-                                        </div>
-                                    </div>
-                                    <input type="text" className="sel a2" />
-                                </div>
-                            </li>
-                            <li>
-                                <span>型号：</span>
-                                <div className="input-wrap">
-                                    <div className="select-down">
-                                        <h2>含</h2>
-                                        <div className="box">
-                                            <span>含</span>
-                                            <span>=</span>
-                                            <span>≠</span>
-                                            <span>&gt;</span>
-                                            <span>&lt;</span>
-                                            <span>≥</span>
-                                            <span>≤</span>
-                                        </div>
-                                    </div>
-                                    <input type="text" className="sel a2" />
-                                </div>
-                            </li>
-                            <li>
-                                <span>客户编码：</span>
-                                <div className="input-wrap">
-                                    <div className="select-down">
-                                        <h2>含</h2>
-                                        <div className="box">
-                                            <span>含</span>
-                                            <span>=</span>
-                                            <span>≠</span>
-                                            <span>&gt;</span>
-                                            <span>&lt;</span>
-                                            <span>≥</span>
-                                            <span>≤</span>
-                                        </div>
-                                    </div>
-                                    <input type="text" className="sel a2" />
-                                </div>
-                            </li>
-                            <li>
-                                <span>销售员：</span>
-                                <div className="input-wrap">
-                                    <button className="pub-search"></button>
-                                    <div className="select-down">
-                                        <h2>=</h2>
-                                        <div className="box">
-                                            <span>含</span>
-                                            <span>=</span>
-                                            <span>≠</span>
-                                            <span>&gt;</span>
-                                            <span>&lt;</span>
-                                            <span>≥</span>
-                                            <span>≤</span>
-                                        </div>
-                                    </div>
-                                    <input type="text" className="sel" />
-                                </div>
-                            </li>
+                            <Input ltr={true} title="销售单号" value={this.state.field1} model={(v)=>this.setState({field1: v})}>
+                                <ContainDown Select={(v)=> this.setState({index1: v})}></ContainDown>
+                            </Input>
+
+                            <Input ltr={true} title="销售商场" value={this.state.field2} model={(v)=>this.setState({field2: v})}>
+                                <ContainDown Select={(v)=> this.setState({index1: v})}></ContainDown>
+                            </Input>
+
+                            <Input ltr={true} title="销售日期" value={this.state.field1} model={(v)=>this.setState({field1: v})}>
+                                <ContainDown Select={(v)=> this.setState({index1: v})}></ContainDown>
+                            </Input>
+
+                            <Input ltr={true} title="销售日期" value={this.state.field1} model={(v)=>this.setState({field1: v})}>
+                                <ContainDown Select={(v)=> this.setState({index1: v})}></ContainDown>
+                            </Input>
+                            
+                            <Input ltr={true} title="货品编码" value={this.state.field1} model={(v)=>this.setState({field1: v})}>
+                                <ContainDown Select={(v)=> this.setState({index1: v})}></ContainDown>
+                            </Input>
+          
+                            <Input ltr={true} title="型号" value={this.state.field1} model={(v)=>this.setState({field1: v})}>
+                                <ContainDown Select={(v)=> this.setState({index1: v})}></ContainDown>
+                            </Input>
+
+                            <Input ltr={true} title="客户编码" value={this.state.field1} model={(v)=>this.setState({field1: v})}>
+                                <ContainDown Select={(v)=> this.setState({index1: v})}></ContainDown>
+                            </Input>
+
+                            <Input split={true} title="销售员" value={this.state.field1} model={(v)=>this.setState({field1: v})}>
+                                <ContainDown Select={(v)=> this.setState({index1: v})}></ContainDown>
+                                <button className="pub-search"></button>
+                            </Input>
                         </ul>
                     </div>
                 </div>
@@ -200,7 +85,7 @@ export default class index extends Component {
                                 <span className="sp100">修改人</span>
                             </div>
                         </div>
-                        <div className="table-row auto-height pub-first-center" ref={this.left_layout}>
+                        <Frame className="table-row pub-first-center" bottom={42}>
                             <ul>
                                 <li>
                                     <span className="sp60">
@@ -271,9 +156,10 @@ export default class index extends Component {
                                 </span>
                                 </li>
                             </ul>
-                        </div>
+                        </Frame>
                 </div>
 
+                {/* 分页器 */}
                 <Pager></Pager>
                 
             </>

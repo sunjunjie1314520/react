@@ -1,45 +1,29 @@
-import React, { Component, createRef } from 'react'
+import React, { Component } from 'react'
 
 import img1 from '../../style/img/a12fd_1092x801.jpg'
 import img2 from '../../style/img/506c0a676c6df69a4a3c7ecbcc827116_162x180.png'
 
 import Pager from '../../components/Pager';
 
-import { Input } from '../../components/UI';
-
-import { offsetTop } from '../../utils';
+import { Input, Frame, DropDown } from '../../components/UI';
 
 export default class index extends Component {
     constructor(){
         super()
-        this.left_layout = createRef()
-        this.right_layout = createRef()
         this.state = {
-            down: ['按货品型号', '按货品价格', '按品牌系列', '按新品上市', '按货品类别', '按货品特价'],
-            index: 0,
+            fields1: '1',
+            fields2: '2',
+
+            items1: ['按货品型号', '按货品价格', '按品牌系列', '按新品上市', '按货品类别', '按货品特价'],
+            index1: 0,
         }
-    }
-    
-    componentDidMount(){
-        let w_hei = window.innerHeight
-        let off_top = offsetTop(this.left_layout.current)
-        this.left_layout.current.style.height = (w_hei - off_top - 15) +'px'
-        let off_top1 = offsetTop(this.right_layout.current)
-        this.right_layout.current.style.height = (w_hei - off_top1 - 48) +'px'
     }
     
     xmTanUploadImg = () => {
         console.log('54564');
     }
 
-    change = (index) =>{
-        this.setState({
-            index: index
-        })
-    }
-
     render() {
-        const {down, index} = this.state
         return (
             <>
                 <div className="picture-path">
@@ -47,7 +31,7 @@ export default class index extends Component {
                         <i className="ico-font48"></i>
                         图片目录
                     </h2>
-                    <div className="box" ref={this.left_layout}>
+                    <Frame className="box" bottom={8}>
                         <ul>
                             <li>
                                 <img src={img1} alt="" />
@@ -74,7 +58,7 @@ export default class index extends Component {
                                 <img src={img1} alt="" />
                             </li>				
                         </ul>
-                    </div>
+                    </Frame>
                 </div>
 
 
@@ -91,15 +75,19 @@ export default class index extends Component {
                         </h2>
                         <div className="pub-table">
                             <ul>
+                                <Input title="搜索" width="48%" placeholder="请输入品牌、系列查询" value={this.state.fields1} model={(v)=>this.setState({fields1: v})}>
+                                    <button class="pub-search"></button>
+                                </Input>
 
-                                <Input type="search" width="48%" placeholder="请输入品牌、系列查询">搜索</Input>
-                                <Input type="default" placeholder="请输入客户手机号">客户手机号</Input>
-                                <Input type="down" items={down} index={index} onChange={this.change} >排序方式</Input>
+                                <Input title="客户手机号" value={this.state.fields2} model={(v)=>this.setState({fields2: v})}></Input>
+
+                                <DropDown items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>排序方式</DropDown>
+                                
                             </ul>
                         </div>
                     </div>
 
-                    <div className="pict-main pubsingleheight" ref={this.right_layout}>
+                    <Frame className="pict-main pubsingleheight" bottom={40}>
                         <div className="fl">
                             <i className="ico-font50"></i>
                             <img src={img1} alt="" />
@@ -161,9 +149,12 @@ export default class index extends Component {
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </Frame>
                     
+
+                    {/* 分页器 */}
                     <Pager></Pager>
+
                 </div>
                 
 

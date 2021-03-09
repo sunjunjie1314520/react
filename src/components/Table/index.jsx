@@ -8,23 +8,42 @@ export default class index extends Component {
         super(props)
         this.table = createRef()
         this.state = {
-            
+            width: null,
         }
     }
     
     componentDidMount(){
         let w_hei = window.innerHeight
         let off_top = offsetTop(this.table.current)
-        this.table.current.style.height = (w_hei - off_top - 42) +'px'
-    }
+        this.table.current.style.height = (w_hei - off_top - this.props.bottom) +'px'
 
+        const { fields } = this.props
+        
+        let width = 0;
+        fields.forEach(item=> width += item.width)
+
+        this.setState({
+            width: width
+        })
+    }
+    scroll(e){
+        let left = e.target.scrollLeft
+        e.target.previousElementSibling.scrollLeft = left
+    }
     render() {
+        const { width } = this.state
+        const { fields } = this.props
         return (
             <div className="clearfix">
                 <div className="pub-row-style">
                     <div className="table-head"> 
-                        <div className="slide-bar">
-                            <span className="sp60">序号</span>
+                        <div className="slide-bar" style={{minWidth: `${width}px`}}>
+                            {
+                                fields.map((v, k)=>{
+                                    return <span key={k} style={{width: `${v.width}px`}}>{v.name}</span>
+                                })
+                            }
+                            {/* <span className="sp60">序号</span>
                             <span className="sp120">客户编码</span>
                             <span className="sp120">客户名称</span>
                             <span className="sp60">性别</span>
@@ -43,11 +62,11 @@ export default class index extends Component {
                             <span className="sp100">户型</span>
                             <span className="sp100">喜好风格</span>
                             <span className="sp100">性格特征</span>
-                            <span className="sp200">备注</span>
+                            <span className="sp200">备注</span> */}
                         </div>
                     </div>
-                    <div className="table-row" ref={this.table}>
-                        <ul>
+                    <div className="table-row" ref={this.table} onScroll={this.scroll}>
+                        <ul style={{minWidth: `${width}px`}}>
                             <li>
                                 <span className="sp60">
                                     <label className="pub-check"><input type="checkbox" />1</label>

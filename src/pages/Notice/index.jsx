@@ -29,8 +29,6 @@ export default class index extends Component {
     }
     
     componentDidMount(){
-        console.log('componentDidMount');
-
         let w_hei = window.innerHeight
         let off_top = offsetTop(this.left_layout.current)
         this.left_layout.current.style.height = (w_hei - off_top - 17) +'px'

@@ -2,6 +2,8 @@ import React, { Component, createRef } from 'react'
 
 import { offsetTop } from '../../utils';
 
+import {Input, DropDown, DateTime } from '../../components/UI';
+
 export default class index extends Component {
 
     constructor(){
@@ -13,6 +15,21 @@ export default class index extends Component {
             s1: true,
             sh: null,
             sh1: null,
+
+            
+            items1: ['营养师1', '菜单一'],
+            index1: 0,
+            field1: '',
+            field2: '',
+            time1: '',  // 销售日期
+
+            field5: '5',
+            field6: '6',
+            field7: '7',
+            field8: false,
+
+            t1: '',
+            t2: '',
         }
         this.left_layout = createRef()
         this.left_layout1 = createRef()
@@ -63,39 +80,11 @@ export default class index extends Component {
 
                         <div className="pub-table">
                             <ul>
-                                <li className="li1">
-                                    <span>销售商场：</span>
-                                    <div className="input-wrap">
-                                    <input type="text" name="" />				
-                                    <button className="pub-down"></button>
-                                    <div className="pub-drop-down">
-                                            <span>菜单一</span>
-                                            <span>菜单二</span>
-                                            <span>菜单三</span>
-                                            <span>菜单四</span>
-                                            <span>菜单五</span>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li className="li1">
-                                    <span>销售单号：</span>
-                                    <div className="input-wrap">
-                                        <input type="text" name="" />
-                                    </div>
-                                </li>
-                                <li className="li1">
-                                    <span>客户名称：</span>
-                                    <div className="input-wrap">
-                                    <input type="text" name="" />
-                                    <button className="pub-search"></button>
-                                    </div>
-                                </li>
-                                <li className="li1">
-                                    <span>销售日期：</span>
-                                    <div className="input-wrap J-datepicker-day right">
-                                        <input type="text" className="c-datepicker-data-input only-date" />
-                                    </div>
-                                </li>
+
+                                <DropDown width="48%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})} required>销售商场</DropDown>
+                                <Input title="销售单号" width="48%" value={this.state.field1} required model={(v)=>this.setState({field1: v})}></Input>
+                                <Input title="客户名称" width="48%" value={this.state.field2} required model={(v)=>this.setState({field2: v})}></Input>
+                                <DateTime width="48%" title="销售日期" model={(v)=> this.setState({time1: v})}></DateTime>
                             </ul>
                         </div>
 
@@ -179,29 +168,16 @@ export default class index extends Component {
                             {/* 列表 */}
                             <div className="pub-table">
                                 <ul>
-                                    <li className="li1">
-                                        <span>收款商场：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" name="" />
-                                        </div>
-                                    </li>
+
+                                    <Input title="收款商场" width="48%" value={this.state.field5} model={(v)=>this.setState({field5: v})}></Input>
+                   
                                     <li className="li1">
                                         <span></span>
-                                        {/* 复选框 */}
-                                        <label className="pub-check1"><input type="checkbox" />是否收余款</label>
+                                        <label className="pub-check1"><input type="checkbox" checked={this.state.field8} onChange={(e)=> this.setState({field8: e.target.checked})} />是否收余款</label>
                                     </li>
-                                    <li className="li1">
-                                        <span>本次收款：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" name="" />
-                                        </div>
-                                    </li>
-                                    <li className="li1">
-                                        <span>还剩余款：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" name="" />
-                                        </div>
-                                    </li>
+                                    
+                                    <Input title="本次收款" width="48%" value={this.state.field6} model={(v)=>this.setState({field6: v})}></Input>
+                                    <Input title="还剩余款" width="48%" value={this.state.field7} model={(v)=>this.setState({field7: v})}></Input>
                                 </ul>
                             </div>
 
@@ -281,88 +257,36 @@ export default class index extends Component {
                         {/* 列表 */}
                         <div className="pub-table">
                             <ul>
-                                <li className="li5">
-                                    <span>销售单号：</span>
-                                    <div className="input-wrap">
-                                    <input type="text" name="" />
-                                    </div>
-                                </li>
-                                <li className="li5">
-                                    <span>销售日期：</span>
-                                    <div className="input-wrap">
-                                    <input type="text" name="" />
-                                    </div>
-                                </li>
+
+                                <Input title="销售单号" width="31%" value={this.state.field1} required model={(v)=>this.setState({field1: v})}></Input>
+                            
+                                <DateTime width="31%" title="销售日期" model={(v)=> this.setState({t1: v})}></DateTime>
+
+                                <DateTime width="32%" title="预送日期" model={(v)=> this.setState({t2: v})}></DateTime>
+
+                                <Input title="客户名称" width="31%" value={this.state.field1} required model={(v)=>this.setState({field1: v})}></Input>
+                                <Input title="客户编码" width="31%" value={this.state.field1} required model={(v)=>this.setState({field1: v})}></Input>
+                                <Input title="手机/电话" width="32%" value={this.state.field1} required model={(v)=>this.setState({field1: v})}></Input>
+
+
+                                <Input title="送货地址" width="98%" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
+                                <Input title="销售商场" width="31%" value={this.state.field1} required model={(v)=>this.setState({field1: v})}></Input>
+                                <Input title="销售员" width="31%" value={this.state.field1} required model={(v)=>this.setState({field1: v})}></Input>
+
                                 <li className="li6">
-                                    <span>预送日期：</span>
-                                    <div className="input-wrap">
-                                    <input type="text" name="" />
-                                    </div>
-                                </li>
-                                <li className="li5">
-                                    <span>客户名称：</span>
-                                    <div className="input-wrap">
-                                    <input type="text" name="" />
-                                    </div>
-                                </li>
-                                <li className="li5">
-                                    <span>客户编码：</span>
-                                    <div className="input-wrap">
-                                    <input type="text" name="" />
-                                    </div>
-                                </li>
-                                <li className="li6">
-                                    <span>手机/电话：</span>
-                                    <div className="input-wrap">
-                                    <input type="text" name="" />
-                                    </div>
-                                </li>
-                                <li className="li2">
-                                    <span>送货地址：</span>
-                                    <div className="input-wrap">
-                                    <input type="text" name="" />
-                                    </div>
-                                </li>
-                                <li className="li5">
-                                    <span>销售商场：</span>
-                                    <div className="input-wrap">
-                                    <input type="text" name="" />
-                                    </div>
-                                </li>
-                                <li className="li5">
-                                    <span>销售员：</span>
-                                    <div className="input-wrap">
-                                    <input type="text" name="" />
-                                    </div>
-                                </li>
-                                <li className="li8">
                                     <span></span>
                                     <label className="pub-check1"><input type="checkbox" />是否有现场销售</label>
                                 </li>
-                                <li className="li5">
-                                    <span>销售金额：</span>
-                                    <div className="input-wrap">
-                                    <input type="text" name="" />
-                                    </div>
-                                </li>
-                                <li className="li5">
-                                    <span>累计收款：</span>
-                                    <div className="input-wrap">
-                                    <input type="text" name="" />
-                                    </div>
-                                </li>
-                                <li className="li6">
-                                    <span>还剩余款：</span>
-                                    <div className="input-wrap">
-                                    <input type="text" name="" />
-                                    </div>
-                                </li>
-                                <li className="li2">
-                                    <span>备注：</span>
-                                    <div className="input-wrap">
-                                    <input type="text" name="" />
-                                    </div>
-                                </li>
+
+                                <Input title="销售金额" width="31%" value={this.state.field1} required model={(v)=>this.setState({field1: v})}></Input>
+                                <Input title="累计收款" width="31%" value={this.state.field1} required model={(v)=>this.setState({field1: v})}></Input>
+                                <Input title="还剩余款" width="32%" value={this.state.field1} required model={(v)=>this.setState({field1: v})}></Input>
+
+                                <Input title="备注" width="98%" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
+
+                                
+
+            
                             </ul>
                         </div>
 

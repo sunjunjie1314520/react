@@ -1,51 +1,49 @@
-import React, { Component, createRef } from 'react'
+import React, { Component } from 'react'
 
 import Pager from '../../components/Pager';
 
-import {Input, DropDown } from '../../components/UI';
-
-import { offsetTop } from '../../utils';
+import {Input, DropDown, Frame, DateTime } from '../../components/UI';
 
 export default class index extends Component {
 
     constructor(){
         super()
         this.state = {
-            down1: ['菜单一', '菜单二', '菜单三', '菜单四'],
+            items1: ['菜单一', '菜单二', '菜单三', '菜单四'],
             index1: 0,
-            down2: ['菜单一', '菜单二', '菜单三', '菜单四'],
+            
+            items2: ['菜单一', '菜单二', '菜单三', '菜单四'],
             index2: 0,
 
-            kehu:'客户',
-            danhao:'00',
-            bianhao: '1052'
+            kehu:'',
+            danhao:'',
+            bianhao: '',
 
+            field1: '',
+            field2: '',
+            field3: '',
+            field4: '',
+            field5: '',
+            field6: '',
+            field7: '',
+            
+            check1: true,
+
+            bottom_alert: false,
+
+            time1: '',
+            time2: ''
         }
-        this.left_layout = createRef()
-        this.rihgt_layout = createRef()
     }
 
-    componentDidMount(){
-        let w_hei = window.innerHeight
-        let off_top = offsetTop(this.left_layout.current)
-        this.left_layout.current.style.height = (w_hei - off_top - 39 - 7) +'px'
-    }
-
-    change1 = (index) => {
+    riDown = () => {
+        const { bottom_alert } = this.state
         this.setState({
-            index1: index
-        })
-    }
-
-    change2 = (index) => {
-        this.setState({
-            index2: index
+            bottom_alert: !bottom_alert
         })
     }
 
     render() {
-        const {down1, index1, down2, index2} = this.state
-        console.log(this.state);
         return (
             <>
                 <div className="xiaoshow">
@@ -70,7 +68,9 @@ export default class index extends Component {
                     <div className="pub-table">
                         <ul>
 
-                            <Input title="销售单号" value={this.state.danhao} methods={(v)=> this.setState({danhao: v})}><i className="ico-sp0"></i></Input>
+                            <Input title="销售单号" value={this.state.danhao} model={(v)=> this.setState({danhao: v})}>
+                                <i className="ico-sp0"></i>
+                            </Input>
 
                             {/* <li>
                                 <span>：</span>
@@ -79,86 +79,48 @@ export default class index extends Component {
                                     
                                 </div>
                             </li> */}
-                            <li>
-                                <span>销售日期：</span>
-                                <div className="input-wrap J-datepicker-day right">
-                                <input type="text" className="c-datepicker-data-input only-date" />
-                                    <var className="pub-asterisk">*</var>
-                                </div>
-                            </li>
-                            <li>
-                                <span>预送日期：</span>
-                                <div className="input-wrap J-datepicker-day right">
-                                <input type="text" className="c-datepicker-data-input only-date" />
-                                    <var className="pub-asterisk">*</var>
-                                </div>
-                            </li>
+                  
+                            <DateTime title="销售日期" model={(v)=> this.setState({time1: v})} required></DateTime>
+                            <DateTime title="预送日期" model={(v)=> this.setState({time2: v})} required></DateTime>
+        
                             <li></li>
 
-                            <Input title="客户" value={this.state.kehu} methods={(v)=> this.setState({kehu: v})}>
+                            <Input title="客户" value={this.state.kehu} model={(v)=> this.setState({kehu: v})}>
                                 <a className="add" href="/" title="">新增</a>
                                 <button className="pub-search"></button>
                             </Input>
               
-                            
-                            <Input title="客户编码" value={this.state.bianhao} methods={(v)=> this.setState({bianhao: v})}></Input>
+                            <Input title="客户编码" value={this.state.bianhao} model={(v)=> this.setState({bianhao: v})}></Input>
 
-                            {/* <input type="text" className="a2" /> */}
-                            <li>
-                                <span>手机/电话：</span>
-                                <div className="input-wrap">
-                                    <input type="text" className="a2" />
-                                </div>
-                            </li>
+                            <Input title="手机/电话" value={this.state.field1} model={(v)=> this.setState({field1: v})}></Input>
+
                             <li>
                                 <span></span>
                                 <p>
                                     <label className="pub-check1">
-                                    <input type="checkbox" />是否现场销售</label>
+                                    <input type="checkbox" checked={this.state.check1} onChange={(e)=> this.setState({check1: e.target.checked})} />是否现场销售</label>
                                 </p>
                             </li>
-                            <li className="li1">
-                                <span>送货地址：</span>
-                                <div className="input-wrap">
-                                    <input type="text" className="a2" />
-                                </div>
-                            </li>
 
-                            <DropDown index={index1} items={down1} onChange={this.change1}>销售商场</DropDown>
+                            <Input width="48%" title="送货地址" value={this.state.field2} model={(v)=> this.setState({field2: v})}></Input>
 
-                            <DropDown type="down" index={index2} items={down2} onChange={this.change2}>销售员</DropDown>
+                            <DropDown index={this.state.index1} items={this.state.items1} onChange={(index)=> this.setState({index1: index})}>销售商场</DropDown>
 
-                            <li>
-                                <span>合计金额：</span>
-                                <div className="input-wrap">
-                                    <input type="text" className="a2" />
-                                </div>
-                            </li>
-                            <li>
-                                <span>已收款：</span>
-                                <div className="input-wrap">
-                                    <input type="text" className="a2" />
-                                </div>
-                            </li>
-                            <li>
-                                <span>未收余款：</span>
-                                <div className="input-wrap">
-                                    <input type="text" className="a2" />
-                                </div>
-                            </li>
-                            <li>
-                                <span>整单折扣：</span>
-                                <div className="input-wrap">
-                                    <input className="in2" type="text" />
-                                    <a className="quzheng" href="/" title="">去零取整</a>
-                                </div>
-                            </li>
-                            <li className="li2">
-                                <span>备注：</span>
-                                <div className="input-wrap inp2">
-                                    <input type="text" className="a2" />
-                                </div>
-                            </li>
+                            <DropDown type="down" index={this.state.index2} items={this.state.items2} onChange={(index)=> this.setState({index2: index})}>销售员</DropDown>
+                            
+                            <Input title="合计金额" value={this.state.field3} model={(v)=> this.setState({field3: v})}></Input>
+
+                            <Input title="已收款" value={this.state.field4} model={(v)=> this.setState({field4: v})}></Input>
+
+                            <Input title="未收余款" value={this.state.field5} model={(v)=> this.setState({field5: v})}></Input>
+
+                            <Input title="整单折扣" value={this.state.field6} model={(v)=> this.setState({field6: v})}>
+                                <a className="quzheng" href="/" title="">去零取整</a>
+                            </Input>
+
+
+                            <Input width="98%" title="备注" value={this.state.field7} model={(v)=> this.setState({field7: v})}></Input>
+                         
                         </ul>
                     </div> 
                 </div>
@@ -183,7 +145,7 @@ export default class index extends Component {
                             <span className="sp100">已送货数</span>
                         </div>
                     </div>
-                    <div className="table-row pub-small" ref={this.left_layout}>
+                    <Frame className="table-row pub-small" bottom={this.state.bottom_alert ? 136 : 45}>
                         <ul>
                             <li>
                                 <span className="sp65">
@@ -248,7 +210,7 @@ export default class index extends Component {
                                 </span>
                             </li>
                         </ul>
-                    </div>
+                    </Frame>
                 </div>
 
                 <div className="add-wrap">
@@ -264,12 +226,12 @@ export default class index extends Component {
                         <a href="/" title=""><var className="a4">末单</var></a>
                     </div>
 
-                    <div className="ri-down">
-                        <i className="ico-down"></i>
+                    <div className="ri-down" onClick={this.riDown}>
+                        <i className={`ico-down ${this.state.bottom_alert ? 'acti': ''}`}></i>
                     </div>
                 </div>
                 
-                <div className="biao">
+                <div className="biao" style={{display: this.state.bottom_alert ? 'block':'none'}}>
                     <ul>
                         <li>
                             <span>制单人：</span>
@@ -442,7 +404,6 @@ export default class index extends Component {
                                 </div>
                             </div>
                             <div className="table-row">
-
                                 <ul>
                                     <li>
                                         <span className="sp60">

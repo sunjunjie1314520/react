@@ -1,52 +1,43 @@
-import React, { Component, createRef } from 'react'
+import React, { Component } from 'react'
 
 import Pager from '../../components/Pager';
 
-import { DropDown } from '../../components/UI';
-
-import { offsetTop } from '../../utils';
+import { Input, DropDown, DateTime, Frame } from '../../components/UI';
 
 export default class index extends Component {
 
     constructor(){
         super()
-        this.div1 = createRef()
-        this.div2 = createRef()
         this.state = {
             s1: null,
             h1: 420,
-            down1: ['产品质量', '服务态度', '送货推迟', '包装问题', '安装技术', '货不对版', '产品设计', '建议', '其他'],
+
+            items1: ['张三', '李四', '王五'],
             index1: 0,
-            down2: ['骂人', '态度差', '不给钱', '打架'],
+
+            items2: ['产品质量', '服务态度', '送货推迟', '包装问题', '安装技术', '货不对版', '产品设计', '建议', '其他'],
             index2: 0,
+
+            field1: '',
+            field2: '',
+            field3: '',
+
+            time1: '',
+            time2: '',
+
+            alert1: false,
         }
     }
 
-    componentDidMount(){
-        let w_hei = window.innerHeight
-        let off_top = offsetTop(this.div1.current)
-        let off_top1 = offsetTop(this.div2.current)
+    slide = () => {
+        const {alert1} = this.state
         this.setState({
-            s1: w_hei - off_top - 37 - 2 - 7,
-            h1: w_hei - off_top1 - 45
-        })
-    }
-
-
-    change1 = (index) =>{
-        this.setState({
-            index1: index
-        })
-    }
-
-    change2 = (index) =>{
-        this.setState({
-            index2: index
+            alert1: !alert1
         })
     }
 
     render() {
-        const { h1, s1, down1, index1, down2, index2 } = this.state
+        const { alert1} = this.state
         return (
             <>
                 <div className="xiaoshow">
@@ -67,149 +58,41 @@ export default class index extends Component {
                     </div>
                     <div className="pub-table">
                         <ul>
-                            <li>
-                                <span>服务单号：</span>
-                                <div className="input-wrap">
-                                    <input type="text" />
-                                    <i className="ico-sp0"></i>
-                                </div>
-                            </li>
-                            <li>
-                                <span>送货单号：</span>
-                                <div className="input-wrap">
-                                    <input type="text" className="a2" />
-                                </div>
-                            </li>
-                            <li>
-                                <span>送货日期：</span>
-                                <div className="input-wrap J-datepicker-day right">
-                                <input type="text" className="c-datepicker-data-input only-date" />
-                                    <var className="pub-asterisk">*</var>
-                                </div>
-                            </li>
+                            <Input title="服务单号" value={this.state.field1} model={(v)=>this.setState({field1: v})} required><i className="ico-sp0"></i></Input>
+                            <Input title="送货单号" value={this.state.field2} model={(v)=>this.setState({field2: v})}></Input>
+             
+                            <DateTime title="送货日期" model={(v)=> this.setState({time1: v})} required></DateTime>
+     
                             <li></li>
-                            <li>
-                                <span>客户：</span>
-                                <div className="input-wrap">
-                                    <input type="text" className="a2" />
-                                </div>
-                            </li>
-                            <li>
-                                <span>客户编码：</span>
-                                <div className="input-wrap">
-                                    <input type="text" className="a2" />
-                                </div>
-                            </li>
-                            <li>
-                                <span>手机/电话：</span>
-                                <div className="input-wrap">
-                                    <input type="text" className="a2" />
-                                </div>
-                            </li>
+                            
+                            <Input title="客户" value={this.state.field3} model={(v)=>this.setState({field3: v})}></Input>
+               
+                            <Input title="客户编码" value={this.state.field2} model={(v)=>this.setState({field2: v})}></Input>
+              
+                            <Input title="手机/电话" value={this.state.field2} model={(v)=>this.setState({field2: v})}></Input>
 
-                            <DropDown index={index1} type="down" required items={down1} onChange={this.change1}>制单人</DropDown>
-                            {/* <li>
-                                <span>：</span>
-                                <div className="input-wrap">
-                                    <div className="pub-down-wrap"><input type="text" />				
-                                    <button className="pub-down"></button>
-                                    <div className="pub-drop-down">
-                                            
-                                    </div>
-                                    </div>
-                                    <var className="pub-asterisk">*</var>
-                                </div>
-                            </li> */}
-                            <li className="li1">
-                                <span>送货地址：</span>
-                                <div className="input-wrap">
-                                    <input type="text" />
-                                </div>
-                            </li>
-                            <li>
-                                <span>销售商场：</span>
-                                <div className="input-wrap">
-                                    <div className="pub-down-wrap"><input type="text" />				
-                                </div>
-                            </div>
-                            </li>
-                            <li>
-                                <span>销售员：</span>
-                                <div className="input-wrap">
-                                    <div className="pub-down-wrap"><input type="text" />
-                                </div>
-                            </div>
-                            </li>
-                            <li className="li4">
-                                <span>诉求内容：</span>
-                                <div className="input-wrap">
-                                    <div className="pub-down-wrap"><input type="text" />
-                                    <var className="pub-asterisk">*</var>
-                                </div>
-                            </div>
-                            </li>
+                            <DropDown items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})} required>制单人</DropDown>
 
+                            <Input width="48%" title="送货地址" value={this.state.field2} model={(v)=>this.setState({field2: v})}></Input>
 
-                            <DropDown index={index2} required items={down2} onChange={this.change2}>投诉类别</DropDown>
+                            <Input title="销售商场" value={this.state.field2} model={(v)=>this.setState({field2: v})}></Input>
 
-                            {/* <li>
-                                <span>投诉类别：</span>
-                                <div className="input-wrap">
-                                    <div className="pub-down-wrap"><input type="text" />				
-                                    <button className="pub-down"></button>
-                                    <div className="pub-drop-down">
-                                            <span>产品质量</span>
-                                            <span>服务态度</span>
-                                            <span>送货推迟</span>
-                                            <span>包装问题</span>
-                                            <span>安装技术</span>
-                                            <span>货不对版</span>
-                                            <span>产品设计</span>
-                                            <span>建议</span>
-                                            <span>其他</span>
-                                    </div>
-                                    </div>
-                                    <var className="pub-asterisk">*</var>
-                                </div>
-                            </li> */}
-                            <li>
-                                <span>服务次数：</span>
-                                <div className="input-wrap">
-                                    <input type="text" className="a2" />
-                                </div>
-                            </li>
-                            <li>
-                                <span>服务费用：</span>
-                                <div className="input-wrap">
-                                    <input type="text" className="a2" />
-                                </div>
-                            </li>
-                            <li>
-                                <span>责任部门：</span>
-                                <div className="input-wrap">
-                                    <input type="text" className="a2" />
-                                </div>
-                            </li>
-                            <li>
-                                <span>完成日期：</span>
-                                <div className="input-wrap J-datepicker-day right">
-                                    <input type="text" className="c-datepicker-data-input only-date" />
-                                    <var className="pub-asterisk">*</var>
-                                </div>
-                            </li>		
-                            <li className="li2">
-                                    <span>服务说明：</span>
-                                    <div className="input-wrap">
-                                        <input type="text" />
-                                        <var className="pub-asterisk">*</var>
-                                    </div>
-                            </li>	
-                            <li className="li2">
-                                <span>备注：</span>
-                                <div className="input-wrap">
-                                    <input type="text" />
-                                </div>
-                            </li>
+                            <Input title="销售员" value={this.state.field2} model={(v)=>this.setState({field2: v})}></Input>
+
+                            <Input width="73%" title="诉求内容" value={this.state.field2} model={(v)=>this.setState({field2: v})} required></Input>
+         
+                            <DropDown items={this.state.items2} index={this.state.index2} onChange={(index)=> this.setState({index2: index})} required>投诉类别</DropDown>
+
+                            <Input title="服务次数" value={this.state.field2} model={(v)=>this.setState({field2: v})}></Input>
+                            <Input title="服务费用" value={this.state.field2} model={(v)=>this.setState({field2: v})}></Input>
+                            <Input title="责任部门" value={this.state.field2} model={(v)=>this.setState({field2: v})}></Input>
+
+                            <DateTime title="完成日期" model={(v)=> this.setState({time2: v})} required></DateTime>
+                            		
+         
+                            <Input width="98%" title="服务说明" value={this.state.field2} model={(v)=>this.setState({field2: v})} required></Input>
+                            <Input width="98%" title="备注" value={this.state.field2} model={(v)=>this.setState({field2: v})}></Input>
+     
                         </ul>
                     </div> 
                 </div>	
@@ -230,7 +113,7 @@ export default class index extends Component {
                                     <span className="sp180">处理结果</span>
                                 </div>
                             </div>
-                            <div className="table-row auto-height" style={{height: `${s1}px`}} ref={this.div1}>
+                            <Frame className="table-row" bottom={alert1 ? 137 :46}>
                                 <ul style={{minWidth: '1180px'}}>
                                     <li>
                                         <span className="sp50">
@@ -268,7 +151,7 @@ export default class index extends Component {
                                         </span>
                                     </li>
                                 </ul>
-                            </div>
+                            </Frame>
                         </div>
                     </div>
                     <div className="fr-layout">
@@ -281,7 +164,7 @@ export default class index extends Component {
                                     <button><span className="ico-upload"></span>上传</button>
                                 </div>
                             </h2>
-                            <div className="wrap auto-height" style={{height: `${h1}px`}} ref={this.div2}>
+                            <Frame className="wrap" bottom={alert1 ? 136 :45}>
                                 <div className="pict">
                                     <img src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1275774655,4144136426&fm=26&gp=0.jpg" alt=""/>
                                 </div>
@@ -307,7 +190,7 @@ export default class index extends Component {
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
+                            </Frame>
                         </div>
                     </div>
                 </div>
@@ -325,12 +208,12 @@ export default class index extends Component {
                         <a className="a2" href="/" title=""><var className="a4">末单</var></a>
                     </div>
 
-                    <div className="ri-down">
-                        <i className="ico-down"></i>
+                    <div className="ri-down" onClick={this.slide}>
+                        <i className={`ico-down ${alert1 ? 'acti': ''}`}></i>
                     </div>
                 </div>
                 
-                <div className="biao">
+                <div className="biao" style={{display: alert1 ? 'block': 'none'}}>
                     <ul>
                         <li>
                             <span>制单人：</span>
