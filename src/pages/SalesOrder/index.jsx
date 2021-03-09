@@ -81,6 +81,7 @@ export default class index extends Component {
                             </li> */}
                   
                             <DateTime title="销售日期" model={(v)=> this.setState({time1: v})} required></DateTime>
+                            
                             <DateTime title="预送日期" model={(v)=> this.setState({time2: v})} required></DateTime>
         
                             <li></li>

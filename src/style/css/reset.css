@@ -33,7 +33,7 @@ img{
 	border:none;
 	vertical-align:middle;
 }
-i,var,em{
+var,em{
 	font-style:normal;
 }
 button{

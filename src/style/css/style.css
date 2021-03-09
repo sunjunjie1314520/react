@@ -565,6 +565,7 @@ body.open .main-right ul li .slide-sub {
   line-height: 1;
   cursor: pointer;
   padding: 0 3px;
+  font-style: normal;
 }
 .main-right .page-tabs .tabs-wrap a i:hover {
   background: #d85940;
