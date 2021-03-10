@@ -29,7 +29,7 @@ import { Input, DropDown, Frame, Move } from '../../components/UI';
 
 import Pager from '../../components/Pager';
 
-import Table, { Box } from '../../components/Table';
+import Table, { Box, Li } from '../../components/Table';
 
 # 构造器
 
@@ -60,7 +60,7 @@ constructor(props){
                 name: '客户名称',
             },
         ],
-        data: [
+        data1: [
             {
                 id: 1,
                 bianma: 'xxxxxxxxxxxxx',
@@ -71,7 +71,9 @@ constructor(props){
                 bianma: 'xxxxxxxxxxxxx',
                 check: false,
             },
-        ]
+        ],
+
+        dex1: 0,
     }
 }
 
@@ -85,6 +87,8 @@ constructor(props){
     <DateTime title="送货日期" model={(v)=> this.setState({time1: v})} required></DateTime>
 # 分页
     <Pager></Pager>
+# 包含
+    <ContainDown index={this.state.dex1} Select={(v)=> this.setState({dex1: v})}></ContainDown>
 
 ```javascript
 // 方法放在 rander 函数上方
@@ -98,19 +102,20 @@ checkHandle(check, k){
 ```
 
 # 表格
-    <Table fields={this.state.fields1} bottom={42}>
+    <Table fields={this.state.fields1} bottom={42} picture={true}>
         {
             this.state.data1.map((v, k)=>{
                 return (
-                    <li key={k} className={v.check ? 'pub-table-back': ''}>
-                        <Box w={this.state.fields1[0].width}><label className="pub-check">
-                            <input onChange={(e)=>this.checkHandle(e.target.checked, k)} checked={v.check} type="checkbox" />{k}</label>
+                    <Li key={k} check={v.check}>
+                        <Box w={this.state.fields1[0].width}>
+                            <label className="pub-check">
+                                <input onChange={(e)=>this.checkHandle(e.target.checked, k)} checked={v.check} type="checkbox" />{k+1}
+                            </label>
                         </Box>
                         <Box w={this.state.fields1[1].width}>111</Box>
                         <Box w={this.state.fields1[2].width}>2222</Box>
-                    </li>
+                    </Li>
                 )
             })
         }
     </Table>
-    

@@ -12,7 +12,9 @@ export default class index extends Component {
         this.state = {
             field1: '123',
             field2: '456',
+            
             index1: 0,
+            index2: 1,
         }
     }
 
@@ -31,19 +33,19 @@ export default class index extends Component {
                     <div className="pub-table">
                         <ul>
                             <Input ltr={true} title="销售单号" value={this.state.field1} model={(v)=>this.setState({field1: v})}>
-                                <ContainDown Select={(v)=> this.setState({index1: v})}></ContainDown>
+                                <ContainDown index={this.state.index1} Select={(v)=> this.setState({index1: v})}></ContainDown>
                             </Input>
 
                             <Input split={true} title="销售商场" value={this.state.field1} model={(v)=>this.setState({field1: v})}>
-                                <ContainDown Select={(v)=> this.setState({index1: v})}></ContainDown>
+                                <ContainDown index={this.state.index2} Select={(v)=> this.setState({index2: v})}></ContainDown>
                                 <button className="pub-search"></button>
                             </Input>
 
-                            <DateTime title="销售日期" width="23%" model={(v)=> this.setState({t1: v})}>
+                            <DateTime title="销售日期" width="23%" model={(v)=> this.setState({t1: v})} left={false}>
 								<ContainDown Select={(v)=>this.setState({d1: v})}></ContainDown>
 							</DateTime>
 
-                            <DateTime title="销售日期" width="23%" model={(v)=> this.setState({t1: v})}>
+                            <DateTime title="销售日期" width="23%" model={(v)=> this.setState({t1: v})} left={false}>
 								<ContainDown Select={(v)=>this.setState({d1: v})}></ContainDown>
 							</DateTime>
 

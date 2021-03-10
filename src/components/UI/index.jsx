@@ -73,6 +73,7 @@ class DateTime extends Component {
 
     static defaultProps = {
         title: '默认标题',
+        left: true,
     }
 
     constructor(props){
@@ -98,7 +99,7 @@ class DateTime extends Component {
             <li className={active ? 'pub-borderColor' : ''} style={{width: this.props.width}}>
                 {/* 标题 */}
                 <span>{this.props.title}：</span>
-                <div className="input-wrap J-datepicker-day">
+                <div className={`input-wrap J-datepicker-day ${this.props.left ? '' : 'no'}`}>
                     {this.props.children}
                     <DatePicker bordered={false} onFocus={this.focus} onBlur={this.blur} onChange={(e, string)=>this.props.model(string)}></DatePicker>
                     {/* 必填项 */}
@@ -207,10 +208,13 @@ class ContainDown extends Component {
         Select: PropTypes.func.isRequired
     }
 
+    static defaultProps = {
+        index: 0,
+    }
+
     constructor(){
         super()
         this.state = {
-            index: 0,
             items: ['含', '=', '≠', '&gt;', '&lt;', '≥', '≤'],
             active: false,
         }
@@ -225,11 +229,14 @@ class ContainDown extends Component {
     click(k){
         this.props.Select(k)
         console.log(k);
-        this.setState({active: false, index: k})
+        this.setState({
+            active: false,
+        })
     }
 
     render() {
-        const { items, active, index } = this.state
+        const { items, active } = this.state
+        const { index } = this.props
         return (
             <div className="select-down" onMouseLeave={()=> this.select(false)}>
                 <h2 onClick={()=> this.select(true)} dangerouslySetInnerHTML={{__html: items[index]}}></h2>
@@ -245,7 +252,6 @@ class ContainDown extends Component {
     }
 }
 
-
 class Move extends Component{
 
     constructor(){
@@ -256,7 +262,9 @@ class Move extends Component{
         model: PropTypes.bool
     }
 
-    static defaultProps = {
+    static  = {
+
+    } = {
         model: false,
     }
 

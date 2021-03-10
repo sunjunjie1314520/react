@@ -199,12 +199,12 @@ export default class index extends Component {
                                     <p>因此，加州众议院决定，支持加州与中国之间为增进互利经济机会继续保持协调合作，增加互利经济机会，并在人文交往、贸易、气候变化、教育、旅游、科技、创新和绿色发展等领域加强实质性合作。</p>
                                 </div>
                             </div>
-                            <div className="follow-up-record a1">
+                            <div className="follow-up-record back">
                                 <h2>
                                     <b className="b3">建议审评</b>
                                     <span className="fr">何晓蒙 2017-08-06 / 10:16</span>
                                 </h2>
-                                <div className="text a1">
+                                <div className="text">
                                     <p>因此，加州众议院决定，支持加州与中国之间为增进互利经济机会继续保持协调合作。</p>
                                 </div>
                             </div>					

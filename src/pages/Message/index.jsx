@@ -47,11 +47,11 @@ export default class index extends Component {
 
 							<DropDown width="48%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>是否已读</DropDown>
 
-							<DateTime title="发送日期" width="48%" model={(v)=> this.setState({t1: v})}>
+							<DateTime title="发送日期" width="48%" model={(v)=> this.setState({t1: v})} left={false}>
 								<ContainDown Select={(v)=>this.setState({d1: v})}></ContainDown>
 							</DateTime>
 
-							<DateTime title="发送日期" width="48%" model={(v)=> this.setState({t2: v})}>
+							<DateTime title="发送日期" width="48%" model={(v)=> this.setState({t2: v})} left={false}>
 								<ContainDown Select={(v)=>this.setState({d2: v})}></ContainDown>
 							</DateTime>
 
