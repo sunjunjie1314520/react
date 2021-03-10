@@ -39,7 +39,6 @@ export default class index extends Component {
         editor.create()
 
         var dom = document.querySelector('.w-e-text-container')
-        console.log(dom);
         dom.style.height = '450px'
     }
 
@@ -61,7 +60,6 @@ export default class index extends Component {
                             <Input title="发布人" width="48%" value={this.state.fields3} model={(v)=>this.setState({fields3: v})}>
                                 <button className="pub-search"></button>
                             </Input>
-
                             <DropDown width="48%" items={this.state.items1} index={this.state.index2} onChange={(index)=> this.setState({index2: index})}>类型</DropDown>
                             <DropDown width="48%" items={this.state.items2} index={this.state.index3} onChange={(index)=> this.setState({index3: index})}>是否已读</DropDown>
                             <DropDown width="48%" items={this.state.items3} index={this.state.index4} onChange={(index)=> this.setState({index4: index})}>发布期间</DropDown>

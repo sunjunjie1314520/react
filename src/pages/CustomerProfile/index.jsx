@@ -193,7 +193,7 @@ export default class index extends Component {
                                 return (
                                     <li key={k} className={v.check ? 'pub-table-back': ''}>
                                         <Box w={this.state.fields[0].width}><label className="pub-check">
-                                            <input onChange={(e)=>this.checkHandle(e.target.checked, k)} checked={v.check} type="checkbox" />{k}</label>
+                                            <input onChange={(e)=>this.checkHandle(e.target.checked, k)} checked={v.check} type="checkbox" />{k+1}</label>
                                         </Box>
                                         <Box w={this.state.fields[1].width}>111</Box>
                                         <Box w={this.state.fields[2].width}>2222</Box>
@@ -239,8 +239,8 @@ export default class index extends Component {
                         <div className="two-wrap">
                             <div className="pub-table">
                                 <ul>
-                                    <Input title="客户编码" width="48%" value={this.state.field1} required model={(v)=>this.setState({field1: v})}></Input>
-                                    <Input title="客户名称" width="48%" value={this.state.field1} required model={(v)=>this.setState({field1: v})} required></Input>
+                                    <Input title="客户编码" width="48%" value={this.state.field1} model={(v)=>this.setState({field1: v})} required></Input>
+                                    <Input title="客户名称" width="48%" value={this.state.field1} model={(v)=>this.setState({field1: v})} required></Input>
                                     <DropDown width="48%" items={this.state.items3} index={this.state.index3} onChange={(index)=> this.setState({index3: index})} required>性别</DropDown>
                                     <DropDown width="48%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})} required>客户类别</DropDown>
                                     <Input title="手机" width="48%" value={this.state.field1} model={(v)=>this.setState({field1: v})} required></Input>
