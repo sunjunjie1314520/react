@@ -63,7 +63,7 @@ export default class index extends Component {
                         <a href="/" title=""><var className="i13">完结</var></a>
                         <a href="/" title=""><var className="i14">作废</var></a>
                         <a href="/" title=""><var className="i15">启用</var></a>
-                        <a href="/" title=""><var className="i16">保存</var></a>
+                        <a className="last" href="/" title=""><var className="i16">保存</var></a>
                     </div>
                     <div className="pub-table">
                         <ul>
