@@ -1,6 +1,8 @@
-import React, { Component, createRef } from 'react'
+import React, { Component } from 'react'
 
 import Pager from '../../components/Pager';
+
+import Table, { Box, Li } from '../../components/Table';
 
 import { Input, Frame, DateTime, ContainDown } from '../../components/UI';
 
@@ -8,14 +10,85 @@ export default class index extends Component {
 
     constructor(props){
         super(props)
-        this.left_layout = createRef()
         this.state = {
             field1: '123',
             field2: '456',
-            
+
             index1: 0,
             index2: 1,
+
+            fields1: [
+                {
+                    width: 60,
+                    name: '序号',
+                },
+                {
+                    width: 180,
+                    name: '销售商场',
+                },
+                {
+                    width: 120,
+                    name: '销售单号',
+                },
+                {
+                    width: 100,
+                    name: '销售日期',
+                },
+                {
+                    width: 100,
+                    name: '客户名称',
+                },
+                {
+                    width: 100,
+                    name: '客户编码',
+                },
+                {
+                    width: 120,
+                    name: '订单金额',
+                },
+                {
+                    width: 120,
+                    name: '已付金额',
+                },
+                {
+                    width: 120,
+                    name: '还剩余款',
+                },
+                {
+                    width: 80,
+                    name: '销售员',
+                },
+                {
+                    width: 220,
+                    name: '备 注',
+                },
+                {
+                    width: 80,
+                    name: '收款人',
+                },
+                {
+                    width: 100,
+                    name: '收款日期',
+                },
+                {
+                    width: 80,
+                    name: '修改人',
+                },
+            ],
+            data1: [
+                {
+                    id: 1,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+                {
+                    id: 2,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+            ]
         }
+
     }
 
     render() {
@@ -69,98 +142,31 @@ export default class index extends Component {
                     </div>
                 </div>
 
-                <div className="pub-row-style">
-                    <div className="table-head">
-                        <div className="slide-bar">
-                                <span className="sp60">序号</span>
-                                <span className="sp150">销售商场</span>
-                                <span className="sp130">销售单号</span>
-                                <span className="sp120">销售日期</span>
-                                <span className="sp120">客户名称</span>
-                                <span className="sp120">客户编码</span>
-                                <span className="sp140">订单金额</span>
-                                <span className="sp120">已付款额</span>
-                                <span className="sp120">还剩款额</span>
-                                <span className="sp100">销售员</span>
-                                <span className="sp200">备　注</span>
-                                <span className="sp100">收款人</span>
-                                <span className="sp120">收款日期</span>
-                                <span className="sp100">修改人</span>
-                            </div>
-                        </div>
-                        <Frame className="table-row pub-first-center" bottom={42}>
-                            <ul>
-                                <li>
-                                    <span className="sp60">
-                                        <label className="pub-check">1</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp60">
-                                        <label className="pub-check">2</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp60">
-                                        <label className="pub-check">3</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp60">
-                                        <label className="pub-check">4</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp60">
-                                        <label className="pub-check">5</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp60">
-                                        <label className="pub-check">6</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp60">
-                                        <label className="pub-check">7</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp60">
-                                        <label className="pub-check">8</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp60">
-                                        <label className="pub-check">9</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp60">
-                                        <label className="pub-check">10</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp60">
-                                        <label className="pub-check">11</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp60">
-                                        <label className="pub-check">12</label>
-                                    </span>
-                                </li>
-                                <li className="pub-last-back">
-                                    <span className="sp60">
-                                        <label className="pub-check">13</label>
-                                    </span>
-                                <span className="sp200">
-                                <b>合计：</b>
-                                </span>
-                                </li>
-                            </ul>
-                        </Frame>
-                </div>
+                <Table fields={this.state.fields1} bottom={42}>
+                    {
+                        this.state.data1.map((v, k)=>{
+                            return (
+                                <Li key={k} check={v.check}>
+                                    <Box w={this.state.fields1[0].width}>
+                                        <label className="pub-check">
+                                            {k+1}
+                                        </label>
+                                    </Box>
+                                    <Box w={this.state.fields1[1].width}>
+                                        11111
+                                    </Box>
+                                    <Box w={this.state.fields1[2].width}>2222</Box>
+                                </Li>
+                            )
+                        })
+                    }
+                    <li className="pub-last-back">
+                        <Box w={this.state.fields1[0].width}></Box>
+                        <Box w={this.state.fields1[1].width}>
+                            <b>合计：</b>
+                        </Box>
+                    </li>
+                </Table>
 
                 {/* 分页器 */}
                 <Pager></Pager>

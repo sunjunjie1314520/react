@@ -111,6 +111,7 @@ export default class index extends Component {
         }
     }
 
+    // 显示或隐藏 底部表单
     riDown = () => {
         const { bottom_alert } = this.state
         this.setState({
@@ -118,6 +119,7 @@ export default class index extends Component {
         })
     }
 
+    // 表格复选框
     checkHandle(check, k){
         const {data1} = this.state
         data1[k].check = check
@@ -126,6 +128,7 @@ export default class index extends Component {
         })
     }
 
+    // 显示或隐藏 弹窗
     slide = () => {
         const {alert1} = this.state
         this.setState({

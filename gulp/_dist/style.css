@@ -2057,7 +2057,6 @@ body.open .main-right ul li .slide-sub {
 .notice-right {
   float: right;
   width: calc(100% - 35% - 15px);
-  overflow-y: auto;
   min-height: 571px;
   background: #f9f9f9;
 }
@@ -2653,10 +2652,10 @@ body.open .main-right ul li .slide-sub {
   outline: none;
 }
 .pub-row-style .table-row ul li span:first-child {
-  text-align: left;
+  text-align: center;
 }
 .pub-row-style .table-row ul li:last-child {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .pub-drop-down {
   display: none;
