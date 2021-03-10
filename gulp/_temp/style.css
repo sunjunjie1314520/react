@@ -2176,7 +2176,7 @@ body.open .main-right ul li .slide-sub {
   margin-top: 2px;
 }
 .notice-right .box1 .negotiation textarea {
-  height: 98px;
+  height: 92px;
   width: 100%;
   border: 1px solid #cdcdcd;
   padding: 10px;
@@ -2939,34 +2939,38 @@ body.open .main-right ul li .slide-sub {
   border-color: #0799fb;
   background: #0799fb;
 }
-.pub-small li:not(.pub-last-back) {
+.pub-small ul li:not(.pub-last-back) {
   height: 95px !important;
 }
-.pub-small li:not(.pub-last-back) span:nth-child(1) {
-  margin-top: 26px;
-  text-align: left;
-}
-.pub-small li:not(.pub-last-back) span:nth-child(2) {
-  margin-top: 8px;
-}
-.pub-small li:not(.pub-last-back) span:nth-child(2) var {
-  display: block;
-  width: 118px;
-  height: 78px;
-  border: 1px solid #e6e6e6;
-  border-radius: 5px;
-}
-.pub-small li:not(.pub-last-back) span:nth-child(3) {
-  margin-top: 8px;
+.pub-small ul li span {
   height: 78px;
   display: -webkit-flex;
   display: flex;
   -webkit-align-items: center;
   align-items: center;
-}
-.pub-small li:not(.pub-last-back) span:nth-child(3) var {
+  -webkit-justify-content: center;
+  justify-content: center;
   word-break: break-all;
   text-align: center;
+  margin-top: 8px;
+  padding: 0 6px;
+}
+.pub-small ul li span:nth-child(1) {
+  margin-top: 26px;
+  height: auto;
+  -webkit-justify-content: left;
+  justify-content: left;
+}
+.pub-small ul li span:nth-child(2) var {
+  display: block;
+  width: 118px;
+  height: 78px;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.pub-small ul li span:nth-child(2) var img {
+  width: 100%;
 }
 span.sp30 {
   width: 30px;

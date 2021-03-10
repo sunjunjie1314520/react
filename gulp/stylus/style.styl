@@ -1794,7 +1794,7 @@ body
                     backp '谈判.png' 28px
                     margin-top: 2px
             textarea
-                height 98px
+                height 92px
                 width 100%
                 border 1px solid #cdcdcd
                 padding 10px
@@ -2428,30 +2428,35 @@ body
             
 // 大缩略图
 .pub-small
-    li
-        &:not(.pub-last-back)
-            height 95px !important
+    ul
+        li
+            &:not(.pub-last-back)
+                height 95px !important
             span
+                // default
+                height 78px
+                display flex
+                align-items center
+                justify-content center
+                word-break break-all
+                text-align center
+                margin-top 8px
+                padding 0 6px
                 &:nth-child(1)
                     margin-top 26px
-                    text-align left
+                    height auto
+                    justify-content left
                 &:nth-child(2)
-                    margin-top 8px
                     var
                         display block
                         width 118px
                         height 78px
                         border 1px solid #e6e6e6
                         border-radius 5px
-                &:nth-child(3)
-                    margin-top 8px
-                    height 78px
-                    display flex
-                    align-items center
-                    var
-                        word-break break-all
-                        text-align center
-                    
+                        overflow hidden
+                        img
+                            width 100%
+
 for i in 30..250
     span.sp{i}
         width i*1px

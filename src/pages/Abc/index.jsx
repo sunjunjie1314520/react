@@ -31,15 +31,71 @@ export default class index extends Component {
                 },
                 {
                     width: 120,
-                    name: '客户编码',
+                    name: '货品编码',
                 },
                 {
                     width: 120,
-                    name: '客户名称',
+                    name: '货品名称',
                 },
                 {
-                    width: 200,
-                    name: '88888',
+                    width: 120,
+                    name: '型 号',
+                },
+                {
+                    width: 140,
+                    name: '尺 寸',
+                },
+                {
+                    width: 60,
+                    name: '单位',
+                },
+                {
+                    width: 100,
+                    name: '库存数',
+                },
+                {
+                    width: 120,
+                    name: '货品属性',
+                },
+                {
+                    width: 100,
+                    name: '单价',
+                },
+                {
+                    width: 80,
+                    name: '采购数',
+                },
+                {
+                    width: 60,
+                    name: '折扣%',
+                },
+                {
+                    width: 120,
+                    name: '金 额',
+                },
+                {
+                    width: 100,
+                    name: '原币价',
+                },
+                {
+                    width: 120,
+                    name: '原币金额',
+                },
+                {
+                    width: 80,
+                    name: '货品单位',
+                },
+                {
+                    width: 80,
+                    name: '已收货数',
+                },
+                {
+                    width: 80,
+                    name: '未收货数',
+                },
+                {
+                    width: 160,
+                    name: '备 注',
                 },
             ],
             data1: [
@@ -56,13 +112,22 @@ export default class index extends Component {
             ]
         }
     }
-
-    riDown = () => {
+        riDown = () => {
         const { bottom_alert } = this.state
         this.setState({
             bottom_alert: !bottom_alert
         })
     }
+
+
+    checkHandle(check, k){
+        const {data1} = this.state
+        data1[k].check = check
+        this.setState({
+            data1: data1
+        })
+    }
+
 
     render() {
         return (
@@ -196,29 +261,7 @@ export default class index extends Component {
 
                     </ul>
                 </div>
-                {/* <div className="pub-row-style">
-                    <div className="table-head">
-                        <div className="slide-bar">
-                            <span className="sp60">序号</span>
-                            <span className="sp120">货品编码</span>
-                            <span className="sp120">货品名称</span>
-                            <span className="sp120">型　号</span>
-                            <span className="sp130">尺　寸</span>
-                            <span className="sp60">单位</span>
-                            <span className="sp80">库存数</span>
-                            <span className="sp120">货品属性</span>
-                            <span className="sp100">单价</span>
-                            <span className="sp80">采购数</span>
-                            <span className="sp80">折扣%</span>
-                            <span className="sp120">金额</span>
-                            <span className="sp120">原币价</span>
-                            <span className="sp120">原币金额</span>
-                            <span className="sp100">已送货数</span>
-                            <span className="sp100">未收货数</span>
-                            <span className="sp200">备　　注</span>
-                        </div>
-                    </div>
-                </div> */}
+
             </>
         )
     }
