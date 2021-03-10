@@ -11,7 +11,7 @@ export default class index extends Component {
         this.state = {
             items1: ['菜单一', '菜单二', '菜单三', '菜单四'],
             index1: 0,
-            
+
             items2: ['菜单一', '菜单二', '菜单三', '菜单四'],
             index2: 0,
 
@@ -26,7 +26,7 @@ export default class index extends Component {
             field5: '',
             field6: '',
             field7: '',
-            
+
             check1: true,
 
             bottom_alert: false,
@@ -76,21 +76,21 @@ export default class index extends Component {
                                 <span>：</span>
                                 <div className="input-wrap">
                                     <input type="text" />
-                                    
+
                                 </div>
                             </li> */}
-                  
+
                             <DateTime title="销售日期" model={(v)=> this.setState({time1: v})} required></DateTime>
-                            
+
                             <DateTime title="预送日期" model={(v)=> this.setState({time2: v})} required></DateTime>
-        
+
                             <li></li>
 
-                            <Input title="客户" value={this.state.kehu} model={(v)=> this.setState({kehu: v})}>
+                            <Input title="客户" value={this.state.kehu} model={(v)=> this.setState({kehu: v})}required>
                                 <a className="add" href="/" title="">新增</a>
                                 <button className="pub-search"></button>
                             </Input>
-              
+
                             <Input title="客户编码" value={this.state.bianhao} model={(v)=> this.setState({bianhao: v})}></Input>
 
                             <Input title="手机/电话" value={this.state.field1} model={(v)=> this.setState({field1: v})}></Input>
@@ -105,10 +105,10 @@ export default class index extends Component {
 
                             <Input width="48%" title="送货地址" value={this.state.field2} model={(v)=> this.setState({field2: v})}></Input>
 
-                            <DropDown index={this.state.index1} items={this.state.items1} onChange={(index)=> this.setState({index1: index})}>销售商场</DropDown>
+                            <DropDown index={this.state.index1} items={this.state.items1} onChange={(index)=> this.setState({index1: index})}required>销售商场</DropDown>
 
-                            <DropDown type="down" index={this.state.index2} items={this.state.items2} onChange={(index)=> this.setState({index2: index})}>销售员</DropDown>
-                            
+                            <DropDown type="down" index={this.state.index2} items={this.state.items2} onChange={(index)=> this.setState({index2: index})}required>销售员</DropDown>
+
                             <Input title="合计金额" value={this.state.field3} model={(v)=> this.setState({field3: v})}></Input>
 
                             <Input title="已收款" value={this.state.field4} model={(v)=> this.setState({field4: v})}></Input>
@@ -121,28 +121,28 @@ export default class index extends Component {
 
 
                             <Input width="98%" title="备注" value={this.state.field7} model={(v)=> this.setState({field7: v})}></Input>
-                         
+
                         </ul>
-                    </div> 
+                    </div>
                 </div>
-                
+
                 <div className="pub-row-style">
-                    <div className="table-head"> 
+                    <div className="table-head">
                         <div className="slide-bar">
                             <span className="sp60"><em className="ico-menu"></em>序号</span>
                             <span className="sp128">图 片</span>
-                            <span className="sp120">货品编码</span> 
-                            <span className="sp120">货品名称</span> 
-                            <span className="sp120">型　号</span> 
-                            <span className="sp130">尺　寸</span> 
-                            <span className="sp60">单位</span> 
-                            <span className="sp80">库存数</span> 
-                            <span className="sp120">货品属性</span> 
-                            <span className="sp100">单价</span> 
-                            <span className="sp80">销售数</span> 
-                            <span className="sp80">折扣%</span> 
-                            <span className="sp120">金额</span> 
-                            <span className="sp200">备　　注</span> 
+                            <span className="sp120">货品编码</span>
+                            <span className="sp120">货品名称</span>
+                            <span className="sp120">型　号</span>
+                            <span className="sp130">尺　寸</span>
+                            <span className="sp60">单位</span>
+                            <span className="sp80">库存数</span>
+                            <span className="sp120">货品属性</span>
+                            <span className="sp100">单价</span>
+                            <span className="sp80">销售数</span>
+                            <span className="sp80">折扣%</span>
+                            <span className="sp120">金额</span>
+                            <span className="sp200">备　　注</span>
                             <span className="sp100">已送货数</span>
                         </div>
                     </div>
@@ -231,7 +231,7 @@ export default class index extends Component {
                         <i className={`ico-down ${this.state.bottom_alert ? 'acti': ''}`}></i>
                     </div>
                 </div>
-                
+
                 <div className="biao" style={{display: this.state.bottom_alert ? 'block':'none'}}>
                     <ul>
                         <li>
@@ -270,7 +270,7 @@ export default class index extends Component {
 
                     </ul>
                 </div>
-                
+
                 {/* 弹窗1 */}
                 <div className="pub-shadow pub-one">
                     <div className="sale-alert move-obj">
@@ -292,7 +292,7 @@ export default class index extends Component {
                                     <span>货品编码：</span>
                                     <div className="input-wrap">
                                         <input type="text" className="a2" />
-                                    </div>	
+                                    </div>
                                 </li>
                             <li className="li5">
                                     <span>型号：</span>
@@ -386,7 +386,7 @@ export default class index extends Component {
                                 </li>
                             </ul>
                         </div>
-                        
+
                         {/* 表格 */}
                         <div className="pub-row-style pub-mt-0 pub-no-border">
                             <div className="table-head">
@@ -419,13 +419,13 @@ export default class index extends Component {
                                 </ul>
                             </div>
                         </div>
-                    
+
                         {/* 分页 */}
                         <Pager></Pager>
 
                     </div>
                 </div>
-                
+
                 {/* 客户信息2 */}
                 <div className="pub-shadow pub-two">
                     <div className="archives-alert move-obj">
@@ -527,7 +527,7 @@ export default class index extends Component {
                                             <button className="pub-down"></button>
                                         </div>
                                     </li>
-                
+
                                     <li className="li1">
                                         <span>微信/QQ：</span>
                                         <div className="input-wrap">

@@ -2,7 +2,7 @@ import React, { Component, createRef } from 'react'
 
 import Pager from '../../components/Pager';
 
-import { Input, Frame, ContainDown } from '../../components/UI';
+import { Input, Frame, DateTime, ContainDown } from '../../components/UI';
 
 export default class index extends Component {
 
@@ -34,22 +34,23 @@ export default class index extends Component {
                                 <ContainDown Select={(v)=> this.setState({index1: v})}></ContainDown>
                             </Input>
 
-                            <Input ltr={true} title="销售商场" value={this.state.field2} model={(v)=>this.setState({field2: v})}>
+                            <Input split={true} title="销售商场" value={this.state.field1} model={(v)=>this.setState({field1: v})}>
                                 <ContainDown Select={(v)=> this.setState({index1: v})}></ContainDown>
+                                <button className="pub-search"></button>
                             </Input>
 
-                            <Input ltr={true} title="销售日期" value={this.state.field1} model={(v)=>this.setState({field1: v})}>
-                                <ContainDown Select={(v)=> this.setState({index1: v})}></ContainDown>
-                            </Input>
+                            <DateTime title="销售日期" width="23%" model={(v)=> this.setState({t1: v})}>
+								<ContainDown Select={(v)=>this.setState({d1: v})}></ContainDown>
+							</DateTime>
 
-                            <Input ltr={true} title="销售日期" value={this.state.field1} model={(v)=>this.setState({field1: v})}>
-                                <ContainDown Select={(v)=> this.setState({index1: v})}></ContainDown>
-                            </Input>
-                            
+                            <DateTime title="销售日期" width="23%" model={(v)=> this.setState({t1: v})}>
+								<ContainDown Select={(v)=>this.setState({d1: v})}></ContainDown>
+							</DateTime>
+
                             <Input ltr={true} title="货品编码" value={this.state.field1} model={(v)=>this.setState({field1: v})}>
                                 <ContainDown Select={(v)=> this.setState({index1: v})}></ContainDown>
                             </Input>
-          
+
                             <Input ltr={true} title="型号" value={this.state.field1} model={(v)=>this.setState({field1: v})}>
                                 <ContainDown Select={(v)=> this.setState({index1: v})}></ContainDown>
                             </Input>
@@ -65,9 +66,9 @@ export default class index extends Component {
                         </ul>
                     </div>
                 </div>
-                
+
                 <div className="pub-row-style">
-                    <div className="table-head"> 
+                    <div className="table-head">
                         <div className="slide-bar">
                                 <span className="sp60">序号</span>
                                 <span className="sp150">销售商场</span>
@@ -161,7 +162,7 @@ export default class index extends Component {
 
                 {/* 分页器 */}
                 <Pager></Pager>
-                
+
             </>
         )
     }

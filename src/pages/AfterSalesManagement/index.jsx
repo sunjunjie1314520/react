@@ -53,22 +53,22 @@ export default class index extends Component {
                         <a href="/" title=""><var className="i19">审核</var></a>
                         <a href="/" title=""><var className="i26">弃审</var></a>
                         <a href="/" title=""><var className="i20">查审</var></a>
-                        <a href="/" title=""><var className="i30">完结</var></a>
+                        <a href="/" title=""><var className="i13">完结</var></a>
                         <a href="/" title=""><var className="i16">保存</var></a>
                     </div>
                     <div className="pub-table">
                         <ul>
                             <Input title="服务单号" value={this.state.field1} model={(v)=>this.setState({field1: v})} required><i className="ico-sp0"></i></Input>
                             <Input title="送货单号" value={this.state.field2} model={(v)=>this.setState({field2: v})}></Input>
-             
-                            <DateTime title="送货日期" model={(v)=> this.setState({time1: v})} required></DateTime>
-     
+
+                            <Input title="送货日期" value={this.state.field3} model={(v)=>this.setState({field3: v})}></Input>
+
                             <li></li>
-                            
+
                             <Input title="客户" value={this.state.field3} model={(v)=>this.setState({field3: v})}></Input>
-               
+
                             <Input title="客户编码" value={this.state.field2} model={(v)=>this.setState({field2: v})}></Input>
-              
+
                             <Input title="手机/电话" value={this.state.field2} model={(v)=>this.setState({field2: v})}></Input>
 
                             <DropDown items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})} required>制单人</DropDown>
@@ -80,7 +80,7 @@ export default class index extends Component {
                             <Input title="销售员" value={this.state.field2} model={(v)=>this.setState({field2: v})}></Input>
 
                             <Input width="73%" title="诉求内容" value={this.state.field2} model={(v)=>this.setState({field2: v})} required></Input>
-         
+
                             <DropDown items={this.state.items2} index={this.state.index2} onChange={(index)=> this.setState({index2: index})} required>投诉类别</DropDown>
 
                             <Input title="服务次数" value={this.state.field2} model={(v)=>this.setState({field2: v})}></Input>
@@ -88,15 +88,14 @@ export default class index extends Component {
                             <Input title="责任部门" value={this.state.field2} model={(v)=>this.setState({field2: v})}></Input>
 
                             <DateTime title="完成日期" model={(v)=> this.setState({time2: v})} required></DateTime>
-                            		
-         
+
                             <Input width="98%" title="服务说明" value={this.state.field2} model={(v)=>this.setState({field2: v})} required></Input>
                             <Input width="98%" title="备注" value={this.state.field2} model={(v)=>this.setState({field2: v})}></Input>
-     
+
                         </ul>
-                    </div> 
-                </div>	
-                
+                    </div>
+                </div>
+
                 <div className="server-dan">
                     <div className="fl-layout">
                         <div className="pub-row-style">
@@ -212,7 +211,7 @@ export default class index extends Component {
                         <i className={`ico-down ${alert1 ? 'acti': ''}`}></i>
                     </div>
                 </div>
-                
+
                 <div className="biao" style={{display: alert1 ? 'block': 'none'}}>
                     <ul>
                         <li>
@@ -251,7 +250,7 @@ export default class index extends Component {
 
                     </ul>
                 </div>
-                
+
                 {/* 弹窗 */}
                 <div className="pub-shadow">
                     <div className="sale-alert">
@@ -327,12 +326,12 @@ export default class index extends Component {
                                             <span>≤</span>
                                         </div>
                                     </div>
-                                    <input type="text" className="two-input" />			
+                                    <input type="text" className="two-input" />
                                 </div>
                                 </li>
                             </ul>
                         </div>
-                        
+
                         {/* 表格 */}
                         <div className="pub-row-style pub-mt-0 pub-no-border">
                         <div className="table-head">
@@ -349,7 +348,7 @@ export default class index extends Component {
                                     <span className="sp120">单价</span>
                                 </div>
                             </div>
-                            <div className="table-row">				  
+                            <div className="table-row">
                                 <ul>
                                     <li>
                                         <span className="sp60">
@@ -364,7 +363,7 @@ export default class index extends Component {
                                 </ul>
                             </div>
                         </div>
-                        
+
                         {/* 分页器 */}
                         <Pager></Pager>
 

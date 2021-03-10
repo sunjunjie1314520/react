@@ -75,11 +75,11 @@ export default class index extends Component {
                         </h2>
                         <div className="pub-table">
                             <ul>
-                                <Input title="搜索" width="48%" placeholder="请输入品牌、系列查询" value={this.state.fields1} model={(v)=>this.setState({fields1: v})}>
+                                <Input title="搜索" width="48%" placeholder="请输入品牌查询" value={this.state.fields1} model={(v)=>this.setState({fields1: v})}>
                                     <button class="pub-search"></button>
                                 </Input>
 
-                                <Input title="客户手机号" value={this.state.fields2} model={(v)=>this.setState({fields2: v})}></Input>
+                                <Input title="客户手机号" placeholder="请输入..." value={this.state.fields2} model={(v)=>this.setState({fields2: v})}></Input>
 
                                 <DropDown items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>排序方式</DropDown>
                                 

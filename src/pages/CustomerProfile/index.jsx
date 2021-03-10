@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { Input, DropDown, Frame, Move } from '../../components/UI';
+import { Input, DropDown, Frame, Move,DateTime } from '../../components/UI';
 
 import Pager from '../../components/Pager';
 
@@ -15,7 +15,13 @@ export default class index extends Component {
             index1: 0,
 
             items2: ['下拉菜单1','下拉菜单2','下拉菜单3','下拉菜单4','下拉菜单5'],
-            index2: 2,
+            index2: 0,
+
+            items3: ['男','女'],
+            index3: 2,
+
+            items4: ['中小户型','大户型','复式/跃层','别墅/双拼','商业/会所','自建房','其他'],
+            index4: 0,
 
             fields1: '1',
             fields2: '2',
@@ -143,7 +149,7 @@ export default class index extends Component {
     render() {
         return (
             <>
-                <Frame className="archives-type" bottom={0}>
+                <Frame className="archives-type" bottom={7}>
                     <h2 className="pub-tit">
                         <i className="ico-type"></i>
                         客户类别
@@ -171,7 +177,7 @@ export default class index extends Component {
                         </div>
                         <div className="pub-table">
                             <ul>
-                                <Input title="客户编码" value={this.state.fields1} model={(v)=>this.setState({fields1: v})} required></Input>
+                                <Input title="客户编码" value={this.state.fields1} model={(v)=>this.setState({fields1: v})}></Input>
                                 <Input title="手机/电话" value={this.state.fields2} model={(v)=>this.setState({fields2: v})}></Input>
 
                                 <DropDown items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>归属商场</DropDown>
@@ -227,7 +233,7 @@ export default class index extends Component {
                                 <i className="ico-info"></i>
                                 <em className="ico-info"></em> 客户信息
                             <div className="fr">
-                                <span className="ico-close" onClick={(e)=>{e.preventDefault(); this.setState({show1: false})}}></span> 
+                                <span className="ico-close" onClick={(e)=>{e.preventDefault(); this.setState({show1: false})}}></span>
                             </div>
                         </div>
                         <div className="two-wrap">
@@ -235,53 +241,12 @@ export default class index extends Component {
                                 <ul>
                                     <Input title="客户编码" width="48%" value={this.state.field1} required model={(v)=>this.setState({field1: v})}></Input>
                                     <Input title="客户名称" width="48%" value={this.state.field1} required model={(v)=>this.setState({field1: v})} required></Input>
-          
-                                    <li className="li1">
-                                        <span>性别：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" name="" />
-                                            <button className="pub-down"></button>
-                                            <div className="pub-drop-down">
-                                                <span>男</span>
-                                                <span>女</span>
-                                            </div>
-                                            <var className="pub-asterisk">*</var>
-                                        </div>
-                                    </li>
-                                    <li className="li1">
-                                        <span>客户类别：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" name="" />
-                                            <button className="pub-down"></button>
-                                            <div className="pub-drop-down">
-                                                <span>潜在客户 Potential Customers</span>
-                                                <span>普通客户 Ordinary</span>
-                                                <span>大客户 Key Account</span>
-                                                <span>设计师 Designer</span>
-                                                <span>重要客户 VIP</span>
-                                            </div>
-                                            <var className="pub-asterisk">*</var>
-                                        </div>
-                                    </li>
-
-                                    <Input title="手机" width="48%" value={this.state.field1} required model={(v)=>this.setState({field1: v})} required></Input>
-                                    <Input title="电话" width="48%" value={this.state.field1} required model={(v)=>this.setState({field1: v})}></Input>
-
-                                    <li className="li2">
-                                        <span>地址：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" name="" />
-                                            <button className="pub-down"></button>
-                                        </div>
-                                    </li>
-                                    <li className="li2">
-                                        <span>归属商场：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" name="" />
-                                            <button className="pub-down"></button>
-                                            <var className="pub-asterisk">*</var>
-                                        </div>
-                                    </li>
+                                    <DropDown width="48%" items={this.state.items3} index={this.state.index3} onChange={(index)=> this.setState({index3: index})} required>性别</DropDown>
+                                    <DropDown width="48%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})} required>客户类别</DropDown>
+                                    <Input title="手机" width="48%" value={this.state.field1} model={(v)=>this.setState({field1: v})} required></Input>
+                                    <Input title="电话" width="48%" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
+                                    <Input title="地址" width="98%" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
+                                    <DropDown width="98%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})} required>归属商场</DropDown>
                                 </ul>
                             </div>
                         </div>
@@ -289,102 +254,18 @@ export default class index extends Component {
                         <div className="two-wrap">
                             <div className="pub-table">
                                 <ul>
-                                    <li className="li1">
-                                        <span>出生年月：</span>
-                                        <div className="input-wrap J-datepicker-day right">
-                                            <input type="text" className="c-datepicker-data-input only-date" />
-                                        </div>
-                                    </li>
-                                    <li className="li1">
-                                        <span>客户来源：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" name="" />
-                                            <button className="pub-down"></button>
-                                        </div>
-                                    </li>
-
-                                    <li className="li1">
-                                        <span>微信/QQ：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" name="" />
-                                        </div>
-                                    </li>
-                                    <li className="li1">
-                                        <span>邮箱：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" name="" />
-                                        </div>
-                                    </li>
-                                    <li className="li1">
-                                        <span>职业：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" name="" />
-                                        </div>
-                                    </li>
-                                    <li className="li1">
-                                        <span>工作单位：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" name="" />
-                                        </div>
-                                    </li>
-                                    <li className="li1">
-                                        <span>楼盘名称：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" name="" />
-                                            <button className="pub-down"></button>
-                                        </div>
-                                    </li>
-                                    <li className="li1">
-                                        <span>房型：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" name="" />
-                                            <button className="pub-down"></button>
-                                            <div className="pub-drop-down">
-                                                <span>中小户型</span>
-                                                <span>大户型</span>
-                                                <span>复式/跃层</span>
-                                                <span>别墅/双拼</span>
-                                                <span>商业/会所</span>
-                                                <span>自建房</span>
-                                                <span>其他</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li className="li1">
-                                        <span>喜好风格：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" name="" />
-                                            <button className="pub-down"></button>
-                                        </div>
-                                    </li>
-                                    <li className="li1">
-                                        <span>性格特征：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" name="" />
-                                            <button className="pub-down"></button>
-                                        </div>
-                                    </li>
-                                    <li className="li2">
-                                        <span>购置意向：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" name="" />
-                                            <button className="pub-down"></button>
-                                            <div className="pub-drop-down">
-                                                <span>添置家具</span>
-                                                <span>更换家具</span>
-                                                <span>整屋家具</span>
-                                                <span>整屋固装</span>
-                                                <span>软装饰品</span>
-                                                <span>全套软硬装家具</span>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li className="li2">
-                                        <span>备注：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" name="" />
-                                        </div>
-                                    </li>
+                                    <DateTime width="48%" title="送货日期" model={(v)=> this.setState({time1: v})} ></DateTime>
+                                    <DropDown width="48%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>客户来源</DropDown>
+                                    <Input title="微信/QQ" width="48%" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
+                                    <Input title="邮箱" width="48%" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
+                                    <Input title="职业" width="48%" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
+                                    <Input title="工作单位" width="48%" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
+                                    <Input title="楼盘名称" width="48%" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
+                                    <DropDown width="48%" items={this.state.items4} index={this.state.index4} onChange={(index)=> this.setState({index4: index})}>房型</DropDown>
+                                    <DropDown width="48%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>喜好风格</DropDown>
+                                    <DropDown width="48%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>性格特征</DropDown>
+                                    <DropDown width="98%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>购置意向</DropDown>
+                                    <Input title="备注" width="98%" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
                                 </ul>
                             </div>
                         </div>

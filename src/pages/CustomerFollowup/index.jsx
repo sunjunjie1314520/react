@@ -2,7 +2,7 @@ import React, { Component, createRef } from 'react'
 
 import { offsetTop } from '../../utils';
 
-import {Input, DropDown, Frame } from '../../components/UI';
+import {Input, DropDown, Frame, DateTime } from '../../components/UI';
 
 export default class index extends Component {
 
@@ -135,15 +135,13 @@ export default class index extends Component {
                         <div className="pub-table">
                             <ul>
              
-                                <Input width="31%" title="客户名称" required value={this.state.cusname} model={(v)=>this.setState({cusname: v})}>
+                                <Input width="31%" placeholder="新客户请直接选择..."title="客户名称" required value={this.state.cusname} model={(v)=>this.setState({cusname: v})}>
                                     <button type="button" className="pub-search"></button>
                                 </Input>
 
-                                <DropDown width="31%" items={this.state.items2} index={this.state.index4} onChange={(index)=> this.setState({index4: index})}>跟进阶段</DropDown>
+                                <DropDown width="31%" items={this.state.items2} index={this.state.index4} onChange={(index)=> this.setState({index4: index})}required>跟进阶段</DropDown>
 
-                                <Input width="32%" title="下次跟进" required value={this.state.next_up} model={(v)=>this.setState({next_up: v})}>
-                                    <button type="button" className="pub-search"></button>
-                                </Input>           
+                                <DateTime width="31%" title="下次跟进" model={(v)=> this.setState({time1: v})} required></DateTime>
                             </ul>
                         </div>
 
