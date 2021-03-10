@@ -262,9 +262,7 @@ class Move extends Component{
         model: PropTypes.bool
     }
 
-    static  = {
-
-    } = {
+    static defaultProps = {
         model: false,
     }
 
