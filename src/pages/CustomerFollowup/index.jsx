@@ -120,7 +120,7 @@ export default class index extends Component {
                         </div>
                     </div>
                 </div>
-                
+
                 <div className="notice-right bg-none">
 
                     <div className="box1">
@@ -134,7 +134,7 @@ export default class index extends Component {
 
                         <div className="pub-table">
                             <ul>
-             
+
                                 <Input width="31%" placeholder="新客户请直接选择..."title="客户名称" required value={this.state.cusname} model={(v)=>this.setState({cusname: v})}>
                                     <button type="button" className="pub-search"></button>
                                 </Input>
@@ -154,7 +154,7 @@ export default class index extends Component {
                             <textarea name="" placeholder="Enter Text..."></textarea>
                         </div>
                     </div>
-                    
+
                     <div className="box2">
                         <h2 className="pub-tit">
                             <i className="ico-font8"></i>
@@ -207,7 +207,7 @@ export default class index extends Component {
                                 <div className="text">
                                     <p>因此，加州众议院决定，支持加州与中国之间为增进互利经济机会继续保持协调合作。</p>
                                 </div>
-                            </div>					
+                            </div>
                             <div className="follow-up-record">
                                 <h2><b className="b4">咨询介绍</b> <span>李先生-13510668888</span><span className="fr">东方鱼薇 2019-08-06 / 10:16</span></h2>
                                 <div className="text">

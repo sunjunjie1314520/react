@@ -15,7 +15,7 @@ export default class index extends Component {
             field1: '1',
             field2: '2',
             field3: '3',
-            
+
             items1: ['内部货品Internal Goods', '其他家具Other furniture'],
             index1: 0,
 

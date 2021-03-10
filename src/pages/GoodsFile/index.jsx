@@ -1,29 +1,162 @@
-import React, { Component, createRef } from 'react'
+import React, { Component } from 'react'
 
 import Pager from '../../components/Pager';
 
+import Table, {Box} from '../../components/Table';
+
 import {Input, DropDown, Frame } from '../../components/UI';
 
-import { offsetTop } from '../../utils';
-
 export default class index extends Component {
-
     constructor(){
         super()
-        this.right_layout = createRef()
         this.state = {
-            fields1: '1',
-            fields2: '2',
-            fields3: '3',
-            items1: ['已停售', '未停售', '已停产', '未停产'],
-            index1: 0
+
+            items1: ['已停产','已停售','销售特价','采购特价'],
+            index1: 0,
+
+            show1: false,
+
+            fields: [
+                {
+                    width: 60,
+                    name: '序号',
+                },
+                {
+                    width: 120,
+                    name: '货品编码',
+                },
+                {
+                    width: 120,
+                    name: '货品名称',
+                },
+                {
+                    width: 140,
+                    name: '型 号',
+                },
+                {
+                    width: 150,
+                    name: '尺 寸',
+                },
+                {
+                    width: 60,
+                    name: '单 位',
+                },
+                {
+                    width: 140,
+                    name: '品牌',
+                },
+                {
+                    width: 140,
+                    name: '系列',
+                },
+                {
+                    width: 100,
+                    name: '采购价',
+                },
+                {
+                    width: 100,
+                    name: '零售价',
+                },
+                {
+                    width: 100,
+                    name: '经销价',
+                },
+                {
+                    width: 100,
+                    name: '批发价',
+                },
+                {
+                    width: 100,
+                    name: '条码标签',
+                },
+                {
+                    width: 80,
+                    name: '颜色',
+                },
+                {
+                    width: 80,
+                    name: '产地',
+                },
+                {
+                    width: 100,
+                    name: '厂家',
+                },
+                {
+                    width: 60,
+                    name: '立方数',
+                },
+                {
+                    width: 60,
+                    name: '包装数',
+                },
+                {
+                    width: 100,
+                    name: '主 材',
+                },
+                {
+                    width: 100,
+                    name: '辅 材',
+                },
+                {
+                    width: 150,
+                    name: '描 述',
+                },
+                {
+                    width: 60,
+                    name: '是否停售',
+                },
+                {
+                    width: 60,
+                    name: '是否停产',
+                },
+                {
+                    width: 80,
+                    name: '建立人',
+                },
+                {
+                    width: 100,
+                    name: '建立时间',
+                },
+                {
+                    width: 100,
+                    name: '修改人',
+                },
+                {
+                    width: 150,
+                    name: '备 注',
+                },
+            ],
+
+            data: [
+                {
+                    id: 1,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+                {
+                    id: 2,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+                {
+                    id: 3,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+                {
+                    id: 4,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+            ]
         }
     }
-    
-    componentDidMount(){
-        let w_hei = window.innerHeight
-        let off_top1 = offsetTop(this.right_layout.current)
-        this.right_layout.current.style.height = (w_hei - off_top1 - 42) +'px'
+    checkHandle(check, k){
+        const {data} = this.state
+        data[k].check = check
+        this.setState({
+            data: data
+        })
     }
 
     alertHandle = (e) => {
@@ -73,7 +206,7 @@ export default class index extends Component {
                         <li><a href="/" title="">30-茶餐用具Plate,Cup,Bowl etc.</a></li>
                         <li><a href="/" title="">31-玻璃水晶Crystal,Glass</a></li>
                         <li><a href="/" title="">32-窗帘curtain</a></li>
-                        <li><a href="/" title="">33-屏风Screen</a></li>			
+                        <li><a href="/" title="">33-屏风Screen</a></li>
                         <li><a href="/" title="">34-树脂/陶瓷Resin,Ceramics</a></li>
                         <li><a href="/" title="">35-花/果/树/植Flower,fruit,Tree,Plant</a></li>
                         <li><a href="/" title="">36-钟表/首饰Clock/Jewelry</a></li>
@@ -94,7 +227,7 @@ export default class index extends Component {
                             <a href="/" title="" className="a2"><i className="ico-ting"></i>停用</a>
                             <a href="/" title="" className="a2"><i className="ico-qi"></i>启用</a>
                             <a href="/" title="" className="a2"><i className="ico-cha"></i>查询</a>
-                        </div>	
+                        </div>
                         <div className="pub-table">
                             <ul>
                                 <Input title="货品编码" value={this.state.fields1} model={(v)=>this.setState({fields1: v})}></Input>
@@ -106,80 +239,32 @@ export default class index extends Component {
                             </ul>
                         </div>
                     </div>
-                    
-                            <div className="clearfix">
-                                <div className="pub-row-style">
-                                    <div className="table-head"> 
-                                        <div className="slide-bar">
-                                            <span className="sp60">序号</span>
-                                            <span className="sp120">货品编码</span>
-                                            <span className="sp120">货品名称</span>
-                                            <span className="sp140">型 号</span>
-                                            <span className="sp140">尺 寸</span>
-                                            <span className="sp60">单 位</span>
-                                            <span className="sp140">品 牌</span>
-                                            <span className="sp140">系 列</span>
-                                            <span className="sp100">采购价</span>				
-                                            <span className="sp100">零售价</span>
-                                            <span className="sp100">经销价</span>
-                                            <span className="sp100">批发价</span>
-                                            <span className="sp100">条码标签</span>				
-                                            <span className="sp100">颜 色</span>
-                                            <span className="sp100">产 地</span>
-                                            <span className="sp120">厂 家</span>	   
-                                            <span className="sp80">立方数</span>
-                                            <span className="sp80">包装数</span>						
-                                            <span className="sp120">主 材</span>
-                                            <span className="sp120">辅 材</span>
-                                            <span className="sp150">描 述</span>
-                                            <span className="sp80">是否停售</span>
-                                            <span className="sp80">是否停产</span>
-                                            <span className="sp80">建立人</span>
-                                            <span className="sp100">建立时间</span>
-                                            <span className="sp160">备 注</span>			
-                                        </div>
-                                    </div>
-                                <div className="table-row auto-height" ref={this.right_layout}>
-                                    <ul>
-                                        <li>
-                                            <span className="sp60">
-                                                <label className="pub-check"><input type="checkbox" />1</label>
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <span className="sp60">
-                                                <label className="pub-check"><input type="checkbox" />2</label>
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <span className="sp60">
-                                                <label className="pub-check"><input type="checkbox" />3</label>
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <span className="sp60">
-                                                <label className="pub-check"><input type="checkbox" />4</label>
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <span className="sp60">
-                                                <label className="pub-check"><input type="checkbox" />5</label>
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <span className="sp60">
-                                                <label className="pub-check"><input type="checkbox" />6</label>
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <span className="sp60">
-                                                <label className="pub-check"><input type="checkbox" />7</label>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                        </div>
-                    </div>
+
+                         {/* 表格 */}
+                    <Table fields={this.state.fields} bottom={43}>
+                        {
+                            this.state.data.map((v, k)=>{
+                                return (
+                                    <li key={k} className={v.check ? 'pub-table-back': ''}>
+                                        <Box w={this.state.fields[0].width}><label className="pub-check">
+                                            <input onChange={(e)=>this.checkHandle(e.target.checked, k)} checked={v.check} type="checkbox" />{k+1}</label>
+                                        </Box>
+                                        <Box w={this.state.fields[1].width}>111</Box>
+                                        <Box w={this.state.fields[2].width}>2222</Box>
+                                        <Box w={this.state.fields[3].width}>6546465</Box>
+                                        <Box w={this.state.fields[4].width}>6546464</Box>
+                                        <Box w={this.state.fields[5].width}>套</Box>
+                                        <Box w={this.state.fields[6].width}>asdf</Box>
+                                        <Box w={this.state.fields[7].width}>65464654</Box>
+                                        <Box w={this.state.fields[8].width}>65464654</Box>
+                                        <Box w={this.state.fields[9].width}>65464654</Box>
+                                        <Box w={this.state.fields[10].width}>65464654</Box>
+                                        <Box w={this.state.fields[11].width}>65464654</Box>
+                                     </li>
+                                )
+                            })
+                        }
+                    </Table>
 
                     <Pager></Pager>
 

@@ -187,7 +187,7 @@ export default class index extends Component {
                     </div>
 
                     {/* 表格 */}
-                    <Table fields={this.state.fields} bottom={42}>
+                    <Table fields={this.state.fields} bottom={43}>
                         {
                             this.state.data.map((v, k)=>{
                                 return (
