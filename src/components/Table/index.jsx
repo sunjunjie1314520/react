@@ -6,6 +6,10 @@ import PropTypes from 'prop-types'
 
 export default class index extends Component {
 
+    static propTypes ={
+        picture: PropTypes.bool
+    }
+
     static defaultProps = {
         picture: false,
     }
