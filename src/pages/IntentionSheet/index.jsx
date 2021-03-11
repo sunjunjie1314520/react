@@ -1,8 +1,8 @@
-import React, { Component, createRef } from 'react'
+import React, { Component } from 'react'
 
 import Table, { Box, Li } from '../../components/Table';
 
-import { Input, DropDown, Frame } from '../../components/UI';
+import { Input, DropDown } from '../../components/UI';
 
 import Pager from '../../components/Pager';
 
@@ -10,7 +10,6 @@ export default class index extends Component {
 
     constructor(props){
         super(props)
-        this.left_layout = createRef()
         this.state = {
             field1: '1',
             field2: '2',

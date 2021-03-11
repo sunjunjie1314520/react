@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import Table, { Box, Li } from '../../components/Table';
 
-import {Input, DropDown, Frame, DateTime } from '../../components/UI';
+import {Input, DropDown, DateTime } from '../../components/UI';
 
 export default class index extends Component {
     constructor(){
@@ -76,7 +76,7 @@ export default class index extends Component {
                 },
                 {
                     width: 100,
-                    name: '金额',
+                    name: '本次送货额',
                 },
                 {
                     width: 120,
@@ -143,19 +143,23 @@ export default class index extends Component {
                 },
                 {
                     width: 120,
-                    name: '货品编码',
+                    name: '销售单号',
                 },
                 {
-                    width: 120,
-                    name: '货品名称',
+                    width: 100,
+                    name: '客户名称',
                 },
                 {
-                    width: 120,
-                    name: '型 号',
+                    width: 100,
+                    name: '销售员',
                 },
                 {
-                    width: 140,
-                    name: '尺 寸',
+                    width: 80,
+                    name: '未送数',
+                },
+                {
+                    width: 100,
+                    name: '送货日期',
                 },
                 ],
             data2: [
@@ -203,57 +207,24 @@ export default class index extends Component {
 
                         </ul>
                     </div>
-                        <div className="pub-row-style pub-mt-0 pub-border-no3">
-                            <div className="table-head">
-                                <div className="slide-bar">
-                                <span className="sp50">序号</span>
-                                <span className="sp120">销售单号</span>
-                                <span className="sp100">客户名称</span>
-                                <span className="sp100">销售员</span>
-                                <span className="sp80">未送数</span>
-                                <span className="sp100">送货日期</span>
-                            </div>
-                        </div>
-                        <Frame className="table-row pub-first-center" bottom={16}>
-                            <ul>
-                                <li>
-                                    <span className="sp50">
-                                    <label className="pub-check a1">1</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp50">
-                                    <label className="pub-check a1">2</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp50">
-                                    <label className="pub-check a1">3</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp50">
-                                    <label className="pub-check a1">4</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp50">
-                                    <label className="pub-check a1">5</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp50">
-                                    <label className="pub-check a1">6</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp50">
-                                    <label className="pub-check a1">7</label>
-                                    </span>
-                                </li>
-                            </ul>
-                        </Frame>
-                    </div>
+                    <Table fields={this.state.fields2} margin bottom={15}>
+                    {
+                        this.state.data2.map((v, k)=>{
+                            return (
+                                <Li key={k} check={v.check}>
+                                    <Box w={this.state.fields2[0].width}>
+                                        <label className="pub-check">
+                                            {k+1}
+                                        </label>
+                                    </Box>
+                                    <Box w={this.state.fields2[1].width}>1111</Box>
+                                    <Box w={this.state.fields2[2].width}>2222</Box>
+                                    <Box w={this.state.fields2[3].width}>3333</Box>
+                                </Li>
+                            )
+                        })
+                    }
+                    </Table>
                 </div>
 
                 <div className="notice-right bg-none">
@@ -300,7 +271,7 @@ export default class index extends Component {
                         </div>
                     </div>
 
-                    <Table fields={this.state.fields1} bottom={17}>
+                    <Table fields={this.state.fields1} bottom={16}>
                     {
                         this.state.data1.map((v, k)=>{
                             return (

@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import Table, { Box, Li } from '../../components/Table';
+
 import {Input, DropDown, Frame, ContainDown, DateTime} from '../../components/UI';
 
 export default class index extends Component {
@@ -21,21 +23,59 @@ export default class index extends Component {
 
 			t1: '',
 			t2: '',
+
+			fields1: [
+                {
+                    width: 50,
+                    name: '序号',
+                },
+                {
+                    width: 120,
+                    name: '商场名称',
+                },
+                {
+                    width: 100,
+                    name: '客户名称',
+                },
+                {
+                    width: 100,
+                    name: '跟进阶段',
+                },
+                {
+                    width: 80,
+                    name: '跟进人',
+                },
+                {
+                    width: 100,
+                    name: '跟进日期',
+                },
+                ],
+            data1: [
+                    {
+                        id: 1,
+                        bianma: 'xxxxxxxxxxxxx',
+                        check: false,
+                    },
+                    {
+                        id: 2,
+                        bianma: 'xxxxxxxxxxxxx',
+                        check: false,
+                    },
+                ]
 		}
     }
 
     render() {
         return (
-            <div className="way-sheet">
-				<div className="fl-layout left-dom">
-
-					<h2 className="pub-tit">
-						<i className="ico-font54"></i>
-						已发消息列表
-						<div className="fr">
-							<a className="a6" href="/" title="">查询</a>
-						</div>
-					</h2>
+			<>
+            <div className="notice-left">
+                    <h2 className="pub-tit">
+                        <i className="ico-font54"></i>
+                        已发消息列表
+                        <div className="fr">
+                            <a className="a6" href="/" title="">查询</a>
+                        </div>
+                    </h2>
 
 					<div className="pub-table">
 						<ul>
@@ -58,60 +98,28 @@ export default class index extends Component {
 						</ul>
 					</div>
 
-					<div className="pub-row-style pub-mt-0 pub-border-no3">
-						<div className="table-head">
-							<div className="slide-bar">
-								<span className="sp50">序号</span>
-								<span className="sp220">消息主题</span>
-								<span className="sp100">接收人</span>
-								<span className="sp80">是否已读</span>
-								<span className="sp120">发送日期</span>
-							</div>
-						</div>
-						<Frame className="table-row pub-first-center" bottom={17}>
-							<ul>
-								<li>
-									<span className="sp50">
-										<label className="pub-check a1">1</label>
-									</span>
-								</li>
-								<li>
-									<span className="sp50">
-										<label className="pub-check a1">2</label>
-									</span>
-								</li>
-								<li>
-									<span className="sp50">
-										<label className="pub-check a1">3</label>
-									</span>
-								</li>
-								<li>
-									<span className="sp50">
-										<label className="pub-check a1">4</label>
-									</span>
-								</li>
-								<li>
-									<span className="sp50">
-										<label className="pub-check a1">5</label>
-									</span>
-								</li>
-								<li>
-									<span className="sp50">
-										<label className="pub-check a1">6</label>
-									</span>
-								</li>
-								<li>
-									<span className="sp50">
-										<label className="pub-check a1">7</label>
-									</span>
-								</li>
-							</ul>
-						</Frame>
+                    <Table fields={this.state.fields1} margin bottom={15}>
+                    {
+                        this.state.data1.map((v, k)=>{
+                            return (
+                                <Li key={k} check={v.check}>
+                                    <Box w={this.state.fields1[0].width}>
+                                        <label className="pub-check">
+                                            {k+1}
+                                        </label>
+                                    </Box>
+                                    <Box w={this.state.fields1[1].width}>1111</Box>
+                                    <Box w={this.state.fields1[2].width}>2222</Box>
+                                    <Box w={this.state.fields1[3].width}>3333</Box>
+                                </Li>
+                            )
+                        })
+                    }
+                    </Table>
+			</div>
 
-					</div>
 
-				</div>
-				<Frame className="notice-right bor" bottom={15}>
+				<Frame className="notice-right bor" bottom={14}>
 					<div className="box1">
 						<h2 className="pub-tit">
 							<i className="ico-font9"></i>
@@ -142,7 +150,8 @@ export default class index extends Component {
 						</div>
 					</div>
 				</Frame>
-			</div>
+
+			</>
         )
     }
 }

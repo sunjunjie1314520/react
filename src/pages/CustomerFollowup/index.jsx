@@ -1,6 +1,6 @@
 import React, { Component, createRef } from 'react'
 
-import { offsetTop } from '../../utils';
+import Table, { Box, Li } from '../../components/Table';
 
 import {Input, DropDown, Frame, DateTime } from '../../components/UI';
 
@@ -26,100 +26,98 @@ export default class index extends Component {
 
             cusname: '',
             next_up: '',
+
+            fields1: [
+                {
+                    width: 50,
+                    name: '序号',
+                },
+                {
+                    width: 120,
+                    name: '商场名称',
+                },
+                {
+                    width: 100,
+                    name: '客户名称',
+                },
+                {
+                    width: 100,
+                    name: '跟进阶段',
+                },
+                {
+                    width: 80,
+                    name: '跟进人',
+                },
+                {
+                    width: 100,
+                    name: '跟进日期',
+                },
+                ],
+            data1: [
+                    {
+                        id: 1,
+                        bianma: 'xxxxxxxxxxxxx',
+                        check: false,
+                    },
+                    {
+                        id: 2,
+                        bianma: 'xxxxxxxxxxxxx',
+                        check: false,
+                    },
+                ]
         }
-    }
-    
-    componentDidMount(){
-        let w_hei = window.innerHeight
-        let off_top = offsetTop(this.left_layout.current)
-        this.left_layout.current.style.height = (w_hei - off_top - 15) +'px'
     }
 
     render() {
         return (
-            <div>
-                <div className="way-sheet">
-                    <div className="fl-layout left-dom">
-                        <h2 className="pub-tit">
-                            <i className="ico-font10"></i>
-                            客户跟进列表
-                            <div className="fr">
-                                <a className="a2" href="/" title="">新建</a>
-                                <a className="a4" href="/" title="">查询</a>
-                            </div>
-                        </h2>
-
-                        <div className="pub-table">
-                            <ul>
-                                <Input width="98%" title="商场" value={this.state.market} model={(v)=>this.setState({market: v})}>
-                                    <button className="pub-search"></button>
-                                </Input>
-                                
-                                <Input width="48%" title="客户名称" value={this.state.name} model={(v)=>this.setState({name: v})}>
-                                    <button className="pub-search"></button>
-                                </Input>
-
-                                <DropDown width="48%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>跟进人</DropDown>
-                                
-                                <DropDown width="48%" items={this.state.items2} index={this.state.index2} onChange={(index)=> this.setState({index2: index})}>跟进阶段</DropDown>
-                                
-                                <DropDown width="48%" items={this.state.items3} index={this.state.index3} onChange={(index)=> this.setState({index3: index})}>跟进期间</DropDown>
-
-                            </ul>
+           <>
+            <div className="notice-left">
+                    <h2 className="pub-tit">
+                        <i className="ico-font10"></i>
+                        跟进列表
+                        <div className="fr">
+                            <a className="a2" href="/" title="">新建</a>
+                            <a className="a6" href="/" title="">查询</a>
                         </div>
+                    </h2>
+                    <div className="pub-table">
+                        <ul>
 
-                        <div className="pub-row-style pub-mt-0 pub-border-no3">
-                            <div className="table-head">
-                                <div className="slide-bar">
-                                    <span className="sp50">序号</span>
-                                    <span className="sp160">商场</span>
-                                    <span className="sp120">客户名称</span>
-                                    <span className="sp120">跟进阶段</span>
-                                    <span className="sp120">跟进日期</span>
-                                </div>
-                            </div>
-                            <div className="table-row auto-table pub-first-center" ref={this.left_layout}>
-                                <ul>
-                                    <li>
-                                        <span className="sp50">
-                                        <label className="pub-check a1">1</label>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <span className="sp50">
-                                        <label className="pub-check a1">2</label>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <span className="sp50">
-                                        <label className="pub-check a1">3</label>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <span className="sp50">
-                                        <label className="pub-check a1">4</label>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <span className="sp50">
-                                        <label className="pub-check a1">5</label>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <span className="sp50">
-                                        <label className="pub-check a1">6</label>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <span className="sp50">
-                                        <label className="pub-check a1">7</label>
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>   
-                        </div>
+                            <DropDown width="98%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>商场</DropDown>
+
+                            <Input title="客户名称" width="48%" value={this.state.field1} model={(v)=>this.setState({field1: v})}>
+                                <button className="pub-search"></button>
+                            </Input>
+
+                            <DropDown width="48%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>跟进人</DropDown>
+
+                            <DropDown width="48%" items={this.state.items2} index={this.state.index2} onChange={(index)=> this.setState({index2: index})}>跟进阶段</DropDown>
+
+                            <DropDown width="48%" items={this.state.items3} index={this.state.index3} onChange={(index)=> this.setState({index3: index})}>跟进期间</DropDown>
+
+                        </ul>
                     </div>
-                </div>
+
+                    <Table fields={this.state.fields1} margin bottom={15}>
+                    {
+                        this.state.data1.map((v, k)=>{
+                            return (
+                                <Li key={k} check={v.check}>
+                                    <Box w={this.state.fields1[0].width}>
+                                        <label className="pub-check">
+                                            {k+1}
+                                        </label>
+                                    </Box>
+                                    <Box w={this.state.fields1[1].width}>1111</Box>
+                                    <Box w={this.state.fields1[2].width}>2222</Box>
+                                    <Box w={this.state.fields1[3].width}>3333</Box>
+                                </Li>
+                            )
+                        })
+                    }
+                    </Table>
+
+          </div>
 
                 <div className="notice-right bg-none">
 
@@ -166,7 +164,7 @@ export default class index extends Component {
                         </h2>
 
 
-                        <Frame className="limitheight" bottom={14}>
+                        <Frame className="limitheight" bottom={15}>
 
                             <div className="follow-up-record">
                                 <h2><b className="b1">方案报价</b> <span>李先生-13510668888</span><var>方案报价：￥168,359.00</var><span className="fr">东方鱼薇 2019-08-06 / 10:16</span></h2>
@@ -223,7 +221,7 @@ export default class index extends Component {
                         </Frame>
                     </div>
                 </div>
-            </div>
+            </>
         )
     }
 }

@@ -1462,9 +1462,6 @@ body.open .main-right ul li .slide-sub {
   border-radius: 3px;
   transition: 0.15s;
 }
-.biao ul li input:focus {
-  border-color: #0799fb;
-}
 .picture-right {
   width: calc(100% - 235px);
   float: right;
@@ -2585,6 +2582,9 @@ body.open .main-right ul li .slide-sub {
   position: relative;
   float: left;
   width: 100%;
+}
+.pub-row-style.none {
+  margin-top: 0px;
 }
 .pub-row-style .table-head {
   background: #eee;

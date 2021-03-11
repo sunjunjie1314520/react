@@ -235,7 +235,7 @@ export default class index extends Component {
                                 <Input title="品牌系列" value={this.state.fields3} model={(v)=>this.setState({fields3: v})}>
                                     <button className="pub-search"></button>
                                 </Input>
-                                <DropDown items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>货品状态</DropDown>
+                                <DropDown items={this.state.items1} index={this.state.index0} onChange={(index)=> this.setState({index0: index})}>货品状态</DropDown>
                             </ul>
                         </div>
                     </div>

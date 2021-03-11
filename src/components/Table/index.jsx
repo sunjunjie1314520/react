@@ -1,8 +1,9 @@
 import React, { Component, createRef } from 'react'
 
+import PropTypes from 'prop-types'
+
 import { offsetTop } from '../../utils';
 
-import PropTypes from 'prop-types'
 
 export default class index extends Component {
 
@@ -21,14 +22,14 @@ export default class index extends Component {
             width: null,
         }
     }
-    
+
     componentDidMount(){
         let w_hei = window.innerHeight
         let off_top = offsetTop(this.table.current)
         this.table.current.style.height = (w_hei - off_top - this.props.bottom) +'px'
 
         const { fields } = this.props
-        
+
         let width = 0;
         fields.forEach(item=> width += item.width)
 
@@ -52,7 +53,7 @@ export default class index extends Component {
         const { fields, picture } = this.props
         return (
             <div className="clearfix">
-                <div className="pub-row-style">
+                <div className={`pub-row-style ${this.props.margin ? 'none': ''}`}>
                     <div className="table-head">
                         <div className="slide-bar" style={{minWidth: `${width}px`}}>
                             {

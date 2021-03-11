@@ -59,13 +59,13 @@ export default class index extends PureComponent {
         .then(function(res) {
             console.log(res);
             _this.setState({
-                list: res.data,
+                list: res.data.reverse(),
             })
         });
     }
 
-    // 实时
     getData1 = () =>{
+        // 实时
         const _this = this
         const { code, history } = this.state
         if(code.length !== 6){
@@ -162,7 +162,7 @@ export default class index extends PureComponent {
                                 <span className="s3">日涨幅</span>
                             </li>
                             {
-                                list.reverse().map((v, k)=>{
+                                list.map((v, k)=>{
                                     return (
                                         <li key={k}>
                                             <span className="s1">{v.time}</span>
