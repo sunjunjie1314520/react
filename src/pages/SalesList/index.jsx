@@ -122,11 +122,11 @@ export default class index extends Component {
                             </Input>
 
                             <DateTime title="销售日期" width="23%" model={(v)=> this.setState({t1: v})} left={false}>
-								<ContainDown index={this.state.index6} Select={(v)=>this.setState({d1: v})}></ContainDown>
+								<ContainDown index={this.state.index6} Select={(v)=>this.setState({index6: v})}></ContainDown>
 							</DateTime>
 
                             <DateTime title="销售日期" width="23%" model={(v)=> this.setState({t1: v})} left={false}>
-								<ContainDown index={this.state.index7} Select={(v)=>this.setState({d1: v})}></ContainDown>
+								<ContainDown index={this.state.index7} Select={(v)=>this.setState({index7: v})}></ContainDown>
 							</DateTime>
 
                             <Input ltr={true} title="货品编码" value={this.state.field2} model={(v)=>this.setState({field2: v})}>
