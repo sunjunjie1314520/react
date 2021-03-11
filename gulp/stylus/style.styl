@@ -1218,8 +1218,6 @@ body
                 padding 0 6px
                 border-radius 3px
                 transition .15s
-                &:focus
-                    border-color #0799FB
 
 // 图片导购
 
@@ -1693,7 +1691,6 @@ body
 .notice-right
     float right
     width calc(100% - 35% - 15px)
-    overflow-y auto
     min-height 571px
     background #f9f9f9
     &.bor
@@ -1745,7 +1742,6 @@ body
             margin-top 10px
             .box
                 dt 1
-                padding-top 15px
                 p
                     border-top 1px dashed #cdcdcd
                     padding-top 10px
@@ -1798,7 +1794,7 @@ body
                 width 100%
                 border 1px solid #cdcdcd
                 padding 10px
-                margin-top 12px
+                margin-top 5px
                 background #fff
                 inputW #aeb6ac
                 line-height 1.8
@@ -2134,6 +2130,8 @@ body
     margin-top 15px
     position relative
     float 0
+    &.none
+        margin-top 0px
     .table-head
         background #eee
         height 39px
@@ -2149,7 +2147,7 @@ body
             color #888
             border-left 1px solid bor1
             border-leftN()
-            
+
     .table-row
         height 360px
         overflow auto
@@ -2159,12 +2157,12 @@ body
             ul
                 li
                     span
-                        
+
                         &:first-child
                             text-align center !important
         .edit
             -webkit-user-modify: read-write-plaintext-only;
-        
+
         &.a2
             height 248px
         ul
@@ -2190,9 +2188,9 @@ body
                         text-align center
                         outline none
                     &:first-child
-                        text-align left
+                        text-align center
                 &:last-child
-                    margin-bottom 20px
+                    margin-bottom 15px
     
     
 // 下拉框选择
@@ -2432,28 +2430,28 @@ body
         li
             &:not(.pub-last-back)
                 height 95px !important
-            span
-                height 78px
-                display flex
-                align-items center
-                justify-content center
-                word-break break-all
-                margin-top 8px
-                padding 0 6px
-                &:nth-child(1)
-                    margin-top 26px
-                    height auto
-                    justify-content left
-                &:nth-child(2)
-                    var
-                        display block
-                        width 118px
-                        height 78px
-                        border 1px solid #e6e6e6
-                        border-radius 5px
-                        overflow hidden
-                        img
-                            width 100%
+                span
+                    height 78px
+                    display flex
+                    align-items center
+                    justify-content center
+                    word-break break-all
+                    margin-top 8px
+                    padding 0 6px
+                    &:nth-child(1)
+                        margin-top 26px
+                        height auto
+                        justify-content left
+                    &:nth-child(2)
+                        var
+                            display block
+                            width 118px
+                            height 78px
+                            border 1px solid #e6e6e6
+                            border-radius 5px
+                            overflow hidden
+                            img
+                                width 100%
 
 for i in 30..250
     span.sp{i}

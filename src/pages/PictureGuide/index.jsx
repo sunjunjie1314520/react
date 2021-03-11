@@ -17,7 +17,7 @@ export default class index extends Component {
             field2: '',
         }
     }
-    
+
     render() {
         return (
             <>
@@ -60,7 +60,7 @@ export default class index extends Component {
                         <li><a href="/" title="">30-茶餐用具Plate,Cup,Bowl etc.</a></li>
                         <li><a href="/" title="">31-玻璃水晶Crystal,Glass</a></li>
                         <li><a href="/" title="">32-窗帘curtain</a></li>
-                        <li><a href="/" title="">33-屏风Screen</a></li>			
+                        <li><a href="/" title="">33-屏风Screen</a></li>
                         <li><a href="/" title="">34-树脂/陶瓷Resin,Ceramics</a></li>
                         <li><a href="/" title="">35-花/果/树/植Flower,fruit,Tree,Plant</a></li>
                         <li><a href="/" title="">36-钟表/首饰Clock/Jewelry</a></li>
@@ -70,7 +70,7 @@ export default class index extends Component {
                         <li><a href="/" title="">40-珠宝/玉器Jewellery,Jade</a></li>
                     </ul>
                 </Frame>
-                
+
                 <div className="picture-right">
                     <div className="picture-guide">
                         <h2 className="pub-tit a3">
@@ -89,9 +89,9 @@ export default class index extends Component {
                             </ul>
                         </div>
                     </div>
-                    
+
                     <div className="clearfix">
-                        <Frame className="picture-guide-item" bottom={40}>
+                        <Frame className="picture-guide-item" bottom={41}>
                             <ul>
                                 <li>
                                     <div className="pict">
@@ -110,7 +110,7 @@ export default class index extends Component {
                                         </strong>
                                     </div>
                                 </li>
-                                
+
                                 <li>
                                     <div className="pict">
                                         <span className="fl">SALE</span>
@@ -352,13 +352,13 @@ export default class index extends Component {
                             </ul>
                         </Frame>
                     </div>
-                    
+
                     {/* 分页器 */}
                     <Pager></Pager>
-                    
+
                 </div>
 
-                
+
                 {/* 图片导购 */}
 
                 <div className="pub-shadow">

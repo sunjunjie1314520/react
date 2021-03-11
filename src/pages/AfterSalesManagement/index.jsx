@@ -112,7 +112,7 @@ export default class index extends Component {
                                     <span className="sp180">处理结果</span>
                                 </div>
                             </div>
-                            <Frame className="table-row" bottom={alert1 ? 137 :46}>
+                            <Frame className="table-row" bottom={alert1 ? 136 :45}>
                                 <ul style={{minWidth: '1180px'}}>
                                     <li>
                                         <span className="sp50">

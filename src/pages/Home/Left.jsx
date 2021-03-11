@@ -141,7 +141,7 @@ export default class Left extends Component {
                             to: '/home/picture-catalogue'
                         },
                         {
-                            title: '销售列表',
+                            title: '销售单列表',
                             to: '/home/sales-list'
                         },
                         {

@@ -1462,9 +1462,6 @@ body.open .main-right ul li .slide-sub {
   border-radius: 3px;
   transition: 0.15s;
 }
-.biao ul li input:focus {
-  border-color: #0799fb;
-}
 .picture-right {
   width: calc(100% - 235px);
   float: right;
@@ -2057,7 +2054,6 @@ body.open .main-right ul li .slide-sub {
 .notice-right {
   float: right;
   width: calc(100% - 35% - 15px);
-  overflow-y: auto;
   min-height: 571px;
   background: #f9f9f9;
 }
@@ -2115,7 +2111,6 @@ body.open .main-right ul li .slide-sub {
 .notice-right .box1 .edit-text .box {
   display: table;
   width: 100%;
-  padding-top: 15px;
 }
 .notice-right .box1 .edit-text .box p {
   border-top: 1px dashed #cdcdcd;
@@ -2180,7 +2175,7 @@ body.open .main-right ul li .slide-sub {
   width: 100%;
   border: 1px solid #cdcdcd;
   padding: 10px;
-  margin-top: 12px;
+  margin-top: 5px;
   background: #fff;
   line-height: 1.8;
   letter-spacing: 1px;
@@ -2588,6 +2583,9 @@ body.open .main-right ul li .slide-sub {
   float: left;
   width: 100%;
 }
+.pub-row-style.none {
+  margin-top: 0px;
+}
 .pub-row-style .table-head {
   background: #eee;
   height: 39px;
@@ -2654,10 +2652,10 @@ body.open .main-right ul li .slide-sub {
   outline: none;
 }
 .pub-row-style .table-row ul li span:first-child {
-  text-align: left;
+  text-align: center;
 }
 .pub-row-style .table-row ul li:last-child {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .pub-drop-down {
   display: none;
@@ -2942,7 +2940,7 @@ body.open .main-right ul li .slide-sub {
 .pub-small ul li:not(.pub-last-back) {
   height: 95px !important;
 }
-.pub-small ul li span {
+.pub-small ul li:not(.pub-last-back) span {
   height: 78px;
   display: -webkit-flex;
   display: flex;
@@ -2954,13 +2952,13 @@ body.open .main-right ul li .slide-sub {
   margin-top: 8px;
   padding: 0 6px;
 }
-.pub-small ul li span:nth-child(1) {
+.pub-small ul li:not(.pub-last-back) span:nth-child(1) {
   margin-top: 26px;
   height: auto;
   -webkit-justify-content: left;
   justify-content: left;
 }
-.pub-small ul li span:nth-child(2) var {
+.pub-small ul li:not(.pub-last-back) span:nth-child(2) var {
   display: block;
   width: 118px;
   height: 78px;
@@ -2968,7 +2966,7 @@ body.open .main-right ul li .slide-sub {
   border-radius: 5px;
   overflow: hidden;
 }
-.pub-small ul li span:nth-child(2) var img {
+.pub-small ul li:not(.pub-last-back) span:nth-child(2) var img {
   width: 100%;
 }
 span.sp30 {

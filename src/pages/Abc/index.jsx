@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 
-import Pager from '../../components/Pager';
-
 import Table, { Box, Li } from '../../components/Table';
 
-import {Input, DropDown, Frame, DateTime } from '../../components/UI';
+import {Input, DropDown, DateTime } from '../../components/UI';
 
 export default class index extends Component {
 

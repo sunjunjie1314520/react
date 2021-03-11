@@ -2,12 +2,14 @@ import React, { Component } from 'react'
 
 import Pager from '../../components/Pager';
 
-import {Input, DropDown, Frame, DateTime } from '../../components/UI';
+import Table, { Box, Li } from '../../components/Table';
+
+import {Input, DropDown, DateTime } from '../../components/UI';
 
 export default class index extends Component {
 
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
             items1: ['菜单一', '菜单二', '菜单三', '菜单四'],
             index1: 0,
@@ -29,17 +31,108 @@ export default class index extends Component {
 
             check1: true,
 
-            bottom_alert: false,
-
             time1: '',
-            time2: ''
+            time2: '',
+
+            fields1: [
+                {
+                    width: 60,
+                    name: '序号',
+                },
+                {
+                    width: 120,
+                    name: '图 片',
+                },
+                {
+                    width: 150,
+                    name: '商场/仓库',
+                },
+                {
+                    width: 140,
+                    name: '客户手机号',
+                },
+                {
+                    width: 120,
+                    name: '货品编码',
+                },
+                {
+                    width: 120,
+                    name: '货品名称',
+                },
+                {
+                    width: 120,
+                    name: '型 号',
+                },
+                {
+                    width: 140,
+                    name: '尺 寸',
+                },
+                {
+                    width: 160,
+                    name: '品牌系列',
+                },
+                {
+                    width: 60,
+                    name: '单位',
+                },
+                {
+                    width: 80,
+                    name: '库存数',
+                },
+                {
+                    width: 80,
+                    name: '单价',
+                },
+                {
+                    width: 80,
+                    name: '选购数',
+                },
+                {
+                    width: 100,
+                    name: '金额',
+                },
+                {
+                    width: 120,
+                    name: '添加日期',
+                },
+            ],
+            data1: [
+                {
+                    id: 1,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+                {
+                    id: 2,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+            ]
         }
     }
 
+    // 显示或隐藏 底部表单
     riDown = () => {
         const { bottom_alert } = this.state
         this.setState({
             bottom_alert: !bottom_alert
+        })
+    }
+
+    // 表格复选框
+    checkHandle(check, k){
+        const {data1} = this.state
+        data1[k].check = check
+        this.setState({
+            data1: data1
+        })
+    }
+
+    // 显示或隐藏 弹窗
+    slide = () => {
+        const {alert1} = this.state
+        this.setState({
+            alert1: !alert1
         })
     }
 
@@ -126,93 +219,29 @@ export default class index extends Component {
                     </div>
                 </div>
 
-                <div className="pub-row-style">
-                    <div className="table-head">
-                        <div className="slide-bar">
-                            <span className="sp60"><em className="ico-menu"></em>序号</span>
-                            <span className="sp128">图 片</span>
-                            <span className="sp120">货品编码</span>
-                            <span className="sp120">货品名称</span>
-                            <span className="sp120">型　号</span>
-                            <span className="sp130">尺　寸</span>
-                            <span className="sp60">单位</span>
-                            <span className="sp80">库存数</span>
-                            <span className="sp120">货品属性</span>
-                            <span className="sp100">单价</span>
-                            <span className="sp80">销售数</span>
-                            <span className="sp80">折扣%</span>
-                            <span className="sp120">金额</span>
-                            <span className="sp200">备　　注</span>
-                            <span className="sp100">已送货数</span>
-                        </div>
-                    </div>
-                    <Frame className="table-row pub-small" bottom={this.state.bottom_alert ? 136 : 45}>
-                        <ul>
-                            <li>
-                                <span className="sp65">
-                                    <label className="pub-check"><input type="checkbox" />1</label>
-                                </span>
-                                <span className="sp128">
-                                    <var></var>
-                                </span>
-                                <span className="sp120">
-                                    <var className="edit">46546546465465445</var>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp65">
-                                    <label className="pub-check"><input type="checkbox" />2</label>
-                                </span>
-                                <span className="sp128">
-                                    <var></var>
-                                </span>
-                                <span className="sp120">
-                                    <var className="edit">此处可以编辑</var>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp65">
-                                    <label className="pub-check"><input type="checkbox" />3</label>
-                                </span>
-                                <span className="sp118">
-                                    <var></var>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp65">
-                                    <label className="pub-check"><input type="checkbox" />4</label>
-                                </span>
-                                <span className="sp118">
-                                    <var></var>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp65">
-                                    <label className="pub-check"><input type="checkbox" />5</label>
-                                </span>
-                                <span className="sp118">
-                                    <var></var>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp65">
-                                    <label className="pub-check"><input type="checkbox" />6</label>
-                                </span>
-                                <span className="sp118">
-                                    <var></var>
-                                </span>
-                            </li>
-                            <li className="pub-last-back">
-                                <span className="sp65">
-                                    <label className="pub-check pub-ml-20"><input type="checkbox" />7</label>
-                                </span>
-                                <span className="sp200">
-                                <b>合计：</b>
-                                </span>
-                            </li>
-                        </ul>
-                    </Frame>
-                </div>
+                <Table fields={this.state.fields1} bottom={this.state.bottom_alert ? 136 : 45} picture={true}>
+        {
+            this.state.data1.map((v, k)=>{
+                return (
+                    <Li key={k} check={v.check}>
+                        <Box w={this.state.fields1[0].width}>
+                            <label className="pub-check">
+                                <input onChange={(e)=>this.checkHandle(e.target.checked, k)} checked={v.check} type="checkbox" />{k+1}
+                            </label>
+                        </Box>
+                        <Box w={this.state.fields1[1].width}><var></var></Box>
+                        <Box w={this.state.fields1[2].width}>2222</Box>
+                    </Li>
+                )
+            })
+        }
+                     <li className="pub-last-back">
+                        <Box w={this.state.fields1[0].width}></Box>
+                        <Box w={this.state.fields1[1].width}>
+                            <b>合计：</b>
+                        </Box>
+                     </li>
+                  </Table>
 
                 <div className="add-wrap">
                     <div className="fl">

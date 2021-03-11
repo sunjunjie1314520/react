@@ -1,21 +1,101 @@
-import React, { Component, createRef } from 'react'
+import React, { Component } from 'react'
 
 import Pager from '../../components/Pager';
 
-import { Input, Frame, DateTime, ContainDown } from '../../components/UI';
+import Table, { Box, Li } from '../../components/Table';
+
+import { Input, DateTime, ContainDown } from '../../components/UI';
 
 export default class index extends Component {
 
     constructor(props){
         super(props)
-        this.left_layout = createRef()
         this.state = {
             field1: '123',
             field2: '456',
-            
+            field3: '',
+
             index1: 0,
             index2: 1,
+            index3: 2,
+            index4: 3,
+            index5: 4,
+            index6: 5,
+            index7: 6,
+            index8: 7,
+
+            fields1: [
+                {
+                    width: 60,
+                    name: '序号',
+                },
+                {
+                    width: 180,
+                    name: '销售商场',
+                },
+                {
+                    width: 120,
+                    name: '销售单号',
+                },
+                {
+                    width: 100,
+                    name: '销售日期',
+                },
+                {
+                    width: 100,
+                    name: '客户名称',
+                },
+                {
+                    width: 100,
+                    name: '客户编码',
+                },
+                {
+                    width: 120,
+                    name: '订单金额',
+                },
+                {
+                    width: 120,
+                    name: '已付金额',
+                },
+                {
+                    width: 120,
+                    name: '还剩余款',
+                },
+                {
+                    width: 80,
+                    name: '销售员',
+                },
+                {
+                    width: 220,
+                    name: '备 注',
+                },
+                {
+                    width: 80,
+                    name: '收款人',
+                },
+                {
+                    width: 100,
+                    name: '收款日期',
+                },
+                {
+                    width: 80,
+                    name: '修改人',
+                },
+            ],
+            data1: [
+                {
+                    id: 1,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+                {
+                    id: 2,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+            ]
         }
+
     }
 
     render() {
@@ -42,125 +122,58 @@ export default class index extends Component {
                             </Input>
 
                             <DateTime title="销售日期" width="23%" model={(v)=> this.setState({t1: v})} left={false}>
-								<ContainDown Select={(v)=>this.setState({d1: v})}></ContainDown>
+								<ContainDown index={this.state.index6} Select={(v)=>this.setState({d1: v})}></ContainDown>
 							</DateTime>
 
                             <DateTime title="销售日期" width="23%" model={(v)=> this.setState({t1: v})} left={false}>
-								<ContainDown Select={(v)=>this.setState({d1: v})}></ContainDown>
+								<ContainDown index={this.state.index7} Select={(v)=>this.setState({d1: v})}></ContainDown>
 							</DateTime>
 
-                            <Input ltr={true} title="货品编码" value={this.state.field1} model={(v)=>this.setState({field1: v})}>
-                                <ContainDown Select={(v)=> this.setState({index1: v})}></ContainDown>
+                            <Input ltr={true} title="货品编码" value={this.state.field2} model={(v)=>this.setState({field2: v})}>
+                                <ContainDown index={this.state.index5} Select={(v)=> this.setState({index5: v})}></ContainDown>
                             </Input>
 
-                            <Input ltr={true} title="型号" value={this.state.field1} model={(v)=>this.setState({field1: v})}>
-                                <ContainDown Select={(v)=> this.setState({index1: v})}></ContainDown>
+                            <Input ltr={true} title="型号" value={this.state.field2} model={(v)=>this.setState({field1: v})}>
+                                <ContainDown index={this.state.index3} Select={(v)=> this.setState({index3: v})}></ContainDown>
                             </Input>
 
-                            <Input ltr={true} title="客户编码" value={this.state.field1} model={(v)=>this.setState({field1: v})}>
-                                <ContainDown Select={(v)=> this.setState({index1: v})}></ContainDown>
+                            <Input ltr={true} title="客户编码" value={this.state.field2} model={(v)=>this.setState({field1: v})}>
+                                <ContainDown index={this.state.index4} Select={(v)=> this.setState({index4: v})}></ContainDown>
                             </Input>
 
-                            <Input split={true} title="销售员" value={this.state.field1} model={(v)=>this.setState({field1: v})}>
-                                <ContainDown Select={(v)=> this.setState({index1: v})}></ContainDown>
+                            <Input split={true} title="销售员" value={this.state.field3} model={(v)=>this.setState({field1: v})}>
+                                <ContainDown index={this.state.index8} Select={(v)=> this.setState({index8: v})}></ContainDown>
                                 <button className="pub-search"></button>
                             </Input>
                         </ul>
                     </div>
                 </div>
 
-                <div className="pub-row-style">
-                    <div className="table-head">
-                        <div className="slide-bar">
-                                <span className="sp60">序号</span>
-                                <span className="sp150">销售商场</span>
-                                <span className="sp130">销售单号</span>
-                                <span className="sp120">销售日期</span>
-                                <span className="sp120">客户名称</span>
-                                <span className="sp120">客户编码</span>
-                                <span className="sp140">订单金额</span>
-                                <span className="sp120">已付款额</span>
-                                <span className="sp120">还剩款额</span>
-                                <span className="sp100">销售员</span>
-                                <span className="sp200">备　注</span>
-                                <span className="sp100">收款人</span>
-                                <span className="sp120">收款日期</span>
-                                <span className="sp100">修改人</span>
-                            </div>
-                        </div>
-                        <Frame className="table-row pub-first-center" bottom={42}>
-                            <ul>
-                                <li>
-                                    <span className="sp60">
-                                        <label className="pub-check">1</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp60">
-                                        <label className="pub-check">2</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp60">
-                                        <label className="pub-check">3</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp60">
-                                        <label className="pub-check">4</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp60">
-                                        <label className="pub-check">5</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp60">
-                                        <label className="pub-check">6</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp60">
-                                        <label className="pub-check">7</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp60">
-                                        <label className="pub-check">8</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp60">
-                                        <label className="pub-check">9</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp60">
-                                        <label className="pub-check">10</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp60">
-                                        <label className="pub-check">11</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp60">
-                                        <label className="pub-check">12</label>
-                                    </span>
-                                </li>
-                                <li className="pub-last-back">
-                                    <span className="sp60">
-                                        <label className="pub-check">13</label>
-                                    </span>
-                                <span className="sp200">
-                                <b>合计：</b>
-                                </span>
-                                </li>
-                            </ul>
-                        </Frame>
-                </div>
+                <Table fields={this.state.fields1} bottom={42}>
+                    {
+                        this.state.data1.map((v, k)=>{
+                            return (
+                                <Li key={k} check={v.check}>
+                                    <Box w={this.state.fields1[0].width}>
+                                        <label className="pub-check">
+                                            {k+1}
+                                        </label>
+                                    </Box>
+                                    <Box w={this.state.fields1[1].width}>
+                                        11111
+                                    </Box>
+                                    <Box w={this.state.fields1[2].width}>2222</Box>
+                                </Li>
+                            )
+                        })
+                    }
+                    <li className="pub-last-back">
+                        <Box w={this.state.fields1[0].width}></Box>
+                        <Box w={this.state.fields1[1].width}>
+                            <b>合计：</b>
+                        </Box>
+                    </li>
+                </Table>
 
                 {/* 分页器 */}
                 <Pager></Pager>

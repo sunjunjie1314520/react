@@ -1,32 +1,128 @@
-import React, { Component, createRef } from 'react'
+import React, { Component } from 'react'
+
+import Table, { Box, Li } from '../../components/Table';
+
+import { Input, DropDown } from '../../components/UI';
 
 import Pager from '../../components/Pager';
 
-import { Input, DropDown, Frame } from '../../components/UI';
-
 export default class index extends Component {
 
-    constructor(){
-        super()
-        this.left_layout = createRef()
+    constructor(props){
+        super(props)
         this.state = {
-            items1: ['天虹购物广场', '百佳购物广场'],
+            field1: '1',
+            field2: '2',
+            field3: '3',
+
+            items1: ['深圳宝能家居广场', '深圳第三空间'],
             index1: 0,
 
-            items2: ['张三', '李四', '王五'],
+            items2: ['1222', '333'],
             index2: 0,
 
-            items3: ['最近三天', '最近一周', '最近一月', '最近一季', '最近半年'],
+            items3: ['最近一周', '最近半月','最近一月','最近三月'],
             index3: 0,
 
-            phone: ''
+            c1: true,
+            c2: false,
+
+            fields1: [
+                {
+                    width: 60,
+                    name: '序号',
+                },
+                {
+                    width: 120,
+                    name: '图 片',
+                },
+                {
+                    width: 150,
+                    name: '商场/仓库',
+                },
+                {
+                    width: 140,
+                    name: '客户手机号',
+                },
+                {
+                    width: 120,
+                    name: '货品编码',
+                },
+                {
+                    width: 120,
+                    name: '货品名称',
+                },
+                {
+                    width: 120,
+                    name: '型 号',
+                },
+                {
+                    width: 140,
+                    name: '尺 寸',
+                },
+                {
+                    width: 160,
+                    name: '品牌系列',
+                },
+                {
+                    width: 60,
+                    name: '单位',
+                },
+                {
+                    width: 80,
+                    name: '库存数',
+                },
+                {
+                    width: 80,
+                    name: '单价',
+                },
+                {
+                    width: 80,
+                    name: '选购数',
+                },
+                {
+                    width: 100,
+                    name: '金额',
+                },
+                {
+                    width: 120,
+                    name: '添加日期',
+                },
+            ],
+            data1: [
+                {
+                    id: 1,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+                {
+                    id: 2,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+            ]
         }
     }
 
-    render() {
+    riDown = () => {
+        const { bottom_alert } = this.state
+        this.setState({
+            bottom_alert: !bottom_alert
+        })
+    }
 
+
+    checkHandle(check, k){
+        const {data1} = this.state
+        data1[k].check = check
+        this.setState({
+            data1: data1
+        })
+    }
+
+    render() {
         return (
-            <>   
+            <>
                 <div className="intention-list">
                     <h2 className="pub-tit">
                     <i className="ico-font8"></i>
@@ -41,97 +137,38 @@ export default class index extends Component {
                     </h2>
                     <div className="pub-table">
                         <ul>
-                            <Input title="客户手机号" value={this.state.phone} model={(v)=> this.setState({phone: v})}></Input>
+                            <Input width="23%" placeholder="请输入..."title="客户手机号" value={this.state.cusname} model={(v)=>this.setState({cusname: v})}></Input>
                             <DropDown index={this.state.index1} items={this.state.items1} onChange={(index)=> this.setState({index1: index})}>商场</DropDown>
                             <DropDown index={this.state.index2} items={this.state.items2} onChange={(index)=> this.setState({index2: index})}>制单人</DropDown>
-                            <DropDown index={this.state.index3} items={this.state.items3} onChange={(index)=> this.setState({index3: index})}>添加期间</DropDown>                            
+                            <DropDown index={this.state.index3} items={this.state.items3} onChange={(index)=> this.setState({index3: index})}>添加期间</DropDown>
                         </ul>
                     </div>
                 </div>
 
-                <div className="pub-row-style">
-                    <div className="table-head"> 
-                        <div className="slide-bar">
-                            <span className="sp60">序号</span>
-                            <span className="sp128">图 片</span>
-                            <span className="sp150">客户手机号</span>
-                            <span className="sp120">货品编码</span>
-                            <span className="sp120">货品名称</span>
-                            <span className="sp120">型 号</span>
-                            <span className="sp140">尺 寸</span>
-                            <span className="sp150">品 牌</span>
-                            <span className="sp60">单位</span>
-                            <span className="sp100">库存数</span>
-                            <span className="sp120">单价</span>
-                            <span className="sp100">选购数</span>
-                            <span className="sp130">金额</span>
-                            <span className="sp120">添加日期</span>
-                        </div>
-                    </div>
+                <Table fields={this.state.fields1} bottom={42} picture={true}>
+        {
+            this.state.data1.map((v, k)=>{
+                return (
+                    <Li key={k} check={v.check}>
+                        <Box w={this.state.fields1[0].width}>
+                            <label className="pub-check">
+                                <input onChange={(e)=>this.checkHandle(e.target.checked, k)} checked={v.check} type="checkbox" />{k+1}
+                            </label>
+                        </Box>
+                        <Box w={this.state.fields1[1].width}><var></var></Box>
+                        <Box w={this.state.fields1[2].width}>2222</Box>
+                    </Li>
+                )
+            })
+        }
+                     <li className="pub-last-back">
+                        <Box w={this.state.fields1[0].width}></Box>
+                        <Box w={this.state.fields1[1].width}>
+                            <b>合计：</b>
+                        </Box>
+                     </li>
+                  </Table>
 
-                    <Frame className="table-row pub-small" bottom={42}>
-                        <ul>
-                            <li>
-                                <span className="sp65">
-                                    <label className="pub-check"><input type="checkbox" />1</label>
-                                </span>
-                                <span className="sp118">
-                                    <var></var>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp65">
-                                    <label className="pub-check"><input type="checkbox" />2</label>
-                                </span>
-                                <span className="sp118">
-                                    <var></var>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp65">
-                                    <label className="pub-check"><input type="checkbox" />3</label>
-                                </span>
-                                <span className="sp118">
-                                    <var></var>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp65">
-                                    <label className="pub-check"><input type="checkbox" />4</label>
-                                </span>
-                                <span className="sp118">
-                                    <var></var>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp65">
-                                    <label className="pub-check"><input type="checkbox" />5</label>
-                                </span>
-                                <span className="sp118">
-                                    <var></var>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp65">
-                                    <label className="pub-check"><input type="checkbox" />6</label>
-                                </span>
-                                <span className="sp118">
-                                    <var></var>
-                                </span>
-                            </li>
-                            <li className="pub-last-back">
-                                <span className="sp65">
-                                    <label className="pub-check"><input type="checkbox" />7</label>
-                                </span>
-                                <span className="sp118">
-                                <span className="sp200">
-                                    <b>合计：</b>
-                                </span>
-                                </span>
-                            </li>
-                        </ul>
-                    </Frame>
-                </div>
 
                 <Pager></Pager>
 

@@ -12,10 +12,10 @@ export default class index extends Component {
         this.state = {
 
             items1: ['下拉菜单1','下拉菜单2','下拉菜单3','下拉菜单4','下拉菜单5'],
-            index1: 0,
+            index1: 6,
 
             items2: ['下拉菜单1','下拉菜单2','下拉菜单3','下拉菜单4','下拉菜单5'],
-            index2: 0,
+            index2: 6,
 
             items3: ['男','女'],
             index3: 2,
@@ -23,8 +23,8 @@ export default class index extends Component {
             items4: ['中小户型','大户型','复式/跃层','别墅/双拼','商业/会所','自建房','其他'],
             index4: 0,
 
-            fields1: '1',
-            fields2: '2',
+            fields1: '',
+            fields2: '',
 
             show1: false,
 
@@ -187,7 +187,7 @@ export default class index extends Component {
                     </div>
 
                     {/* 表格 */}
-                    <Table fields={this.state.fields} bottom={42}>
+                    <Table fields={this.state.fields} bottom={43}>
                         {
                             this.state.data.map((v, k)=>{
                                 return (
@@ -239,7 +239,7 @@ export default class index extends Component {
                         <div className="two-wrap">
                             <div className="pub-table">
                                 <ul>
-                                    <Input title="客户编码" width="48%" value={this.state.field1} model={(v)=>this.setState({field1: v})} required></Input>
+                                    <Input title="客户编码" width="48%" placeholder="编码会自动生成" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
                                     <Input title="客户名称" width="48%" value={this.state.field1} model={(v)=>this.setState({field1: v})} required></Input>
                                     <DropDown width="48%" items={this.state.items3} index={this.state.index3} onChange={(index)=> this.setState({index3: index})} required>性别</DropDown>
                                     <DropDown width="48%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})} required>客户类别</DropDown>
@@ -254,7 +254,7 @@ export default class index extends Component {
                         <div className="two-wrap">
                             <div className="pub-table">
                                 <ul>
-                                    <DateTime width="48%" title="送货日期" model={(v)=> this.setState({time1: v})} ></DateTime>
+                                    <DateTime width="48%" title="出生日期" model={(v)=> this.setState({time1: v})} ></DateTime>
                                     <DropDown width="48%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>客户来源</DropDown>
                                     <Input title="微信/QQ" width="48%" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
                                     <Input title="邮箱" width="48%" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
