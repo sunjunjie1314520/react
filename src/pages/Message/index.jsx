@@ -12,11 +12,11 @@ export default class index extends Component {
 			items1: ['是', '否'],
             index1: 0,
 
-			input1: '',  // 搜索消息主题
-            input4: '',  // 搜索接收人
+			input1: '', 
+            input4: '', 
 
-            input2: '',  // 消息主题
-            input3: '',  // 接收人
+            input2: '', 
+            input3: '', 
 
 			d1: 0,
 			d2: 0,
