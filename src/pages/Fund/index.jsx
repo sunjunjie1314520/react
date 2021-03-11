@@ -41,7 +41,7 @@ export default class index extends PureComponent {
             alert('代号格式不正确');
             return false
         }
-        _this.setState({list: [], info: null, slide: false})
+        _this.setState({info: null, slide: false})
         // fetch('http://127.0.0.1:80/api/fund/search',
         fetch('https://active.okami.net.cn/api/fund/search',
             {
@@ -59,7 +59,7 @@ export default class index extends PureComponent {
         .then(function(res) {
             console.log(res);
             _this.setState({
-                list: res.data.reverse(),
+                list: res.data,
             })
         });
     }
@@ -106,7 +106,7 @@ export default class index extends PureComponent {
 
     set(v){
         this.setState({code: v})
-        this.getData()
+        setTimeout(()=>this.getData(), 30)
     }
 
     ding = (checked) => {
