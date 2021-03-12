@@ -86,6 +86,35 @@ constructor(props){
 }
 
 ```
+  # 第一步 在rcuters index.jsx 加入文件 (注意第一个文字大写，之间不能空隔)
+
+    import SalesOrder from '../pages/SalesOrder';
+
+    children: [
+			{
+				path: '/index',
+				exact: false,
+				component: Index,
+			},
+			{
+				path: '/sales-order',
+				exact: false,
+				component: SalesOrder,
+			},
+
+# 第二步 在HOME Left.jsx 加入文件名（注意对应菜单）
+        menu: [
+                {
+                    slide: false,
+                    title: '已完成',
+                    icons: 'ico-huo',
+                    types: [
+                        {
+                            title: '发送消息',
+                            to: '/home/message'
+                        },
+                    ]
+
 
 # 输入框
     <Input title="公告通知" placeholder="请输入单号..." width="64%" value={this.state.field1} model={(v)=>this.setState({field1: v})} required></Input>
@@ -95,7 +124,7 @@ constructor(props){
     <DateTime title="送货日期" model={(v)=> this.setState({time1: v})} required></DateTime>
 # 分页
     <Pager></Pager>
-# 包含
+# 表单包含
     <Input ltr={true} title="销售单号" value={this.state.input1} model={(v)=>this.setState({input1: v})}>
         <ContainDown index={this.state.down1} Select={(v)=> this.setState({down1: v})}></ContainDown>
     </Input>
@@ -109,18 +138,43 @@ constructor(props){
         <ContainDown index={this.state.down3} Select={(v)=>this.setState({down3: v})}></ContainDown>
     </DateTime
 
+    <Input title="销售单号" value={this.state.input1} model={(v)=> this.setState({nput1: v})} required>
+        <i className="ico-sp0"></i>
+    </Input>
+
+    <Input title="客户编码" value={this.state.input2} model={(v)=> this.setState({input2: v})} required></Input>
+
+    <DropDown index={this.state.index2} items={this.state.items2} onChange={(index)=> this.setState({index2: index})} required>销售员</DropDown>
 
 ```javascript
 // 方法放在 rander 函数上方
-checkHandle(check, k){
-    const { data1 } = this.state
-    data1[k].check = check
-    this.setState({
-        data1: data
-    })
-}
-```
 
+
+    // 显示或隐藏 底部表单
+    riDown = () => {
+        const { bottom_alert } = this.state
+        this.setState({
+            bottom_alert: !bottom_alert
+        })
+    }
+
+    // 表格复选框
+    checkHandle(check, k){
+        const {data1} = this.state
+        data1[k].check = check
+        this.setState({
+            data1: data1
+        })
+    }
+
+    // 显示或隐藏 弹窗
+    slide = () => {
+        const {alert1} = this.state
+        this.setState({
+            alert1: !alert1
+        })
+    }
+```
 # 表格
     <Table fields={this.state.fields1} bottom={42} picture={true}>
         {
@@ -147,3 +201,4 @@ checkHandle(check, k){
 python push.py
 
 
+onClick={(e)=> {e.preventDefault();this.setState({alert1: true})}}

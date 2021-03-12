@@ -24,6 +24,11 @@ export default class index extends Component {
             items3: ['asdf64', '4545'],
             index3: 0,
 
+            input1: '',
+            input2: '',
+            input3: '',
+            input4: '',
+
             c1: true,
             c2: false,
 
@@ -144,8 +149,8 @@ export default class index extends Component {
                     </h2>
                     <div className="pub-table">
                         <ul>
-                            <Input title="货品编码" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
-                            <Input title="品名/型号" value={this.state.field2} model={(v)=>this.setState({field2: v})}></Input>
+                            <Input title="货品编码" value={this.state.input1} model={(v)=>this.setState({input1: v})}></Input>
+                            <Input title="品名/型号" value={this.state.input2} model={(v)=>this.setState({input2: v})}></Input>
 
 
                             <DropDown items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>货品类别</DropDown>

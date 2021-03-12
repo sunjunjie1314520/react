@@ -27,7 +27,7 @@ import Receipt from '../pages/Receipt';
 import AfterSalesManagement from '../pages/AfterSalesManagement';
 
 
-import Abc from '../pages/Abc';
+import PurchaseOrder from '../pages/PurchaseOrder';
 
 const router = [
 	{
@@ -131,9 +131,9 @@ const router = [
 				component: AfterSalesManagement,
 			},
 			{
-				path: '/abc',
+				path: '/purchase-order',
 				exact: false,
-				component: Abc,
+				component: PurchaseOrder,
 			},
 			{
 				path: '/*',

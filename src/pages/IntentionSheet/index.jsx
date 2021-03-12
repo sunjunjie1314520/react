@@ -24,6 +24,9 @@ export default class index extends Component {
             items3: ['最近一周', '最近半月','最近一月','最近三月'],
             index3: 0,
 
+            input1: '',
+            input2: '',
+
             c1: true,
             c2: false,
 
@@ -137,7 +140,7 @@ export default class index extends Component {
                     </h2>
                     <div className="pub-table">
                         <ul>
-                            <Input width="23%" placeholder="请输入..."title="客户手机号" value={this.state.cusname} model={(v)=>this.setState({cusname: v})}></Input>
+                            <Input width="23%" placeholder="请输入..."title="客户手机号" value={this.state.input1} model={(v)=>this.setState({input1: v})}></Input>
                             <DropDown index={this.state.index1} items={this.state.items1} onChange={(index)=> this.setState({index1: index})}>商场</DropDown>
                             <DropDown index={this.state.index2} items={this.state.items2} onChange={(index)=> this.setState({index2: index})}>制单人</DropDown>
                             <DropDown index={this.state.index3} items={this.state.items3} onChange={(index)=> this.setState({index3: index})}>添加期间</DropDown>
@@ -146,32 +149,29 @@ export default class index extends Component {
                 </div>
 
                 <Table fields={this.state.fields1} bottom={42} picture={true}>
-        {
-            this.state.data1.map((v, k)=>{
-                return (
-                    <Li key={k} check={v.check}>
-                        <Box w={this.state.fields1[0].width}>
-                            <label className="pub-check">
-                                <input onChange={(e)=>this.checkHandle(e.target.checked, k)} checked={v.check} type="checkbox" />{k+1}
-                            </label>
-                        </Box>
-                        <Box w={this.state.fields1[1].width}><var></var></Box>
-                        <Box w={this.state.fields1[2].width}>2222</Box>
-                    </Li>
-                )
-            })
-        }
-                     <li className="pub-last-back">
-                        <Box w={this.state.fields1[0].width}></Box>
-                        <Box w={this.state.fields1[1].width}>
-                            <b>合计：</b>
-                        </Box>
-                     </li>
-                  </Table>
-
-
-                <Pager></Pager>
-
+                {
+                    this.state.data1.map((v, k)=>{
+                        return (
+                            <Li key={k} check={v.check}>
+                                <Box w={this.state.fields1[0].width}>
+                                    <label className="pub-check">
+                                        <input onChange={(e)=>this.checkHandle(e.target.checked, k)} checked={v.check} type="checkbox" />{k+1}
+                                    </label>
+                                </Box>
+                                <Box w={this.state.fields1[1].width}><var></var></Box>
+                                <Box w={this.state.fields1[2].width}>2222</Box>
+                            </Li>
+                        )
+                    })
+                }
+                            <li className="pub-last-back">
+                                <Box w={this.state.fields1[0].width}></Box>
+                                <Box w={this.state.fields1[1].width}>
+                                    <b>合计：</b>
+                                </Box>
+                            </li>
+                        </Table>
+            <Pager></Pager>
             </>
         )
     }

@@ -172,8 +172,8 @@ export default class Left extends Component {
                     icons: 'ico-huo',
                     types: [
                         {
-                            title: '刚定义的页面',
-                            to: '/home/abc'
+                            title: '采购订单',
+                            to: '/home/purchase-order'
                         },
                         {
                             title: '货品档案',

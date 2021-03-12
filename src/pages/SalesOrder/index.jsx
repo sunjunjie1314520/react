@@ -4,7 +4,7 @@ import Pager from '../../components/Pager';
 
 import Table, { Box, Li } from '../../components/Table';
 
-import {Input, DropDown, DateTime } from '../../components/UI';
+import {Input, DropDown, DateTime, Move } from '../../components/UI';
 
 export default class index extends Component {
 
@@ -17,9 +17,24 @@ export default class index extends Component {
             items2: ['菜单一', '菜单二', '菜单三', '菜单四'],
             index2: 0,
 
+            items3: ['菜单一', '菜单二', '菜单三', '菜单四'],
+            index3: 0,
+
+            items4: ['菜单一', '菜单二', '菜单三', '菜单四'],
+            index4: 0,
+
+            items5: ['菜单一', '菜单二', '菜单三', '菜单四'],
+            index5: 0,
+
             input1: '',
             input2: '',
             input3: '',
+            input4: '',
+            input5: '',
+            input6: '',
+            input7: '',
+            input8: '',
+            input9: '',
 
             kehu:'',
             danhao:'',
@@ -111,7 +126,10 @@ export default class index extends Component {
                     bianma: 'xxxxxxxxxxxxx',
                     check: false,
                 },
-            ]
+            ],
+
+            alert1: false,
+            alert2: false,
         }
     }
 
@@ -148,7 +166,7 @@ export default class index extends Component {
                         <a href="/" title=""><var className="i1">打印</var></a>
                         <a href="/" title=""><var className="i2">刷新</var></a>
                         <a href="/" title=""><var className="i3">列表</var></a>
-                        <a href="/" title=""><var className="i4">新建</var></a>
+                        <a href="/" title=""><var className="i4" onClick={(e)=> {e.preventDefault();this.setState({alert2: true})}}>新建</var></a>
                         <a href="/" title=""><var className="i5">删单</var></a>
                         <a href="/" title=""><var className="i6">收款</var></a>
                         <a href="/" title=""><var className="i7">取消</var></a>
@@ -249,7 +267,7 @@ export default class index extends Component {
 
                 <div className="add-wrap">
                     <div className="fl">
-                        <a href="/" title=""><var className="i1">增加行</var></a>
+                        <a href="/" title=""><var className="i1" onClick={(e)=> {e.preventDefault();this.setState({alert1: true})}}>增加行</var></a>
                         <a href="/" title=""><var className="i2">插入行</var></a>
                         <a href="/" title=""><var className="i3">删除行</var></a>
                     </div>
@@ -304,16 +322,16 @@ export default class index extends Component {
                     </ul>
                 </div>
 
-                {/* 弹窗1 */}
-                <div className="pub-shadow pub-one">
+                {/* 选取货品 */}
+                <Move model={this.state.alert1}>
                     <div className="sale-alert move-obj">
-                        <div className="pub-tit a2">
+                        <div className="pub-tit add">
                             <i className="ico-xuan"></i>
                             选取货品
                             <div className="fr">
-                                <span className="ico-close"></span>
+                                <span className="ico-close" onClick={(e)=> {e.preventDefault();this.setState({alert1: false})}}></span>
                             </div>
-                            <p>
+                            <p className="mr">
                                 <a className="a1" href="/" title="">选　取</a>
                                 <a className="a2" href="/" title="">查　询</a>
                             </p>
@@ -321,102 +339,12 @@ export default class index extends Component {
 
                         <div className="pub-table">
                             <ul>
-                            <li className="li5">
-                                    <span>货品编码：</span>
-                                    <div className="input-wrap">
-                                        <input type="text" className="a2" />
-                                    </div>
-                                </li>
-                            <li className="li5">
-                                    <span>型号：</span>
-                                    <div className="input-wrap">
-                                        <input type="text" className="a2" />
-                                    </div>
-                                </li>
-                            <li className="li9">
-                                    <span>货品名称：</span>
-                                    <div className="input-wrap">
-                                        <input type="text" className="a2" />
-                                    </div>
-                                </li>
-                            <li className="li5">
-                                    <span>品牌：</span>
-                                    <div className="input-wrap">
-                                        <input type="text" />
-                                        <button className="pub-down"></button>
-                                        <div className="pub-drop-down">
-                                            <span>菜单一</span>
-                                            <span>菜单一</span>
-                                            <span>菜单一</span>
-                                            <span>菜单一</span>
-                                            <span>菜单一</span>
-                                        </div>
-                                    </div>
-                                </li>
-                            <li className="li5">
-                                    <span>系列：</span>
-                                    <div className="input-wrap">
-                                        <input type="text" />
-                                        <button className="pub-down"></button>
-                                        <div className="pub-drop-down">
-                                            <span>菜单一</span>
-                                            <span>菜单一</span>
-                                            <span>菜单一</span>
-                                            <span>菜单一</span>
-                                            <span>菜单一</span>
-                                        </div>
-                                    </div>
-                                </li>
-                            <li className="li9">
-                                    <span>货品类别：</span>
-                                    <div className="input-wrap">
-                                        <input type="text" />
-                                        <button className="pub-down"></button>
-                                        <div className="pub-drop-down">
-                                            <span>内部货品Internal Goods</span>
-                                            <span>其他家具Other furniture</span>
-                                            <span>综合类others</span>
-                                            <span>沙发Sofa</span>
-                                            <span>茶几coffee table</span>
-                                            <span>电视柜TV cabinet</span>
-                                            <span>展示柜/酒柜Showcase wine cabinet</span>
-                                            <span>玄关Console</span>
-                                            <span>餐桌/吧台Dining table,Bar counter</span>
-                                            <span>餐椅/吧椅Side chair,Bar Stool</span>
-                                            <span>边柜/边桌Side board</span>
-                                            <span>床Bed</span>
-                                            <span>床头柜Night Table</span>
-                                            <span>床尾凳Bench</span>
-                                            <span>休闲椅Other Chairs</span>
-                                            <span>妆凳/脚凳Dressing Chair</span>
-                                            <span>妆台/妆柜DressingTable,Cabinet</span>
-                                            <span>衣柜Clothing Cabinet</span>
-                                            <span>斗柜Chest</span>
-                                            <span>书桌Writing Desk</span>
-                                            <span>书椅Writing Chair</span>
-                                            <span>书柜Bookcase</span>
-                                            <span>床垫Matress</span>
-                                            <span>镜Mirror</span>
-                                            <span>架Shelf</span>
-                                            <span>灯/烛台Lighting,Candle holder</span>
-                                            <span>画/相框Painting,Photo Frame</span>
-                                            <span>毯Carpet</span>
-                                            <span>抱枕Cushion</span>
-                                            <span>床上用品Bedclothes</span>
-                                            <span>茶餐用具Plate,Cup,Bowl etc.</span>
-                                            <span>玻璃水晶Crystal,Glass</span>
-                                            <span>树脂/陶瓷Resin,Ceramics</span>
-                                            <span>花/果/树/植Flower,fruit,Tree,Plant</span>
-                                            <span>钟表/首饰Clock/Jewelry</span>
-                                            <span>公仔/玩具Doll,Toy</span>
-                                            <span>工艺精品Artware</span>
-                                            <span>窗帘Curtain</span>
-                                            <span>屏风Screen</span>
-                                            <span>箱包/衣物Bags,Clothing</span>
-                                            <span>珠宝/玉器Jewellery,Jade</span>
-                                        </div>
-                                    </div>
-                                </li>
+                                <Input title="货品编码" width="31%" value={this.state.input2} model={(v)=> this.setState({input2: v})} ></Input>
+                                <Input title="型号" width="31%" value={this.state.input2} model={(v)=> this.setState({input2: v})} ></Input>
+                                <Input title="货品名称" width="31%" value={this.state.input2} model={(v)=> this.setState({input2: v})} ></Input>
+                                <DropDown width="31%" index={this.state.index3} items={this.state.items3} onChange={(index)=> this.setState({index3: index})} required>品牌</DropDown>
+                                <DropDown width="31%" index={this.state.index4} items={this.state.items4} onChange={(index)=> this.setState({index4: index})} required>系列</DropDown>
+                                <DropDown width="31%" index={this.state.index5} items={this.state.items5} onChange={(index)=> this.setState({index5: index})} required>货品类别</DropDown>
                             </ul>
                         </div>
 
@@ -457,16 +385,16 @@ export default class index extends Component {
                         <Pager></Pager>
 
                     </div>
-                </div>
+                </Move>
 
                 {/* 客户信息2 */}
-                <div className="pub-shadow pub-two">
+                <Move model={this.state.alert2}>
                     <div className="archives-alert move-obj">
                         <div className="pub-tit add">
                             <i className="ico-info"></i>
                             <em className="ico-info"></em> 新增客户
                             <div className="fr">
-                                <span className="ico-close"></span>
+                                <span className="ico-close" onClick={(e)=> {e.preventDefault();this.setState({alert2: false})}}></span>
                             </div>
                         </div>
                         <div className="two-wrap">
@@ -623,12 +551,12 @@ export default class index extends Component {
                             </div>
                         </div>
                         <div className="btn-wrap">
-                            <a href="/" className="a1" title="">退出</a>
+                            <a href="/" className="a1" title="" onClick={(e)=> {e.preventDefault();this.setState({alert2: false})}}>退出</a>
                             <a href="/" className="a2" title="">清空</a>
                             <a href="/" className="a4" title="">保存</a>
                         </div>
                     </div>
-                </div>
+                </Move>
             </>
         )
     }

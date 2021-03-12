@@ -12,13 +12,15 @@ export default class index extends Component {
             items1: ['菜单一', '菜单二', '菜单三', '菜单四'],
             index1: 0,
 
-            field1: '',
-            field2: '',
-            field3: '',
-            field4: '',
-            field5: '',
-            field6: '',
-            field7: '',
+            input1: '',
+            input2: '',
+            input3: '',
+            input4: '',
+            input5: '',
+            input6: '',
+
+            time1: '',
+            time2: '',
 
             bottom_alert: false,
 
@@ -149,7 +151,7 @@ export default class index extends Component {
                     </div>
                     <div className="pub-table">
                         <ul>
-                        <Input title="采购单号" value={this.state.danhao} model={(v)=> this.setState({danhao: v})}>
+                        <Input title="采购单号" value={this.state.input1} model={(v)=> this.setState({input1: v})}>
                                 <i className="ico-sp0"></i>
                             </Input>
 
@@ -167,10 +169,10 @@ export default class index extends Component {
 
                             <li></li>
                             <DropDown index={this.state.index1} items={this.state.items1} onChange={(index)=> this.setState({index1: index})}required>供应商</DropDown>
-                            <DropDown index={this.state.index1} items={this.state.items1} onChange={(index)=> this.setState({index1: index})}required>品牌系列</DropDown>
-                            <Input title="联系电话" value={this.state.field3} model={(v)=> this.setState({field3: v})}></Input>
-                            <DropDown index={this.state.index1} items={this.state.items1} onChange={(index)=> this.setState({index1: index})}required>采购人</DropDown>
-                            <Input width="98%" title="备注" value={this.state.field7} model={(v)=> this.setState({field7: v})}></Input>
+                            <DropDown index={this.state.index2} items={this.state.items1} onChange={(index)=> this.setState({index2: index})}required>品牌系列</DropDown>
+                            <Input title="联系电话" value={this.state.input2} model={(v)=> this.setState({input2: v})}></Input>
+                            <DropDown index={this.state.index3} items={this.state.items1} onChange={(index)=> this.setState({index3: index})}required>采购人</DropDown>
+                            <Input width="98%" title="备注" value={this.state.input3} model={(v)=> this.setState({input3: v})}></Input>
                         </ul>
                     </div>
                 </div>

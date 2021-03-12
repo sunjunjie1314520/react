@@ -2,7 +2,7 @@ import React, { Component, createRef } from 'react'
 
 import { offsetTop } from '../../utils';
 
-import {Input, DropDown, DateTime } from '../../components/UI';
+import {Input, DropDown, DateTime, Move } from '../../components/UI';
 
 export default class index extends Component {
 
@@ -16,7 +16,7 @@ export default class index extends Component {
             sh: null,
             sh1: null,
 
-            
+
             items1: ['营养师1', '菜单一'],
             index1: 0,
             field1: '',
@@ -30,6 +30,10 @@ export default class index extends Component {
 
             t1: '',
             t2: '',
+
+            input1: '',
+
+            alert1: false,
         }
         this.left_layout = createRef()
         this.left_layout1 = createRef()
@@ -48,7 +52,7 @@ export default class index extends Component {
             sh: w_hei - off_top - 58 - 15,
             init1: w_hei - off_top - 58 - 15,
             init2: w_hei - off_top2
-        })      
+        })
 
         this.rihgt_layout.current.style.height = (w_hei - off_top1 - 17) +'px'
     }
@@ -67,7 +71,7 @@ export default class index extends Component {
         return (
             <>
                 <div className="left-wrappr">
-		
+
                     <div className="query pub-bor-fl">
 
                         <h2 className="pub-tit">
@@ -83,7 +87,7 @@ export default class index extends Component {
 
                                 <DropDown width="48%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>销售商场</DropDown>
                                 <Input title="销售单号" width="48%" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
-                                <Input width="48%" title="客户名称" value={this.state.name} model={(v)=>this.setState({name: v})}>
+                                <Input width="48%" title="客户名称" value={this.state.input1} model={(v)=>this.setState({input1: v})}>
                                     <button className="pub-search"></button>
                                 </Input>
                                 <DateTime width="48%" title="销售日期" model={(v)=> this.setState({time1: v})}></DateTime>
@@ -162,7 +166,7 @@ export default class index extends Component {
                                 销售收款
                             </div>
                             <div className="fr">
-                                <a className="a3" href="/" title="">确定</a>
+                                <a className="a3" onClick={(e)=> {e.preventDefault();this.setState({alert1: true})}} href="/" title="">确定</a>
                             </div>
                         </h2>
                         
@@ -362,14 +366,14 @@ export default class index extends Component {
                 </div>
                 
                 {/* 确认弹窗 */}
-                <div className="pub-shadow">
+                <Move model={this.state.alert1}>
                     <div className="tips-wrapper move-obj">
                         <div className="pub-tit add">
                             <i className="ico-font30"></i>
                             提示
                             <div className="fr">
-                            <span className="ico-close"></span> 
-                        </div>
+                                <span className="ico-close" onClick={(e)=> {e.preventDefault();this.setState({alert1: false})}}></span> 
+                            </div>
                         </div>
                         <div className="tips-text">
                             <img src="img/33faba806d3a89bc_88x88.png" alt="" />
@@ -378,11 +382,11 @@ export default class index extends Component {
                         </div>
                         <div className="tip-btn-group">
                             <a href="/" className="a1">打印</a>
-                            <a href="/" className="a2">取消</a>
+                            <a href="/" className="a2" onClick={(e)=> {e.preventDefault();this.setState({alert1: false})}}>取消</a>
                             <a href="/" className="a3">确定</a>
                         </div>
                     </div>
-                </div>
+                </Move>
             </>
         )
     }

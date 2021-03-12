@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 
 import img1 from '../../style/img/506c0a676c6df69a4a3c7ecbcc827116_162x180.png';
+import img2 from '../../style/img/160228070832troqwv.jpg';
 
 import Pager from '../../components/Pager';
 
-import {Input, DropDown, Frame } from '../../components/UI';
+import {Input, DropDown, Frame, Move } from '../../components/UI';
 
 export default class index extends Component {
     constructor(){
@@ -15,6 +16,11 @@ export default class index extends Component {
 
             field1:'',
             field2: '',
+
+            input1: '',
+            input2: '',
+            input3: '',
+            alert1: false,
         }
     }
 
@@ -83,8 +89,8 @@ export default class index extends Component {
                         </h2>
                         <div className="pub-table">
                             <ul>
-                                <Input placeholder="请输入品牌或型号查询..." title="搜索" width="48%" value={this.state.field1}></Input>
-                                <Input placeholder="请输入..." title="客户手机号" value={this.state.field2} required></Input>
+                            <Input title="搜索" width="48%" placeholder="请输入品牌或型号查询" value={this.state.input1} model={(v)=>this.setState({input1: v})}></Input>
+                                <Input placeholder="请输入..." title="客户手机号" value={this.state.input2} model={(v)=>this.setState({input2: v})}required></Input>
                                 <DropDown items={this.state.items1} index={this.state.index1} onChange={(index) => this.setState({index1: index})}>排序方式</DropDown>
                             </ul>
                         </div>
@@ -93,7 +99,7 @@ export default class index extends Component {
                     <div className="clearfix">
                         <Frame className="picture-guide-item" bottom={41}>
                             <ul>
-                                <li>
+                                <li onClick={(e)=> {e.preventDefault();this.setState({alert1: true})}}>
                                     <div className="pict">
                                         <span className="fl">SALE</span>
                                         <span className="fr">UEW</span>
@@ -109,246 +115,7 @@ export default class index extends Component {
                                             <del>￥68,880.00</del>
                                         </strong>
                                     </div>
-                                </li>
-
-                                <li>
-                                    <div className="pict">
-                                        <span className="fl">SALE</span>
-                                        <span className="fr">UEW</span>
-                                        <img src={img1} alt="" />
-                                    </div>
-                                    <div className="text">
-                                        <p>JNC104568－储物柜</p>
-                                        <span>Jonathan Charles</span>
-                                        <span className="sp1">1680*660*1820MM</span>
-                                        <strong>
-                                            <a href="/" title=""><var>加入意向单</var></a>
-                                            <b>￥42,580.00</b>
-                                            <del>￥68,880.00</del>
-                                        </strong>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="pict">
-                                        <span className="fl">SALE</span>
-                                        <span className="fr">UEW</span>
-                                        <img src={img1} alt="" />
-                                    </div>
-                                    <div className="text">
-                                        <p>JNC104568－储物柜</p>
-                                        <span>Jonathan Charles</span>
-                                        <span className="sp1">1680*660*1820MM</span>
-                                        <strong>
-                                            <a href="/" title=""><var>加入意向单</var></a>
-                                            <b>￥42,580.00</b>
-                                            <del>￥68,880.00</del>
-                                        </strong>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="pict">
-                                        <span className="fl">SALE</span>
-                                        <span className="fr">UEW</span>
-                                        <img src={img1} alt="" />
-                                    </div>
-                                    <div className="text">
-                                        <p>JNC104568－储物柜</p>
-                                        <span>Jonathan Charles</span>
-                                        <span className="sp1">1680*660*1820MM</span>
-                                        <strong>
-                                            <a href="/" title=""><var>加入意向单</var></a>
-                                            <b>￥42,580.00</b>
-                                            <del>￥68,880.00</del>
-                                        </strong>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="pict">
-                                        <span className="fl">SALE</span>
-                                        <span className="fr">UEW</span>
-                                        <img src={img1} alt="" />
-                                    </div>
-                                    <div className="text">
-                                        <p>JNC104568－储物柜</p>
-                                        <span>Jonathan Charles</span>
-                                        <span className="sp1">1680*660*1820MM</span>
-                                        <strong>
-                                            <a href="/" title=""><var>加入意向单</var></a>
-                                            <b>￥42,580.00</b>
-                                            <del>￥68,880.00</del>
-                                        </strong>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="pict">
-                                        <span className="fl">SALE</span>
-                                        <span className="fr">UEW</span>
-                                        <img src={img1} alt="" />
-                                    </div>
-                                    <div className="text">
-                                        <p>JNC104568－储物柜</p>
-                                        <span>Jonathan Charles</span>
-                                        <span className="sp1">1680*660*1820MM</span>
-                                        <strong>
-                                            <a href="/" title=""><var>加入意向单</var></a>
-                                            <b>￥42,580.00</b>
-                                            <del>￥68,880.00</del>
-                                        </strong>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="pict">
-                                        <span className="fl">SALE</span>
-                                        <span className="fr">UEW</span>
-                                        <img src={img1} alt="" />
-                                    </div>
-                                    <div className="text">
-                                        <p>JNC104568－储物柜</p>
-                                        <span>Jonathan Charles</span>
-                                        <span className="sp1">1680*660*1820MM</span>
-                                        <strong>
-                                            <a href="/" title=""><var>加入意向单</var></a>
-                                            <b>￥42,580.00</b>
-                                            <del>￥68,880.00</del>
-                                        </strong>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="pict">
-                                        <span className="fl">SALE</span>
-                                        <span className="fr">UEW</span>
-                                        <img src={img1} alt="" />
-                                    </div>
-                                    <div className="text">
-                                        <p>JNC104568－储物柜</p>
-                                        <span>Jonathan Charles</span>
-                                        <span className="sp1">1680*660*1820MM</span>
-                                        <strong>
-                                            <a href="/" title=""><var>加入意向单</var></a>
-                                            <b>￥42,580.00</b>
-                                            <del>￥68,880.00</del>
-                                        </strong>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="pict">
-                                        <span className="fl">SALE</span>
-                                        <span className="fr">UEW</span>
-                                        <img src={img1} alt="" />
-                                    </div>
-                                    <div className="text">
-                                        <p>JNC104568－储物柜</p>
-                                        <span>Jonathan Charles</span>
-                                        <span className="sp1">1680*660*1820MM</span>
-                                        <strong>
-                                            <a href="/" title=""><var>加入意向单</var></a>
-                                            <b>￥42,580.00</b>
-                                            <del>￥68,880.00</del>
-                                        </strong>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="pict">
-                                        <span className="fl">SALE</span>
-                                        <span className="fr">UEW</span>
-                                        <img src={img1} alt="" />
-                                    </div>
-                                    <div className="text">
-                                        <p>JNC104568－储物柜</p>
-                                        <span>Jonathan Charles</span>
-                                        <span className="sp1">1680*660*1820MM</span>
-                                        <strong>
-                                            <a href="/" title=""><var>加入意向单</var></a>
-                                            <b>￥42,580.00</b>
-                                            <del>￥68,880.00</del>
-                                        </strong>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="pict">
-                                        <span className="fl">SALE</span>
-                                        <span className="fr">UEW</span>
-                                        <img src={img1} alt="" />
-                                    </div>
-                                    <div className="text">
-                                        <p>JNC104568－储物柜</p>
-                                        <span>Jonathan Charles</span>
-                                        <span className="sp1">1680*660*1820MM</span>
-                                        <strong>
-                                            <a href="/" title=""><var>加入意向单</var></a>
-                                            <b>￥42,580.00</b>
-                                            <del>￥68,880.00</del>
-                                        </strong>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="pict">
-                                        <span className="fl">SALE</span>
-                                        <span className="fr">UEW</span>
-                                        <img src={img1} alt="" />
-                                    </div>
-                                    <div className="text">
-                                        <p>JNC104568－储物柜</p>
-                                        <span>Jonathan Charles</span>
-                                        <span className="sp1">1680*660*1820MM</span>
-                                        <strong>
-                                            <a href="/" title=""><var>加入意向单</var></a>
-                                            <b>￥42,580.00</b>
-                                            <del>￥68,880.00</del>
-                                        </strong>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="pict">
-                                        <span className="fl">SALE</span>
-                                        <span className="fr">UEW</span>
-                                        <img src={img1} alt="" />
-                                    </div>
-                                    <div className="text">
-                                        <p>JNC104568－储物柜</p>
-                                        <span>Jonathan Charles</span>
-                                        <span className="sp1">1680*660*1820MM</span>
-                                        <strong>
-                                            <a href="/" title=""><var>加入意向单</var></a>
-                                            <b>￥42,580.00</b>
-                                            <del>￥68,880.00</del>
-                                        </strong>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="pict">
-                                        <span className="fl">SALE</span>
-                                        <span className="fr">UEW</span>
-                                        <img src={img1} alt="" />
-                                    </div>
-                                    <div className="text">
-                                        <p>JNC104568－储物柜</p>
-                                        <span>Jonathan Charles</span>
-                                        <span className="sp1">1680*660*1820MM</span>
-                                        <strong>
-                                            <a href="/" title=""><var>加入意向单</var></a>
-                                            <b>￥42,580.00</b>
-                                            <del>￥68,880.00</del>
-                                        </strong>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="pict">
-                                        <span className="fl">SALE</span>
-                                        <span className="fr">UEW</span>
-                                        <img src={img1} alt="" />
-                                    </div>
-                                    <div className="text">
-                                        <p>JNC104568－储物柜</p>
-                                        <span>Jonathan Charles</span>
-                                        <span className="sp1">1680*660*1820MM</span>
-                                        <strong>
-                                            <a href="/" title=""><var>加入意向单</var></a>
-                                            <b>￥42,580.00</b>
-                                            <del>￥68,880.00</del>
-                                        </strong>
-                                    </div>
-                                </li>
+                                </li>                                
                             </ul>
                         </Frame>
                     </div>
@@ -360,40 +127,39 @@ export default class index extends Component {
 
 
                 {/* 图片导购 */}
-
-                <div className="pub-shadow">
-                    <div className="picture-alert">
-                        <div className="close"><em className="ico-close a1"></em></div>
+                <Move model={this.state.alert1}>
+                    <div className="picture-alert move-obj">
+                        <div className="close"><em className="ico-close" onClick={(e)=> {e.preventDefault();this.setState({alert1: false})}}></em></div>
                         <div className="pict">
-                            <img src="img/160228070832troqwv.jpg" alt="" />
+                            <img src={img2} alt="" />
                         </div>
                         <div className="small">
                             <ul>
                                 <li>
-                                    <img src="img/160228070832troqwv.jpg" alt="" />
+                                    <img src={img2} alt="" />
                                 </li>
                                 <li>
-                                    <img src="img/160228070832gueyza.jpg" alt="" />
+                                    <img src={img2} alt="" />
                                 </li>
                                 <li>
-                                    <img src="img/160228063951ffymmg.jpg" alt="" />
+                                    <img src={img2} alt="" />
                                 </li>
                                 <li>
-                                    <img src="img/160228065904pdckkr.jpg" alt="" />
+                                    <img src={img2} alt="" />
                                 </li>
                                 <li>
-                                    <img src="img/MLQ-Dior 25102.jpg" alt="" />
+                                    <img src={img2} alt="" />
                                 </li>
                                 <li>
-                                    <img src="img/160228065904xwsfom.jpg" alt="" />
+                                    <img src={img2} alt="" />
                                 </li>
                                 <li>
-                                    <img src="img/160228074814uewqgl.jpg" alt="" />
+                                    <img src={img2} alt="" />
                                 </li>
                             </ul>
                         </div>
                     </div>
-                </div>
+                </Move>
             </>
         )
     }

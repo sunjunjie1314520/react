@@ -12,11 +12,11 @@ export default class index extends Component {
 			items1: ['是', '否'],
             index1: 0,
 
-			input1: '', 
-            input4: '', 
-
-            input2: '', 
-            input3: '', 
+			input1: '',
+			input2: '',
+            input3: '',
+            input4: '',
+			input5: '',
 
 			d1: 0,
 			d2: 0,
@@ -49,19 +49,19 @@ export default class index extends Component {
                     width: 100,
                     name: '跟进日期',
                 },
-                ],
+            ],
             data1: [
-                    {
-                        id: 1,
-                        bianma: 'xxxxxxxxxxxxx',
-                        check: false,
-                    },
-                    {
-                        id: 2,
-                        bianma: 'xxxxxxxxxxxxx',
-                        check: false,
-                    },
-                ]
+                {
+                    id: 1,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+                {
+                    id: 2,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+            ]
 		}
     }
 
@@ -79,19 +79,19 @@ export default class index extends Component {
 
 					<div className="pub-table">
 						<ul>
-							<Input title="消息主题" width="98%" value={this.state.input2} model={(v)=>this.setState({input2: v})}></Input>
+							<Input title="消息主题" width="98%" value={this.state.input1} model={(v)=>this.setState({input1: v})}></Input>
 
-							<Input title="接收人" width="48%" value={this.state.input3} model={(v)=>this.setState({input3: v})}>
+							<Input title="接收人" width="48%" value={this.state.input2} model={(v)=>this.setState({input2: v})}>
 								<button className="pub-search"></button>
 							</Input>
 
-							<DropDown width="48%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>是否已读</DropDown>
+							<DropDown width="48%" items={this.state.items1} index={this.state.index3} onChange={(index)=> this.setState({index3: index})}>是否已读</DropDown>
 
-							<DateTime title="发送日期" width="48%" model={(v)=> this.setState({t1: v})} left={false}>
+							<DateTime title="发送日期" width="48%" model={(v)=> this.setState({time1: v})} left={false}>
 								<ContainDown Select={(v)=>this.setState({d1: v})}></ContainDown>
 							</DateTime>
 
-							<DateTime title="发送日期" width="48%" model={(v)=> this.setState({t2: v})} left={false}>
+							<DateTime title="发送日期" width="48%" model={(v)=> this.setState({time2: v})} left={false}>
 								<ContainDown Select={(v)=>this.setState({d2: v})}></ContainDown>
 							</DateTime>
 
@@ -132,9 +132,9 @@ export default class index extends Component {
 						</h2>
 						<div className="pub-table">
 							<ul>
-								<Input title="消息主题" width="64%" value={this.state.input1} required model={(v)=>this.setState({input1: v})}></Input>
-								<Input title="接收人" width="32%" value={this.state.input4} required model={(v)=>this.setState({input4: v})}>
-									<button type="button" onClick={()=> alert(`搜索【${this.state.input4}】中...`)} className="pub-search"></button>
+								<Input title="消息主题" width="64%" value={this.state.input4} required model={(v)=>this.setState({input4: v})}></Input>
+								<Input title="接收人" width="32%" value={this.state.input5} required model={(v)=>this.setState({input5: v})}>
+									<button type="button" onClick={()=> alert(`搜索【${this.state.input5}】中...`)} className="pub-search"></button>
 								</Input>
 							</ul>
 						</div>
