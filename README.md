@@ -102,7 +102,7 @@ constructor(props){
 				component: SalesOrder,
 			},
 
-# 第二步 在HOME Left.jsx 加入文件名
+# 第二步 在HOME Left.jsx 加入文件名（注意对应菜单）
         menu: [
                 {
                     slide: false,
@@ -124,7 +124,7 @@ constructor(props){
     <DateTime title="送货日期" model={(v)=> this.setState({time1: v})} required></DateTime>
 # 分页
     <Pager></Pager>
-# 包含
+# 表单包含
     <Input ltr={true} title="销售单号" value={this.state.input1} model={(v)=>this.setState({input1: v})}>
         <ContainDown index={this.state.down1} Select={(v)=> this.setState({down1: v})}></ContainDown>
     </Input>
@@ -138,17 +138,18 @@ constructor(props){
         <ContainDown index={this.state.down3} Select={(v)=>this.setState({down3: v})}></ContainDown>
     </DateTime
 
+    <Input title="销售单号" value={this.state.input1} model={(v)=> this.setState({nput1: v})}>
+        <i className="ico-sp0"></i>
+    </Input>
+
+    <Input title="客户编码" value={this.state.input2} model={(v)=> this.setState({input2: v})}required></Input>
+
+    <DropDown type="down" index={this.state.index2} items={this.state.items2} onChange={(index)=> this.setState({index2: index})}required>销售员</DropDown>
 
 ```javascript
 // 方法放在 rander 函数上方
-checkHandle(check, k){
-    const { data1 } = this.state
-    data1[k].check = check
-    this.setState({
-        data1: data
-    })
-}
-```
+
+
     // 显示或隐藏 底部表单
     riDown = () => {
         const { bottom_alert } = this.state
@@ -173,7 +174,7 @@ checkHandle(check, k){
             alert1: !alert1
         })
     }
-
+```
 # 表格
     <Table fields={this.state.fields1} bottom={42} picture={true}>
         {
