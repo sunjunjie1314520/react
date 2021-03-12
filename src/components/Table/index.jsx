@@ -50,10 +50,10 @@ export default class index extends Component {
     }
     render() {
         const { width } = this.state
-        const { fields, picture } = this.props
+        const { fields, picture, margin, noborder  } = this.props
         return (
             <div className="clearfix">
-                <div className={`pub-row-style ${this.props.margin ? 'none': ''}`}>
+                <div className={`pub-row-style ${margin ? 'none': ''} ${noborder ? 'pub-border-no3':''}`}>
                     <div className="table-head">
                         <div className="slide-bar" style={{minWidth: `${width}px`}}>
                             {

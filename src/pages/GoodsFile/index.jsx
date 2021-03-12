@@ -1,10 +1,23 @@
 import React, { Component } from 'react'
 
+// import Swiper from "swiper"
+
+// import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 import Pager from '../../components/Pager';
 
 import Table, {Box} from '../../components/Table';
 
 import {Input, DropDown, Frame, Move } from '../../components/UI';
+
+import img1 from '../../style/img/Goods_1199074c-5a08-49d6-834c-ff0b37996442.jpg';
+import img2 from '../../style/img/Goods_27caca70-04a0-4659-979e-31459d0c9518.jpg';
+import img3 from '../../style/img/Goods_a545c1fc-5f74-4d80-b975-40f3bd23cc7c.jpg';
+
+
+// SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 export default class index extends Component {
     constructor(){
@@ -163,7 +176,28 @@ export default class index extends Component {
                 },
             ],
 
-            alert1: false
+            alert1: true,
+
+            produce: [
+                {
+                    src: img1
+                },
+                {
+                    src: img2
+                },
+                {
+                    src: img3
+                },
+                {
+                    src: img1
+                },
+                {
+                    src: img2
+                },
+                {
+                    src: img3
+                },
+            ],
         }
     }
 
@@ -173,6 +207,10 @@ export default class index extends Component {
         this.setState({
             data: data
         })
+    }
+
+    componentDidMount(){
+        
     }
 
     render() {
@@ -488,26 +526,37 @@ export default class index extends Component {
                             </div>
                             <div className="fr-wrap">
                                 <div className="pict">
-                                    <img src="img/Goods_1199074c-5a08-49d6-834c-ff0b37996442.jpg" alt="" />
+                                    <img src={img1} alt="" />
                                     <i className="ico-shou"></i>
                                     <i className="ico-chuan"></i>
                                 </div>
                                 <div className="scroll">
-                                    <i className="pos next"></i>
-                                    <ul>
-                                        <li>
-                                            <img src="img/Goods_27caca70-04a0-4659-979e-31459d0c9518.jpg" alt="" />
-                                        </li>
-                                        <li>
-                                            <img src="img/Goods_a545c1fc-5f74-4d80-b975-40f3bd23cc7c.jpg" alt="" />
-                                        </li>
-                                        <li>
-                                            <img src="img/Goods_db8c4fba-40ed-4a64-a23c-a35241160612.jpg" alt="" />
-                                        </li>
-                                        <li>
-                                            <img src="img/Goods_fea511af-956d-4c6c-ac5b-d7b715e5fe8f.jpg" alt="" />	
-                                        </li>
-                                    </ul>
+                                    <i className="pos next swiper-button-next"></i>
+                                    <Swiper
+                                        spaceBetween={9}
+                                        slidesPerView={4}
+                                        autoplay={{
+                                            delay: 3000,
+                                            stopOnLastSlide: false,
+                                            disableOnInteraction: false
+                                        }}
+                                        loop
+                                        navigation={{nextEl: '.swiper-button-next',}}
+                                        onSlideChange={() => console.log('slide change')}
+                                        onSwiper={()=> this.setState({alert1: false})}
+                                    >
+                                        {
+                                            this.state.produce.map((item, k)=>{
+                                                return (
+                                                    <SwiperSlide key={k} >
+                                                        {/* <li className="swiper-slide"> */}
+                                                            <img src={item.src} alt="" />
+                                                        {/* </li> */}
+                                                    </SwiperSlide>
+                                                )
+                                            })
+                                        }
+                                    </Swiper>
                                 </div>
                             </div>
                         </div>
@@ -519,9 +568,9 @@ export default class index extends Component {
                                 <label className="pub-check1"><input type="checkbox" />是否无折</label>
                             </div>
                             <div className="fr">
-                                <a><i className="ico-i1"></i>上传</a>
-                                <a><i className="ico-i2"></i>删除</a>
-                                <a><i className="ico-i3"></i>主图</a>
+                                <a href="/"><i className="ico-i1"></i>上传</a>
+                                <a href="/"><i className="ico-i2"></i>删除</a>
+                                <a href="/"><i className="ico-i3"></i>主图</a>
                             </div>
                         </div>
                         <div className="btn-group">
