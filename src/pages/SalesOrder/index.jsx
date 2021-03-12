@@ -349,10 +349,10 @@ export default class index extends Component {
                         </div>
 
                         {/* 表格 */}
-                        <div className="pub-row-style pub-mt-0 pub-no-border">
+                        <div className="pub-row-style none pub-no-border">
                             <div className="table-head">
                                 <div className="slide-bar">
-                                    <span className="sp60">序号</span>
+                                    <span className="sp60"><label class="pub-check serial bold"><input type="checkbox" />序号</label></span>
                                     <span className="sp120">货品编码</span>
                                     <span className="sp120">货品名称</span>
                                     <span className="sp120">型 号</span>
@@ -369,12 +369,12 @@ export default class index extends Component {
                                 <ul>
                                     <li>
                                         <span className="sp60">
-                                            <label className="pub-check"><input type="checkbox" />1</label>
+                                            <label className="pub-check serial"><input type="checkbox" />1</label>
                                         </span>
                                     </li>
                                     <li>
                                         <span className="sp60">
-                                            <label className="pub-check"><input type="checkbox" />2</label>
+                                            <label className="pub-check serial"><input type="checkbox" />2</label>
                                         </span>
                                     </li>
                                 </ul>

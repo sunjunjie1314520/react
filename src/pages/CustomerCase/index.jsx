@@ -97,8 +97,8 @@ export default class index extends Component {
                 {/* 轮播大图 */}
                 <Move model={this.state.alert2}>
                     <div className="case-scroll move-obj">
-                        <a className="pos prev"><img src={prev} alt="上一张" /></a>
-                        <a className="pos next"><img src={next} alt="下一张" /></a>
+                        <a className="pos prev" href="/"><img src={prev} alt="上一张" /></a>
+                        <a className="pos next" href="/"><img src={next} alt="下一张" /></a>
                         <div className="wrap">
                             <span className="ico-close" onClick={(e)=> {e.preventDefault();this.setState({alert2: false})}}></span>
                             <ul className="swiper-wrapper">
