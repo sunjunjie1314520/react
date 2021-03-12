@@ -6,6 +6,9 @@ import {Input, DropDown, Frame } from '../../components/UI';
 
 import Pager from '../../components/Pager';
 
+// import Waterfall from '../../components/Waterfall';
+
+
 export default class index extends Component {
 
     constructor(){

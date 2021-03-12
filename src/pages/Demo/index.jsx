@@ -8,19 +8,12 @@ import logo from "../../style/img/logo.svg";
 
 import './index.styl';
 
-import {Link} from 'react-router-dom';
+import Waterfall from '../../components/Waterfall';
 
 class App extends Component{
-
-	myRef = React.createRef()
-
 	constructor(props){
 		super(props)
 		this.state = {}
-	}
-
-	show = () => {
-		console.log(this.myRef.current.clientWidth);
 	}
 	render(){
 		const {count, loadding, data, loadDataAsync, addOne} = this.props
@@ -33,10 +26,6 @@ class App extends Component{
 				<button className="c1" onClick={() => addOne(1)}>点一下+1</button>
 				<button className="c2" onClick={loadDataAsync}>加载数据</button>
 
-				<div className="wrap1" ref={this.myRef}>
-					
-				</div>
-				<button className="abc1" onClick={this.show}>显示show</button>
 				{
 				loadding ?
 					<h2>加载中...</h2>
@@ -49,8 +38,8 @@ class App extends Component{
 						</ul>
 					</>
 				}
-                <h3 className="title">46546546445</h3>
-				<Link to="/test">Test</Link>
+
+				<Waterfall col={4} margin={15}></Waterfall>
 			</>
 		)
 	}
