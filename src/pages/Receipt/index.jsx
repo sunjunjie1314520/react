@@ -34,6 +34,20 @@ export default class index extends Component {
             t2: '',
 
             input1: '',
+            input2: '',
+            input3: '',
+            input4: '',
+            input5: '',
+            input6: '',
+            input7: '',
+            input8: '',
+            input9: '',
+            input10: '',
+            input11: '',
+            input12: '',
+            input13: '',
+            input14: '',
+            input15: '',
 
             alert1: false,
             alert2: false,
@@ -41,15 +55,15 @@ export default class index extends Component {
             // Tabel 列字段
             fields1: [
                 {
-                    width: 60,
+                    width: 50,
                     name: '序号',
                 },
                 {
-                    width: 130,
-                    name: '销售日期',
+                    width: 180,
+                    name: '销售商场',
                 },
                 {
-                    width: 150,
+                    width: 120,
                     name: '销售单号',
                 },
                 {
@@ -58,7 +72,7 @@ export default class index extends Component {
                 },
                 {
                     width: 100,
-                    name: '销售金额',
+                    name: '销售日期',
                 },
             ],
             // Tabel 源数据
@@ -76,6 +90,15 @@ export default class index extends Component {
             ]
         }
         this.rihgt_layout = createRef()
+    }
+
+    // 表格复选框
+    checkHandle(check, k){
+        const {data1} = this.state
+        data1[k].check = check
+        this.setState({
+            data1: data1
+        })
     }
 
     componentDidMount(){
@@ -103,8 +126,8 @@ export default class index extends Component {
                             <ul>
 
                                 <DropDown width="48%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>销售商场</DropDown>
-                                <Input title="销售单号" width="48%" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
-                                <Input width="48%" title="客户名称" value={this.state.input1} model={(v)=>this.setState({input1: v})}>
+                                <Input title="销售单号" width="48%" value={this.state.input1} model={(v)=>this.setState({input1: v})}></Input>
+                                <Input width="48%" title="客户名称" value={this.state.input2} model={(v)=>this.setState({input2: v})}>
                                     <button className="pub-search"></button>
                                 </Input>
                                 <DateTime width="48%" title="销售日期" model={(v)=> this.setState({time1: v})}></DateTime>
@@ -118,7 +141,7 @@ export default class index extends Component {
                                         <Li key={k} check={v.check}>
                                             <Box w={this.state.fields1[0].width}>
                                                 <label className="pub-check">
-                                                    <input onChange={(e)=>this.checkHandle(e.target.checked, k)} checked={v.check} type="checkbox" />{k+1}
+                                                    {k+1}
                                                 </label>
                                             </Box>
                                             <Box w={this.state.fields1[1].width}>111</Box>
@@ -144,36 +167,36 @@ export default class index extends Component {
                                 <a className="a6 let w100" href="/" title="">查看销售单</a>
                             </div>
                         </h2>
-                        
+
                         {/* 列表 */}
                         <div className="pub-table">
                             <ul>
 
-                                <Input title="销售单号" width="31%" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
-                            
-                                <Input title="销售日期" width="31%" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
+                                <Input title="销售单号" width="31%" value={this.state.input3} model={(v)=>this.setState({input3: v})}></Input>
 
-                                <Input title="预送日期" width="31%" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
+                                <Input title="销售日期" width="31%" value={this.state.time2} model={(v)=>this.setState({time2: v})}></Input>
 
-                                <Input title="客户名称" width="31%" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
-                                <Input title="客户编码" width="31%" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
-                                <Input title="手机/电话" width="32%" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
+                                <Input title="预送日期" width="32%" value={this.state.time3} model={(v)=>this.setState({time3: v})}></Input>
+
+                                <Input title="客户名称" width="31%" value={this.state.input4} model={(v)=>this.setState({input4: v})}></Input>
+                                <Input title="客户编码" width="31%" value={this.state.input5} model={(v)=>this.setState({input5: v})}></Input>
+                                <Input title="手机/电话" width="32%" value={this.state.input6} model={(v)=>this.setState({input6: v})}></Input>
 
 
-                                <Input title="送货地址" width="98%" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
-                                <Input title="销售商场" width="31%" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
-                                <Input title="销售员" width="31%" value={this.state.field1}  model={(v)=>this.setState({field1: v})}></Input>
+                                <Input title="送货地址" width="98%" value={this.state.input7} model={(v)=>this.setState({input7: v})}></Input>
+                                <Input title="销售商场" width="31%" value={this.state.input8} model={(v)=>this.setState({input8: v})}></Input>
+                                <Input title="销售员" width="31%" value={this.state.input9}  model={(v)=>this.setState({input9: v})}></Input>
 
                                 <li className="li6">
                                     <span></span>
                                     <label className="pub-check1"><input type="checkbox" />是否有现场销售</label>
                                 </li>
 
-                                <Input title="销售金额" width="31%" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
-                                <Input title="累计收款" width="31%" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
-                                <Input title="还剩余款" width="32%" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
+                                <Input title="销售金额" width="31%" value={this.state.input10} model={(v)=>this.setState({input10: v})}></Input>
+                                <Input title="累计收款" width="31%" value={this.state.input11} model={(v)=>this.setState({input11: v})}></Input>
+                                <Input title="还剩余款" width="32%" value={this.state.input12} model={(v)=>this.setState({input12: v})}></Input>
 
-                                <Input title="备注" width="98%" value={this.state.field1} model={(v)=>this.setState({field1: v})}></Input>
+                                <Input title="备注" width="98%" value={this.state.input13} model={(v)=>this.setState({input13: v})}></Input>
                             </ul>
                         </div>
 

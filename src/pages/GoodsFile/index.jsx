@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 // import Swiper from "swiper"
 
-// import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
+import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -17,7 +17,7 @@ import img2 from '../../style/img/Goods_27caca70-04a0-4659-979e-31459d0c9518.jpg
 import img3 from '../../style/img/Goods_a545c1fc-5f74-4d80-b975-40f3bd23cc7c.jpg';
 
 
-// SwiperCore.use([Navigation, Pagination, Autoplay]);
+SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 export default class index extends Component {
     constructor(){
@@ -295,7 +295,7 @@ export default class index extends Component {
                             this.state.data.map((v, k)=>{
                                 return (
                                     <li key={k} className={v.check ? 'pub-table-back': ''}>
-                                        <Box w={this.state.fields[0].width}><label className="pub-check">
+                                        <Box w={this.state.fields[0].width}><label className="pub-check3">
                                             <input onChange={(e)=>this.checkHandle(e.target.checked, k)} checked={v.check} type="checkbox" />{k+1}</label>
                                         </Box>
                                         <Box w={this.state.fields[1].width}>111</Box>

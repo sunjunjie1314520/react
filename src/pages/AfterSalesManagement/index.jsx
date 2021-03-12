@@ -194,7 +194,7 @@ export default class index extends Component {
                                 return (
                                     <Li key={k} check={v.check}>
                                         <Box w={this.state.fields1[0].width}>
-                                            <label className="pub-check">
+                                            <label className="pub-check3">
                                                 <input onChange={(e)=>this.checkHandle(e.target.checked, k)} checked={v.check} type="checkbox" />
                                                 {k+1}
                                             </label>
