@@ -45,10 +45,10 @@ export default class index extends Component {
                     <h2 className="pub-tit">
                         <i className="ico-font12"></i>
                         客户案例
-                        <p>
-                            <a className="a1" href="/" onClick={(e)=> {e.preventDefault();this.setState({alert1: true})}} title="">上传</a>
+                        <div className="fr">
+                            <a className="a3" href="/" onClick={(e)=> {e.preventDefault();this.setState({alert1: true})}} title="">上传</a>
                             <a className="a2" href="/" onClick={(e)=> {e.preventDefault();this.setState({alert1: true})}} title="">查询</a>
-                        </p>
+                        </div>
                     </h2>
                     <div className="pub-table">
                         <ul>
@@ -132,14 +132,14 @@ export default class index extends Component {
                                     <li>
                                         <span>标题：</span>
                                         <div className="input-wrap">
-                                            <input type="text" placeholder="案例标题文字介绍在20字以内" />
+                                            <input type="text" placeholder="文字介绍在20字以内" />
                                             <var className="pub-asterisk">*</var>
                                         </div>
                                     </li>
                                     <li>
                                         <span>上传图片：</span>
                                         <div className="input-wrap">
-                                            <input className="in1" type="text" placeholder="图片大小不能超过3M" />
+                                            <input className="in1" type="text" placeholder="大小不能超过3M" />
                                             <a className="upload" href="/">浏览<input type="file" onchange="xmTanUploadImg(this)" accept="image/*"/></a>
                                             <var className="pub-asterisk">*</var>
                                         </div>
@@ -147,35 +147,35 @@ export default class index extends Component {
                                     <li>
                                         <span>上传图片：</span>
                                         <div className="input-wrap">
-                                            <input className="in1" type="text" placeholder="图片大小不能超过3M" />
+                                            <input className="in1" type="text" placeholder="大小不能超过3M" />
                                             <a className="upload" href="/">浏览<input type="file" onchange="xmTanUploadImg(this)" accept="image/*"/></a>
                                         </div>
                                     </li>
                                     <li>
                                         <span>上传图片：</span>
                                         <div className="input-wrap">
-                                            <input className="in1" type="text" placeholder="图片大小不能超过3M" />
+                                            <input className="in1" type="text" placeholder="大小不能超过3M" />
                                             <a className="upload" href="/">浏览<input type="file" onchange="xmTanUploadImg(this)" accept="image/*"/></a>
                                         </div>
                                     </li>
                                     <li>
                                         <span>上传图片：</span>
                                         <div className="input-wrap">
-                                            <input className="in1" type="text" placeholder="图片大小不能超过3M" />
+                                            <input className="in1" type="text" placeholder="大小不能超过3M" />
                                             <a className="upload" href="/">浏览<input type="file" onchange="xmTanUploadImg(this)" accept="image/*"/></a>
                                         </div>
                                     </li>
                                     <li>
                                         <span>上传图片：</span>
                                         <div className="input-wrap">
-                                            <input className="in1" type="text" placeholder="图片大小不能超过3M" />
+                                            <input className="in1" type="text" placeholder="大小不能超过3M" />
                                             <a className="upload" href="/">浏览<input type="file" onchange="xmTanUploadImg(this)" accept="image/*"/></a>
                                         </div>
                                     </li>
                                     <li>
                                         <span>上传图片：</span>
                                         <div className="input-wrap">
-                                            <input className="in1" type="text" placeholder="图片大小不能超过3M" />
+                                            <input className="in1" type="text" placeholder="大小不能超过3M" />
                                             <a className="upload" href="/">浏览<input type="file" onchange="xmTanUploadImg(this)" accept="image/*"/></a>
                                         </div>
                                     </li>
