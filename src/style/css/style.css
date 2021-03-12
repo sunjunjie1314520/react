@@ -2254,9 +2254,6 @@ body.open .main-right ul li .slide-sub {
 .notice-left .pub-row-style .table-head {
   border-top: 1px solid #cdcdcd;
 }
-.notice-left .pub-row-style ul {
-  height: calc(100vh - 239px);
-}
 .notice-left .pub-table {
   padding-right: 25px;
 }

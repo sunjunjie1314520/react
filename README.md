@@ -25,7 +25,7 @@ gulp
 
 # 先引入后使用------------------------------
 
-import { Input, DropDown, Frame, Move } from '../../components/UI';
+import { Input, DropDown, Frame, Move, ContainDown, ContainDown } from '../../components/UI';
 
 import Pager from '../../components/Pager';
 
@@ -39,27 +39,37 @@ constructor(props){
     super(props)
     this.state = {
 
-        field1: '1',
+        // Input
+        input1: '',
+        input2: '',
+        input3: '',
 
-        items1: ['菜单一', '菜单二'],
+        // DropDown
+        items1:['第一个菜单', '2'],
         index1: 0,
 
-        time1: '2019-05-20',
+        // ContainDown
+        down1: 0,
+        down2: 0,
+        down3: 0,
+        down4: 0,
+        down4: 0,
 
+        // ContainDown
+        time1: '',
+
+        // Tabel 列字段
         fields1: [
             {
                 width: 60,
                 name: '序号',
             },
             {
-                width: 120,
-                name: '客户编码',
-            },
-            {
-                width: 120,
-                name: '客户名称',
+                width: 180,
+                name: '销售商场',
             },
         ],
+        // Tabel 源数据
         data1: [
             {
                 id: 1,
@@ -71,9 +81,7 @@ constructor(props){
                 bianma: 'xxxxxxxxxxxxx',
                 check: false,
             },
-        ],
-
-        dex1: 0,
+        ]
     }
 }
 
@@ -88,7 +96,19 @@ constructor(props){
 # 分页
     <Pager></Pager>
 # 包含
-    <ContainDown index={this.state.dex1} Select={(v)=> this.setState({dex1: v})}></ContainDown>
+    <Input ltr={true} title="销售单号" value={this.state.input1} model={(v)=>this.setState({input1: v})}>
+        <ContainDown index={this.state.down1} Select={(v)=> this.setState({down1: v})}></ContainDown>
+    </Input>
+
+    <Input split={true} title="销售商场" value={this.state.input2} model={(v)=>this.setState({input2: v})}>
+        <ContainDown index={this.state.down2} Select={(v)=> this.setState({down2: v})}></ContainDown>
+        <button className="pub-search"></button>
+    </Input>
+
+    <DateTime title="销售日期" width="23%" model={(v)=> this.setState({time1: v})} left={false}>
+        <ContainDown index={this.state.down3} Select={(v)=>this.setState({down3: v})}></ContainDown>
+    </DateTime
+
 
 ```javascript
 // 方法放在 rander 函数上方

@@ -12,11 +12,11 @@ export default class index extends Component {
 			items1: ['是', '否'],
             index1: 0,
 
-			fields1: '',  // 搜索消息主题
-            fields4: '',  // 搜索接收人
+			input1: '', 
+            input4: '', 
 
-            fields2: '',  // 消息主题
-            fields3: '',  // 接收人
+            input2: '', 
+            input3: '', 
 
 			d1: 0,
 			d2: 0,
@@ -79,9 +79,9 @@ export default class index extends Component {
 
 					<div className="pub-table">
 						<ul>
-							<Input title="消息主题" width="98%" value={this.state.fields2} model={(v)=>this.setState({fields2: v})}></Input>
+							<Input title="消息主题" width="98%" value={this.state.input2} model={(v)=>this.setState({input2: v})}></Input>
 
-							<Input title="接收人" width="48%" value={this.state.fields3} model={(v)=>this.setState({fields3: v})}>
+							<Input title="接收人" width="48%" value={this.state.input3} model={(v)=>this.setState({input3: v})}>
 								<button className="pub-search"></button>
 							</Input>
 
@@ -132,9 +132,9 @@ export default class index extends Component {
 						</h2>
 						<div className="pub-table">
 							<ul>
-								<Input title="消息主题" width="64%" value={this.state.fields1} required model={(v)=>this.setState({fields1: v})}></Input>
-								<Input title="接收人" width="32%" value={this.state.fields4} required model={(v)=>this.setState({fields4: v})}>
-									<button type="button" onClick={()=> alert(`搜索【${this.state.fields4}】中...`)} className="pub-search"></button>
+								<Input title="消息主题" width="64%" value={this.state.input1} required model={(v)=>this.setState({input1: v})}></Input>
+								<Input title="接收人" width="32%" value={this.state.input4} required model={(v)=>this.setState({input4: v})}>
+									<button type="button" onClick={()=> alert(`搜索【${this.state.input4}】中...`)} className="pub-search"></button>
 								</Input>
 							</ul>
 						</div>

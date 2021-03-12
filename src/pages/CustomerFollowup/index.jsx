@@ -1,4 +1,4 @@
-import React, { Component, createRef } from 'react'
+import React, { Component } from 'react'
 
 import Table, { Box, Li } from '../../components/Table';
 
@@ -8,8 +8,6 @@ export default class index extends Component {
 
     constructor(){
         super()
-        this.left_layout = createRef()
-
         this.state = {
             items1: ['1', '2', '3'],
             index1: 0,
@@ -52,26 +50,26 @@ export default class index extends Component {
                     width: 100,
                     name: '跟进日期',
                 },
-                ],
+            ],
             data1: [
-                    {
-                        id: 1,
-                        bianma: 'xxxxxxxxxxxxx',
-                        check: false,
-                    },
-                    {
-                        id: 2,
-                        bianma: 'xxxxxxxxxxxxx',
-                        check: false,
-                    },
-                ]
+                {
+                    id: 1,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+                {
+                    id: 2,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+            ]
         }
     }
 
     render() {
         return (
-           <>
-            <div className="notice-left">
+            <>
+                <div className="notice-left">
                     <h2 className="pub-tit">
                         <i className="ico-font10"></i>
                         跟进列表
@@ -82,7 +80,6 @@ export default class index extends Component {
                     </h2>
                     <div className="pub-table">
                         <ul>
-
                             <DropDown width="98%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>商场</DropDown>
 
                             <Input title="客户名称" width="48%" value={this.state.field1} model={(v)=>this.setState({field1: v})}>
@@ -94,9 +91,11 @@ export default class index extends Component {
                             <DropDown width="48%" items={this.state.items2} index={this.state.index2} onChange={(index)=> this.setState({index2: index})}>跟进阶段</DropDown>
 
                             <DropDown width="48%" items={this.state.items3} index={this.state.index3} onChange={(index)=> this.setState({index3: index})}>跟进期间</DropDown>
-
                         </ul>
                     </div>
+
+                    {/* 清除浮动 */}
+                    <div className="clear"></div>
 
                     <Table fields={this.state.fields1} margin bottom={15}>
                     {

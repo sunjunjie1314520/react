@@ -11,18 +11,24 @@ export default class index extends Component {
     constructor(props){
         super(props)
         this.state = {
-            field1: '123',
-            field2: '456',
-            field3: '',
+
+            input1: '',
+            input2: '',
+            input3: '',
 
             index1: 0,
-            index2: 1,
-            index3: 2,
-            index4: 3,
-            index5: 4,
-            index6: 5,
-            index7: 6,
-            index8: 7,
+            items1:['第一个菜单', '2'],
+
+            down1: 0,
+            down2: 1,
+            down3: 5,
+            down4: 6,
+            down5: 0,
+            down6: 0,
+            down7: 0,
+            down8: 1,
+
+            time1: '',
 
             fields1: [
                 {
@@ -82,6 +88,7 @@ export default class index extends Component {
                     name: '修改人',
                 },
             ],
+
             data1: [
                 {
                     id: 1,
@@ -112,37 +119,37 @@ export default class index extends Component {
                     </div>
                     <div className="pub-table">
                         <ul>
-                            <Input ltr={true} title="销售单号" value={this.state.field1} model={(v)=>this.setState({field1: v})}>
-                                <ContainDown index={this.state.index1} Select={(v)=> this.setState({index1: v})}></ContainDown>
+                            <Input ltr={true} title="销售单号" value={this.state.input1} model={(v)=>this.setState({input1: v})}>
+                                <ContainDown index={this.state.down1} Select={(v)=> this.setState({down1: v})}></ContainDown>
                             </Input>
 
-                            <Input split={true} title="销售商场" value={this.state.field1} model={(v)=>this.setState({field1: v})}>
-                                <ContainDown index={this.state.index2} Select={(v)=> this.setState({index2: v})}></ContainDown>
+                            <Input split={true} title="销售商场" value={this.state.input2} model={(v)=>this.setState({input2: v})}>
+                                <ContainDown index={this.state.down2} Select={(v)=> this.setState({down2: v})}></ContainDown>
                                 <button className="pub-search"></button>
                             </Input>
 
-                            <DateTime title="销售日期" width="23%" model={(v)=> this.setState({t1: v})} left={false}>
-								<ContainDown index={this.state.index6} Select={(v)=>this.setState({d1: v})}></ContainDown>
+                            <DateTime title="销售日期" width="23%" model={(v)=> this.setState({time1: v})} left={false}>
+								<ContainDown index={this.state.down3} Select={(v)=>this.setState({down3: v})}></ContainDown>
 							</DateTime>
 
-                            <DateTime title="销售日期" width="23%" model={(v)=> this.setState({t1: v})} left={false}>
-								<ContainDown index={this.state.index7} Select={(v)=>this.setState({d1: v})}></ContainDown>
+                            <DateTime title="销售日期" width="23%" model={(v)=> this.setState({time1: v})} left={false}>
+								<ContainDown index={this.state.down4} Select={(v)=>this.setState({down3: v})}></ContainDown>
 							</DateTime>
 
-                            <Input ltr={true} title="货品编码" value={this.state.field2} model={(v)=>this.setState({field2: v})}>
-                                <ContainDown index={this.state.index5} Select={(v)=> this.setState({index5: v})}></ContainDown>
+                            <Input ltr={true} title="货品编码" value={this.state.input1} model={(v)=>this.setState({input1: v})}>
+                                <ContainDown index={this.state.down5} Select={(v)=> this.setState({down5: v})}></ContainDown>
                             </Input>
 
-                            <Input ltr={true} title="型号" value={this.state.field2} model={(v)=>this.setState({field1: v})}>
-                                <ContainDown index={this.state.index3} Select={(v)=> this.setState({index3: v})}></ContainDown>
+                            <Input ltr={true} title="型号" value={this.state.input1} model={(v)=>this.setState({input1: v})}>
+                                <ContainDown index={this.state.down6} Select={(v)=> this.setState({down6: v})}></ContainDown>
                             </Input>
 
-                            <Input ltr={true} title="客户编码" value={this.state.field2} model={(v)=>this.setState({field1: v})}>
-                                <ContainDown index={this.state.index4} Select={(v)=> this.setState({index4: v})}></ContainDown>
+                            <Input ltr={true} title="客户编码" value={this.state.input1} model={(v)=>this.setState({input1: v})}>
+                                <ContainDown index={this.state.down7} Select={(v)=> this.setState({down7: v})}></ContainDown>
                             </Input>
 
-                            <Input split={true} title="销售员" value={this.state.field3} model={(v)=>this.setState({field1: v})}>
-                                <ContainDown index={this.state.index8} Select={(v)=> this.setState({index8: v})}></ContainDown>
+                            <Input split={true} title="销售员" value={this.state.input1} model={(v)=>this.setState({input1: v})}>
+                                <ContainDown index={this.state.down8} Select={(v)=> this.setState({down8: v})}></ContainDown>
                                 <button className="pub-search"></button>
                             </Input>
                         </ul>

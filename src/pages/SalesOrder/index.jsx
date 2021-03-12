@@ -17,6 +17,10 @@ export default class index extends Component {
             items2: ['菜单一', '菜单二', '菜单三', '菜单四'],
             index2: 0,
 
+            input1: '',
+            input2: '',
+            input3: '',
+
             kehu:'',
             danhao:'',
             bianhao: '',
@@ -161,7 +165,7 @@ export default class index extends Component {
                     <div className="pub-table">
                         <ul>
 
-                            <Input title="销售单号" value={this.state.danhao} model={(v)=> this.setState({danhao: v})}>
+                            <Input title="销售单号" value={this.state.input1} model={(v)=> this.setState({nput1: v})}>
                                 <i className="ico-sp0"></i>
                             </Input>
 
@@ -184,9 +188,9 @@ export default class index extends Component {
                                 <button className="pub-search"></button>
                             </Input>
 
-                            <Input title="客户编码" value={this.state.bianhao} model={(v)=> this.setState({bianhao: v})}></Input>
+                            <Input title="客户编码" value={this.state.input2} model={(v)=> this.setState({input2: v})}></Input>
 
-                            <Input title="手机/电话" value={this.state.field1} model={(v)=> this.setState({field1: v})}></Input>
+                            <Input title="手机/电话" value={this.state.input3} model={(v)=> this.setState({input3: v})}></Input>
 
                             <li>
                                 <span></span>
@@ -196,24 +200,24 @@ export default class index extends Component {
                                 </p>
                             </li>
 
-                            <Input width="48%" title="送货地址" value={this.state.field2} model={(v)=> this.setState({field2: v})}></Input>
+                            <Input width="48%" title="送货地址" value={this.state.input4} model={(v)=> this.setState({input4: v})}></Input>
 
                             <DropDown index={this.state.index1} items={this.state.items1} onChange={(index)=> this.setState({index1: index})}required>销售商场</DropDown>
 
                             <DropDown type="down" index={this.state.index2} items={this.state.items2} onChange={(index)=> this.setState({index2: index})}required>销售员</DropDown>
 
-                            <Input title="合计金额" value={this.state.field3} model={(v)=> this.setState({field3: v})}></Input>
+                            <Input title="合计金额" value={this.state.input5} model={(v)=> this.setState({input5: v})}></Input>
 
-                            <Input title="已收款" value={this.state.field4} model={(v)=> this.setState({field4: v})}></Input>
+                            <Input title="已收款" value={this.state.input6} model={(v)=> this.setState({input6: v})}></Input>
 
-                            <Input title="未收余款" value={this.state.field5} model={(v)=> this.setState({field5: v})}></Input>
+                            <Input title="未收余款" value={this.state.input7} model={(v)=> this.setState({input7: v})}></Input>
 
-                            <Input title="整单折扣" value={this.state.field6} model={(v)=> this.setState({field6: v})}>
+                            <Input title="整单折扣" value={this.state.input8} model={(v)=> this.setState({input8: v})}>
                                 <a className="quzheng" href="/" title="">去零取整</a>
                             </Input>
 
 
-                            <Input width="98%" title="备注" value={this.state.field7} model={(v)=> this.setState({field7: v})}></Input>
+                            <Input width="98%" title="备注" value={this.state.input9} model={(v)=> this.setState({input9: v})}></Input>
 
                         </ul>
                     </div>
