@@ -14,6 +14,19 @@ export default class index extends Component {
             items1: ['已停产','已停售','销售特价','采购特价'],
             index1: 0,
 
+            input1: '',
+            input2: '',
+            input3: '',
+            input4: '',
+            input5: '',
+            input6: '',
+            input7: '',
+            input8: '',
+            input9: '',
+            input10: '',
+            input11: '',
+            input12: '',
+
             show1: false,
 
             fields: [
@@ -230,9 +243,9 @@ export default class index extends Component {
                         </div>
                         <div className="pub-table">
                             <ul>
-                                <Input title="货品编码" value={this.state.fields1} model={(v)=>this.setState({fields1: v})}></Input>
-                                <Input title="型号" value={this.state.fields2} model={(v)=>this.setState({fields2: v})}></Input>
-                                <Input title="品牌系列" value={this.state.fields3} model={(v)=>this.setState({fields3: v})}>
+                                <Input title="货品编码" value={this.state.input1} model={(v)=>this.setState({input1: v})}></Input>
+                                <Input title="型号" value={this.state.input2} model={(v)=>this.setState({input2: v})}></Input>
+                                <Input title="品牌系列" value={this.state.input3} model={(v)=>this.setState({input3: v})}>
                                     <button className="pub-search"></button>
                                 </Input>
                                 <DropDown items={this.state.items1} index={this.state.index0} onChange={(index)=> this.setState({index0: index})}>货品状态</DropDown>

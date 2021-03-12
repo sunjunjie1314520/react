@@ -20,7 +20,12 @@ export default class index extends Component {
             items3: ['按最新', '按城市', '按户型', '按风格', '按点赞', '按收藏'],
             index3: 0,
 
-            name: '项目昵称'
+            input1: '',
+            input2: '',
+            input3: '',
+            input4: '',
+
+            name: ''
         }
     }
 
@@ -44,17 +49,17 @@ export default class index extends Component {
                     <div className="pub-table">
                         <ul>
                             <DropDown items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>案例类型</DropDown>
-                            
+
                             <DropDown items={this.state.items2} index={this.state.index2} onChange={(index)=> this.setState({index2: index})}>户型</DropDown>
 
                             <Input title="项目名称" value={this.state.name} model={(v)=>this.setState({name: v})}></Input>
 
                             <DropDown items={this.state.items3} index={this.state.index3} onChange={(index)=> this.setState({index3: index})}>排序方式</DropDown>
-   
+
                         </ul>
                     </div>
-                </div>	
-                
+                </div>
+
                 <div className="clearfix">
                     <div className="case-item">
                         <Frame className="auto-height" bottom={41}>

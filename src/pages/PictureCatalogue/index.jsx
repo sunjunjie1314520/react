@@ -16,9 +16,19 @@ export default class index extends Component {
 
             items1: ['按货品型号', '按货品价格', '按品牌系列', '按新品上市', '按货品类别', '按货品特价'],
             index1: 0,
+
+            input1: '',
+            input2: '',
+            input3: '',
+            input4: '',
+            input5: '',
+            input6: '',
+            input7: '',
+            input8: '',
+            input9: '',
         }
     }
-    
+
     xmTanUploadImg = () => {
         console.log('54564');
     }
@@ -56,7 +66,7 @@ export default class index extends Component {
                             </li>
                             <li>
                                 <img src={img1} alt="" />
-                            </li>				
+                            </li>
                         </ul>
                     </Frame>
                 </div>
@@ -75,19 +85,19 @@ export default class index extends Component {
                         </h2>
                         <div className="pub-table">
                             <ul>
-                                <Input title="搜索" width="48%" placeholder="请输入品牌查询" value={this.state.fields1} model={(v)=>this.setState({fields1: v})}>
+                                <Input title="搜索" width="48%" placeholder="请输入品牌查询" value={this.state.input1} model={(v)=>this.setState({input1: v})}>
                                     <button class="pub-search"></button>
                                 </Input>
 
-                                <Input title="客户手机号" placeholder="请输入..." value={this.state.fields2} model={(v)=>this.setState({fields2: v})}></Input>
+                                <Input title="客户手机号" placeholder="请输入..." value={this.state.input2} model={(v)=>this.setState({input2: v})}></Input>
 
                                 <DropDown items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>排序方式</DropDown>
-                                
+
                             </ul>
                         </div>
                     </div>
 
-                    <Frame className="pict-main pubsingleheight" bottom={40}>
+                    <Frame className="pict-main pubsingleheight" bottom={41}>
                         <div className="fl">
                             <i className="ico-font50"></i>
                             <img src={img1} alt="" />

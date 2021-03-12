@@ -120,6 +120,30 @@ checkHandle(check, k){
     })
 }
 ```
+    // 显示或隐藏 底部表单
+    riDown = () => {
+        const { bottom_alert } = this.state
+        this.setState({
+            bottom_alert: !bottom_alert
+        })
+    }
+
+    // 表格复选框
+    checkHandle(check, k){
+        const {data1} = this.state
+        data1[k].check = check
+        this.setState({
+            data1: data1
+        })
+    }
+
+    // 显示或隐藏 弹窗
+    slide = () => {
+        const {alert1} = this.state
+        this.setState({
+            alert1: !alert1
+        })
+    }
 
 # 表格
     <Table fields={this.state.fields1} bottom={42} picture={true}>

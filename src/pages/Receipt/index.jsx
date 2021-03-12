@@ -16,7 +16,7 @@ export default class index extends Component {
             sh: null,
             sh1: null,
 
-            
+
             items1: ['营养师1', '菜单一'],
             index1: 0,
             field1: '',
@@ -48,7 +48,7 @@ export default class index extends Component {
             sh: w_hei - off_top - 58 - 15,
             init1: w_hei - off_top - 58 - 15,
             init2: w_hei - off_top2
-        })      
+        })
 
         this.rihgt_layout.current.style.height = (w_hei - off_top1 - 17) +'px'
     }
@@ -67,7 +67,7 @@ export default class index extends Component {
         return (
             <>
                 <div className="left-wrappr">
-		
+
                     <div className="query pub-bor-fl">
 
                         <h2 className="pub-tit">
