@@ -86,6 +86,35 @@ constructor(props){
 }
 
 ```
+  # 第一步 在rcuters index.jsx 加入文件 (注意第一个文字大写，之间不能空隔)
+
+    import SalesOrder from '../pages/SalesOrder';
+
+    children: [
+			{
+				path: '/index',
+				exact: false,
+				component: Index,
+			},
+			{
+				path: '/sales-order',
+				exact: false,
+				component: SalesOrder,
+			},
+
+# 第二步 在HOME Left.jsx 加入文件名
+        menu: [
+                {
+                    slide: false,
+                    title: '已完成',
+                    icons: 'ico-huo',
+                    types: [
+                        {
+                            title: '发送消息',
+                            to: '/home/message'
+                        },
+                    ]
+
 
 # 输入框
     <Input title="公告通知" placeholder="请输入单号..." width="64%" value={this.state.field1} model={(v)=>this.setState({field1: v})} required></Input>

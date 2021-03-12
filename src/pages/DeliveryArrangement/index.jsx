@@ -63,7 +63,7 @@ export default class index extends Component {
                     name: '尺 寸',
                 },
                 {
-                    width: 120,
+                    width: 80,
                     name: '货品属性',
                 },
                 {

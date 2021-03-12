@@ -1414,9 +1414,10 @@ body.open .main-right ul li .slide-sub {
   float: right;
   color: #555;
   border-left: solid 1px #cdcdcd;
-  width: 68px;
+  width: 66px;
   height: 25px;
   line-height: 25px;
+  font-size: 12px;
   text-align: center;
   background: #eee;
   -webkit-flex-shrink: 0;
@@ -4559,7 +4560,7 @@ span.sp250 {
 .picture-path {
   float: left;
   border: solid 1px #cdcdcd;
-  width: 240px;
+  width: 220px;
 }
 .picture-path .box {
   background: #f9f9f9;
@@ -4569,12 +4570,12 @@ span.sp250 {
   width: 100%;
 }
 .picture-path .box ul {
-  padding: 0 14px;
+  padding-left: 12px;
 }
 .picture-path .box ul li {
-  margin-top: 15px;
+  margin-top: 12px;
   background: #d9d9d9;
-  height: 140px;
+  height: 120px;
   overflow: hidden;
   display: -webkit-flex;
   display: flex;
@@ -4584,13 +4585,13 @@ span.sp250 {
   justify-content: center;
 }
 .picture-path .box ul li:last-child {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 .picture-path .box ul li img {
   width: 100%;
 }
 .picture-list {
-  width: calc(100% - 255px);
+  width: calc(100% - 235px);
   float: right;
 }
 .picture-list .pict-main {

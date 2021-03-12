@@ -89,7 +89,7 @@ export default class index extends Component {
                                     <button class="pub-search"></button>
                                 </Input>
 
-                                <Input title="客户手机号" placeholder="请输入..." value={this.state.input2} model={(v)=>this.setState({input2: v})}></Input>
+                                <Input title="客户手机号" placeholder="请输入..." value={this.state.input2} required model={(v)=>this.setState({input2: v})}></Input>
 
                                 <DropDown items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>排序方式</DropDown>
 
