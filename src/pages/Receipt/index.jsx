@@ -104,7 +104,7 @@ export default class index extends Component {
     componentDidMount(){
         let w_hei = window.innerHeight
         let off_top1 = offsetTop(this.rihgt_layout.current)
-        this.rihgt_layout.current.style.height = (w_hei - off_top1 - 16) +'px'
+        this.rihgt_layout.current.style.height = (w_hei - off_top1 - 15) +'px'
     }
 
     render() {
@@ -134,7 +134,7 @@ export default class index extends Component {
                             </ul>
                         </div>
 
-                        <Table fields={this.state.fields1} bottom={17} margin noborder>
+                        <Table fields={this.state.fields1} bottom={16} margin noborder>
                             {
                                 this.state.data1.map((v, k)=>{
                                     return (
@@ -265,9 +265,9 @@ export default class index extends Component {
 
                         </div>
                     </div>
-                    
+
                 </div>
-                
+
                 {/* 确认弹窗 */}
                 <Move model={this.state.alert1}>
                     <div className="tips-wrapper move-obj">
@@ -275,7 +275,7 @@ export default class index extends Component {
                             <i className="ico-font30"></i>
                             提示
                             <div className="fr">
-                                <span className="ico-close" onClick={(e)=> {e.preventDefault();this.setState({alert1: false})}}></span> 
+                                <span className="ico-close" onClick={(e)=> {e.preventDefault();this.setState({alert1: false})}}></span>
                             </div>
                         </div>
                         <div className="tips-text">
@@ -399,7 +399,7 @@ export default class index extends Component {
                             <i className="ico-font30"></i>
                             提示
                             <div className="fr">
-                                <span className="ico-close" onClick={(e)=> {e.preventDefault();this.setState({alert1: false})}}></span> 
+                                <span className="ico-close" onClick={(e)=> {e.preventDefault();this.setState({alert1: false})}}></span>
                             </div>
                         </div>
                         <div className="tips-text">
