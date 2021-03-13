@@ -301,7 +301,7 @@ export default class index extends Component {
                             <span className="ico-close" onClick={(e)=> {e.preventDefault();this.setState({alert2: false})}}></span> 
                         </div>
                     </div>
-                        <div className="two-wrap">
+                        <div className="two-wrap bot">
                             <div className="pub-table">
                                 <ul>
                                     <li className="li1">

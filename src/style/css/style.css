@@ -2058,6 +2058,10 @@ body.open .main-right ul li .slide-sub {
 .archives-alert .two-wrap {
   float: left;
   width: 100%;
+  border-bottom: 1px solid #cdcdcd;
+}
+.archives-alert .two-wrap.bot {
+  border-bottom: 0px solid #cdcdcd;
 }
 .archives-alert .two-wrap.line {
   border-bottom: 1px solid #cdcdcd;
@@ -2132,7 +2136,7 @@ body.open .main-right ul li .slide-sub {
   background-color: #d85940;
 }
 .case-scroll {
-  height: 92vh;
+  height: 91vh;
   position: absolute;
   width: 84%;
   left: 8%;
@@ -2875,7 +2879,7 @@ body.open .main-right ul li .slide-sub {
   border-left: none;
 }
 .pub-row-style .table-row {
-  height: 360px;
+  height: 320px;
   overflow: auto;
   float: left;
   width: 100%;
@@ -4201,6 +4205,7 @@ span.sp250 {
   position: relative;
   overflow: hidden;
   text-align: center;
+  background: #fff
 }
 .goods .box-one .fr-wrap .pict img {
   height: 100%;
@@ -4265,6 +4270,7 @@ span.sp250 {
   float: left;
   -webkit-flex-shrink: 0;
   flex-shrink: 0;
+  background: #fff;
 }
 .goods .box-one .fr-wrap .scroll .swiper-wrapper .swiper-slide:hover {
   border-color: #0799fb;

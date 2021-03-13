@@ -27,6 +27,12 @@ export default class index extends Component {
             items1: ['已停产','已停售','销售特价','采购特价'],
             index1: 0,
 
+            items2: ['个','张','件','套','组','幅'],
+            index2: 0,
+
+            items3: '',
+            index3: 0,
+
             input1: '',
             input2: '',
             input3: '',
@@ -209,10 +215,6 @@ export default class index extends Component {
         })
     }
 
-    componentDidMount(){
-        
-    }
-
     render() {
         return (
             <>
@@ -318,7 +320,7 @@ export default class index extends Component {
                     <Pager></Pager>
 
                 </div>
-                
+
                 {/* 弹窗1 */}
                 <Move className="pub-one" model={this.state.alert1}>
                     <div className="goods move-obj">
@@ -333,194 +335,29 @@ export default class index extends Component {
                             <div className="fl-wrap">
                                 <div className="pub-table">
                                     <ul>
-                                        <li className="li1">
-                                            <span>货品编码：</span>
-                                            <div className="input-wrap">
-                                                <input type="text" />
-                                            </div>
-                                        </li>
-                                        <li className="li1">
-                                            <span>品牌：</span>
-                                            <div className="input-wrap">
-                                                <input type="text" />
-                                                <button className="pub-search"></button>
-                                                <var className="pub-asterisk">*</var>
-                                            </div>
-                                        </li>
-                                        <li className="li1">
-                                            <span>系列：</span>
-                                            <div className="input-wrap">
-                                                <input type="text" />
-                                                <button className="pub-down"></button>
-                                                <var className="pub-asterisk">*</var>
-                                            </div>
-                                        </li>
-                                        <li className="li1">
-                                            <span>货品类别：</span>
-                                            <div className="input-wrap">
-                                                <input type="text" />
-                                                <button className="pub-down"></button>
-                                                <div className="pub-drop-down">
-                                                <span>内部货品Internal Goods</span>
-                                                <span>其他家具Other furniture</span>
-                                                <span>综合类others</span>
-                                                <span>沙发Sofa</span>
-                                                <span>茶几coffee table</span>
-                                                <span>电视柜TV cabinet</span>
-                                                <span>展示柜/酒柜Showcase wine cabinet</span>
-                                                <span>玄关Console</span>
-                                                <span>餐桌/吧台Dining table,Bar counter</span>
-                                                <span>餐椅/吧椅Side chair,Bar Stool</span>
-                                                <span>边柜/边桌Side board</span>
-                                                <span>床Bed</span>
-                                                <span>床头柜Night Table</span>
-                                                <span>床尾凳Bench</span>
-                                                <span>休闲椅Other Chairs</span>
-                                                <span>妆凳/脚凳Dressing Chair</span>
-                                                <span>妆台/妆柜DressingTable,Cabinet</span>
-                                                <span>衣柜Clothing Cabinet</span>
-                                                <span>斗柜Chest</span>
-                                                <span>书桌Writing Desk</span>
-                                                <span>书椅Writing Chair</span>
-                                                <span>书柜Bookcase</span>
-                                                <span>床垫Matress</span>
-                                                <span>镜Mirror</span>
-                                                <span>架Shelf</span>
-                                                <span>灯/烛台Lighting,Candle holder</span>
-                                                <span>画/相框Painting,Photo Frame</span>
-                                                <span>毯Carpet</span>
-                                                <span>抱枕Cushion</span>
-                                                <span>床上用品Bedclothes</span>
-                                                <span>茶餐用具Plate,Cup,Bowl etc.</span>
-                                                <span>玻璃水晶Crystal,Glass</span>
-                                                <span>树脂/陶瓷Resin,Ceramics</span>
-                                                <span>花/果/树/植Flower,fruit,Tree,Plant</span>
-                                                <span>钟表/首饰Clock/Jewelry</span>
-                                                <span>公仔/玩具Doll,Toy</span>
-                                                <span>工艺精品Artware</span>
-                                                <span>窗帘Curtain</span>
-                                                <span>屏风Screen</span>
-                                                <span>箱包/衣物Bags,Clothing</span>
-                                                <span>珠宝/玉器Jewellery,Jade</span>
-                                        </div>
-                                                <var className="pub-asterisk">*</var>
-                                            </div>
-                                        </li>
-                                        <li className="li2">
-                                            <span>货品名称：</span>
-                                            <div className="input-wrap">
-                                                <input type="text" />
-                                                <var className="pub-asterisk">*</var>
-                                            </div>
-                                        </li>
-                                        <li className="li1">
-                                            <span>型号：</span>
-                                            <div className="input-wrap">
-                                                <input type="text" />
-                                                <var className="pub-asterisk">*</var>
-                                            </div>
-                                        </li>
-                                        <li className="li1">
-                                            <span>尺寸：</span>
-                                            <div className="input-wrap">
-                                                <input type="text" />
-                                            </div>
-                                        </li>
-                                        <li className="li1">
-                                            <span>单位：</span>
-                                            <div className="input-wrap">
-                                                <input type="text" />
-                                                <button className="pub-down"></button>
-                                                <div className="pub-drop-down">
-                                                <span>张</span>
-                                                <span>个</span>
-                                                <span>件</span>	
-                                                <span>套</span>
-                                                <span>台</span>
-                                                <span>幅</span>
-                                                <span>盏</span>
-                                                </div>	
-                                                <var className="pub-asterisk">*</var>
-                                            </div>
-                                        </li>
-                                        <li className="li1">
-                                            <span>颜色：</span>
-                                            <div className="input-wrap">
-                                                <input type="text" />
-                                            </div>
-                                        </li>
-                                        <li className="li1">
-                                            <span>经销价：</span>
-                                            <div className="input-wrap">
-                                                <input type="text" />
-                                            </div>
-                                        </li>
-                                        <li className="li1">
-                                            <span>零售价：</span>
-                                            <div className="input-wrap">
-                                                <input type="text" />
-                                            </div>
-                                        </li>
-                                        <li className="li1">
-                                            <span>采购价：</span>
-                                            <div className="input-wrap">
-                                                <input type="text" />
-                                            </div>
-                                        </li>
-                                        <li className="li1">
-                                            <span>批发价：</span>
-                                            <div className="input-wrap">
-                                                <input type="text" />
-                                            </div>
-                                        </li>
-                                        <li className="li1">
-                                            <span>产地：</span>
-                                            <div className="input-wrap">
-                                                <input type="text" />
-                                            </div>
-                                        </li>
-                                        <li className="li1">
-                                            <span>条码标签：</span>
-                                            <div className="input-wrap">
-                                                <input type="text" />
-                                            </div>
-                                        </li>
-                                        <li className="li1">
-                                            <span>立方数：</span>
-                                            <div className="input-wrap">
-                                                <input type="text" />
-                                            </div>
-                                        </li>
-                                        <li className="li1">
-                                            <span>包装数：</span>
-                                            <div className="input-wrap">
-                                                <input type="text" />
-                                            </div>
-                                        </li>
-                                        <li className="li1">
-                                            <span>主材：</span>
-                                            <div className="input-wrap">
-                                                <input type="text" />
-                                            </div>
-                                        </li>
-                                        <li className="li1">
-                                            <span>辅材：</span>
-                                            <div className="input-wrap">
-                                                <input type="text" />
-                                            </div>
-                                        </li>
-                                        <li className="li2">
-                                            <span>描述：</span>
-                                            <div className="input-wrap">
-                                                <input type="text" />
-                                            </div>
-                                        </li>
-                                        <li className="li2">
-                                            <span>备注：</span>
-                                            <div className="input-wrap">
-                                                <input type="text" />
-                                            </div>
-                                        </li>
+                                        <Input title="货品编码" width="48%" placeholder="编码会自动生成" value={this.state.input4} model={(v)=>this.setState({input4: v})}></Input>
+                                        <Input title="品牌系列" width="48%" value={this.state.input3}  required model={(v)=>this.setState({input3: v})}>
+                                            <button className="pub-search"></button>
+                                        </Input>
+                                        <DropDown width="48%" items={this.state.items1} index={this.state.index4} onChange={(index)=> this.setState({index4: index})} required>系列</DropDown>
+                                        <DropDown width="48%" items={this.state.items1} index={this.state.index3} onChange={(index)=> this.setState({index3: index})} required>货品类别</DropDown>
+                                        <Input title="货品名称" width="98%" value={this.state.input5} model={(v)=>this.setState({input5: v})} required></Input>
+                                        <Input title="型号" width="48%" value={this.state.input6} model={(v)=>this.setState({input6: v})} required></Input>
+                                        <Input title="尺寸" width="48%" value={this.state.input7} model={(v)=>this.setState({input7: v})}></Input>
+                                        <DropDown width="48%" items={this.state.items2} index={this.state.index6} onChange={(index)=> this.setState({index6: index})} required>单位</DropDown>
+                                        <Input title="颜色" width="48%" value={this.state.input7} model={(v)=>this.setState({input7: v})}></Input>
+                                        <Input title="经销价" width="48%" value={this.state.input8} model={(v)=>this.setState({input8: v})}></Input>
+                                        <Input title="零售价" width="48%" value={this.state.input9} model={(v)=>this.setState({input9: v})} ></Input>
+                                        <Input title="采购价" width="48%" value={this.state.input10} model={(v)=>this.setState({input10: v})}></Input>
+                                        <Input title="批发价" width="48%" value={this.state.input11} model={(v)=>this.setState({input11: v})}></Input>
+                                        <Input title="产地" width="48%" value={this.state.input12} model={(v)=>this.setState({input12: v})}></Input>
+                                        <Input title="条码标签" width="48%" placeholder="编码会自动生成" value={this.state.input13} model={(v)=>this.setState({input13: v})}></Input>
+                                        <Input title="立方数" width="48%" value={this.state.input14} model={(v)=>this.setState({input14: v})}></Input>
+                                        <Input title="包装数" width="48%" value={this.state.input15} model={(v)=>this.setState({input15: v})}></Input>
+                                        <Input title="主材" width="48%" value={this.state.input16} model={(v)=>this.setState({input16: v})}></Input>
+                                        <Input title="辅材" width="48%" value={this.state.input17} model={(v)=>this.setState({input17: v})}></Input>
+                                        <Input title="描述" width="98%" value={this.state.input18} model={(v)=>this.setState({input18: v})}></Input>
+                                        <Input title="备注" width="98%" value={this.state.input19} model={(v)=>this.setState({input19: v})}></Input>
                                     </ul>
                                 </div>
                             </div>
