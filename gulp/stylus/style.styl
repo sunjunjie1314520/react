@@ -956,8 +956,6 @@ body
   cursor: pointer;
   width 28px
   height: 25px;
-  vertical-align: middle;
-  display: inline-block;
 }
 .xiaoshow .pub-table ul li .input-wrap .add {
   float: left;
@@ -985,6 +983,7 @@ body
 }
 .xiaoshow .pub-table ul li .input-wrap .ico-sp0 {
   background: #eee url("../img/icon60.png") center no-repeat;
+  flex-shrink: 0
 }
 .xiaoshow .pub-table ul li .input-wrap .ico-sp1 {
   background: #eee url("../img/icon62.png") center no-repeat;
@@ -3171,15 +3170,11 @@ for i in 30..250
   border-radius: 50%;
   background: #fff;
   opacity: 0.6;
-  filter: alpha(opacity=60);
   margin: 0 3px;
 }
 .swiper-pagination span.swiper-pagination-bullet-active {
   opacity: 1;
-  filter: alpha(opacity=100);
 }
-
-
 .accounting
     border 1px solid bor1
     .retreat
