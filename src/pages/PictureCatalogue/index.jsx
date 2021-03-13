@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import img1 from '../../style/img/a12fd_1092x801.jpg'
+import img3 from '../../style/img/99094e75cd9e0bf20b699ccc6dae832b_510x360.jpg'
 import img2 from '../../style/img/506c0a676c6df69a4a3c7ecbcc827116_162x180.png'
 
 import Pager from '../../components/Pager';
@@ -49,25 +50,25 @@ export default class index extends Component {
                                 <img src={img1} alt="" />
                             </li>
                             <li>
-                            <img src={img1} alt="" />
+                                <img src={img3} alt="" />
                             </li>
                             <li>
                                 <img src={img1} alt="" />
                             </li>
                             <li>
-                                <img src={img1} alt="" />
+                                <img src={img3} alt="" />
                             </li>
                             <li>
                                 <img src={img1} alt="" />
                             </li>
                             <li>
-                                <img src={img1} alt="" />
+                                <img src={img3} alt="" />
                             </li>
                             <li>
                                 <img src={img1} alt="" />
                             </li>
                             <li>
-                                <img src={img1} alt="" />
+                                <img src={img3} alt="" />
                             </li>
                         </ul>
                     </Frame>
@@ -87,9 +88,7 @@ export default class index extends Component {
                         </h2>
                         <div className="pub-table">
                             <ul>
-                                <Input title="搜索" width="48%" placeholder="请输入品牌查询" value={this.state.input1} model={(v)=>this.setState({input1: v})}>
-                                    <button class="pub-search"></button>
-                                </Input>
+                                <Input title="搜索" width="48%" placeholder="请输入品牌查询" value={this.state.input1} model={(v)=>this.setState({input1: v})}></Input>
 
                                 <Input title="客户手机号" placeholder="请输入..." value={this.state.input2} required model={(v)=>this.setState({input2: v})}></Input>
 

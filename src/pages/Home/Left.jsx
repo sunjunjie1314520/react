@@ -228,7 +228,7 @@ export default class Left extends Component {
                         },
                         {
                             title: '跟进列表',
-                            to: '/home/page5'
+                            to: '/home/Follow-up-list'
                         },
                         {
                             title: '客户跟进',

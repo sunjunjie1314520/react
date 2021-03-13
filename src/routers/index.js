@@ -26,7 +26,7 @@ import DeliveryArrangement from '../pages/DeliveryArrangement';
 import Receipt from '../pages/Receipt';
 import AfterSalesManagement from '../pages/AfterSalesManagement';
 
-
+import FollowUpList from '../pages/FollowUpList';
 import PurchaseOrder from '../pages/PurchaseOrder';
 
 const router = [
@@ -134,6 +134,11 @@ const router = [
 				path: '/purchase-order',
 				exact: false,
 				component: PurchaseOrder,
+			},
+			{
+				path: '/Follow-up-list',
+				exact: false,
+				component: FollowUpList,
 			},
 			{
 				path: '/*',

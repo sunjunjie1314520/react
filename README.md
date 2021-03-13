@@ -192,6 +192,13 @@ constructor(props){
                 )
             })
         }
+        
+                    <li className="pub-last-back">
+                        <Box w={this.state.fields1[0].width}></Box>
+                        <Box w={this.state.fields1[1].width}>
+                            <b>合计：</b>
+                        </Box>
+                    </li>
     </Table>
 
 

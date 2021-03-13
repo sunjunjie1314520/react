@@ -18,7 +18,7 @@ export default class index extends Component {
             index2: 0,
 
             items3: ['菜单一', '菜单二', '菜单三', '菜单四'],
-            index3: 0,
+            index3: 4,
 
             items4: ['菜单一', '菜单二', '菜单三', '菜单四'],
             index4: 0,
@@ -63,12 +63,75 @@ export default class index extends Component {
                     name: '图 片',
                 },
                 {
-                    width: 150,
-                    name: '商场/仓库',
+                    width: 120,
+                    name: '货品编码',
+                },
+                {
+                    width: 120,
+                    name: '货品名称',
                 },
                 {
                     width: 140,
-                    name: '客户手机号',
+                    name: '型 号',
+                },
+                {
+                    width: 160,
+                    name: '尺 寸',
+                },
+                {
+                    width: 180,
+                    name: '品牌系列',
+                },
+                {
+                    width: 80,
+                    name: '货品属性',
+                },
+                {
+                    width: 60,
+                    name: '单位',
+                },
+                {
+                    width: 80,
+                    name: '库存数',
+                },
+                {
+                    width: 80,
+                    name: '单价',
+                },
+                {
+                    width: 80,
+                    name: '折扣',
+                },
+                {
+                    width: 100,
+                    name: '金额',
+                },
+                {
+                    width: 180,
+                    name: '备注',
+                },
+                {
+                    width: 100,
+                    name: '已送数',
+                },
+            ],
+            data1: [
+                {
+                    id: 1,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+                {
+                    id: 2,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+            ],
+
+            fields2: [
+                {
+                    width: 50,
+                    name: '序号',
                 },
                 {
                     width: 120,
@@ -96,26 +159,18 @@ export default class index extends Component {
                 },
                 {
                     width: 80,
+                    name: '货品属性',
+                },
+                {
+                    width: 80,
                     name: '库存数',
                 },
                 {
                     width: 80,
                     name: '单价',
                 },
-                {
-                    width: 80,
-                    name: '选购数',
-                },
-                {
-                    width: 100,
-                    name: '金额',
-                },
-                {
-                    width: 120,
-                    name: '添加日期',
-                },
             ],
-            data1: [
+            data2: [
                 {
                     id: 1,
                     bianma: 'xxxxxxxxxxxxx',
@@ -339,11 +394,11 @@ export default class index extends Component {
 
                         <div className="pub-table">
                             <ul>
-                                <Input title="货品编码" width="31%" value={this.state.input2} model={(v)=> this.setState({input2: v})} ></Input>
-                                <Input title="型号" width="31%" value={this.state.input2} model={(v)=> this.setState({input2: v})} ></Input>
-                                <Input title="货品名称" width="calc(32% - 6px)" value={this.state.input2} model={(v)=> this.setState({input2: v})} ></Input>
+                                <Input title="货品编码" width="31%" value={this.state.input10} model={(v)=> this.setState({input10: v})} ></Input>
+                                <Input title="型号" width="31%" value={this.state.input11} model={(v)=> this.setState({input11: v})} ></Input>
+                                <Input title="货品名称" width="calc(32% - 6px)" value={this.state.input12} model={(v)=> this.setState({input12: v})} ></Input>
                                 <DropDown width="31%" index={this.state.index3} items={this.state.items3} onChange={(index)=> this.setState({index3: index})}>品牌</DropDown>
-                                <DropDown width="31%" index={this.state.index4} items={this.state.items4} onChange={(index)=> this.setState({index4: index})}>系列</DropDown>
+                                <DropDown width="31%" index={this.state.index4} items={this.state.items1} onChange={(index)=> this.setState({index4: index})}>系列</DropDown>
                                 <DropDown width="calc(32% - 6px)" index={this.state.index5} items={this.state.items5} onChange={(index)=> this.setState({index5: index})}>货品类别</DropDown>
                             </ul>
                         </div>
