@@ -24,6 +24,12 @@ export default class index extends Component {
         }
     }
 
+    join = (e)=> {
+        e.preventDefault();
+        e.stopPropagation();
+        alert('加入成功')
+    }
+
     render() {
         return (
             <>
@@ -99,7 +105,7 @@ export default class index extends Component {
                     <div className="clearfix">
                         <Frame className="picture-guide-item" bottom={41}>
                             <ul>
-                                <li onClick={(e)=> {e.preventDefault();this.setState({alert1: true})}}>
+                                <li onClick={(e)=> {e.preventDefault();e.stopPropagation();this.setState({alert1: true})}}>
                                     <div className="pict">
                                         <span className="fl">SALE</span>
                                         <span className="fr">UEW</span>
@@ -110,7 +116,7 @@ export default class index extends Component {
                                         <span>Jonathan Charles</span>
                                         <span className="sp1">1680*660*1820MM</span>
                                         <strong>
-                                            <a href="/" title=""><var>加入意向单</var></a>
+                                            <a href="/" title="" onClick={this.join}><var>加入意向单</var></a>
                                             <b>￥42,580.00</b>
                                             <del>￥68,880.00</del>
                                         </strong>
@@ -125,11 +131,12 @@ export default class index extends Component {
 
                 </div>
 
-
                 {/* 图片导购 */}
                 <Move model={this.state.alert1}>
                     <div className="picture-alert move-obj">
-                        <div className="close"><em className="ico-close" onClick={(e)=> {e.preventDefault();this.setState({alert1: false})}}></em></div>
+                        <div className="close">
+                            <em className="ico-close" onClick={(e)=> {e.preventDefault();this.setState({alert1: false})}}></em>
+                        </div>
                         <div className="pict">
                             <img src={img2} alt="" />
                         </div>
