@@ -127,7 +127,6 @@ export default class index extends Component {
     }
 
     render() {
-        const { alert1} = this.state
         return (
             <>
                 <div className="xiaoshow">

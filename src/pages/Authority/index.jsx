@@ -8,10 +8,6 @@ export default class index extends Component {
     constructor(){
         super()
         this.state = {
-            fields1: '',
-            fields2: '',
-            fields3: '',
-
             input1: '',
             input2: '',
             input3: '',

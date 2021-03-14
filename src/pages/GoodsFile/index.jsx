@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 // import Swiper from "swiper"
 
-import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
+import SwiperCore, { Navigation, Pagination, Autoplay } from 'react-swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
