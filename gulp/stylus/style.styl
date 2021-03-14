@@ -761,6 +761,9 @@ body
         background #fff url(../img/554f152585fd4e9622dcd68c4a132db5_16x15.png) 10px center no-repeat
         inputW #ccc
         border-radius 3px 0 0 3px
+        &:focus
+            border-color lan
+            box-shadow 0 0 6px rgba(lan, .4)
     button
         transition .2s
         width 100px
@@ -795,6 +798,7 @@ body
                 background #f9f9f9
                 position relative
                 color #555
+                font-weight: bold;
                 &:after
                     transition .2s
                     content ''
@@ -2218,7 +2222,7 @@ body
             border-leftN()
 
     .table-row
-        height 360px
+        height 320px
         overflow auto
         float 0
         background #fff

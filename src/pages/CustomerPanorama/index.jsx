@@ -1,6 +1,124 @@
 import React, { Component } from 'react'
 
+import { Input } from '../../components/UI';
+
+import Table, { Box, Li } from '../../components/Table';
+
 export default class index extends Component {
+
+    constructor(){
+        super()
+        this.state = {
+            s1: null,
+            h1: 420,
+
+            items1: ['张三', '李四', '王五'],
+            index1: 0,
+
+            items2: ['产品质量', '服务态度', '送货推迟', '包装问题', '安装技术', '货不对版', '产品设计', '建议', '其他'],
+            index2: 0,
+
+            field1: '',
+            field2: '',
+            field3: '',
+
+            input1: '',
+            input2: '',
+            input3: '',
+            input4: '',
+            input5: '',
+            input6: '',
+            input7: '',
+            input8: '',
+            input9: '',
+            input10: '',
+            input11: '',
+            input12: '',
+            input13: '',
+            input14: '',
+            input15: '',
+
+            time1: '',
+            time2: '',
+
+            alert1: false,
+
+            fields1: [
+                {
+                    width: 50,
+                    name: '序号',
+                },
+                {
+                    width: 140,
+                    name: '货品编码',
+                },
+                {
+                    width: 120,
+                    name: '货品名称',
+                },
+                {
+                    width: 150,
+                    name: '型 号',
+                },
+                {
+                    width: 180,
+                    name: '尺 寸',
+                },
+                {
+                    width: 120,
+                    name: '货品属性',
+                },
+                {
+                    width: 80,
+                    name: '单位',
+                },
+                {
+                    width: 80,
+                    name: '库存数',
+                },
+                {
+                    width: 100,
+                    name: '订货数',
+                },
+                {
+                    width: 100,
+                    name: '单价',
+                },
+                {
+                    width: 100,
+                    name: '已送数',
+                },
+                {
+                    width: 60,
+                    name: '折扣%',
+                },
+                {
+                    width: 120,
+                    name: '送货额',
+                },
+                {
+                    width: 260,
+                    name: '备注',
+                },
+            ],
+
+            data1: [
+                {
+                    id: 1,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+                {
+                    id: 2,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+            ]
+
+        }
+    }
+
+
     render() {
         return (
             <>
@@ -9,7 +127,7 @@ export default class index extends Component {
                         <i className="ico-inten2"></i>
                         <var>销售单全貌</var>
                         <div className="seacrh">
-                            <input type="text" placeholder="请输入销售单号查询" />
+                            <input type="text" placeholder="请输入销售单号查询"/>
                             <button type="submit">查询</button>
                         </div>
                     </h2>
@@ -23,178 +141,50 @@ export default class index extends Component {
                     </div>
                     <div className="pub-table">
                         <ul>
-                            <li>
-                                <span>送货单号：</span>
-                                <div className="input-wrap">
-                                    <input type="text" className="a2" />
-                                </div>
-                            </li>
-                            <li>
-                                <span>销售单号：</span>
-                                <div className="input-wrap">
-                                    <input type="text" className="a2" />
-                                </div>
-                            </li>
-                            <li>
-                                <span>送货日期：</span>
-                                <div className="input-wrap">
-                                    <input type="text" />
-                                </div>
-                            </li>
-                            <li>
-                                <span>出货仓库：</span>
-                                <div className="input-wrap">
-                                    <input type="text" className="a2" />
-                                </div>
-                            </li>
+                            <Input title="送货单号" value={this.state.input4} model={(v)=>this.setState({input4: v})}></Input>
+                            <Input title="销售单号" value={this.state.input4} model={(v)=>this.setState({input4: v})}></Input>
+                            <Input title="送货日期" value={this.state.input4} model={(v)=>this.setState({input4: v})}></Input>
+                            <Input title="出货仓库" value={this.state.input4} model={(v)=>this.setState({input4: v})}></Input>
 
-                            <li>
-                                <span>客户名称：</span>
-                                <div className="input-wrap">
-                                    <input type="text" className="a2" />
-                                </div>
-                            </li>
-                            <li>
-                                <span>客户编码：</span>
-                                <div className="input-wrap">
-                                    <input type="text" className="a2" />
-                                </div>
-                            </li>
-                            <li>
-                                <span>手机/电话：</span>
-                                <div className="input-wrap">
-                                    <input type="text" className="a2" />
-                                </div>
-                            </li>
-                            <li>
-                                <span>销售商场：</span>
-                                <div className="input-wrap">
-                                    <input type="text" className="a2" />
-                                </div>
-                            </li>
+                            <Input title="客户名称" value={this.state.input4} model={(v)=>this.setState({input4: v})}></Input>
+                            <Input title="客户编码" value={this.state.input4} model={(v)=>this.setState({input4: v})}></Input>
+                            <Input title="手机/电话" value={this.state.input4} model={(v)=>this.setState({input4: v})}></Input>
+                            <Input title="销售商场" value={this.state.input4} model={(v)=>this.setState({input4: v})}></Input>
 
-                            <li className="li1">
-                                <span>送货地址：</span>
-                                <div className="input-wrap">
-                                    <input type="text" />
-                                </div>
-                            </li>
-                            <li>
-                                <span>制单人：</span>
-                                <div className="input-wrap">
-                                    <input type="text" />
-                                </div>
-                            </li>
-                            <li>
-                                <span>销售员：</span>
-                                <div className="input-wrap">
-                                    <input type="text" />
-                                </div>
-                            </li>
-                            <li className="li2">
-                                <span>备注：</span>
-                                <div className="input-wrap">
-                                    <input type="text" />
-                                </div>
-                            </li>
+                            <Input width="48%" title="送货地址" value={this.state.input7} model={(v)=>this.setState({input7: v})}></Input>
+                            <Input title="制单人" value={this.state.input4} model={(v)=>this.setState({input4: v})}></Input>
+                            <Input title="销售员" value={this.state.input4} model={(v)=>this.setState({input4: v})}></Input>
+                            <Input width="98%" title="备注" value={this.state.input15} model={(v)=>this.setState({input15: v})}></Input>
 
                         </ul>
                     </div>
-                    
                 </div>
 
-                <div className="pub-row-style">
-                    <div className="table-head"> 
-                        <div className="slide-bar">
-                            <span className="sp60">序号</span>
-                            <span className="sp120">货品编码</span>
-                            <span className="sp120">货品名称</span>
-                            <span className="sp120">型 号</span>
-                            <span className="sp140">尺 寸</span>
-                            <span className="sp60">单位</span>
-                            <span className="sp100">库存数</span>
-                            <span className="sp110">货品属性</span>
-                            <span className="sp100">订货数</span>
-                            <span className="sp100">送货数</span>
-                            <span className="sp120">单价</span>
-                            <span className="sp140">金额</span>
-                            <span className="sp200">备　　注</span>
-                            <span className="sp120">末送货数</span>
-                        </div>
-                    </div>
-                    <div className="table-row auto-table pub-first-center">
-                        <ul>
-                            <li>
-                                <span className="sp60">
-                                    <label className="pub-check">1</label>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp60">
-                                    <label className="pub-check">2</label>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp60">
-                                    <label className="pub-check">3</label>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp60">
-                                    <label className="pub-check">4</label>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp60">
-                                    <label className="pub-check">5</label>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp60">
-                                    <label className="pub-check">6</label>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp60">
-                                    <label className="pub-check">7</label>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp60">
-                                    <label className="pub-check">8</label>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp60">
-                                    <label className="pub-check">9</label>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp60">
-                                    <label className="pub-check">10</label>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp60">
-                                    <label className="pub-check">11</label>
-                                </span>
-                            </li>
-                            <li>
-                                <span className="sp60">
-                                    <label className="pub-check">12</label>
-                                </span>
-                            </li>
-                            <li className="pub-last-back">
-                                <span className="sp60">
-                                    <label className="pub-check">13</label>
-                                </span>
-                                <span className="sp200">
-                                    <b>合计：</b>
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <Table fields={this.state.fields1} bottom={16}>
+                    {
+                        this.state.data1.map((v, k)=>{
+                            return (
+                                <Li key={k} check={v.check}>
+                                    <Box w={this.state.fields1[0].width}>
+                                        <label className="pub-check">
+                                            {k+1}
+                                        </label>
+                                    </Box>
+                                    <Box w={this.state.fields1[1].width}>
+                                        11111
+                                    </Box>
+                                    <Box w={this.state.fields1[2].width}>2222</Box>
+                                </Li>
+                            )
+                        })
+                    }
+                    <li className="pub-last-back">
+                        <Box w={this.state.fields1[0].width}></Box>
+                        <Box w={this.state.fields1[1].width}>
+                            <b>合计：</b>
+                        </Box>
+                    </li>
+                </Table>
             </>
         )
     }

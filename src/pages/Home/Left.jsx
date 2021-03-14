@@ -121,7 +121,7 @@ export default class Left extends Component {
                             to: '/home/customer-followup'
                         },
                         {
-                            title: '客户全貌',
+                            title: '销售单全貌',
                             to: '/home/customer-panorama'
                         },
                         {
