@@ -194,12 +194,21 @@ export default class index extends Component {
         })
     }
 
-    // 表格复选框
-    checkHandle(check, k){
+    // 表格复选框1
+    checkHandle1(check, k){
         const {data1} = this.state
         data1[k].check = check
         this.setState({
             data1: data1
+        })
+    }
+
+    // 表格复选框2
+    checkHandle2(check, k){
+        const {data2} = this.state
+        data2[k].check = check
+        this.setState({
+            data2: data2
         })
     }
 
@@ -267,7 +276,7 @@ export default class index extends Component {
                                 <Li key={k} check={v.check}>
                                     <Box w={this.state.fields1[0].width}>
                                     <label className="pub-check3">
-                                        <input onChange={(e)=>this.checkHandle(e.target.checked, k)} checked={v.check} type="checkbox" />{k+1}
+                                        <input onChange={(e)=>this.checkHandle1(e.target.checked, k)} checked={v.check} type="checkbox" />{k+1}
                                     </label>
                                     </Box>
                                     <Box w={this.state.fields1[1].width}>
@@ -372,30 +381,29 @@ export default class index extends Component {
 
                         {/* 表格 */}
 
-                                <Table fields={this.state.fields2} margin noborder>
-                                    {
-                                        this.state.data2.map((v, k)=>{
-                                            return (
-                                                <Li key={k} check={v.check}>
-                                                    <Box w={this.state.fields2[0].width}>
-                                                    <label className="pub-check3">
-                                                        <input onChange={(e)=>this.checkHandle(e.target.checked, k)} checked={v.check} type="checkbox" />{k+1}
-                                                            </label>
-                                                    </Box>
-                                                    <Box w={this.state.fields2[1].width}>111</Box>
-                                                    <Box w={this.state.fields2[2].width}>2222</Box>
-                                                </Li>
-                                            )
-                                        })
-                                    }
+                        <Table fields={this.state.fields2} margin noborder>
+                            {
+                                this.state.data2.map((v, k)=>{
+                                    return (
+                                        <Li key={k} check={v.check}>
+                                            <Box w={this.state.fields2[0].width}>
+                                            <label className="pub-check3">
+                                                <input onChange={(e)=>this.checkHandle2(e.target.checked, k)} checked={v.check} type="checkbox" />{k+1}
+                                                    </label>
+                                            </Box>
+                                            <Box w={this.state.fields2[1].width}>111</Box>
+                                            <Box w={this.state.fields2[2].width}>2222</Box>
+                                        </Li>
+                                    )
+                                })
+                            }
 
-                                </Table>
+                        </Table>
 
 
-                    {/* 分页 */}
-                    <Pager></Pager>
+                        {/* 分页 */}
+                        <Pager></Pager>
                     </div>
-                    
                 </Move>
 
             </>
