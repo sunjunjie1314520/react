@@ -761,6 +761,9 @@ body
         background #fff url(../img/554f152585fd4e9622dcd68c4a132db5_16x15.png) 10px center no-repeat
         inputW #ccc
         border-radius 3px 0 0 3px
+        &:focus
+            border-color lan
+            box-shadow 0 0 6px rgba(lan, .4)
     button
         transition .2s
         width 100px
@@ -779,14 +782,14 @@ body
     float left
     width 100%
     .tabs
-        height 48px
+        height 39px
         border-bottom 1px solid #cdcdcd
         a
             color #888
             float left
             width 100px
-            line-height 47px
-            height 47px
+            line-height 40px
+            height 39px
             text-align center
             border-right 1px solid #cdcdcd
             transition .2s
@@ -795,6 +798,7 @@ body
                 background #f9f9f9
                 position relative
                 color #555
+                font-weight: bold;
                 &:after
                     transition .2s
                     content ''
@@ -1564,6 +1568,8 @@ body
     background #eeeeee
     height 28px
     text-align center
+    &.top
+            border-top: 1px solid bor1
     a
         display inline-block
         width 98px
@@ -2218,10 +2224,11 @@ body
             border-leftN()
 
     .table-row
-        height 360px
+        height 335px
         overflow auto
         float 0
         background #fff
+
         &.pub-first-center
             ul
                 li
@@ -2242,7 +2249,7 @@ body
                 height 40px
                 line-height 39px
                 color #555
-                font-size 14px
+                font-size 13px
                 transition .15s
                 &:hover
                     background-color rgba(#ccc, .15)

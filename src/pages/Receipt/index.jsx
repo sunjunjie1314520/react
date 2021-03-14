@@ -1,7 +1,5 @@
 import React, { Component, createRef } from 'react'
 
-import { offsetTop } from '../../utils';
-
 import {Input, DropDown, DateTime, Move} from '../../components/UI';
 
 import Table, {Box, Li} from '../../components/Table';
@@ -21,8 +19,12 @@ export default class index extends Component {
             sh1: null,
 
 
-            items1: ['营养师1', '菜单一'],
+            items1: ['菜单一', '菜单二'],
             index1: 0,
+
+            items2: ['菜单一', '菜单二','菜单三','菜单四'],
+            index2: 0,
+
             field1: '',
             field2: '',
             time1: '',  // 销售日期
@@ -77,6 +79,60 @@ export default class index extends Component {
                     name: '销售日期',
                 },
             ],
+
+            fields2: [
+                {
+                    width: 50,
+                    name: '序号',
+                },
+                {
+                    width: 300,
+                    name: '收款商场',
+                },
+                {
+                    width: 140,
+                    name: '收款单号',
+                },
+                {
+                    width: 120,
+                    name: '收款方式',
+                },
+                {
+                    width: 140,
+                    name: '收款金额',
+                },
+                {
+                    width: 100,
+                    name: '收款人',
+                },
+                {
+                    width: 200,
+                    name: '备 注',
+                },
+            ],
+
+            fields3: [
+                {
+                    width: 50,
+                    name: '序号',
+                },
+                {
+                    width: 180,
+                    name: '收款方式',
+                },
+                {
+                    width: 150,
+                    name: '收款币种',
+                },
+                {
+                    width: 160,
+                    name: '收款金额',
+                },
+                {
+                    width: 100,
+                    name: '备注',
+                },
+            ],
             // Tabel 源数据
             data1: [
                 {
@@ -86,6 +142,60 @@ export default class index extends Component {
                 },
                 {
                     id: 2,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+            ],
+            data2: [
+                {
+                    id: 1,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+                {
+                    id: 2,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+            ],
+            data3: [
+                {
+                    id: 1,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+                {
+                    id: 2,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+                {
+                    id: 3,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+                {
+                    id: 4,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+                {
+                    id: 5,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+                {
+                    id: 6,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+                {
+                    id: 7,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+                {
+                    id: 8,
                     bianma: 'xxxxxxxxxxxxx',
                     check: false,
                 },
@@ -103,11 +213,7 @@ export default class index extends Component {
         })
     }
 
-    componentDidMount(){
-        let w_hei = window.innerHeight
-        let off_top1 = offsetTop(this.rihgt_layout.current)
-        this.rihgt_layout.current.style.height = (w_hei - off_top1 - 15) +'px'
-    }
+
 
     render() {
         return (
@@ -206,68 +312,29 @@ export default class index extends Component {
 
                     <div className="record-receipts pub-mt-15 pub-bor-fl">
 
-                        <h2 className="pub-tit">
+                        <h2 className="pub-tit no-border">
                             <i className="ico-font1"></i>
                             收款记录
                         </h2>
 
-                        <div className="pub-row-style pub-mt-0 pub-border-no4">
-
-                            <div className="table-head">
-                                <div className="slide-bar">
-                                    <span className="sp50">序号</span>
-                                    <span className="sp120">收款日期</span>
-                                    <span className="sp120">收款方式</span>
-                                    <span className="sp140">收款金额</span>
-                                    <span className="sp200">收款商场</span>
-                                    <span className="sp100">收款人</span>
-                                    <span className="sp140">备注</span>
-                                </div>
-                            </div>
-
-                            <div className="table-row auto-table pub-first-center" ref={this.rihgt_layout}>
-                                <ul>
-                                <li>
-                                    <span className="sp50">
-                                    <label className="pub-check a1">1</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp50">
-                                    <label className="pub-check a1">2</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp50">
-                                    <label className="pub-check a1">3</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp50">
-                                    <label className="pub-check a1">4</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp50">
-                                    <label className="pub-check a1">5</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp50">
-                                    <label className="pub-check a1">6</label>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="sp50">
-                                    <label className="pub-check a1">7</label>
-                                    </span>
-                                </li>
-                                </ul>
-                            </div>
-
-                        </div>
+                        <Table fields={this.state.fields2} bottom={16} margin noborder >
+                            {
+                                this.state.data2.map((v, k)=>{
+                                    return (
+                                        <Li key={k} check={v.check}>
+                                            <Box w={this.state.fields2[0].width}>
+                                                <label className="pub-check">
+                                                    {k+1}
+                                                </label>
+                                            </Box>
+                                            <Box w={this.state.fields2[1].width}>111</Box>
+                                            <Box w={this.state.fields2[2].width}>2222</Box>
+                                        </Li>
+                                    )
+                                })
+                            }
+                        </Table>
                     </div>
-
                 </div>
 
                 {/* 确认弹窗 */}
@@ -300,92 +367,41 @@ export default class index extends Component {
                             <i className="ico-font2"></i>
                             <em className="ico-font2"></em> 销售收款
                         <div className="fr">
-                            <span className="ico-close" onClick={(e)=> {e.preventDefault();this.setState({alert2: false})}}></span> 
+                            <span className="ico-close" onClick={(e)=> {e.preventDefault();this.setState({alert2: false})}}></span>
                         </div>
                     </div>
                         <div className="two-wrap bot">
                             <div className="pub-table">
                                 <ul>
-                                    <li className="li1">
-                                        <span>收款商场：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" name="" />
-                                            <button className="pub-down"></button>
-                                        </div>
-                                    </li>
+                                    <DropDown width="48%" index={this.state.index2} items={this.state.items2} onChange={(index)=> this.setState({index2: index})}>收款商场</DropDown>
                                     <li className="li1">
                                         <span></span>
                                         <label className="pub-check1"><input type="checkbox" />是否收全款</label>
                                     </li>
-                                    <li className="li1">
-                                        <span>本次收款：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" name="" />
-                                        </div>
-                                    </li>
-                                    <li className="li1">
-                                        <span>还剩余款：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" name="" />
-                                        </div>
-                                    </li>
-                                    <li className="li2">
-                                        <span>备注：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" name="" />
-                                        </div>
-                                    </li>
+                                    <Input title="本次收款" width="48%" value={this.state.input14} model={(v)=> this.setState({input14: v})} ></Input>
+                                    <Input title="累计收款" width="48%" value={this.state.input15} model={(v)=> this.setState({input15: v})} ></Input>
+                                    <Input title="备注" width="98%" value={this.state.input16} model={(v)=> this.setState({input16: v})} ></Input>
                                 </ul>
                             </div>
                         </div>
-                        <div className="two-wrap line">
-                            <div className="pub-row-style none pub-no-border">
-                                <div className="table-head">
-                                    <div className="slide-bar">
-                                        <span className="sp50">序号</span>
-                                        <span className="sp180">收款方式</span>
-                                        <span className="sp120">币种</span>
-                                        <span className="sp180">收款金额</span>
-                                        <span className="sp220">备注</span>
-                                    </div>
-                                </div>
-                                <div className="table-row a1 pub-half pub-first-center">
-                                    <ul>
-                                        <li>
-                                            <span className="sp50">
-                                            <label className="pub-check a1">1</label>
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <span className="sp50">
-                                            <label className="pub-check a1">2</label>
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <span className="sp50">
-                                            <label className="pub-check a1">3</label>
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <span className="sp50">
-                                            <label className="pub-check a1">4</label>
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <span className="sp50">
-                                            <label className="pub-check a1">5</label>
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <span className="sp50">
-                                            <label className="pub-check a1">6</label>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="btn-wrap">
+                        <Table fields={this.state.fields3} margin noborder >
+                            {
+                                this.state.data3.map((v, k)=>{
+                                    return (
+                                        <Li key={k} check={v.check}>
+                                            <Box w={this.state.fields3[0].width}>
+                                                <label className="pub-check">
+                                                    {k+1}
+                                                </label>
+                                            </Box>
+                                            <Box w={this.state.fields3[1].width}>111</Box>
+                                            <Box w={this.state.fields3[2].width}>2222</Box>
+                                        </Li>
+                                    )
+                                })
+                            }
+                        </Table>
+                        <div className="btn-wrap top">
                             <a href="/" className="a1" title="" onClick={(e)=> {e.preventDefault();this.setState({alert2: false})}}>退 出</a>
                             <a href="/" className="a2" title="">打 印</a>
                             <a href="/" className="a3" title="">清 空</a>

@@ -249,7 +249,7 @@ export default class index extends Component {
                                 <span className="ico-close" onClick={(e)=>{e.preventDefault(); this.setState({show1: false})}}></span>
                             </div>
                         </div>
-                        <div className="two-wrap">
+                        <div className="two-wrap line">
                             <div className="pub-table">
                                 <ul>
                                     <Input title="客户编码" width="48%" placeholder="编码会自动生成" value={this.state.input3} model={(v)=>this.setState({input3: v})}></Input>
@@ -264,7 +264,7 @@ export default class index extends Component {
                             </div>
                         </div>
 
-                        <div className="two-wrap">
+                        <div className="two-wrap line">
                             <div className="pub-table">
                                 <ul>
                                     <DateTime width="48%" title="出生日期" model={(v)=> this.setState({time1: v})} ></DateTime>
