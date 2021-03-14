@@ -1882,6 +1882,9 @@ body.open .main-right ul li .slide-sub {
   height: 28px;
   text-align: center;
 }
+.btn-wrap.top {
+  border-top: 1px solid #cdcdcd;
+}
 .btn-wrap a {
   display: inline-block;
   width: 98px;
@@ -2687,7 +2690,7 @@ body.open .main-right ul li .slide-sub {
   border-left: none;
 }
 .pub-row-style .table-row {
-  height: 320px;
+  height: 335px;
   overflow: auto;
   float: left;
   width: 100%;
