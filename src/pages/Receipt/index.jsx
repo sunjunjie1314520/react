@@ -6,6 +6,8 @@ import {Input, DropDown, DateTime, Move} from '../../components/UI';
 
 import Table, {Box, Li} from '../../components/Table';
 
+import img1 from '../../style/img/33faba806d3a89bc_88x88.png';
+
 export default class index extends Component {
 
     constructor(){
@@ -279,7 +281,7 @@ export default class index extends Component {
                             </div>
                         </div>
                         <div className="tips-text">
-                            <img src="img/33faba806d3a89bc_88x88.png" alt="" />
+                            <img src={img1} alt="" />
                             <b>销售订单：XS001658</b>
                             <p>【是否确认收款￥10,000.00元】</p>
                         </div>
@@ -392,28 +394,6 @@ export default class index extends Component {
                     </div>
                 </Move>
 
-                {/* 确认弹窗 */}
-                <Move model={this.state.alert1}>
-                    <div className="tips-wrapper move-obj">
-                        <div className="pub-tit add">
-                            <i className="ico-font30"></i>
-                            提示
-                            <div className="fr">
-                                <span className="ico-close" onClick={(e)=> {e.preventDefault();this.setState({alert1: false})}}></span>
-                            </div>
-                        </div>
-                        <div className="tips-text">
-                            <img src="img/33faba806d3a89bc_88x88.png" alt="" />
-                            <b>销售订单：XS001658</b>
-                            <p>【是否确认收款￥10,000.00元】</p>
-                        </div>
-                        <div className="tip-btn-group">
-                            <a href="/" className="a1">打印</a>
-                            <a href="/" className="a2" onClick={(e)=> {e.preventDefault();this.setState({alert1: false})}}>取消</a>
-                            <a href="/" className="a3">确定</a>
-                        </div>
-                    </div>
-                </Move>
             </>
         )
     }
