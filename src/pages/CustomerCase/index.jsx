@@ -37,7 +37,9 @@ export default class index extends Component {
             alert2: false,
         }
     }
-
+    xmTanUploadImg = (e)=>{
+        console.log(e);
+    }
     render() {
         return (
             <>
@@ -140,7 +142,7 @@ export default class index extends Component {
                                         <span>上传图片：</span>
                                         <div className="input-wrap">
                                             <input className="in1" type="text" placeholder="大小不能超过3M" />
-                                            <a className="upload" href="/">浏览<input type="file" onchange="xmTanUploadImg(this)" accept="image/*"/></a>
+                                            <a className="upload" href="/">浏览<input type="file" onChange={this.xmTanUploadImg} accept="image/*"/></a>
                                             <var className="pub-asterisk">*</var>
                                         </div>
                                     </li>
@@ -148,35 +150,35 @@ export default class index extends Component {
                                         <span>上传图片：</span>
                                         <div className="input-wrap">
                                             <input className="in1" type="text" placeholder="大小不能超过3M" />
-                                            <a className="upload" href="/">浏览<input type="file" onchange="xmTanUploadImg(this)" accept="image/*"/></a>
+                                            <a className="upload" href="/">浏览<input type="file" onChange={this.xmTanUploadImg} accept="image/*"/></a>
                                         </div>
                                     </li>
                                     <li>
                                         <span>上传图片：</span>
                                         <div className="input-wrap">
                                             <input className="in1" type="text" placeholder="大小不能超过3M" />
-                                            <a className="upload" href="/">浏览<input type="file" onchange="xmTanUploadImg(this)" accept="image/*"/></a>
+                                            <a className="upload" href="/">浏览<input type="file" onChange={this.xmTanUploadImg} accept="image/*"/></a>
                                         </div>
                                     </li>
                                     <li>
                                         <span>上传图片：</span>
                                         <div className="input-wrap">
                                             <input className="in1" type="text" placeholder="大小不能超过3M" />
-                                            <a className="upload" href="/">浏览<input type="file" onchange="xmTanUploadImg(this)" accept="image/*"/></a>
+                                            <a className="upload" href="/">浏览<input type="file" onChange={this.xmTanUploadImg} accept="image/*"/></a>
                                         </div>
                                     </li>
                                     <li>
                                         <span>上传图片：</span>
                                         <div className="input-wrap">
                                             <input className="in1" type="text" placeholder="大小不能超过3M" />
-                                            <a className="upload" href="/">浏览<input type="file" onchange="xmTanUploadImg(this)" accept="image/*"/></a>
+                                            <a className="upload" href="/">浏览<input type="file" onChange={this.xmTanUploadImg} accept="image/*"/></a>
                                         </div>
                                     </li>
                                     <li>
                                         <span>上传图片：</span>
                                         <div className="input-wrap">
                                             <input className="in1" type="text" placeholder="大小不能超过3M" />
-                                            <a className="upload" href="/">浏览<input type="file" onchange="xmTanUploadImg(this)" accept="image/*"/></a>
+                                            <a className="upload" href="/">浏览<input type="file" onChange={this.xmTanUploadImg} accept="image/*"/></a>
                                         </div>
                                     </li>
                                     <li>

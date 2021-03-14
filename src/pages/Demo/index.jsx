@@ -8,8 +8,6 @@ import logo from "../../style/img/logo.svg";
 
 import './index.styl';
 
-import Waterfall from '../../components/Waterfall';
-
 class App extends Component{
 	constructor(props){
 		super(props)
@@ -27,19 +25,17 @@ class App extends Component{
 				<button className="c2" onClick={loadDataAsync}>加载数据</button>
 
 				{
-				loadding ?
+					loadding ?
 					<h2>加载中...</h2>
-				:
-					<>
-						<ul>
-							{
-								data.map((v, k) => (<li key={v.id}>{v.Code}</li>))
-							}
-						</ul>
-					</>
+					:
+					<ul>
+						{
+							data.map((v, k) => (<li key={v.id}>{v.Code}</li>))
+						}
+					</ul>
 				}
 
-				<Waterfall col={4} margin={15}></Waterfall>
+				
 			</>
 		)
 	}

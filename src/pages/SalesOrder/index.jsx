@@ -297,27 +297,27 @@ export default class index extends Component {
                 </div>
 
                 <Table fields={this.state.fields1} bottom={this.state.bottom_alert ? 136 : 45} picture={true}>
-        {
-            this.state.data1.map((v, k)=>{
-                return (
-                    <Li key={k} check={v.check}>
-                        <Box w={this.state.fields1[0].width}>
-                            <label className="pub-check">
-                                <input onChange={(e)=>this.checkHandle(e.target.checked, k)} checked={v.check} type="checkbox" />{k+1}
-                            </label>
-                        </Box>
-                        <Box w={this.state.fields1[1].width}><var></var></Box>
-                        <Box w={this.state.fields1[2].width}>2222</Box>
-                    </Li>
-                )
-            })
-        }
-                     <li className="pub-last-back">
+                    {
+                        this.state.data1.map((v, k)=>{
+                            return (
+                                <Li key={k} check={v.check}>
+                                    <Box w={this.state.fields1[0].width}>
+                                        <label className="pub-check">
+                                            <input onChange={(e)=>this.checkHandle(e.target.checked, k)} checked={v.check} type="checkbox" />{k+1}
+                                        </label>
+                                    </Box>
+                                    <Box w={this.state.fields1[1].width}><var></var></Box>
+                                    <Box w={this.state.fields1[2].width}>2222</Box>
+                                </Li>
+                            )
+                        })
+                    }
+                    <li className="pub-last-back">
                         <Box w={this.state.fields1[0].width}></Box>
                         <Box w={this.state.fields1[1].width}>
                             <b>合计：</b>
                         </Box>
-                     </li>
+                    </li>
                   </Table>
 
                 <div className="add-wrap">
@@ -407,7 +407,11 @@ export default class index extends Component {
                         <div className="pub-row-style none pub-no-border">
                             <div className="table-head">
                                 <div className="slide-bar">
-                                    <span className="sp60"><label class="pub-check serial bold"><input type="checkbox" />序号</label></span>
+                                    <span className="sp60">
+                                        <label className="pub-check serial bold">
+                                            <input type="checkbox" />序号
+                                        </label>
+                                    </span>
                                     <span className="sp120">货品编码</span>
                                     <span className="sp120">货品名称</span>
                                     <span className="sp120">型 号</span>
@@ -446,8 +450,7 @@ export default class index extends Component {
                 <Move model={this.state.alert2}>
                     <div className="archives-alert move-obj">
                         <div className="pub-tit add">
-                            <i className="ico-info"></i>
-                            <em className="ico-info"></em> 新增客户
+                            <i className="ico-info"></i>新增客户
                             <div className="fr">
                                 <span className="ico-close" onClick={(e)=> {e.preventDefault();this.setState({alert2: false})}}></span>
                             </div>

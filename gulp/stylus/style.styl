@@ -356,11 +356,21 @@ body
             width 100%
             height 100%
 
+.ico-inten2
+    float left
+    border-right 1px solid #95989a
+    box-sizing border-box
+    width 40px
+    height 39px
+    back1("icon127.png")
+    
 .title
     border-bottom 1px solid #bcbebf
     height 49px
     background #eeeeee
     padding-right 12px
+    float left
+    width 100%
     h2
         float left
         .ico-inten
@@ -377,13 +387,7 @@ body
             width 40px
             height 39px
             back1("icon68.png")
-        .ico-inten2
-            float left
-            border-right 1px solid #95989a
-            box-sizing border-box
-            width 40px
-            height 39px
-            back1("icon127.png")
+
         var
             line-height 48px
             font-size 16px
@@ -549,7 +553,7 @@ body
         back1('icon15.png')
 
     .ico-fen1
-    back1('icon156.png')
+        back1('icon156.png')
 
     .ico-xin1
         width 18px
@@ -742,11 +746,10 @@ body
 
 .seacrh
     float right
-    width 50%
-    margin-topV 49px 33px
-    height 33px
-    background #fff
-    max-width 660px
+    width 40%
+    height 26px
+    max-width 480px
+    margin-top 6px
     input
         border 1px solid #cdcdcd
         border-right none
@@ -755,21 +758,29 @@ body
         height 100%
         line-height 31px
         padding 0 10px 0 30px
-        background url(../img/554f152585fd4e9622dcd68c4a132db5_16x15.png) 10px center no-repeat
+        background #fff url(../img/554f152585fd4e9622dcd68c4a132db5_16x15.png) 10px center no-repeat
         inputW #ccc
+        border-radius 3px 0 0 3px
     button
         transition .2s
-        width 120px
-        height 32px
+        width 100px
+        height 100%
         color #fff
         background #27a9e3
         ls 10px
+        float right
+        border-radius 0 3px 3px 0
+        line-height 1
+        &:hover
+            background #0E97D3
 
 .panorama-list
-    border 1px solid #95989a
+    border 1px solid #cdcdcd
+    float left
+    width 100%
     .tabs
         height 48px
-        border-bottom 1px solid #95989a
+        border-bottom 1px solid #cdcdcd
         a
             color #888
             float left
@@ -777,7 +788,7 @@ body
             line-height 47px
             height 47px
             text-align center
-            border-right 1px solid #95989a
+            border-right 1px solid #cdcdcd
             transition .2s
             &:hover
             &.acti
@@ -3468,6 +3479,7 @@ for i in 30..250
         border solid 1px bor1
         width 100%
         inputW #888888
+      
 
 
 // @media screen and (max-width:1260px)
