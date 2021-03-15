@@ -7,7 +7,9 @@ import logo from "../../style/img/logo.svg";
 
 import './index.styl';
 
-import Two from './Two';
+// import Two from './Two';
+
+import Waterfall from '../../components/Waterfall';
 
 import { Link } from "react-router-dom";
 
@@ -41,7 +43,7 @@ class App extends Component{
 					</ul>
 				}
 
-				<Two></Two>
+				<Waterfall col={4} margin={15}></Waterfall>
 				
 			</>
 		)

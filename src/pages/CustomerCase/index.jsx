@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-import img1 from '../../style/img/99094e75cd9e0bf20b699ccc6dae832b_510x360.jpg'
 import img2 from '../../style/img/160228070832troqwv.jpg'
 
 import prev from '../../style/img/custom–1.png'
@@ -9,8 +8,7 @@ import next from '../../style/img/custom–2.png'
 import {Input, DropDown, Frame, Move } from '../../components/UI';
 
 import Pager from '../../components/Pager';
-
-// import Waterfall from '../../components/Waterfall';
+import Waterfall from '../../components/Waterfall';
 
 export default class index extends Component {
 
@@ -35,6 +33,87 @@ export default class index extends Component {
 
             alert1: false,
             alert2: false,
+
+            data: [
+                {
+                    src: 'http://img.sccnn.com/bimg/338/70540.jpg'
+                },
+                {
+                    src: 'http://img.sccnn.com/bimg/338/70477.jpg'
+                },
+                {
+                    src: 'http://img.sccnn.com/bimg/341/22386.jpg'
+                },
+                {
+                    src: 'http://img.sccnn.com/bimg/338/70432.jpg'
+                },
+                {
+                    src: 'http://img.sccnn.com/bimg/338/70541.jpg'
+                },
+                {
+                    src: 'http://img.sccnn.com/bimg/338/70568.jpg'
+                },
+                {
+                    src: 'http://img.sccnn.com/bimg/340/02119.jpg'
+                },
+                {
+                    src: 'http://img.sccnn.com/bimg/341/22457.jpg'
+                },
+                {
+                    src: 'http://img.sccnn.com/bimg/340/02127.jpg'
+                },
+                {
+                    src: 'http://img.sccnn.com/bimg/340/02126.jpg'
+                },
+                {
+                    src: 'http://img.sccnn.com/bimg/340/02121.jpg'
+                },
+                {
+                    src: 'http://img.sccnn.com/bimg/338/70540.jpg'
+                },
+                {
+                    src: 'http://img.sccnn.com/bimg/338/70477.jpg'
+                },
+                {
+                    src: 'http://img.sccnn.com/bimg/341/22386.jpg'
+                },
+                {
+                    src: 'http://img.sccnn.com/bimg/338/70432.jpg'
+                },
+                {
+                    src: 'http://img.sccnn.com/bimg/338/70541.jpg'
+                },
+                {
+                    src: 'http://img.sccnn.com/bimg/338/70568.jpg'
+                },
+                {
+                    src: 'http://img.sccnn.com/bimg/340/02119.jpg'
+                },
+                {
+                    src: 'http://img.sccnn.com/bimg/341/22457.jpg'
+                },
+                {
+                    src: 'http://img.sccnn.com/bimg/340/02127.jpg'
+                },
+                {
+                    src: 'http://img.sccnn.com/bimg/340/02126.jpg'
+                },
+                {
+                    src: 'http://img.sccnn.com/bimg/340/02121.jpg'
+                },
+                {
+                    src: 'https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/0824ab18972bd40797d8db1179899e510fb3093a.jpg'
+                },
+                {
+                    src: 'https://sc8.mofengwo.cn/tuku/6372333258101659495921101.jpg'
+                },
+                {
+                    src: 'https://sc8.mofengwo.cn/tuku/6372358446274492571008670.jpg'
+                },
+                {
+                    src: 'https://sc8.mofengwo.cn/tuku/6372333292974485792619349.jpg'
+                },
+            ]
         }
     }
     xmTanUploadImg = (e)=>{
@@ -64,13 +143,16 @@ export default class index extends Component {
 
                         </ul>
                     </div>
-                </div>
+                </div>     
 
                 <div className="clearfix">
                     <div className="case-item">
-                        <Frame className="auto-height" bottom={41}>
-                            <ul>
-                                <li onClick={(e)=> {e.preventDefault();this.setState({alert2: true})}}>
+                        <Frame bottom={41}>
+
+                            <Waterfall col={4} margin={15} data={this.state.data} additional={114}></Waterfall>
+
+                            {/* <ul> */}
+                                {/* <li onClick={(e)=> {e.preventDefault();this.setState({alert2: true})}}>
                                     <div className="pict">
                                         <p>
                                             <a className="fr" href="/" title=""><i className="ico-cang i1"></i><i className="ico-cang"></i>收藏</a>
@@ -88,8 +170,8 @@ export default class index extends Component {
                                         <a className="c3" href="/">独栋别墅</a>
                                         <a className="c4" href="/">现代/简约</a>
                                     </div>
-                                </li>
-                            </ul>
+                                </li> */}
+                            {/* </ul> */}
                         </Frame>
                     </div>
                 </div>
