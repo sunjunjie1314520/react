@@ -569,7 +569,7 @@ export default class Left extends Component {
                         },
                         {
                             title: '收款方式',
-                            to: '/home/page6'
+                            to: '/home/Payment-Methods'
                         },
                         {
                             title: '货品类别',

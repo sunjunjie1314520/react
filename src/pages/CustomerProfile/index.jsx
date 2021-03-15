@@ -55,7 +55,7 @@ export default class index extends Component {
                     name: '客户名称',
                 },
                 {
-                    width: 120,
+                    width: 60,
                     name: '性别',
                 },
                 {
@@ -71,7 +71,7 @@ export default class index extends Component {
                     name: '电话',
                 },
                 {
-                    width: 150,
+                    width: 200,
                     name: '地址',
                 },
                 {
@@ -79,12 +79,8 @@ export default class index extends Component {
                     name: '归属商场',
                 },
                 {
-                    width: 150,
-                    name: '出生年月',
-                },
-                {
-                    width: 150,
-                    name: '客户来源',
+                    width: 100,
+                    name: '出生日期',
                 },
                 {
                     width: 120,
@@ -99,27 +95,27 @@ export default class index extends Component {
                     name: '邮箱',
                 },
                 {
-                    width: 130,
+                    width: 100,
                     name: '职业',
                 },
                 {
-                    width: 130,
+                    width: 140,
                     name: '工作单位',
                 },
                 {
-                    width: 130,
+                    width: 140,
                     name: '楼盘名称',
                 },
                 {
-                    width: 130,
+                    width: 120,
                     name: '户型',
                 },
                 {
-                    width: 130,
+                    width: 100,
                     name: '喜好风格',
                 },
                 {
-                    width: 130,
+                    width: 100,
                     name: '性格特征',
                 },
                 {
@@ -224,10 +220,6 @@ export default class index extends Component {
                                         <Box w={this.state.fields[14].width}>65464654</Box>
                                         <Box w={this.state.fields[15].width}>65464654</Box>
                                         <Box w={this.state.fields[16].width}>65464654</Box>
-                                        <Box w={this.state.fields[17].width}>65464654</Box>
-                                        <Box w={this.state.fields[18].width}>65464654</Box>
-                                        <Box w={this.state.fields[19].width}>65464654</Box>
-                                        <Box w={this.state.fields[20].width}>65464654</Box>
                                     </li>
                                 )
                             })
