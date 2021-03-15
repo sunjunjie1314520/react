@@ -148,7 +148,7 @@ export default class index extends Component {
                     <div className="function-wrap">
                         <div className="pub-fun">
                             <a title=""  className="a2" href="/"><i className="ico-xin1"></i>跟进</a>
-                            <a href="/" title="" className="a2"><i className="ico-fu"></i>分配</a>
+                            <a href="/" title="" className="a2"><i className="ico-fen"></i>分配</a>
                             <a title="" onClick={(e)=>{e.preventDefault(); this.setState({show1: true})}} className="a2" href="/"><i className="ico-ka"></i>档案</a>
                             <a href="/" title="" className="a2"><i className="ico-quan"></i>全貌</a>
                             <a href="/" title="" className="a2"><i className="ico-shan"></i>删除</a>

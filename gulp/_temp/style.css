@@ -640,8 +640,15 @@ body.open .main-right ul li .slide-sub {
 .pub-fun .ico-qi {
   background: url("../img/icon15.png") center no-repeat;
 }
-.pub-fun .ico-fen1 {
+.pub-fun .ico-fen {
+  width: 16px;
+  height: 16px;
   background: url("../img/icon156.png") center no-repeat;
+}
+.pub-fun .ico-suan {
+  width: 16px;
+  height: 16px;
+  background: url("../img/icon2.png") center no-repeat;
 }
 .pub-fun .ico-xin1 {
   width: 18px;
@@ -653,6 +660,9 @@ body.open .main-right ul li .slide-sub {
   border: 1px solid #cdcdcd;
   display: table;
   width: 100%;
+}
+.function-wrap.color {
+  background: #f9f9f9;
 }
 .sales-list {
   margin-top: 15px;
