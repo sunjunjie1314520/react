@@ -119,6 +119,12 @@ export default class index extends Component {
     xmTanUploadImg = (e)=>{
         console.log(e);
     }
+
+    click = (e) =>{
+        e.preventDefault();
+        this.setState({alert2: true})
+    }
+    
     render() {
         return (
             <>
@@ -149,7 +155,7 @@ export default class index extends Component {
                     <div className="case-item">
                         <Frame bottom={41}>
 
-                            <Waterfall col={4} margin={15} data={this.state.data} additional={114}></Waterfall>
+                            <Waterfall col={4} margin={15} data={this.state.data} additional={114} click={this.click}></Waterfall>
 
                             {/* <ul> */}
                                 {/* <li onClick={(e)=> {e.preventDefault();this.setState({alert2: true})}}>

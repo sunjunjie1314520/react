@@ -132,7 +132,7 @@ export default class index extends Component {
                         {
                             data.map((v, k)=>{
                                 return (
-                                    <li key={k} style={{left: `${v.left}px`, top: `${v.top}px`, width: `${width}px`}}>
+                                    <li key={k} style={{left: `${v.left}px`, top: `${v.top}px`, width: `${width}px`}} onClick={(e)=> this.props.click(e)}>
                                         <div className="pict">
                                             <p>
                                                 <a className="fr" href="/" title=""><i className="ico-cang i1"></i><i className="ico-cang"></i>收藏</a>
