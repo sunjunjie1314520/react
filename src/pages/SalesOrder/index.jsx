@@ -26,6 +26,27 @@ export default class index extends Component {
             items5: ['菜单一', '菜单二', '菜单三', '菜单四'],
             index5: 0,
 
+            items6: ['下拉菜单1','下拉菜单2','下拉菜单3','下拉菜单4','下拉菜单5'],
+            index6: 6,
+
+            items7: ['下拉菜单1','下拉菜单2','下拉菜单3','下拉菜单4','下拉菜单5'],
+            index7: 6,
+
+            items8: ['下拉菜单1','下拉菜单2','下拉菜单3','下拉菜单4','下拉菜单5'],
+            index8: 6,
+
+            items9: ['下拉菜单1','下拉菜单2','下拉菜单3','下拉菜单4','下拉菜单5'],
+            index9: 6,
+
+            items10: ['下拉菜单1','下拉菜单2','下拉菜单3','下拉菜单4','下拉菜单5'],
+            index10: 6,
+
+            items11: ['下拉菜单1','下拉菜单2','下拉菜单3','下拉菜单4','下拉菜单5'],
+            index11: 6,
+
+            items12: ['下拉菜单1','下拉菜单2','下拉菜单3','下拉菜单4','下拉菜单5'],
+            index12: 6,
+
             input1: '',
             input2: '',
             input3: '',
@@ -35,6 +56,29 @@ export default class index extends Component {
             input7: '',
             input8: '',
             input9: '',
+            input10: '',
+            input11: '',
+            input12: '',
+            input13: '',
+            input14: '',
+            input15: '',
+            input16: '',
+            input17: '',
+            input18: '',
+            input19: '',
+            input20: '',
+            input21: '',
+            input22: '',
+            input23: '',
+            input24: '',
+            input25: '',
+            input26: '',
+            input27: '',
+            input28: '',
+            input29: '',
+
+            search1: '',
+            search2: '',
 
             kehu:'',
             danhao:'',
@@ -52,6 +96,8 @@ export default class index extends Component {
 
             time1: '',
             time2: '',
+            time3: '',
+            time4: '',
 
             fields1: [
                 {
@@ -405,9 +451,11 @@ export default class index extends Component {
                                 <Input title="货品编码" width="31%" value={this.state.input10} model={(v)=> this.setState({input10: v})} ></Input>
                                 <Input title="型号" width="31%" value={this.state.input11} model={(v)=> this.setState({input11: v})} ></Input>
                                 <Input title="货品名称" width="calc(32% - 6px)" value={this.state.input12} model={(v)=> this.setState({input12: v})} ></Input>
-                                <DropDown width="31%" index={this.state.index3} items={this.state.items3} onChange={(index)=> this.setState({index3: index})}>品牌</DropDown>
-                                <DropDown width="31%" index={this.state.index4} items={this.state.items1} onChange={(index)=> this.setState({index4: index})}>系列</DropDown>
-                                <DropDown width="calc(32% - 6px)" index={this.state.index5} items={this.state.items5} onChange={(index)=> this.setState({index5: index})}>货品类别</DropDown>
+                                <Input width="31%" title="品牌" value={this.state.search2} model={(v)=>this.setState({search2: v})}>
+                                    <button className="pub-search"></button>
+                                </Input>
+                                <DropDown width="31%" items={this.state.items3} index={this.state.index3} onChange={(index)=> this.setState({index3: index})}>系列</DropDown>
+                                <DropDown width="calc(32% - 6px)" index={this.state.index4} items={this.state.items4} onChange={(index)=> this.setState({index4: index})}>货品类别</DropDown>
                             </ul>
                         </div>
 
@@ -450,14 +498,14 @@ export default class index extends Component {
                         <div className="two-wrap line">
                             <div className="pub-table">
                                 <ul>
-                                    <Input title="客户编码" width="48%" placeholder="编码会自动生成" value={this.state.input3} model={(v)=>this.setState({input3: v})}></Input>
-                                    <Input title="客户名称" width="48%" value={this.state.input4} model={(v)=>this.setState({input4: v})} required></Input>
-                                    <DropDown width="48%" items={this.state.items3} index={this.state.index3} onChange={(index)=> this.setState({index3: index})} required>性别</DropDown>
-                                    <DropDown width="48%" items={this.state.items1} index={this.state.index4} onChange={(index)=> this.setState({index4: index})} required>客户类别</DropDown>
-                                    <Input title="手机" width="48%" value={this.state.input5} model={(v)=>this.setState({input5: v})} required></Input>
-                                    <Input title="电话" width="48%" value={this.state.input6} model={(v)=>this.setState({input6: v})}></Input>
-                                    <Input title="地址" width="98%" value={this.state.input7} model={(v)=>this.setState({input7: v})}></Input>
-                                    <DropDown width="98%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})} required>归属商场</DropDown>
+                                    <Input title="客户编码" width="48%" placeholder="编码会自动生成" value={this.state.input11} model={(v)=>this.setState({inpu11: v})}></Input>
+                                    <Input title="客户名称" width="48%" value={this.state.input12} model={(v)=>this.setState({input12: v})} required></Input>
+                                    <DropDown width="48%" items={this.state.items5} index={this.state.index5} onChange={(index)=> this.setState({index5: index})} required>性别</DropDown>
+                                    <DropDown width="48%" items={this.state.items6} index={this.state.index6} onChange={(index)=> this.setState({index6: index})} required>客户类别</DropDown>
+                                    <Input title="手机" width="48%" value={this.state.input13} model={(v)=>this.setState({input13: v})} required></Input>
+                                    <Input title="电话" width="48%" value={this.state.input14} model={(v)=>this.setState({input14: v})}></Input>
+                                    <Input title="地址" width="98%" value={this.state.input15} model={(v)=>this.setState({input15: v})}></Input>
+                                    <DropDown width="98%" items={this.state.items7} index={this.state.index7} onChange={(index)=> this.setState({index7: index})} required>归属商场</DropDown>
                                 </ul>
                             </div>
                         </div>
@@ -465,18 +513,18 @@ export default class index extends Component {
                         <div className="two-wrap line">
                             <div className="pub-table">
                                 <ul>
-                                    <DateTime width="48%" title="出生日期" model={(v)=> this.setState({time1: v})} ></DateTime>
-                                    <DropDown width="48%" items={this.state.items1} index={this.state.index5} onChange={(index)=> this.setState({index5: index})}>客户来源</DropDown>
-                                    <Input title="微信/QQ" width="48%" value={this.state.input8} model={(v)=>this.setState({input8: v})}></Input>
-                                    <Input title="邮箱" width="48%" value={this.state.input9} model={(v)=>this.setState({input9: v})}></Input>
-                                    <Input title="职业" width="48%" value={this.state.input10} model={(v)=>this.setState({input10: v})}></Input>
-                                    <Input title="工作单位" width="48%" value={this.state.input11} model={(v)=>this.setState({input11: v})}></Input>
-                                    <Input title="楼盘名称" width="48%" value={this.state.input12} model={(v)=>this.setState({input12: v})}></Input>
-                                    <DropDown width="48%" items={this.state.items4} index={this.state.index4} onChange={(index)=> this.setState({index4: index})}>房型</DropDown>
-                                    <DropDown width="48%" items={this.state.items1} index={this.state.index6} onChange={(index)=> this.setState({index6: index})}>喜好风格</DropDown>
-                                    <DropDown width="48%" items={this.state.items1} index={this.state.index7} onChange={(index)=> this.setState({index7: index})}>性格特征</DropDown>
-                                    <DropDown width="98%" items={this.state.items1} index={this.state.index8} onChange={(index)=> this.setState({index8: index})}>购置意向</DropDown>
-                                    <Input title="备注" width="98%" value={this.state.input13} model={(v)=>this.setState({input13: v})}></Input>
+                                    <DateTime width="48%" title="出生日期" model={(v)=> this.setState({time3: v})} ></DateTime>
+                                    <DropDown width="48%" items={this.state.items8} index={this.state.index8} onChange={(index)=> this.setState({index8: index})}>客户来源</DropDown>
+                                    <Input title="微信/QQ" width="48%" value={this.state.input16} model={(v)=>this.setState({input16: v})}></Input>
+                                    <Input title="邮箱" width="48%" value={this.state.input17} model={(v)=>this.setState({input17: v})}></Input>
+                                    <Input title="职业" width="48%" value={this.state.input18} model={(v)=>this.setState({input18: v})}></Input>
+                                    <Input title="工作单位" width="48%" value={this.state.input19} model={(v)=>this.setState({input19: v})}></Input>
+                                    <Input title="楼盘名称" width="48%" value={this.state.input20} model={(v)=>this.setState({input20: v})}></Input>
+                                    <DropDown width="48%" items={this.state.items9} index={this.state.index9} onChange={(index)=> this.setState({index9: index})}>房型</DropDown>
+                                    <DropDown width="48%" items={this.state.items10} index={this.state.index10} onChange={(index)=> this.setState({index10: index})}>喜好风格</DropDown>
+                                    <DropDown width="48%" items={this.state.items11} index={this.state.index11} onChange={(index)=> this.setState({index11: index})}>性格特征</DropDown>
+                                    <DropDown width="98%" items={this.state.items12} index={this.state.index12} onChange={(index)=> this.setState({index12: index})}>购置意向</DropDown>
+                                    <Input title="备注" width="98%" value={this.state.input21} model={(v)=>this.setState({input21: v})}></Input>
                                 </ul>
                             </div>
                         </div>

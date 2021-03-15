@@ -9,15 +9,34 @@ export default class index extends Component {
     constructor(){
         super()
         this.state = {
-            items1: ['1', '2', '3'],
+            items1: ['深圳宝能家居广场', '上海红星美凯龙真北店', '北京居然之家朝阳店'],
             index1: 0,
 
             items2: ['潜在客户', '咨询介绍', '初步意向', '正常跟进','方案报价', '商务谈价', '成交开单', '流失作废'],
             index2: 0,
-            index4: 0,
+            index7: 8,
 
             items3: ['最近一周', '最近一月', '最近三月', '最近半年'],
             index3: 0,
+
+            items4: ['一', '二', '三', '四'],
+            index4: 0,
+
+            items5: ['一', '二', '三', '四'],
+            index5: 0,
+
+            items6: ['潜在客户', '咨询介绍', '初步意向', '正常跟进','方案报价', '商务谈价', '成交开单', '流失作废'],
+            index6: 0,
+ 
+
+            input1: '',
+            input2: '',
+            input3: '',
+            input4: '',
+            input5: '',
+
+            search1: '',
+            search2: '',
 
             market: '',
             name: '',
@@ -82,11 +101,11 @@ export default class index extends Component {
                         <ul>
                             <DropDown width="98%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>商场</DropDown>
 
-                            <Input title="客户名称" width="48%" value={this.state.field1} model={(v)=>this.setState({field1: v})}>
+                            <Input title="客户名称" width="48%" value={this.state.search1} model={(v)=>this.setState({search1: v})}>
                                 <button className="pub-search"></button>
                             </Input>
 
-                            <DropDown width="48%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>跟进人</DropDown>
+                            <DropDown width="48%" items={this.state.items4} index={this.state.index4} onChange={(index)=> this.setState({index4: index})}>跟进人</DropDown>
 
                             <DropDown width="48%" items={this.state.items2} index={this.state.index2} onChange={(index)=> this.setState({index2: index})}>跟进阶段</DropDown>
 
@@ -132,11 +151,11 @@ export default class index extends Component {
                         <div className="pub-table">
                             <ul>
 
-                                <Input width="31%" placeholder="新客户请直接选择..."title="客户名称" required value={this.state.cusname} model={(v)=>this.setState({cusname: v})}>
+                                <Input width="31%" placeholder="新客户请直接选择..."title="客户名称" required value={this.state.search2} model={(v)=>this.setState({search2: v})}>
                                     <button type="button" className="pub-search"></button>
                                 </Input>
 
-                                <DropDown width="31%" items={this.state.items2} index={this.state.index4} onChange={(index)=> this.setState({index4: index})}required>跟进阶段</DropDown>
+                                <DropDown width="31%" items={this.state.items2} index={this.state.index7} onChange={(index)=> this.setState({index7: index})}required>跟进阶段</DropDown>
 
                                 <DateTime width="31%" title="下次跟进" model={(v)=> this.setState({time1: v})} required></DateTime>
                             </ul>

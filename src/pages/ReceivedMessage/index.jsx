@@ -18,6 +18,9 @@ export default class index extends Component {
             time1: '',
             time2: '',
 
+            search1: '',
+            search2: '',
+
             input1: '',
 			input2: '',
             input3: '',
@@ -85,7 +88,7 @@ export default class index extends Component {
                         <ul>
                             <Input title="消息主题" width="98%" value={this.state.input1} model={(v)=>this.setState({input1: v})}></Input>
 
-                            <Input title="发送人" width="48%" value={this.state.input2} model={(v)=>this.setState({input2: v})}>
+                            <Input title="发送人" width="48%" value={this.state.search1} model={(v)=>this.setState({search1: v})}>
                                 <button className="pub-search"></button>
                             </Input>
 
@@ -95,7 +98,7 @@ export default class index extends Component {
 								<ContainDown index={this.state.down3} Select={(v)=>this.setState({down3: v})}></ContainDown>
 							</DateTime>
 
-                            <DateTime title="收到日期" width="48%" model={(v)=> this.setState({time1: v})} left={false}>
+                            <DateTime title="收到日期" width="48%" model={(v)=> this.setState({time2: v})} left={false}>
 								<ContainDown index={this.state.down4} Select={(v)=>this.setState({down3: v})}></ContainDown>
 							</DateTime>
                         </ul>
@@ -139,7 +142,7 @@ export default class index extends Component {
                             <div className="pub-table">
                                 <ul>
                                     <Input title="消息主题" width="64%" value={this.state.input4} model={(v)=>this.setState({input4: v})}></Input>
-                                    <Input title="抄送" width="32%" value={this.state.input5} model={(v)=>this.setState({input5: v})}>
+                                    <Input title="抄送" width="32%" value={this.state.search2} model={(v)=>this.setState({search2: v})}>
                                         <button type="button" onClick={()=> alert(`搜索【${this.state.input5}】中...`)} className="pub-search"></button>
                                     </Input>
                                 </ul>
