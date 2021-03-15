@@ -1968,17 +1968,17 @@ body.open .main-right ul li .slide-sub {
   position: relative;
   overflow: hidden;
 }
-.case-scroll .wrap ul {
+.case-scroll .wrap .swiper-wrapper {
   height: 100%;
   display: flex;
 }
-.case-scroll .wrap ul li {
+.case-scroll .wrap .swiper-wrapper .swiper-slide {
   background: #ccc;
   height: 100%;
   text-align: center;
   flex-shrink: 0;
 }
-.case-scroll .wrap ul li img {
+.case-scroll .wrap .swiper-wrapper .swiper-slide img {
   height: 100%;
 }
 .ico-up {
@@ -4350,28 +4350,6 @@ span.sp250 {
 .model ul li .model-content dl dd span.sp3 {
   width: 23.5%;
   text-align: center;
-}
-.swiper-pagination {
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  z-index: 1;
-}
-.swiper-pagination span {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #fff;
-  opacity: 0.6;
-  filter: alpha(opacity=60);
-  margin: 0 3px;
-}
-.swiper-pagination span.swiper-pagination-bullet-active {
-  opacity: 1;
-  filter: alpha(opacity=100);
 }
 .accounting {
   border: 1px solid #cdcdcd;

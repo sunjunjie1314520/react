@@ -27,8 +27,11 @@ export default class index extends Component {
 
     componentDidMount(){
         const { col, margin } = this.props
+
+        // console.log(col);
+
         let array = new Array(col)
-        for(var i =0; i< array.length; i++){
+        for(var i = 0; i < array.length; i++){
             array[i] = 0
         }
 
@@ -39,9 +42,10 @@ export default class index extends Component {
         })
 
     }
+
     load=(e, index)=>{
 
-        console.group(`第${index+1}张`);
+        // console.group(`第${index+1}张`);
 
         const { height } = e.target
         const { array, width, count } = this.state
@@ -55,11 +59,11 @@ export default class index extends Component {
 
         let min = Math.min(...array)
         
-        console.log('array =>', array)
-        console.log('min', min)
+        // console.log('array =>', array)
+        // console.log('min', min)
 
         var index1 = array.findIndex(item => item===min)
-        console.log('find =>', index1)
+        // console.log('find =>', index1)
 
         let top = array[index1]
         array[index1] = top + height
@@ -68,7 +72,7 @@ export default class index extends Component {
         data[index].top = min
         data[index].load = true
 
-        console.log(array)
+        // console.log(array)
 
         let max = Math.max(...array)
         
@@ -96,30 +100,29 @@ export default class index extends Component {
     }
 
     handleScroll(e) {
-        // console.log(e.nativeEvent);
         const x = 130
 
         const { translate, max } = this.state
         const { margin } = this.props
 
         if (e.nativeEvent.deltaY <= 0) {
-            console.log('up');
             let up = translate + x
-            console.log(up);
             this.setState({
                 translate: up >= 0 ? 0 : up
             })
         } 
         else{
-            console.log('down');
             let down = translate - x
-            var a = this.layout.current.clientHeight
+            let a = this.layout.current.clientHeight
             let res = (max + margin - a) * -1
-            console.log(down, res);
             this.setState({
                 translate: down < res ? res : down
             })
         }
+    }
+
+    componentDidUpdate(){
+        
     }
 
     render() {
