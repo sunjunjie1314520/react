@@ -550,7 +550,7 @@ export default class Left extends Component {
                         },
                         {
                             title: '记事本',
-                            to: '/home/page4'
+                            to: '/home/Notebook'
                         },
                     ]
                 },

@@ -160,7 +160,7 @@ export default class index extends Component {
 
                     <div className="box2">
                         <h2 className="pub-tit">
-                            <i className="ico-font53"></i>
+                            <i className="ico-message"></i>
                             历史消息
                             <div className="fr">
                                 <a className="a2" href="/" title="">回复</a>

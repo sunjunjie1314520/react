@@ -242,12 +242,12 @@ export default class index extends Component {
                                         </Box>
                                         <Box w={this.state.fields[1].width}>111</Box>
                                         <Box w={this.state.fields[2].width}>2222</Box>
-                                        <Box w={this.state.fields[3].width}>65464654</Box>
+                                        <Box w={this.state.fields[3].width}>aaa</Box>
                                         <Box w={this.state.fields[4].width}>65464654</Box>
-                                        <Box w={this.state.fields[5].width}>65464654</Box>
+                                        <Box w={this.state.fields[5].width}>ssss</Box>
                                         <Box w={this.state.fields[6].width}>asdf</Box>
                                         <Box w={this.state.fields[7].width}>65464654</Box>
-                                        <Box w={this.state.fields[8].width}>65464654</Box>
+                                        <Box w={this.state.fields[8].width}>dddd</Box>
                                         <Box w={this.state.fields[9].width}>65464654</Box>
                                         <Box w={this.state.fields[10].width}>65464654</Box>
                                         <Box w={this.state.fields[11].width}>65464654</Box>

@@ -55,6 +55,9 @@ export default class index extends Component {
             input13: '',
             input14: '',
             input15: '',
+            input16: '',
+            input17: '',
+            input18: '',
 
             search1: '',
             search2: '',
@@ -123,11 +126,11 @@ export default class index extends Component {
                     name: '序号',
                 },
                 {
-                    width: 180,
+                    width: 220,
                     name: '收款方式',
                 },
                 {
-                    width: 150,
+                    width: 120,
                     name: '收款币种',
                 },
                 {
@@ -135,8 +138,8 @@ export default class index extends Component {
                     name: '收款金额',
                 },
                 {
-                    width: 100,
-                    name: '备注',
+                    width: 180,
+                    name: '备 注',
                 },
             ],
             // Tabel 源数据
@@ -197,11 +200,6 @@ export default class index extends Component {
                 },
                 {
                     id: 7,
-                    bianma: 'xxxxxxxxxxxxx',
-                    check: false,
-                },
-                {
-                    id: 8,
                     bianma: 'xxxxxxxxxxxxx',
                     check: false,
                 },
@@ -400,8 +398,10 @@ export default class index extends Component {
                                                     {k+1}
                                                 </label>
                                             </Box>
-                                            <Box w={this.state.fields3[1].width}>111</Box>
-                                            <Box w={this.state.fields3[2].width}>2222</Box>
+                                            <Box w={this.state.fields3[1].width}>现金 Cash</Box>
+                                            <Box w={this.state.fields3[2].width}>￥人民币</Box>
+                                            <Box w={this.state.fields3[3].width}>12680.00</Box>
+                                            <Box w={this.state.fields3[4].width}>预付30%货款</Box>
                                         </Li>
                                     )
                                 })

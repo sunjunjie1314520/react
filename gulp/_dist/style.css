@@ -4445,33 +4445,6 @@ span.sp250 {
   width: 23.5%;
   text-align: center;
 }
-<<<<<<< HEAD
-.swiper-pagination {
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: center;
-  justify-content: center;
-  z-index: 1;
-}
-.swiper-pagination span {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #fff;
-  opacity: 0.6;
-  filter: alpha(opacity=60);
-  margin: 0 3px;
-}
-.swiper-pagination span.swiper-pagination-bullet-active {
-  opacity: 1;
-  filter: alpha(opacity=100);
-}
-=======
->>>>>>> 2ee79aa7adbd6de26c1ff0de4d72d915491aff7d
 .accounting {
   border: 1px solid #cdcdcd;
 }

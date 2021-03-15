@@ -31,6 +31,7 @@ import PurchaseOrder from '../pages/PurchaseOrder';
 import PaymentMethods from '../pages/PaymentMethods';
 import TheUnitType from '../pages/TheUnitType';
 import ReceivedMessage from '../pages/ReceivedMessage';
+import Notebook from '../pages/Notebook';
 
 
 const router = [
@@ -158,6 +159,11 @@ const router = [
 				path: '/Received-message',
 				exact: false,
 				component: ReceivedMessage,
+			},
+			{
+				path: '/Notebook',
+				exact: false,
+				component: Notebook,
 			},
 			{
 				path: '/*',
