@@ -10,10 +10,17 @@ import {Input, DropDown, Frame, Move } from '../../components/UI';
 import Pager from '../../components/Pager';
 import Waterfall from '../../components/Waterfall';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+
+
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+
 export default class index extends Component {
 
     constructor(){
         super()
+        let wid = window.innerWidth;
         this.state = {
             items1: ['实景拍摄', '效果图', 'VR情景', '样板房', '展示厅', '其他'],
             index1: 0,
@@ -32,7 +39,7 @@ export default class index extends Component {
             name: '',
 
             alert1: false,
-            alert2: false,
+            alert2: true,
 
             data: [
                 {
@@ -113,12 +120,24 @@ export default class index extends Component {
                 {
                     src: 'https://sc8.mofengwo.cn/tuku/6372333292974485792619349.jpg'
                 },
-            ]
+            ],
+
+            col: wid <= 1665 ? 3 : 4,
         }
     }
     xmTanUploadImg = (e)=>{
         console.log(e);
     }
+
+    click = (e) =>{
+        e.preventDefault();
+        this.setState({alert2: true})
+    }
+
+    componentDidMount(){
+        
+    }
+
     render() {
         return (
             <>
@@ -149,7 +168,7 @@ export default class index extends Component {
                     <div className="case-item">
                         <Frame bottom={41}>
 
-                            <Waterfall col={4} margin={15} data={this.state.data} additional={114}></Waterfall>
+                            <Waterfall col={this.state.col} margin={15} data={this.state.data} additional={114} click={this.click}></Waterfall>
 
                             {/* <ul> */}
                                 {/* <li onClick={(e)=> {e.preventDefault();this.setState({alert2: true})}}>
@@ -181,16 +200,29 @@ export default class index extends Component {
                 {/* 轮播大图 */}
                 <Move model={this.state.alert2}>
                     <div className="case-scroll move-obj">
-                        <a className="pos prev" href="/"><img src={prev} alt="上一张" /></a>
-                        <a className="pos next" href="/"><img src={next} alt="下一张" /></a>
+                        <a className="pos prev swiper-button-prev" href="/"><img src={prev} alt="上一张" /></a>
+                        <a className="pos next swiper-button-next" href="/"><img src={next} alt="下一张" /></a>
                         <div className="wrap">
                             <span className="ico-close" onClick={(e)=> {e.preventDefault();this.setState({alert2: false})}}></span>
-                            <ul className="swiper-wrapper">
-                                <li className="swiper-slide">
-                                    <img src={img2} alt="" />
-                                </li>
-                            </ul>
-                            <div className="swiper-pagination"></div>
+                            <Swiper
+                                spaceBetween={20}
+                                slidesPerView={1}
+                                navigation={
+                                    {
+                                        nextEl: '.swiper-button-next',
+                                        prevEl: '.swiper-button-prev',
+                                    }
+                                }
+                                pagination={{ clickable: true }}
+                                onSlideChange={() => console.log('slide change')}
+                                onSwiper={(swiper) => this.setState({alert2: false})}
+                                >
+                                <SwiperSlide><img src={img2} alt="" /></SwiperSlide>
+                                <SwiperSlide><img src={img2} alt="" /></SwiperSlide>
+                                <SwiperSlide><img src={img2} alt="" /></SwiperSlide>
+                                <SwiperSlide><img src={img2} alt="" /></SwiperSlide>
+                            </Swiper>
+                            {/* <div className="swiper-pagination"></div> */}
                         </div>
                     </div>
                 </Move>

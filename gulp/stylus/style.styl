@@ -1645,10 +1645,10 @@ body
         margin 0 auto
         position relative
         overflow hidden
-        ul
+        .swiper-wrapper
             height 100%
             display flex
-            li
+            .swiper-slide
                 background #ccc
                 height 100%
                 text-align center
@@ -3208,26 +3208,6 @@ for i in 30..250
     width 23.5%
     text-align center
 
-.swiper-pagination {
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  z-index: 1
-}
-.swiper-pagination span {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #fff;
-  opacity: 0.6;
-  margin: 0 3px;
-}
-.swiper-pagination span.swiper-pagination-bullet-active {
-  opacity: 1;
-}
 .accounting
     border 1px solid bor1
     .retreat
