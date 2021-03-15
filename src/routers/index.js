@@ -28,6 +28,8 @@ import AfterSalesManagement from '../pages/AfterSalesManagement';
 
 import FollowUpList from '../pages/FollowUpList';
 import PurchaseOrder from '../pages/PurchaseOrder';
+import PaymentMethods from '../pages/PaymentMethods';
+import TheUnitType from '../pages/PaymentMethods';
 
 const router = [
 	{
@@ -139,6 +141,16 @@ const router = [
 				path: '/Follow-up-list',
 				exact: false,
 				component: FollowUpList,
+			},
+			{
+				path: '/Payment-methods',
+				exact: false,
+				component: PaymentMethods,
+			},
+			{
+				path: '/The-unit-type',
+				exact: false,
+				component: TheUnitType,
 			},
 			{
 				path: '/*',
