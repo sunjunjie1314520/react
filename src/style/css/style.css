@@ -76,6 +76,9 @@
 .ico-font9 {
   background: url("../img/icon117.png") center no-repeat;
 }
+.ico-font53 {
+  background: url("../img/icon158.png") center no-repeat;
+}
 .ico-font54 {
   background: url("../img/icon159.png") center no-repeat;
 }
@@ -2426,6 +2429,42 @@ body.open .main-right ul li .slide-sub {
   padding-left: 28px;
   margin-top: 2px;
 }
+.notice-right .box1 .negotiation h2 b.b1 {
+  background: url("../img/方案.png") left center no-repeat;
+  padding-left: 28px;
+}
+.notice-right .box1 .negotiation h2 b.b2 {
+  background: url("../img/跟进.png") left center no-repeat;
+  padding-left: 28px;
+}
+.notice-right .box1 .negotiation h2 b.b3 {
+  background: url("../img/建议.png") left center no-repeat;
+  padding-left: 28px;
+}
+.notice-right .box1 .negotiation h2 b.b4 {
+  background: url("../img/介绍.png") left center no-repeat;
+  padding-left: 28px;
+}
+.notice-right .box1 .negotiation h2 b.b5 {
+  background: url("../img/意向.png") left center no-repeat;
+  padding-left: 28px;
+}
+.notice-right .box1 .negotiation h2 b.b6 {
+  background: url("../img/谈判.png") left center no-repeat;
+  padding-left: 28px;
+}
+.notice-right .box1 .negotiation h2 b.b7 {
+  background: url("../img/成交.png") left center no-repeat;
+  padding-left: 28px;
+}
+.notice-right .box1 .negotiation h2 b.b8 {
+  background: url("../img/流失.png") left center no-repeat;
+  padding-left: 28px;
+}
+.notice-right .box1 .negotiation h2 b.b9 {
+  background: url("../img/潜在.png") left center no-repeat;
+  padding-left: 28px;
+}
 .notice-right .box1 .negotiation textarea {
   height: 92px;
   width: 100%;
@@ -2520,6 +2559,22 @@ body.open .main-right ul li .slide-sub {
 }
 .notice-right .box2 .follow-up-record b.b5 {
   background: url("../img/意向.png") left center no-repeat;
+  padding-left: 28px;
+}
+.notice-right .box2 .follow-up-record b.b6 {
+  background: url("../img/谈判.png") left center no-repeat;
+  padding-left: 28px;
+}
+.notice-right .box2 .follow-up-record b.b7 {
+  background: url("../img/成交.png") left center no-repeat;
+  padding-left: 28px;
+}
+.notice-right .box2 .follow-up-record b.b8 {
+  background: url("../img/流失.png") left center no-repeat;
+  padding-left: 28px;
+}
+.notice-right .box2 .follow-up-record b.b9 {
+  background: url("../img/潜在.png") left center no-repeat;
   padding-left: 28px;
 }
 .notice-right .box2 .follow-up-record .text {
@@ -3042,6 +3097,9 @@ body.open .main-right ul li .slide-sub {
 }
 .pub-tit .ico-notice {
   background: url("../img/a1d33c829fbc48ccb0d450d28a90382d_18x20.png") center no-repeat;
+}
+.pub-tit .ico-message {
+  background: url("../img/icon158.png") center no-repeat;
 }
 .pub-tit p {
   float: right;

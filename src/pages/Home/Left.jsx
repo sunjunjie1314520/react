@@ -534,7 +534,7 @@ export default class Left extends Component {
                         },
                         {
                             title: '收到消息',
-                            to: '/home/page4'
+                            to: '/home/Received-message'
                         },
                         {
                             title: '发送消息',

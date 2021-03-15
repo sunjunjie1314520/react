@@ -44,7 +44,7 @@ export default class index extends Component {
                         <li><a href="/" title="">04-零售批发</a></li>
                         <li><a href="/" title="">05-大型品牌联盟</a></li>
                         <li><a href="/" title="">06-设计公司</a></li>
-                        <li><a href="/" title="">06-其他</a></li>
+                        <li><a href="/" title="">07-其他</a></li>
                     </ul>
                 </Frame>
 

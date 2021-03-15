@@ -29,7 +29,9 @@ import AfterSalesManagement from '../pages/AfterSalesManagement';
 import FollowUpList from '../pages/FollowUpList';
 import PurchaseOrder from '../pages/PurchaseOrder';
 import PaymentMethods from '../pages/PaymentMethods';
-import TheUnitType from '../pages/PaymentMethods';
+import TheUnitType from '../pages/TheUnitType';
+import ReceivedMessage from '../pages/ReceivedMessage';
+
 
 const router = [
 	{
@@ -151,6 +153,11 @@ const router = [
 				path: '/The-unit-type',
 				exact: false,
 				component: TheUnitType,
+			},
+			{
+				path: '/Received-message',
+				exact: false,
+				component: ReceivedMessage,
 			},
 			{
 				path: '/*',
