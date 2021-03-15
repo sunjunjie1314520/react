@@ -35,16 +35,16 @@ export default class index extends Component {
                 <Frame className="archives-type" bottom={14}>
                     <div className="pub-tit">
                         <i className="ico-type"></i>
-                        收款方式
+                        单位类型
                     </div>
                     <ul>
-                        <li><a href="/" title="">00-现金 Cash</a></li>
-                        <li><a href="/" title="">01-刷卡 Swiping Sard</a></li>
-                        <li><a href="/" title="">02-银行转账 Bank transfer</a></li>
-                        <li><a href="/" title="">03-微信 WeChect</a></li>
-                        <li><a href="/" title="">04-支付宝 Alipay</a></li>
-                        <li><a href="/" title="">05-优惠券 Coupons</a></li>
-                        <li><a href="/" title="">06-其他 Other</a></li>
+                        <li><a href="/" title="">01-品牌专卖店</a></li>
+                        <li><a href="/" title="">02-连锁店</a></li>
+                        <li><a href="/" title="">03-旗舰独立店</a></li>
+                        <li><a href="/" title="">04-零售批发</a></li>
+                        <li><a href="/" title="">05-大型品牌联盟</a></li>
+                        <li><a href="/" title="">06-设计公司</a></li>
+                        <li><a href="/" title="">06-其他</a></li>
                     </ul>
                 </Frame>
 
@@ -60,29 +60,29 @@ export default class index extends Component {
                         </div>
                         <div className="pub-table">
                             <ul>
-                                <Input width="30%" title="收款编码" value={this.state.input1} model={(v)=>this.setState({input1: v})}required></Input>
+                                <Input width="30%" title="类型编码" value={this.state.input1} model={(v)=>this.setState({input1: v})}required></Input>
                                 <li></li>
                                 <li></li>
-                                <Input width="30%" title="收款名称" value={this.state.input2} model={(v)=>this.setState({input2: v})}required></Input>
+                                <Input width="30%" title="类型名称" value={this.state.input2} model={(v)=>this.setState({input2: v})}required></Input>
                                 <li></li>
                                 <li></li>
                                 <li>
                                     <span></span>
                                     <p>
-                                        <label className="pub-check1" title="默认收款方式">
-                                            <input type="checkbox" checked={this.state.c1} onChange={(e)=>this.setState({c1: e.target.checked})}/>默认收款方式
+                                        <label className="pub-check1" title="默认类型">
+                                            <input type="checkbox" checked={this.state.c1} onChange={(e)=>this.setState({c1: e.target.checked})}/>默认类型
                                         </label>
                                     </p>
                                 </li>
                                 <li></li>
                                 <li></li>
-                                <Input width="30%" title="备注" value={this.state.input5} model={(v)=>this.setState({input5: v})}></Input>
+                                <Input width="30%" title="备注" value={this.state.input3} model={(v)=>this.setState({input3: v})}></Input>
                                 <li></li>
                                 <li></li>
-                                <Input width="30%" title="建立人" value={this.state.input3} model={(v)=>this.setState({input3: v})}></Input>
+                                <Input width="30%" title="建立人" value={this.state.input4} model={(v)=>this.setState({input4: v})}></Input>
                                 <li></li>
                                 <li></li>
-                                <Input width="30%" title="修改人" value={this.state.input4} model={(v)=>this.setState({input4: v})}></Input>
+                                <Input width="30%" title="修改人" value={this.state.input5} model={(v)=>this.setState({input5: v})}></Input>
                             </ul>
                         </div>
                     </Frame>

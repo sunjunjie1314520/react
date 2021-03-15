@@ -560,8 +560,8 @@ export default class Left extends Component {
                     icons: 'ico-ji',
                     types: [
                         {
-                            title: '单位类别',
-                            to: '/home/page5'
+                            title: '单位类型',
+                            to: '/home/The-unit-type'
                         },
                         {
                             title: '货币设置',
