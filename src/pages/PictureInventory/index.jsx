@@ -29,6 +29,8 @@ export default class index extends Component {
             input3: '',
             input4: '',
 
+            search1: '',
+
             c1: true,
             c2: false,
 
@@ -166,7 +168,7 @@ export default class index extends Component {
                                 </p>
                             </li>
 
-                            <Input title="品牌" value={this.state.field3} model={(v)=>this.setState({field3: v})}><button className="pub-search"></button></Input>
+                            <Input title="品牌" value={this.state.search1} model={(v)=>this.setState({search1: v})}><button className="pub-search"></button></Input>
                             <DropDown items={this.state.items2} index={this.state.index2} onChange={(index)=> this.setState({index2: index})}>系列</DropDown>
                             <DropDown width="48%" items={this.state.items3} index={this.state.index3} onChange={(index)=> this.setState({index3: index})}>商场/仓库</DropDown>
                         </ul>

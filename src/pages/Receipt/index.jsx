@@ -27,7 +27,10 @@ export default class index extends Component {
 
             field1: '',
             field2: '',
+
             time1: '',  // 销售日期
+            time2: '', 
+            time3: '', 
 
             field5: '5',
             field6: '6',
@@ -52,6 +55,9 @@ export default class index extends Component {
             input13: '',
             input14: '',
             input15: '',
+
+            search1: '',
+            search2: '',
 
             alert1: false,
             alert2: false,
@@ -235,7 +241,7 @@ export default class index extends Component {
 
                                 <DropDown width="48%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>销售商场</DropDown>
                                 <Input title="销售单号" width="48%" value={this.state.input1} model={(v)=>this.setState({input1: v})}></Input>
-                                <Input width="48%" title="客户名称" value={this.state.input2} model={(v)=>this.setState({input2: v})}>
+                                <Input width="48%" title="客户名称" value={this.state.search1} model={(v)=>this.setState({search1: v})}>
                                     <button className="pub-search"></button>
                                 </Input>
                                 <DateTime width="48%" title="销售日期" model={(v)=> this.setState({time1: v})}></DateTime>

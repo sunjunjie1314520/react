@@ -15,6 +15,8 @@ export default class index extends Component {
             input1: '',
             input2: '',
             input3: '',
+            input4: '',
+            input5: '',
 
             index1: 0,
             items1:['第一个菜单', '2'],
@@ -27,6 +29,9 @@ export default class index extends Component {
             down6: 0,
             down7: 0,
             down8: 1,
+
+            search1: '',
+            search2: '',
 
             time1: '',
 
@@ -105,6 +110,8 @@ export default class index extends Component {
 
     }
 
+
+
     render() {
         return (
             <>
@@ -123,7 +130,7 @@ export default class index extends Component {
                                 <ContainDown index={this.state.down1} Select={(v)=> this.setState({down1: v})}></ContainDown>
                             </Input>
 
-                            <Input split={true} title="销售商场" value={this.state.input2} model={(v)=>this.setState({input2: v})}>
+                            <Input split={true} title="销售商场" value={this.state.search1} model={(v)=>this.setState({search1: v})}>
                                 <ContainDown index={this.state.down2} Select={(v)=> this.setState({down2: v})}></ContainDown>
                                 <button className="pub-search"></button>
                             </Input>
@@ -132,23 +139,23 @@ export default class index extends Component {
 								<ContainDown index={this.state.down3} Select={(v)=>this.setState({down3: v})}></ContainDown>
 							</DateTime>
 
-                            <DateTime title="销售日期" width="23%" model={(v)=> this.setState({time1: v})} left={false}>
+                            <DateTime title="销售日期" width="23%" model={(v)=> this.setState({time2: v})} left={false}>
 								<ContainDown index={this.state.down4} Select={(v)=>this.setState({down3: v})}></ContainDown>
 							</DateTime>
 
-                            <Input ltr={true} title="货品编码" value={this.state.input1} model={(v)=>this.setState({input1: v})}>
+                            <Input ltr={true} title="货品编码" value={this.state.input2} model={(v)=>this.setState({input2: v})}>
                                 <ContainDown index={this.state.down5} Select={(v)=> this.setState({down5: v})}></ContainDown>
                             </Input>
 
-                            <Input ltr={true} title="型号" value={this.state.input1} model={(v)=>this.setState({input1: v})}>
+                            <Input ltr={true} title="型号" value={this.state.input3} model={(v)=>this.setState({input3: v})}>
                                 <ContainDown index={this.state.down6} Select={(v)=> this.setState({down6: v})}></ContainDown>
                             </Input>
 
-                            <Input ltr={true} title="客户编码" value={this.state.input1} model={(v)=>this.setState({input1: v})}>
+                            <Input ltr={true} title="客户编码" value={this.state.input4} model={(v)=>this.setState({input4: v})}>
                                 <ContainDown index={this.state.down7} Select={(v)=> this.setState({down7: v})}></ContainDown>
                             </Input>
 
-                            <Input split={true} title="销售员" value={this.state.input1} model={(v)=>this.setState({input1: v})}>
+                            <Input split={true} title="销售员" value={this.state.search2} model={(v)=>this.setState({search2: v})}>
                                 <ContainDown index={this.state.down8} Select={(v)=> this.setState({down8: v})}></ContainDown>
                                 <button className="pub-search"></button>
                             </Input>
@@ -184,6 +191,8 @@ export default class index extends Component {
 
                 {/* 分页器 */}
                 <Pager></Pager>
+
+
 
             </>
         )
