@@ -148,13 +148,22 @@ export default class index extends Component {
             ]
         }
     }
-    checkHandle(check, k){
-        const {data} = this.state
-        data[k].check = check
-        this.setState({
-            data: data
-        })
-    }
+        checkHandle(check, k){
+            const {data} = this.state
+            data[k].check = check
+            this.setState({
+                data: data
+            })
+        }
+
+        // 显示或隐藏 弹窗
+        slide = () => {
+            const {alert1} = this.state
+            this.setState({
+                alert1: !alert1
+            })
+        }
+
     render() {
         return (
             <>
@@ -175,7 +184,7 @@ export default class index extends Component {
                 <div className="archives-right">
                     <div className="function-wrap">
                         <div className="pub-fun">
-                            <a title="" onClick={(e)=>{e.preventDefault(); this.setState({show1: true})}} className="a2" href="/"><i className="ico-xin1"></i>新建</a>
+                            <a title="" onClick={(e)=>{e.preventDefault(); this.setState({alert1: true})}} className="a2" href="/"><i className="ico-xin1"></i>新建</a>
                             <a href="/" title="" className="a2"><i className="ico-fu"></i>复制</a>
                             <a title="" className="a2" href="/"><i className="ico-ka"></i>卡片</a>
                             <a href="/" title="" className="a2"><i className="ico-quan"></i>全貌</a>
@@ -232,7 +241,7 @@ export default class index extends Component {
                 </div>
 
                 {/* 弹窗 */}
-                <Move model={this.state.show1}>
+                <Move model={this.state.alert1}>
                     <div className="archives-alert move-obj">
                         <div className="pub-tit add">
                                 <i className="ico-info"></i>
@@ -275,7 +284,7 @@ export default class index extends Component {
                             </div>
                         </div>
                         <div className="btn-wrap">
-                            <a href="/" className="a1" title="">退 出</a>
+                            <a href="/" className="a1" title="" onClick={(e)=> {e.preventDefault();this.setState({alert1: false})}}>退 出</a>
                             <a href="/" className="a2" title="">上 页</a>
                             <a href="/" className="a2" title="">下 页</a>
                             <a href="/" className="a3" title="">新 建</a>

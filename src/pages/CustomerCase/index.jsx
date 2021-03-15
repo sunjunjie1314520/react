@@ -127,8 +127,8 @@ export default class index extends Component {
                         <i className="ico-font12"></i>
                         客户案例
                         <div className="fr">
-                            <a className="a3" href="/" onClick={(e)=> {e.preventDefault();this.setState({alert1: true})}} title="">上传</a>
-                            <a className="a2" href="/" onClick={(e)=> {e.preventDefault();this.setState({alert1: true})}} title="">查询</a>
+                            <a className="a3 w100" href="/" onClick={(e)=> {e.preventDefault();this.setState({alert1: true})}} title="">上传</a>
+                            <a className="a4 w100" href="/" onClick={(e)=> {e.preventDefault();this.setState({alert1: true})}} title="">查询</a>
                         </div>
                     </h2>
                     <div className="pub-table">
