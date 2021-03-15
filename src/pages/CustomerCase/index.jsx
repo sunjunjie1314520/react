@@ -143,7 +143,7 @@ export default class index extends Component {
 
                         </ul>
                     </div>
-                </div>     
+                </div>
 
                 <div className="clearfix">
                     <div className="case-item">
