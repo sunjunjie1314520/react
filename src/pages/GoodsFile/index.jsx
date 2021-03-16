@@ -24,6 +24,7 @@ export default class index extends Component {
         super()
         this.state = {
 
+            // 下拉选择项
             items1: ['已停产','已停售','销售特价','采购特价'],
             index1: 0,
 
@@ -43,6 +44,7 @@ export default class index extends Component {
             items4: ['1','2','3','4','5','6'],
             index4: 7,
 
+            // 表单显示内容项
             input1: '',
             input2: '',
             input3: '',
@@ -63,6 +65,7 @@ export default class index extends Component {
             input18: '',
             input19: '',
 
+            // 表单查询内容项
             search1: '',
             search2: '',
 

@@ -37,6 +37,9 @@ import SalesInquiry from '../pages/SalesInquiry';
 import GoodsSpecials from '../pages/GoodsSpecials';
 import PriceAdjustment from '../pages/PriceAdjustment';
 import SpecialOfferList from '../pages/SpecialOfferList';
+import BatchEdit from '../pages/BatchEdit';
+import StoreWarehouseSettings from '../pages/StoreWarehouseSettings';
+
 
 const router = [
 	{
@@ -193,6 +196,16 @@ const router = [
 				path: '/Special-Offer-List',
 				exact: false,
 				component: SpecialOfferList,
+			},
+			{
+				path: '/Batch-Edit',
+				exact: false,
+				component: BatchEdit,
+			},
+			{
+				path: '/Store-Warehouse-Settings',
+				exact: false,
+				component: StoreWarehouseSettings,
 			},
 			{
 				path: '/*',

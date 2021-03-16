@@ -15,6 +15,7 @@ export default class index extends Component {
             field2: '2',
             field3: '3',
 
+            // 下拉选择项
             items1: ['内部货品Internal Goods', '其他家具Other furniture'],
             index1: 0,
 
@@ -24,16 +25,20 @@ export default class index extends Component {
             items3: ['asdf64', '4545'],
             index3: 0,
 
+            // 表单显示内容项
             input1: '',
             input2: '',
             input3: '',
             input4: '',
 
+            // 表单查询内容项
             search1: '',
 
-            c1: true,
-            c2: false,
+            // 勾选项
+            check1: true,
+            check2: false,
 
+            // table表头文字列项
             fields1: [
                 {
                     width: 60,
@@ -104,6 +109,7 @@ export default class index extends Component {
                     name: '有效数',
                 },
             ],
+            // table表头文字行项
             data1: [
                 {
                     id: 1,
@@ -160,10 +166,10 @@ export default class index extends Component {
                             <li>
                                 <p>
                                     <label className="pub-check1 fl" title="库存为零不显示">
-                                        <input type="checkbox" checked={this.state.c1} onChange={(e)=>this.setState({c1: e.target.checked})}/>库存为零不显示
+                                        <input type="checkbox" checked={this.state.check1} onChange={(e)=>this.setState({check1: e.target.checked})}/>库存为零不显示
                                     </label>
                                     <label className="pub-check1 fr" title="停产停售不显示">
-                                        <input type="checkbox" checked={this.state.c2} onChange={(e)=>this.setState({c2: e.target.checked})}/>停产停售不显示
+                                        <input type="checkbox" checked={this.state.check2} onChange={(e)=>this.setState({check2: e.target.checked})}/>停产停售不显示
                                     </label>
                                 </p>
                             </li>

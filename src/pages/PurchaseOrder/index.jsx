@@ -11,6 +11,8 @@ export default class index extends Component {
     constructor(){
         super()
         this.state = {
+
+            // 下拉选择项
             items1: ['菜单一', '菜单二', '菜单三', '菜单四'],
             index1: 0,
 
@@ -49,6 +51,7 @@ export default class index extends Component {
                 ],
             index6: 19,
 
+            // 表单显示内容项
             input1: '',
             input2: '',
             input3: '',
@@ -59,11 +62,13 @@ export default class index extends Component {
             input8: '',
             input9: '',
 
+            // 表单日期项
             time1: '',
             time2: '',
 
             bottom_alert: false,
 
+            // table表头文字列项
             fields1: [
                 {
                     width: 60,
@@ -138,6 +143,7 @@ export default class index extends Component {
                     name: '备 注',
                 },
             ],
+            // table表头文字行项
             data1: [
                 {
                     id: 1,

@@ -197,7 +197,7 @@ export default class Left extends Component {
                         },
                         {
                             title: '批量修改货品',
-                            to: '/home/page1'
+                            to: '/home/Batch-Edit'
                         },
                         {
                             title: '货品修改记录',
@@ -597,7 +597,7 @@ export default class Left extends Component {
                         },
                         {
                             title: '商场/仓库设置',
-                            to: '/home/page5'
+                            to: '/home/Store-Warehouse-Settings'
                         },
                         {
                             title: '客户来源',

@@ -15,9 +15,11 @@ export default class index extends Component {
         super()
         this.state = {
 
+            // 下拉选择项
             items1: '',
             index1: 0,
 
+            // 表单显示内容项
             input1: '',
             input2: '',
             input3: '',
@@ -25,6 +27,9 @@ export default class index extends Component {
             input5: '',
             input6: '',
 
+            // 勾选项
+            check1: true,
+            check2: false,
         }
     }
 
@@ -52,11 +57,10 @@ export default class index extends Component {
                     <Frame className="function-wrap color" bottom={14}>
                         <div className="pub-fun">
                             <a href="/" title="" className="a2"><i className="ico-xin1"></i>新建</a>
-                            <a href="/" title="" className="a2"><i className="ico-suan"></i>刷新</a>
                             <a href="/" title="" className="a2"><i className="ico-shan"></i>删除</a>
                             <a href="/" title="" className="a2"><i className="ico-ting"></i>停用</a>
                             <a href="/" title="" className="a2"><i className="ico-qi"></i>启用</a>
-                            <a href="/" title="" className="a2"><i className="ico-cha"></i>查询</a>
+                            <a href="/" title="" className="a2"><i className="ico-bao"></i>保存</a>
                         </div>
                         <div className="pub-table">
                             <ul>
@@ -70,7 +74,7 @@ export default class index extends Component {
                                     <span></span>
                                     <p>
                                         <label className="pub-check1" title="默认类型">
-                                            <input type="checkbox" checked={this.state.c1} onChange={(e)=>this.setState({c1: e.target.checked})}/>默认类型
+                                            <input type="checkbox" checked={this.state.check1} onChange={(e)=>this.setState({check1: e.target.checked})}/>默认类型
                                         </label>
                                     </p>
                                 </li>
