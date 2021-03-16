@@ -279,7 +279,7 @@ export default class Left extends Component {
                         },
                         {
                             title: '销售退货单',
-                            to: '/home/page4'
+                            to: '/home/Return-form'
                         },
                         {
                             title: '销售退款',
@@ -287,7 +287,7 @@ export default class Left extends Component {
                         },
                         {
                             title: '销售单查询',
-                            to: '/home/page4'
+                            to: '/home/Sales-inquiry'
                         },
                         {
                             title: '销售收款查询',

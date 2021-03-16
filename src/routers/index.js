@@ -32,6 +32,8 @@ import PaymentMethods from '../pages/PaymentMethods';
 import TheUnitType from '../pages/TheUnitType';
 import ReceivedMessage from '../pages/ReceivedMessage';
 import Notebook from '../pages/Notebook';
+import ReturnForm from '../pages/ReturnForm';
+import SalesInquiry from '../pages/SalesInquiry';
 
 
 const router = [
@@ -164,6 +166,16 @@ const router = [
 				path: '/Notebook',
 				exact: false,
 				component: Notebook,
+			},
+			{
+				path: '/Return-form',
+				exact: false,
+				component: ReturnForm,
+			},
+			{
+				path: '/Sales-inquiry',
+				exact: false,
+				component: SalesInquiry,
 			},
 			{
 				path: '/*',

@@ -1217,8 +1217,8 @@ body.open .main-right ul li .slide-sub {
 .xiaoshow .pub-table ul li .input-wrap .add {
   float: left;
   color: #555;
-  border-right: 1px solid #cdcdcd;
-  border-left: solid 1px #cdcdcd;
+  border-right: 1px solid #d6d6d6;
+  border-left: solid 1px #d6d6d6;
   width: 40px;
   height: 25px;
   line-height: 25px;
@@ -1230,7 +1230,7 @@ body.open .main-right ul li .slide-sub {
 .xiaoshow .pub-table ul li .input-wrap .quzheng {
   float: right;
   color: #555;
-  border-left: solid 1px #cdcdcd;
+  border-left: solid 1px #d6d6d6;
   width: 66px;
   height: 25px;
   line-height: 25px;
@@ -2645,7 +2645,7 @@ body.open .main-right ul li .slide-sub {
 .pub-table ul li .input-wrap {
   background: #fff;
   position: relative;
-  border: 1px solid #cdcdcd;
+  border: 1px solid #d6d6d6;
   height: 27px;
   width: calc(100% - 91px);
   float: right;

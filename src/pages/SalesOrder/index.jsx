@@ -146,7 +146,7 @@ export default class index extends Component {
                 },
                 {
                     width: 80,
-                    name: '折扣',
+                    name: '折扣%',
                 },
                 {
                     width: 100,
