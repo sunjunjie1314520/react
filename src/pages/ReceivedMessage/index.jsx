@@ -151,7 +151,7 @@ export default class index extends Component {
                             <div className="negotiation">
                             <h2>
                                 <b className="b3">回复 / 五一促销活动方案</b>
-                                <span>东方鱼薇-13510668888</span>
+                                <span>抄送：林婷婷</span>
                                 <span className="fr">何晓蒙 2019-08-18 / 12:32</span>
                             </h2>
                                 <textarea name="" placeholder="Enter Text..."></textarea>
@@ -172,20 +172,20 @@ export default class index extends Component {
                         <Frame className="limitheight" bottom={15}>
 
                             <div className="follow-up-record">
-                                <h2><b className="b2">回复3 / 五一促销活动方案</b> <span>李先生-13510668888</span><span className="fr">东方鱼薇 2019-08-06 / 10:16</span></h2>
+                                <h2><b className="b2">五一促销活动方案</b><span className="fr">东方鱼薇 2019-08-06 / 10:16</span></h2>
                                 <div className="text">
                                     <p>议案中说，加州是中国在美国的最重要的合作伙伴之一，目前大约有200万华人华侨生活在加州。中国政府也高度重视与加州的友好合作关系。中国是美国第五大游客来源地，2016年有近150万中国游客到访加州。加州和北京、上海、广州、西安、成都、武汉、青岛等中国主要城市之间每天有20多个航班，并且加州已与中国20多对城市结为友好城市。</p>
                                 </div>
                             </div>
                             <div className="follow-up-record">
-                                <h2><b className="b2">回复2 / 五一促销活动方案</b> <span>李先生-13510668888</span><span className="fr">东方鱼薇 2019-08-06 / 10:16</span></h2>
+                                <h2><b className="b2">五一促销活动方案</b><span className="fr">东方鱼薇 2019-08-06 / 10:16</span></h2>
                                 <div className="text">
                                     <p>因此，加州众议院决定，支持加州与中国之间为增进互利经济机会继续保持协调合作，增加互利经济机会，并在人文交往、贸易、气候变化、教育、旅游、科技、创新和绿色发展等领域加强实质性合作。</p>
                                 </div>
                             </div>
                             <div className="follow-up-record back">
                                 <h2>
-                                    <b className="b3">回复 / 五一促销活动方案</b>
+                                    <b className="b3">回复 / 五一促销活动方案</b><span>抄送：陈少白</span>
                                     <span className="fr">何晓蒙 2017-08-06 / 10:16</span>
                                 </h2>
                                 <div className="text">
@@ -193,7 +193,7 @@ export default class index extends Component {
                                 </div>
                             </div>
                             <div className="follow-up-record">
-                                <h2><b className="b2">五一促销活动方案</b> <span>李先生-13510668888</span><span className="fr">东方鱼薇 2019-08-06 / 10:16</span></h2>
+                                <h2><b className="b2">五一促销活动方案</b><span className="fr">东方鱼薇 2019-08-06 / 10:16</span></h2>
                                 <div className="text">
                                     <p>因此，加州众议院决定，积极支持加州与中国之间为增进互利经济机会继续保持协调合作，增加互利经济机会，并在人文交往、贸易、气候变化、教育、旅游、科技、创新和绿色发展等领域加强实质性合作。因此，加州众议院决定，积极支持加州与中国之间为增进互利经济机会继续保持协调合作，增加互利经济机会，并在人文交往、贸易、气候变化、教育、旅游、科技、创新和绿色发展等领域加强实质性合作。</p>
                                 </div>

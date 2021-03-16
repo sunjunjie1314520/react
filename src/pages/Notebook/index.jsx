@@ -133,13 +133,13 @@ export default class index extends Component {
                             <div className="fr">
                                 <a className="a2" href="/" title="">新建</a>
                                 <a className="a1" href="/" title="">删除</a>
-                                <a className="a3" href="/" title="">确定</a>
+                                <a className="a3" href="/" title="">保存</a>
                             </div>
                         </h2>
                         <div className="pub-table">
                             <ul>
                                 <Input title="备忘录主题" width="64%" value={this.state.input4} required model={(v)=>this.setState({input4: v})}></Input>
-                                <DateTime width="32%" title="提醒日期" model={(v)=> this.setState({time3: v})}></DateTime>
+                                <DateTime width="31%" title="提醒日期" model={(v)=> this.setState({time3: v})}></DateTime>
                             </ul>
                         </div>
 

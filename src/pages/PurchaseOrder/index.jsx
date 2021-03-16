@@ -21,10 +21,33 @@ export default class index extends Component {
             index3: 4,
 
             items4: ['菜单一', '菜单二', '菜单三', '菜单四'],
-            index4: 0,
+            index4: 4,
 
             items5: ['菜单一', '菜单二', '菜单三', '菜单四'],
-            index5: 0,
+            index5: 4,
+
+            items6:
+             [
+                 '内部货品Internal Goods',
+                 '其他家具Other furniture',
+                 '综合类others',
+                 '沙发Sofa',
+                 '茶几coffee table',
+                 '电视柜TV cabinet',
+                 '展示柜/酒柜Showcase wine cabinet',
+                 '玄关Console',
+                 '餐桌/吧台Dining table,Bar counter',
+                 '餐椅/吧椅Side chair,Bar Stool',
+                 '边柜/边桌Side board',
+                 '床Bed',
+                 '床头柜Night Table',
+                 '床尾凳Bench',
+                 '休闲椅Other Chairs',
+                 '妆凳/脚凳Dressing Chair',
+                 '妆台/妆柜DressingTable,Cabinet',
+                 '衣柜Clothing Cabinet',
+                ],
+            index6: 19,
 
             input1: '',
             input2: '',
@@ -261,9 +284,9 @@ export default class index extends Component {
 
                             <li></li>
                             <DropDown index={this.state.index1} items={this.state.items1} onChange={(index)=> this.setState({index1: index})}required>供应商</DropDown>
-                            <DropDown index={this.state.index2} items={this.state.items1} onChange={(index)=> this.setState({index2: index})}required>品牌系列</DropDown>
+                            <DropDown index={this.state.index2} items={this.state.items2} onChange={(index)=> this.setState({index2: index})}required>品牌系列</DropDown>
                             <Input title="联系电话" value={this.state.input2} model={(v)=> this.setState({input2: v})}></Input>
-                            <DropDown index={this.state.index3} items={this.state.items1} onChange={(index)=> this.setState({index3: index})}required>采购人</DropDown>
+                            <DropDown index={this.state.index3} items={this.state.items3} onChange={(index)=> this.setState({index3: index})}required>采购人</DropDown>
                             <Input width="98%" title="备注" value={this.state.input3} model={(v)=> this.setState({input3: v})}></Input>
                         </ul>
                     </div>
@@ -370,12 +393,12 @@ export default class index extends Component {
 
                         <div className="pub-table">
                             <ul>
-                                <Input title="货品编码" width="31%" value={this.state.input10} model={(v)=> this.setState({input10: v})} ></Input>
-                                <Input title="型号" width="31%" value={this.state.input11} model={(v)=> this.setState({input11: v})} ></Input>
-                                <Input title="货品名称" width="calc(32% - 6px)" value={this.state.input12} model={(v)=> this.setState({input12: v})} ></Input>
-                                <DropDown width="31%" index={this.state.index3} items={this.state.items3} onChange={(index)=> this.setState({index3: index})}>品牌</DropDown>
-                                <DropDown width="31%" index={this.state.index4} items={this.state.items1} onChange={(index)=> this.setState({index4: index})}>系列</DropDown>
-                                <DropDown width="calc(32% - 6px)" index={this.state.index5} items={this.state.items5} onChange={(index)=> this.setState({index5: index})}>货品类别</DropDown>
+                                <Input title="货品编码" width="31%" value={this.state.input3} model={(v)=> this.setState({input3: v})} ></Input>
+                                <Input title="型号" width="31%" value={this.state.input4} model={(v)=> this.setState({input4: v})} ></Input>
+                                <Input title="货品名称" width="calc(32% - 6px)" value={this.state.input5} model={(v)=> this.setState({input5: v})} ></Input>
+                                <DropDown width="31%" index={this.state.index4} items={this.state.items4} onChange={(index)=> this.setState({index4: index})}>品牌</DropDown>
+                                <DropDown width="31%" index={this.state.index5} items={this.state.items5} onChange={(index)=> this.setState({index5: index})}>系列</DropDown>
+                                <DropDown width="calc(32% - 6px)" index={this.state.index6} items={this.state.items6} onChange={(index)=> this.setState({index6: index})}>货品类别</DropDown>
                             </ul>
                         </div>
 
