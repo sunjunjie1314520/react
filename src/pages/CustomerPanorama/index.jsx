@@ -11,7 +11,8 @@ export default class index extends Component {
         this.state = {
             s1: null,
             h1: 420,
-
+            
+            // 下拉选择项
             items1: ['张三', '李四', '王五'],
             index1: 0,
 
@@ -22,6 +23,7 @@ export default class index extends Component {
             field2: '',
             field3: '',
 
+            // 表单显示内容项
             input1: '',
             input2: '',
             input3: '',
@@ -38,11 +40,13 @@ export default class index extends Component {
             input14: '',
             input15: '',
 
+            // 表单日期项
             time1: '',
             time2: '',
 
             alert1: false,
 
+            // table表头文字列项
             fields1: [
                 {
                     width: 50,
@@ -101,7 +105,7 @@ export default class index extends Component {
                     name: '备注',
                 },
             ],
-
+            // table表头文字行项
             data1: [
                 {
                     id: 1,

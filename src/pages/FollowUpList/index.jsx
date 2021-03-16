@@ -11,6 +11,7 @@ export default class index extends Component {
         super()
         this.state = {
 
+            // 下拉选择项
             items1: ['下拉菜单1','下拉菜单2','下拉菜单3','下拉菜单4','下拉菜单5'],
             index1: 6,
 
@@ -23,6 +24,7 @@ export default class index extends Component {
             items4: ['中小户型','大户型','复式/跃层','别墅/双拼','商业/会所','自建房','其他'],
             index4: 0,
 
+            // 表单显示内容项
             input1: '',
             input2: '',
             input3: '',
@@ -41,6 +43,7 @@ export default class index extends Component {
 
             show1: false,
 
+            // table表头文字列项
             fields: [
                 {
                     width: 60,
@@ -95,7 +98,7 @@ export default class index extends Component {
                     name: '跟进人',
                 },
             ],
-
+            // table表头文字行项
             data: [
                 {
                     id: 1,

@@ -15,9 +15,11 @@ export default class index extends Component {
             fields1: '1',
             fields2: '2',
 
+            // 下拉选择项
             items1: ['按货品型号', '按货品价格', '按品牌系列', '按新品上市', '按货品类别', '按货品特价'],
             index1: 0,
 
+            // 表单显示内容项
             input1: '',
             input2: '',
             input3: '',
@@ -28,6 +30,7 @@ export default class index extends Component {
             input8: '',
             input9: '',
 
+            // 跳窗项
             alert1: false,
         }
     }

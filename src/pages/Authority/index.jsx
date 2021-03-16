@@ -8,11 +8,14 @@ export default class index extends Component {
     constructor(){
         super()
         this.state = {
+
+            // 表单显示内容项
             input1: '',
             input2: '',
             input3: '',
             input4: '',
 
+            // table表头文字列项
             fields1: [
                 {
                     width: 50,
@@ -31,6 +34,7 @@ export default class index extends Component {
                     name: '商场 / 仓库',
                 },
             ],
+            // table表头文字行项
             data1: [
                     {
                         id: 1,
@@ -44,6 +48,7 @@ export default class index extends Component {
                     },
                 ],
 
+            // 菜单功能项
             tree: [
                 {
                     title: '货品管理',

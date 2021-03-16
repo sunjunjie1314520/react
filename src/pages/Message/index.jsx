@@ -9,15 +9,19 @@ export default class index extends Component {
 	constructor(){
         super()
         this.state = {
+
+            // 下拉选择项
 			items1: ['是', '否'],
             index1: 0,
 
+            // 表单显示内容项
 			input1: '',
 			input2: '',
             input3: '',
             input4: '',
 			input5: '',
 
+            // 表单下拉查询条件项
 			down1: 0,
             down2: 1,
             down3: 5,
@@ -27,9 +31,13 @@ export default class index extends Component {
             down7: 0,
             down8: 1,
 
-			t1: '',
-			t2: '',
+			// 表单日期项
+            time1: '',
+            time2: '',
+            time3: '',
+            time4: '',
 
+            // table表头文字列项
 			fields1: [
                 {
                     width: 50,
@@ -52,6 +60,7 @@ export default class index extends Component {
                     name: '跟进日期',
                 },
             ],
+            // table表头文字行项
             data1: [
                 {
                     id: 1,

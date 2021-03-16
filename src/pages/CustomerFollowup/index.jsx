@@ -9,6 +9,7 @@ export default class index extends Component {
     constructor(){
         super()
         this.state = {
+            // 下拉选择项
             items1: ['深圳宝能家居广场', '上海红星美凯龙真北店', '北京居然之家朝阳店'],
             index1: 0,
 
@@ -28,13 +29,14 @@ export default class index extends Component {
             items6: ['潜在客户', '咨询介绍', '初步意向', '正常跟进','方案报价', '商务谈价', '成交开单', '流失作废'],
             index6: 0,
  
-
+            // 表单显示内容项
             input1: '',
             input2: '',
             input3: '',
             input4: '',
             input5: '',
 
+            // 表单查询内容项
             search1: '',
             search2: '',
 
@@ -44,6 +46,7 @@ export default class index extends Component {
             cusname: '',
             next_up: '',
 
+            // table表头文字列项
             fields1: [
                 {
                     width: 50,
@@ -70,6 +73,7 @@ export default class index extends Component {
                     name: '跟进日期',
                 },
             ],
+            // table表头文字行项
             data1: [
                 {
                     id: 1,

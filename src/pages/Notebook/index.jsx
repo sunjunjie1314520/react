@@ -12,6 +12,7 @@ export default class index extends Component {
         super()
         this.left_layout = createRef()
         this.state = {
+            // 下拉选择项
             items1: ['公告 Announcement', '通知 Notice', '文件资料 Document'],
             index1: 0,
             index2: 0,
@@ -22,11 +23,13 @@ export default class index extends Component {
             items3: ['最近一周', '最近一月', '最近一季', '最近半年', '最近一年'],
             index4: 0,
 
+            // 表单显示内容项
             input1: '',
             input2: '',
             input3: '',
             input4: '',
 
+            // 表单显示内容项
             down1: 0,
             down2: 1,
             down3: 5,
@@ -36,10 +39,12 @@ export default class index extends Component {
             down7: 0,
             down8: 1,
 
+            // 表单日期项
             time1: '',
             time2: '',
             time3: '',
 
+            // table表头文字列项
             fields1: [
                 {
                     width: 50,
@@ -54,6 +59,7 @@ export default class index extends Component {
                     name: '记录日期',
                 },
                 ],
+                // table表头文字行项
             data1: [
                     {
                         id: 1,

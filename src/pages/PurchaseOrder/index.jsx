@@ -66,6 +66,9 @@ export default class index extends Component {
             time1: '',
             time2: '',
 
+            // 跳窗项
+            alert1: false,
+
             bottom_alert: false,
 
             // table表头文字列项

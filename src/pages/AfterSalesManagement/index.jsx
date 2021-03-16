@@ -14,6 +14,7 @@ export default class index extends Component {
             s1: null,
             h1: 420,
 
+            // 下拉选择项
             items1: ['张三', '李四', '王五'],
             index1: 0,
 
@@ -30,6 +31,7 @@ export default class index extends Component {
             field2: '',
             field3: '',
 
+            // 表单显示内容项
             input1: '',
             input2: '',
             input3: '',
@@ -51,6 +53,7 @@ export default class index extends Component {
             input19: '',
             input20: '',
 
+            // 表单下拉条件选项
             down1: 0,
             down2: 1,
             down3: 5,
@@ -60,15 +63,17 @@ export default class index extends Component {
             down7: 0,
             down8: 1,
 
+            // 表单日期项
             time1: '',
             time2: '',
             time3: '',
             time4: '',
 
+            // 表单查询内容项
             search1: '',
             search2: '',
 
-
+            // table表头文字列项
             fields1: [
                 {
                     width: 60,
@@ -155,6 +160,7 @@ export default class index extends Component {
                 },
             ],
 
+            // table表头文字行项
             data1: [
                 {
                     id: 1,

@@ -22,6 +22,8 @@ export default class index extends Component {
         super()
         let wid = window.innerWidth;
         this.state = {
+
+            // 下拉选择项
             items1: ['实景拍摄', '效果图', 'VR情景', '样板房', '展示厅', '其他'],
             index1: 0,
 
@@ -31,6 +33,7 @@ export default class index extends Component {
             items3: ['按最新', '按城市', '按户型', '按风格', '按点赞', '按收藏'],
             index3: 0,
 
+            // 表单显示内容项
             input1: '',
             input2: '',
             input3: '',
@@ -38,6 +41,7 @@ export default class index extends Component {
 
             name: '',
 
+            // 跳窗显示项
             alert1: false,
             alert2: true,
 
@@ -135,7 +139,7 @@ export default class index extends Component {
     }
 
     componentDidMount(){
-        
+
     }
 
     render() {
@@ -147,7 +151,7 @@ export default class index extends Component {
                         客户案例
                         <div className="fr">
                             <a className="a3 w100" href="/" onClick={(e)=> {e.preventDefault();this.setState({alert1: true})}} title="">上传</a>
-                            <a className="a4 w100" href="/" onClick={(e)=> {e.preventDefault();this.setState({alert1: true})}} title="">查询</a>
+                            <a className="a4 w100" href="/">查询</a>
                         </div>
                     </h2>
                     <div className="pub-table">
@@ -156,7 +160,7 @@ export default class index extends Component {
 
                             <DropDown items={this.state.items2} index={this.state.index2} onChange={(index)=> this.setState({index2: index})}>户型</DropDown>
 
-                            <Input title="项目名称" value={this.state.name} model={(v)=>this.setState({name: v})}></Input>
+                            <Input title="项目名称" value={this.state.input1} model={(v)=>this.setState({input1: v})}></Input>
 
                             <DropDown items={this.state.items3} index={this.state.index3} onChange={(index)=> this.setState({index3: index})}>排序方式</DropDown>
 
@@ -226,7 +230,7 @@ export default class index extends Component {
                         </div>
                     </div>
                 </Move>
-                
+
                 {/* 上传案例 */}
                 <Move className="alert-two" model={this.state.alert1}>
                     <div className="case-alert move-obj">

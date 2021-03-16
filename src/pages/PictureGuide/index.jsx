@@ -11,12 +11,15 @@ export default class index extends Component {
     constructor(){
         super()
         this.state = {
+
+            // 下拉选择项
             items1: ['按货品型号', '按货品价格', '按品牌系列', '按新品上市', '按货品类别', '按货品特价'],
             index1: 0,
 
             field1:'',
             field2: '',
 
+            // 表单显示内容项
             input1: '',
             input2: '',
             input3: '',

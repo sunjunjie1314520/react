@@ -12,15 +12,18 @@ export default class index extends Component {
         super(props)
         this.state = {
 
+            // 表单显示内容项
             input1: '',
             input2: '',
             input3: '',
             input4: '',
             input5: '',
 
+            // 下拉选择项
             index1: 0,
             items1:['第一个菜单', '2'],
 
+            // 表单查询条件项
             down1: 0,
             down2: 1,
             down3: 5,
@@ -30,11 +33,15 @@ export default class index extends Component {
             down7: 0,
             down8: 1,
 
+            // 表单查询内容项
             search1: '',
             search2: '',
 
+            // 表单日期项
             time1: '',
+            time2: '',
 
+            // table表头文字列项
             fields1: [
                 {
                     width: 60,
@@ -93,7 +100,7 @@ export default class index extends Component {
                     name: '修改人',
                 },
             ],
-
+            // table数据源项
             data1: [
                 {
                     id: 1,

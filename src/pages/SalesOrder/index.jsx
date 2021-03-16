@@ -100,7 +100,6 @@ export default class index extends Component {
             field6: '',
             field7: '',
 
-            
             // 表单日期项
             time1: '',
             time2: '',

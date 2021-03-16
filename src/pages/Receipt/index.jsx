@@ -18,7 +18,7 @@ export default class index extends Component {
             sh: null,
             sh1: null,
 
-
+            // 下拉选择项
             items1: ['菜单一', '菜单二'],
             index1: 0,
 
@@ -28,18 +28,17 @@ export default class index extends Component {
             field1: '',
             field2: '',
 
-            time1: '',  // 销售日期
-            time2: '', 
-            time3: '', 
+            // 表单日期项
+            time1: '',
+            time2: '',
+            time3: '',
 
             field5: '5',
             field6: '6',
             field7: '7',
             field8: false,
 
-            t1: '',
-            t2: '',
-
+            // 表单显示内容项
             input1: '',
             input2: '',
             input3: '',
@@ -59,9 +58,11 @@ export default class index extends Component {
             input17: '',
             input18: '',
 
+            // 表单查询内容项
             search1: '',
             search2: '',
 
+            // 跳窗项
             alert1: false,
             alert2: false,
 

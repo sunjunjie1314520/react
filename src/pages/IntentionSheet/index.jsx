@@ -15,6 +15,7 @@ export default class index extends Component {
             field2: '2',
             field3: '3',
 
+            // 下拉选择项
             items1: ['深圳宝能家居广场', '深圳第三空间'],
             index1: 0,
 
@@ -24,12 +25,15 @@ export default class index extends Component {
             items3: ['最近一周', '最近半月','最近一月','最近三月'],
             index3: 0,
 
+            // 表单显示内容项
             input1: '',
             input2: '',
 
-            c1: true,
-            c2: false,
+            // 勾选项
+            check1: true,
+            check2: false,
 
+            // table表头文字列项
             fields1: [
                 {
                     width: 60,
@@ -92,6 +96,7 @@ export default class index extends Component {
                     name: '添加日期',
                 },
             ],
+            // table表头文字行项
             data1: [
                 {
                     id: 1,

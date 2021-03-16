@@ -9,24 +9,29 @@ export default class index extends Component {
     constructor(){
         super()
         this.state = {
+            // 下拉选择项
             items1: ['是', '否'],
             index1: 1,
 
             items3: ['最近一周', '最近一月', '最近三月', '最近半年'],
             index3: 0,
 
+            // 表单日期项
             time1: '',
             time2: '',
 
+            // 表单查询内容项
             search1: '',
             search2: '',
 
+            // 表单显示内容项
             input1: '',
 			input2: '',
             input3: '',
             input4: '',
 			input5: '',
 
+            // 表单查询条件项
             down1: 0,
             down2: 1,
             down3: 5,
@@ -39,7 +44,7 @@ export default class index extends Component {
             market: '',
             name: '',
 
-
+            // table表头文字列项
             fields1: [
                 {
                     width: 50,
@@ -58,6 +63,7 @@ export default class index extends Component {
                     name: '发送日期',
                 },
             ],
+            // table数据源项
             data1: [
                 {
                     id: 1,
