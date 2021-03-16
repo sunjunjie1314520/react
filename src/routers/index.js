@@ -34,7 +34,9 @@ import ReceivedMessage from '../pages/ReceivedMessage';
 import Notebook from '../pages/Notebook';
 import ReturnForm from '../pages/ReturnForm';
 import SalesInquiry from '../pages/SalesInquiry';
-
+import GoodsSpecials from '../pages/GoodsSpecials';
+import PriceAdjustment from '../pages/PriceAdjustment';
+import SpecialOfferList from '../pages/SpecialOfferList';
 
 const router = [
 	{
@@ -176,6 +178,21 @@ const router = [
 				path: '/Sales-inquiry',
 				exact: false,
 				component: SalesInquiry,
+			},
+			{
+				path: '/Goods-Specials',
+				exact: false,
+				component: GoodsSpecials,
+			},
+			{
+				path: '/Price-Adjustment',
+				exact: false,
+				component: PriceAdjustment,
+			},
+			{
+				path: '/Special-Offer-List',
+				exact: false,
+				component: SpecialOfferList,
 			},
 			{
 				path: '/*',

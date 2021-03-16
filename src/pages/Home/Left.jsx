@@ -185,15 +185,15 @@ export default class Left extends Component {
                         },
                         {
                             title: '价格调整单',
-                            to: '/home/page1'
+                            to: '/home/Price-Adjustment'
                         },
                         {
                             title: '货品特价申请',
-                            to: '/home/page1'
+                            to: '/home/Goods-Specials'
                         },
                         {
                             title: '特价货品表',
-                            to: '/home/page1'
+                            to: '/home/Special-Offer-List'
                         },
                         {
                             title: '批量修改货品',
@@ -254,7 +254,7 @@ export default class Left extends Component {
                     icons: 'ico-xiao',
                     types: [
                         {
-                            title: '商城支出',
+                            title: '商场现金支出',
                             to: '/home/page4'
                         },
                         {
