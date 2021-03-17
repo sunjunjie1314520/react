@@ -301,7 +301,7 @@ export default class index extends Component {
                     <div className="pub-table">
                         <ul>
 
-                            <Input title="销售单号" value={this.state.input1} model={(v)=> this.setState({nput1: v})}>
+                            <Input title="销售单号" value={this.state.input1} model={(v)=> this.setState({input1: v})}>
                                 <i className="ico-sp0"></i>
                             </Input>
 

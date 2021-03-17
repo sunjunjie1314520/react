@@ -13,8 +13,8 @@ export default class index extends Component {
         this.state = {
 
             // 下拉选择项
-            items1: ['按货品型号', '按货品价格', '按品牌系列', '按新品上市', '按货品类别', '按货品特价'],
-            index1: 0,
+            items1: ['按货品型号', '按货品价格', '按品牌系列', '按新品上市', '按货品类别', '按货品特价','按房间分类'],
+            index1: 4,
 
             field1:'',
             field2: '',

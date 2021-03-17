@@ -39,7 +39,9 @@ import PriceAdjustment from '../pages/PriceAdjustment';
 import SpecialOfferList from '../pages/SpecialOfferList';
 import BatchEdit from '../pages/BatchEdit';
 import StoreWarehouseSettings from '../pages/StoreWarehouseSettings';
-
+import GoodsCategory from '../pages/GoodsCategory';
+import CurrentInventory from '../pages/CurrentInventory';
+import DeliveryStatistics from '../pages/DeliveryStatistics';
 
 const router = [
 	{
@@ -206,6 +208,21 @@ const router = [
 				path: '/Store-Warehouse-Settings',
 				exact: false,
 				component: StoreWarehouseSettings,
+			},
+			{
+				path: '/Goods-Category',
+				exact: false,
+				component: GoodsCategory,
+			},
+			{
+				path: '/Current-Inventory',
+				exact: false,
+				component: CurrentInventory,
+			},
+			{
+				path: '/Delivery-Statistics',
+				exact: false,
+				component: DeliveryStatistics,
 			},
 			{
 				path: '/*',

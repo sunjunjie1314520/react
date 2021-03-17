@@ -318,11 +318,11 @@ export default class Left extends Component {
                     types: [
                         {
                             title: '当前库存查询',
-                            to: '/home/page4'
+                            to: '/home/Current-Inventory'
                         },
                         {
                             title: '图片库存表',
-                            to: '/home/page5'
+                            to: '/home/picture-inventory'
                         },
                         {
                             title: '调拨申请单',
@@ -417,7 +417,7 @@ export default class Left extends Component {
                         },
                         {
                             title: '送货统计表',
-                            to: '/home/page5'
+                            to: '/home/Delivery-Statistics'
                         },
                         {
                             title: '送货毛利明细表',
@@ -573,7 +573,7 @@ export default class Left extends Component {
                         },
                         {
                             title: '货品类别',
-                            to: '/home/page4'
+                            to: '/home/Goods-Category'
                         },
                         {
                             title: '客户类别',

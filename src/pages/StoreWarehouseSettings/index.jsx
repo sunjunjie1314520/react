@@ -96,15 +96,6 @@ export default class index extends Component {
                                 <DropDown width="30%" items={this.state.items2} index={this.state.index2} onChange={(index)=> this.setState({index2: index})}>商场性质</DropDown>
                                 <li></li>
                                 <li></li>
-                                <Input width="30%" title="联系人" value={this.state.input3} model={(v)=>this.setState({input3: v})}></Input>
-                                <li></li>
-                                <li></li>
-                                <Input width="30%" title="联系电话" value={this.state.input4} model={(v)=>this.setState({input4: v})}></Input>
-                                <li></li>
-                                <li></li>
-                                <Input width="30%" title="地址" value={this.state.input5} model={(v)=>this.setState({input5: v})}></Input>
-                                <li></li>
-                                <li></li>
                                 <Input width="30%" title="所属单位" value={this.state.search1} required model={(v)=>this.setState({search1: v})}><button className="pub-search"></button></Input>
                                 <li></li>
                                 <li></li>
@@ -118,6 +109,16 @@ export default class index extends Component {
                                 </li>
                                 <li></li>
                                 <li></li>
+                                <Input width="30%" title="联系人" value={this.state.input3} model={(v)=>this.setState({input3: v})}></Input>
+                                <li></li>
+                                <li></li>
+                                <Input width="30%" title="联系电话" value={this.state.input4} model={(v)=>this.setState({input4: v})}></Input>
+                                <li></li>
+                                <li></li>
+                                <Input width="30%" title="地址" value={this.state.input5} model={(v)=>this.setState({input5: v})}></Input>
+                                <li></li>
+                                <li></li>
+
                                 <Input width="30%" title="备注" value={this.state.input6} model={(v)=>this.setState({input6: v})}></Input>
                                 <li></li>
                                 <li></li>
