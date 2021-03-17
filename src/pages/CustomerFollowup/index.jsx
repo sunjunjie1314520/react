@@ -155,7 +155,7 @@ export default class index extends Component {
                         <div className="pub-table">
                             <ul>
 
-                                <Input width="31%" placeholder="新客户请直接选择..."title="客户名称" required value={this.state.search2} model={(v)=>this.setState({search2: v})}>
+                                <Input width="31%" placeholder="请选择要跟进客户"title="客户名称" required value={this.state.search2} model={(v)=>this.setState({search2: v})}>
                                     <button type="button" className="pub-search"></button>
                                 </Input>
 

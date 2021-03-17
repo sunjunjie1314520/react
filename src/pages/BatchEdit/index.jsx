@@ -114,14 +114,8 @@ export default class index extends Component {
         }
     }
 
-    riDown = () => {
-        const { bottom_alert } = this.state
-        this.setState({
-            bottom_alert: !bottom_alert
-        })
-    }
 
-
+    // 表格复选框
     checkHandle(check, k){
         const {data1} = this.state
         data1[k].check = check
@@ -140,7 +134,6 @@ export default class index extends Component {
                     <i className="ico-font3"></i>
                         批量修改货品
                     <div className="fr">
-                            <a className="a2 w100" href="/" title="">增行</a>
                             <a className="a1 w100" href="/" title="">删行</a>
                             <a className="a3 w100" href="/" title="">确定</a>
                             <a className="a4 w100" href="/" title="">查询</a>
@@ -154,7 +147,7 @@ export default class index extends Component {
                             <Input title="货品名称" value={this.state.input1} model={(v)=>this.setState({input1: v})}></Input>
 
                             <DropDown width="48%" items={this.state.items3} index={this.state.index3} onChange={(index)=> this.setState({index3: index})} required>需要修改项</DropDown>
-                            <DropDown width="48%" items={this.state.items4} index={this.state.index4} onChange={(index)=> this.setState({index4: index})} required>统一修改傎</DropDown>
+                            <Input width="48%" title="统一修改为" value={this.state.input2} required model={(v)=>this.setState({input2: v})}></Input>
                         </ul>
                     </div>
                 </div>
@@ -166,7 +159,7 @@ export default class index extends Component {
                                 <Li key={k} check={v.check}>
                                     <Box w={this.state.fields1[0].width}>
                                     <label className="pub-check3">
-                                        <input onChange={(e)=>this.checkHandle1(e.target.checked, k)} checked={v.check} type="checkbox" />{k+1}
+                                        <input onChange={(e)=>this.checkHandle(e.target.checked, k)} checked={v.check} type="checkbox" />{k+1}
                                     </label>
                                     </Box>
                                     <Box w={this.state.fields1[1].width}>

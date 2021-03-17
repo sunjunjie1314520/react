@@ -23,6 +23,10 @@ export default class index extends Component {
             input1: '',
             input2: '',
             input3: '',
+
+            // 表单查询内容项
+            search1: '',
+
             alert1: false,
         }
     }
@@ -98,8 +102,10 @@ export default class index extends Component {
                         </h2>
                         <div className="pub-table">
                             <ul>
-                            <Input title="搜索" width="48%" placeholder="请输入品牌或型号查询" value={this.state.input1} model={(v)=>this.setState({input1: v})}></Input>
-                                <Input placeholder="请输入..." title="客户手机号" value={this.state.input2} model={(v)=>this.setState({input2: v})}required></Input>
+                                <Input title="搜索" width="48%" placeholder="请输入品牌或型号查询" value={this.state.input1} model={(v)=>this.setState({input1: v})}></Input>
+                                <Input placeholder="请先选择客户"title="客户名称" required value={this.state.search1} model={(v)=>this.setState({search1: v})}>
+                                    <button type="button" className="pub-search"></button>
+                                </Input>
                                 <DropDown items={this.state.items1} index={this.state.index1} onChange={(index) => this.setState({index1: index})}>排序方式</DropDown>
                             </ul>
                         </div>

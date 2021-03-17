@@ -25,11 +25,11 @@ export default class index extends Component {
             items4: ['菜单一', '菜单二', '菜单三', '菜单四'],
             index4: 0,
 
-            items5: ['菜单一', '菜单二', '菜单三', '菜单四'],
-            index5: 0,
+            items5: ['男', '女'],
+            index5: 3,
 
-            items6: ['下拉菜单1','下拉菜单2','下拉菜单3','下拉菜单4','下拉菜单5'],
-            index6: 6,
+            items6: ['潜在客户 Potential Customers','普通客户 Ordinary','大客户 Key Account','设计师 Designer','重要客户 VIP'],
+            index6: 1,
 
             items7: ['下拉菜单1','下拉菜单2','下拉菜单3','下拉菜单4','下拉菜单5'],
             index7: 6,
@@ -37,11 +37,11 @@ export default class index extends Component {
             items8: ['下拉菜单1','下拉菜单2','下拉菜单3','下拉菜单4','下拉菜单5'],
             index8: 6,
 
-            items9: ['下拉菜单1','下拉菜单2','下拉菜单3','下拉菜单4','下拉菜单5'],
-            index9: 6,
+            items9: ['小中户型', '大户型', '复式/双拼', '独栋别墅', '样板房', '商业空间', '其他'],
+            index9: 1,
 
-            items10: ['下拉菜单1','下拉菜单2','下拉菜单3','下拉菜单4','下拉菜单5'],
-            index10: 6,
+            items10: ['现代/简约', '新/中式', '新/古典', '古典/欧式', '乡村/美式', '意式/轻奢', '北欧', '东南亚','地中海','其他'],
+            index10: 0,
 
             items11: ['下拉菜单1','下拉菜单2','下拉菜单3','下拉菜单4','下拉菜单5'],
             index11: 6,
@@ -319,7 +319,7 @@ export default class index extends Component {
 
                             <li></li>
 
-                            <Input title="客户" value={this.state.kehu} model={(v)=> this.setState({kehu: v})}required>
+                            <Input title="客户" placeholder="新客户点击新增"value={this.state.kehu} model={(v)=> this.setState({kehu: v})}required>
                                 <a className="add" href="/" title="" onClick={(e)=> {e.preventDefault();this.setState({alert2: true})}}>新增</a>
                                 <button className="pub-search"></button>
                             </Input>
