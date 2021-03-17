@@ -1226,7 +1226,7 @@ body.open .main-right ul li .slide-sub {
   height: 25px;
   line-height: 25px;
   text-align: center;
-  background: #eee;
+  background: #000;
   -webkit-flex-shrink: 0;
   flex-shrink: 0;
 }
@@ -1875,7 +1875,7 @@ body.open .main-right ul li .slide-sub {
   width: 100%;
 }
 .archives-alert .two-wrap.line {
-  border-bottom: 1px solid #cdcdcd;
+  border-bottom: 1px solid #ddd;
 }
 .archives-alert .two-wrap.bot {
   border-bottom: 0px solid #cdcdcd;
@@ -2195,7 +2195,7 @@ body.open .main-right ul li .slide-sub {
 .notice-right .box1 .negotiation {
   padding: 15px;
   background: #f9f9f9;
-  border-top: 1px solid #cdcdcd;
+  border-top: 1px solid #ddd;
   display: table;
   width: 100%;
 }
@@ -2294,7 +2294,7 @@ body.open .main-right ul li .slide-sub {
 }
 .notice-right .box2 .follow-up-record {
   padding: 15px;
-  border-bottom: 1px solid #cdcdcd;
+  border-bottom: 1px solid #ddd;
   display: table;
   width: 100%;
 }
@@ -4180,7 +4180,7 @@ span.sp250 {
 .goods .set-config {
   float: left;
   width: 100%;
-  border-top: 1px solid #cdcdcd;
+  border-top: 1px solid #ddd;
   border-bottom: 1px solid #cdcdcd;
   margin-top: 10px;
   padding: 15px 0;
