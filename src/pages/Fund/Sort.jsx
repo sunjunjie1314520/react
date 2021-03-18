@@ -128,8 +128,8 @@ class sort extends Component {
         }
         this.fengzhang(item)
         .then(gszzl=>{
-            console.log(item);
-            console.log(gszzl);
+            // console.log(item);
+            // console.log(gszzl);
             item.fund.today = gszzl;
             list1.push(item)
             list1.sort(compare({property: 'fund.'.concat(order_by)}))
@@ -175,13 +175,13 @@ class sort extends Component {
             return response.json();
         })
         .then(function(res) {
-            console.log(res);
+            // console.log(res);
             if(res.code){
                 alert(res.msg)
             }
         });
     }
-    
+
     fengzhang(item){
         return new Promise((resolve, reject)=>{
             fetch(baseURL.concat('/fund/realtime'),

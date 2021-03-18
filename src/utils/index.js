@@ -1,9 +1,9 @@
 
 var baseURL;
 if (process.env.NODE_ENV === 'development'){
-    baseURL = 'https://active.okami.net.cn/api';
-} else {
     baseURL = 'http://127.0.0.1:8000/api';
+} else {
+    baseURL = 'https://active.okami.net.cn/api';
 }
 export default baseURL
 
