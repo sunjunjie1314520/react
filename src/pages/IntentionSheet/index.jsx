@@ -15,6 +15,7 @@ export default class index extends Component {
             field2: '2',
             field3: '3',
 
+            // 下拉选择项
             items1: ['深圳宝能家居广场', '深圳第三空间'],
             index1: 0,
 
@@ -24,12 +25,18 @@ export default class index extends Component {
             items3: ['最近一周', '最近半月','最近一月','最近三月'],
             index3: 0,
 
+            // 表单显示内容项
             input1: '',
             input2: '',
 
-            c1: true,
-            c2: false,
+            // 表单查询内容项
+            search1: '',
 
+            // 勾选项
+            check1: true,
+            check2: false,
+
+            // table表头文字列项
             fields1: [
                 {
                     width: 60,
@@ -41,11 +48,11 @@ export default class index extends Component {
                 },
                 {
                     width: 150,
-                    name: '商场/仓库',
+                    name: '商场 / 仓库',
                 },
                 {
-                    width: 140,
-                    name: '客户手机号',
+                    width: 180,
+                    name: '客户 / 手机号',
                 },
                 {
                     width: 120,
@@ -64,7 +71,7 @@ export default class index extends Component {
                     name: '尺 寸',
                 },
                 {
-                    width: 160,
+                    width: 150,
                     name: '品牌系列',
                 },
                 {
@@ -76,7 +83,7 @@ export default class index extends Component {
                     name: '库存数',
                 },
                 {
-                    width: 80,
+                    width: 100,
                     name: '单价',
                 },
                 {
@@ -91,7 +98,12 @@ export default class index extends Component {
                     width: 120,
                     name: '添加日期',
                 },
+                {
+                    width: 100,
+                    name: '制单人',
+                },
             ],
+            // table表头文字行项
             data1: [
                 {
                     id: 1,
@@ -140,7 +152,9 @@ export default class index extends Component {
                     </h2>
                     <div className="pub-table">
                         <ul>
-                            <Input width="23%" placeholder="请输入..."title="客户手机号" value={this.state.input1} model={(v)=>this.setState({input1: v})}></Input>
+                            <Input placeholder="请先选择客户"title="客户名称" value={this.state.search1} model={(v)=>this.setState({search1: v})}>
+                                    <button type="button" className="pub-search"></button>
+                                </Input>
                             <DropDown index={this.state.index1} items={this.state.items1} onChange={(index)=> this.setState({index1: index})}>商场</DropDown>
                             <DropDown index={this.state.index2} items={this.state.items2} onChange={(index)=> this.setState({index2: index})}>制单人</DropDown>
                             <DropDown index={this.state.index3} items={this.state.items3} onChange={(index)=> this.setState({index3: index})}>添加期间</DropDown>

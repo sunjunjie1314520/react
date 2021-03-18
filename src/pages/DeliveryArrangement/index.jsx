@@ -8,6 +8,7 @@ export default class index extends Component {
     constructor(){
         super()
         this.state = {
+            // 下拉选择项
             items1: ['深圳红星香蜜湖店', '上海红星真北店', '北京居然之家四环店'],
             index1: 0,
 
@@ -19,6 +20,7 @@ export default class index extends Component {
 
             index4: 0,
 
+            // 表单显示内容项
             input1: '',
             input2: '',
             input3: '',
@@ -38,9 +40,11 @@ export default class index extends Component {
             field1:'',
             field2: '',
 
+            // 表单日期项
             time1: '',
             time2: '',
 
+            // table表头文字列项
             fields1: [
                 {
                     width: 50,
@@ -99,6 +103,7 @@ export default class index extends Component {
                     name: '备注',
                 },
             ],
+            // table表头文字列项
             data1: [
                 {
                     id: 1,

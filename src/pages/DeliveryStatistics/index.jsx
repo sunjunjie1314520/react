@@ -24,7 +24,7 @@ export default class index extends Component {
             items1:['第一个菜单', '2'],
 
             // 表单查询条件项
-            down1: 0,
+            down1: 1,
             down2: 1,
             down3: 5,
             down4: 6,
@@ -36,6 +36,7 @@ export default class index extends Component {
             // 表单查询内容项
             search1: '',
             search2: '',
+            search3: '',
 
             // 表单日期项
             time1: '',
@@ -48,56 +49,44 @@ export default class index extends Component {
                     name: '序号',
                 },
                 {
-                    width: 180,
+                    width: 240,
                     name: '销售商场',
                 },
                 {
-                    width: 120,
-                    name: '销售单号',
-                },
-                {
-                    width: 100,
-                    name: '销售日期',
-                },
-                {
-                    width: 100,
-                    name: '客户名称',
-                },
-                {
-                    width: 100,
-                    name: '客户编码',
+                    width: 180,
+                    name: '品牌系列',
                 },
                 {
                     width: 120,
-                    name: '订单金额',
+                    name: '货品编码',
                 },
                 {
                     width: 120,
-                    name: '已付金额',
+                    name: '货品名称',
                 },
                 {
-                    width: 120,
-                    name: '还剩余款',
+                    width: 160,
+                    name: '型 号',
                 },
                 {
-                    width: 80,
-                    name: '销售员',
+                    width: 180,
+                    name: '尺 寸',
                 },
                 {
-                    width: 220,
-                    name: '备 注',
-                },
-                {
-                    width: 80,
-                    name: '收款人',
+                    width: 60,
+                    name: '单位',
                 },
                 {
                     width: 100,
-                    name: '收款日期',
+                    name: '数量',
                 },
                 {
-                    width: 80,
-                    name: '修改人',
+                    width: 120,
+                    name: '均价',
+                },
+                {
+                    width: 150,
+                    name: '金额',
                 },
             ],
             // table数据源项
@@ -133,20 +122,21 @@ export default class index extends Component {
                     </div>
                     <div className="pub-table">
                         <ul>
-                            <Input ltr={true} title="销售单号" value={this.state.input1} model={(v)=>this.setState({input1: v})}>
+                            <Input split={true} title="品牌系列" value={this.state.search1} model={(v)=>this.setState({search1: v})}>
                                 <ContainDown index={this.state.down1} Select={(v)=> this.setState({down1: v})}></ContainDown>
+                                <button className="pub-search"></button>
                             </Input>
 
-                            <Input split={true} title="销售商场" value={this.state.search1} model={(v)=>this.setState({search1: v})}>
+                            <Input split={true} title="销售商场" value={this.state.search2} model={(v)=>this.setState({search2: v})}>
                                 <ContainDown index={this.state.down2} Select={(v)=> this.setState({down2: v})}></ContainDown>
                                 <button className="pub-search"></button>
                             </Input>
 
-                            <DateTime title="销售日期" width="23%" model={(v)=> this.setState({time1: v})} left={false}>
+                            <DateTime title="送货日期" width="23%" model={(v)=> this.setState({time1: v})} left={false}>
 								<ContainDown index={this.state.down3} Select={(v)=>this.setState({down3: v})}></ContainDown>
 							</DateTime>
 
-                            <DateTime title="销售日期" width="23%" model={(v)=> this.setState({time2: v})} left={false}>
+                            <DateTime title="送货日期" width="23%" model={(v)=> this.setState({time2: v})} left={false}>
 								<ContainDown index={this.state.down4} Select={(v)=>this.setState({down3: v})}></ContainDown>
 							</DateTime>
 
@@ -158,11 +148,11 @@ export default class index extends Component {
                                 <ContainDown index={this.state.down6} Select={(v)=> this.setState({down6: v})}></ContainDown>
                             </Input>
 
-                            <Input ltr={true} title="客户编码" value={this.state.input4} model={(v)=>this.setState({input4: v})}>
+                            <Input ltr={true} title="出货仓库" value={this.state.input4} model={(v)=>this.setState({input4: v})}>
                                 <ContainDown index={this.state.down7} Select={(v)=> this.setState({down7: v})}></ContainDown>
                             </Input>
 
-                            <Input split={true} title="销售员" value={this.state.search2} model={(v)=>this.setState({search2: v})}>
+                            <Input split={true} title="销售员" value={this.state.search3} model={(v)=>this.setState({search3: v})}>
                                 <ContainDown index={this.state.down8} Select={(v)=> this.setState({down8: v})}></ContainDown>
                                 <button className="pub-search"></button>
                             </Input>

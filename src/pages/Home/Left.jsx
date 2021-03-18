@@ -185,19 +185,19 @@ export default class Left extends Component {
                         },
                         {
                             title: '价格调整单',
-                            to: '/home/page1'
+                            to: '/home/Price-Adjustment'
                         },
                         {
                             title: '货品特价申请',
-                            to: '/home/page1'
+                            to: '/home/Goods-Specials'
                         },
                         {
                             title: '特价货品表',
-                            to: '/home/page1'
+                            to: '/home/Special-Offer-List'
                         },
                         {
                             title: '批量修改货品',
-                            to: '/home/page1'
+                            to: '/home/Batch-Edit'
                         },
                         {
                             title: '货品修改记录',
@@ -254,7 +254,7 @@ export default class Left extends Component {
                     icons: 'ico-xiao',
                     types: [
                         {
-                            title: '商城支出',
+                            title: '商场现金支出',
                             to: '/home/page4'
                         },
                         {
@@ -279,7 +279,7 @@ export default class Left extends Component {
                         },
                         {
                             title: '销售退货单',
-                            to: '/home/page4'
+                            to: '/home/Return-form'
                         },
                         {
                             title: '销售退款',
@@ -287,7 +287,7 @@ export default class Left extends Component {
                         },
                         {
                             title: '销售单查询',
-                            to: '/home/page4'
+                            to: '/home/Sales-inquiry'
                         },
                         {
                             title: '销售收款查询',
@@ -318,11 +318,11 @@ export default class Left extends Component {
                     types: [
                         {
                             title: '当前库存查询',
-                            to: '/home/page4'
+                            to: '/home/Current-Inventory'
                         },
                         {
                             title: '图片库存表',
-                            to: '/home/page5'
+                            to: '/home/picture-inventory'
                         },
                         {
                             title: '调拨申请单',
@@ -417,7 +417,7 @@ export default class Left extends Component {
                         },
                         {
                             title: '送货统计表',
-                            to: '/home/page5'
+                            to: '/home/Delivery-Statistics'
                         },
                         {
                             title: '送货毛利明细表',
@@ -534,7 +534,7 @@ export default class Left extends Component {
                         },
                         {
                             title: '收到消息',
-                            to: '/home/page4'
+                            to: '/home/Received-message'
                         },
                         {
                             title: '发送消息',
@@ -550,7 +550,7 @@ export default class Left extends Component {
                         },
                         {
                             title: '记事本',
-                            to: '/home/page4'
+                            to: '/home/Notebook'
                         },
                     ]
                 },
@@ -573,7 +573,7 @@ export default class Left extends Component {
                         },
                         {
                             title: '货品类别',
-                            to: '/home/page4'
+                            to: '/home/Goods-Category'
                         },
                         {
                             title: '客户类别',
@@ -597,7 +597,7 @@ export default class Left extends Component {
                         },
                         {
                             title: '商场/仓库设置',
-                            to: '/home/page5'
+                            to: '/home/Store-Warehouse-Settings'
                         },
                         {
                             title: '客户来源',

@@ -7,6 +7,8 @@
 lan=#0799FB
 bor1=#cdcdcd
 bor2=#95989a
+bor3=#f9f9f9
+bor4=#eeeeee
 
 scrollY()
     overflow-y auto
@@ -358,7 +360,7 @@ body
 
 .ico-inten2
     float left
-    border-right 1px solid #95989a
+    border-right 1px solid bor2
     box-sizing border-box
     width 40px
     height 39px
@@ -367,7 +369,7 @@ body
 .title
     border-bottom 1px solid #bcbebf
     height 49px
-    background #eeeeee
+    background bor4
     padding-right 12px
     float left
     width 100%
@@ -375,14 +377,14 @@ body
         float left
         .ico-inten
             float left
-            border-right 1px solid #95989a
+            border-right 1px solid bor2
             box-sizing border-box
             width 40px
             height 39px
             back1("icon144.png")
         .ico-inten1
             float left
-            border-right 1px solid #95989a
+            border-right 1px solid bor2
             box-sizing border-box
             width 40px
             height 39px
@@ -497,7 +499,7 @@ body
                     
         
 .pub-fun
-    background #eeeeee
+    background bor4
     height 39px
     line-height 38px
     border-bottom 1px solid #cdcdcd
@@ -510,7 +512,7 @@ body
         color #555555
         transition .2s
         &:hover
-            background #f9f9f9
+            background bor3
         i
             width 22px
             height 21px
@@ -552,6 +554,9 @@ body
     .ico-qi
         back1('icon15.png')
 
+    .ico-bao
+        back1('icon16.png')
+
     .ico-fen
         width 16px
         height 16px
@@ -571,7 +576,7 @@ body
     border-top none
     border 1px solid #cdcdcd
     &.color
-        background #f9f9f9
+        background bor3
     dt 1
 
 .sales-list
@@ -654,7 +659,7 @@ body
     width 220px
     float left
     ul
-        background #f9f9f9
+        background bor3
         height calc(100% - 39px)
         scrollY 1
         scrollbar 1
@@ -663,7 +668,7 @@ body
             line-height 35px
             &:hover
                 a
-                    background #e0e0e0
+                    background #e6e6e6
                     color #0799fb
             a
                 transition .2s
@@ -728,7 +733,7 @@ body
                 line-height 48px
                 text-align center
                 float left
-                border-left 1px solid #95989a
+                border-left 1px solid bor2
                 border-leftN()
                 color #555555
         ul
@@ -804,7 +809,7 @@ body
             transition .2s
             &:hover
             &.acti
-                background #f9f9f9
+                background bor3
                 position relative
                 color #555
                 font-weight: bold;
@@ -815,7 +820,7 @@ body
                     left 0
                     width 100%
                     bottom -1px
-                    background #f9f9f9
+                    background bor3
                     height 1px
 
 // 客户全貌表格
@@ -857,7 +862,7 @@ body
         width 90px
     b
         heightL 49px
-        background #eeeeee
+        background bor4
         display block
         border-bottom 1px solid #cdcdcd
         span
@@ -912,7 +917,7 @@ body
             color #555
             transition .2s
             &:hover
-                background #f9f9f9
+                background bor3
             &.last
                 border-right none
             .i1
@@ -984,8 +989,8 @@ body
 .xiaoshow .pub-table ul li .input-wrap .add {
   float: left;
   color: #555;
-  border-right: 1px solid #cdcdcd;
-  border-left: solid 1px #cdcdcd;
+  border-right: 1px solid #d6d6d6;
+  border-left: solid 1px #d6d6d6;
   width: 40px;
   height: 25px;
   line-height: 25px;
@@ -996,7 +1001,7 @@ body
 .xiaoshow .pub-table ul li .input-wrap .quzheng {
   float: right;
   color: #555;
-  border-left: solid 1px #cdcdcd;
+  border-left: solid 1px #d6d6d6;
   width: 66px;
   height: 25px;
   line-height: 25px;
@@ -1114,7 +1119,7 @@ body
 }
 
 .xuhao ul li:hover {
-  background: #f9f9f9;
+  background: bor3;
 }
 .xuhao ul li span {
   float: left;
@@ -1150,7 +1155,7 @@ body
             backp 'icon53.png' 18px
 
 .add-wrap .fl a:hover{
-  background: #eeeeee;
+  background: bor4;
 }
 .add-wrap .fl a:first-child {
   border-left: none;
@@ -1179,7 +1184,7 @@ body
   font-size: 12px;
   margin: 0 2px;
   &:hover
-      background-color: #f9f9f9;
+      background-color: bor3;
   var
     display inline-block
     height 100%
@@ -1219,7 +1224,7 @@ body
 
 .biao
     display none
-    background #f9f9f9
+    background bor3
     padding 1px 0 10px
     margin-top 7px
     border 1px solid #cdcdcd
@@ -1262,7 +1267,7 @@ body
                     letter-spacing: 0
 
 .picture-guide-item
-    background #f9f9f9
+    background bor3
     float 0
     border 1px solid #cdcdcd
     margin-top 15px
@@ -1363,14 +1368,14 @@ body
 
 
 .customer-case
-    background #f9f9f9
+    background bor3
     border 1px solid #cdcdcd
     float left
     width 100%
 
 .case-item
     float 0
-    background #f9f9f9
+    background bor3
     border 1px solid #cdcdcd
     margin-top 15px
     ul
@@ -1562,14 +1567,14 @@ body
         float left
         width 100%
         &.line
-            border-bottom 1px solid bor1
+            border-bottom 1px solid #dddddd
         &.bot
             border-bottom 0px solid bor1
 
 .btn-wrap
     dt 1
     padding 17px 0
-    background #eeeeee
+    background bor4
     height 28px
     text-align center
     &.top
@@ -1664,8 +1669,8 @@ body
     width 65%
     left 10%
     .wrap
-        background #f9f9f9
-        padding 20px
+        background bor3
+        padding 15px 25px 15px 15px
         dt 1
         border-bottom 1px solid #cdcdcd
         .fl-wrap
@@ -1690,12 +1695,13 @@ body
                     mt 0
                     a
                         float right
-                        background #eeeeee
+                        background bor4
                         width 30px
                         text-align center
                         font-size 12px
                         position relative
                         heightL 25px
+                        border-left: solid 1px #d6d6d6
                         input
                             opacity 0
                             abs()
@@ -1729,7 +1735,7 @@ body
     float right
     width calc(100% - 35% - 15px)
     min-height 571px
-    background #f9f9f9
+    background bor3
     &.bor
         border 1px solid #cdcdcd
         .box1
@@ -1773,7 +1779,7 @@ body
                 padding 5px 10px
         .edit-text
             padding 0 15px
-            background #f9f9f9
+            background bor3
             float left
             width 100%
             margin-top 10px
@@ -1810,16 +1816,17 @@ body
                                 background #d85940
         .negotiation
             padding 15px
-            background #F9F9F9
-            border-top: 1px solid #cdcdcd
+            background bor3
+            border-top: 1px solid #dddddd
             dt 1
-
+            
             h2
                 span
                     color #888
                     font-size 13px
                     line-height 19px
                     margin-left 10px
+                    
                 b
                     float left
                     line-height 18px
@@ -1827,6 +1834,25 @@ body
                     color #555
                     backp '谈判.png' 28px
                     margin-top: 2px
+                    &.b1
+                        backp '方案.png' 28px
+                    &.b2
+                        backp '跟进.png' 28px
+                    &.b3
+                        backp '建议.png' 28px
+                    &.b4
+                        backp '介绍.png' 28px
+                    &.b5
+                        backp '意向.png' 28px
+                    &.b6
+                        backp '谈判.png' 28px
+                    &.b7
+                        backp '成交.png' 28px
+                    &.b8
+                        backp '流失.png' 28px
+                    &.b9
+                        backp '潜在.png' 28px
+                    
             textarea
                 height 92px
                 width 100%
@@ -1854,7 +1880,7 @@ body
                 top -6px
                 
     .box2
-        background #f9f9f9
+        background bor3
         border 1px solid #cdcdcd
         float left
         width 100%
@@ -1865,7 +1891,7 @@ body
 
         .follow-up-record
             padding 15px
-            border-bottom 1px solid #cdcdcd
+            border-bottom 1px solid #dddddd
             dt 1
             &.back
                 background #ebf8f8
@@ -1899,12 +1925,20 @@ body
                     backp '介绍.png' 28px
                 &.b5
                     backp '意向.png' 28px
+                &.b6
+                    backp '谈判.png' 28px
+                &.b7
+                    backp '成交.png' 28px
+                &.b8
+                    backp '流失.png' 28px
+                &.b9
+                    backp '潜在.png' 28px
      
             .text
                 padding 12px 5px 0
                 border-top 1px dotted #AEBDC8
                 margin-top 12px
-                background #f9f9f9
+                background bor3
                 letter-spacing 1px
                 float left
                 width 100%
@@ -1996,7 +2030,7 @@ body
         appearance none
         width 13px
         height 13px
-        border 1px solid #95989a
+        border 1px solid bor2
         margin-right 10px
         margin-left 12px
         margin-top 13px
@@ -2027,7 +2061,7 @@ body
         appearance none
         width 15px
         height 15px
-        border 1px solid #95989a
+        border 1px solid bor2
         border-radius 3px
         &:checked
             border none
@@ -2046,7 +2080,7 @@ body
         appearance none
         width 13px
         height 13px
-        border 1px solid #95989a
+        border 1px solid bor2
         margin-right 10px
         margin-left 12px
         margin-top 13px
@@ -2114,7 +2148,7 @@ body
 .pub-table
     padding-right 25px
     padding-bottom 15px
-    background #f9f9f9
+    background bor3
     float left
     width 100%
 
@@ -2148,7 +2182,7 @@ body
             .input-wrap
                 background #fff
                 position relative
-                border 1px solid #cdcdcd
+                border 1px solid #d6d6d6
                 height 27px
                 widthC 91px
                 float right
@@ -2286,8 +2320,10 @@ body
     left -1px
     box-shadow 0 2px 5px rgba(#000,.1)
     border-top none
-    max-height 450px
+    max-height 480px
     overflow-y auto
+    text-overflow ellipsis
+    white-space nowrap
     span
         display block
         heightL 32px
@@ -2309,13 +2345,13 @@ body
     
 // 表格最后一行背景色
 .pub-last-back
-    background #c8e1eb !important
+    background #e6f7ff !important
     
 // 标题栏
 .pub-tit
     border-bottom 1px solid bor1
     height 39px
-    background #eeeeee
+    background bor4
     line-height 38px
     font-weight bold
     color #555555
@@ -2353,6 +2389,9 @@ body
     
     .ico-notice
         back1('a1d33c829fbc48ccb0d450d28a90382d_18x20.png')
+
+    .ico-message
+        back1('icon158.png')
     p
         // margin-right 25px
         float right
@@ -2373,7 +2412,7 @@ body
             cursor pointer
             border-radius 3px
             letter-spacing 0px
-            text-indent 10px
+
             em
                 background-color #fff
                 color #28b779
@@ -2490,7 +2529,7 @@ body
         font-size 14px
         text-align center
         heightL 25px
-        border-right 1px solid #cdcdcd
+        border-right 1px solid #d6d6d6
     .box
         display none
         z-index 1
@@ -2522,10 +2561,6 @@ body
                     word-break break-all
                     margin-top 8px
                     padding 0 6px
-                    &:nth-child(1)
-                        margin-top 26px
-                        height auto
-                        justify-content left
                     &:nth-child(2)
                         var
                             display block
@@ -2682,7 +2717,7 @@ for i in 30..250
     float left
     border-top 1px solid #cdcdcd
     width 100%
-    background #f9f9f9
+    background bor3
 
 .tree .ico-file3
     width 12px
@@ -2706,7 +2741,7 @@ for i in 30..250
     appearance: none
     width: 15px
     height: 15px
-    border: 1px solid #95989a
+    border: 1px solid bor2
     float: left
     margin-right: 12px
 
@@ -2805,7 +2840,7 @@ for i in 30..250
 .goods
     width: 62%
     position: absolute
-    background: #f9f9f9
+    background: bor3
 
 .goods .box-one
     float left
@@ -2921,7 +2956,7 @@ for i in 30..250
 .goods .set-config
     float left
     width: 100%
-    border-top: 1px solid #cdcdcd
+    border-top: 1px solid #dddddd
     border-bottom: 1px solid #cdcdcd
     margin-top: 10px
     padding: 15px 0
@@ -3153,7 +3188,7 @@ for i in 30..250
     width 100%
     transition .15s
     &:hover
-        background #f9f9f9
+        background bor3
         span
             color #0799fb
 
@@ -3282,7 +3317,7 @@ for i in 30..250
     border solid 1px bor1
     width 220px
     .box
-        background #f9f9f9
+        background bor3
         // overflow hidden
         overflow-y auto
         height 765px
@@ -3309,7 +3344,7 @@ for i in 30..250
 .picture-list
     widthC 235px
     .pict-main
-        background #f9f9f9
+        background bor3
         border 1px solid bor1
         margin-top 15px
         padding 15px

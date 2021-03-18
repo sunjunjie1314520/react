@@ -4,7 +4,7 @@ import Pager from '../../components/Pager';
 
 import Table, { Box, Li } from '../../components/Table';
 
-import { Input, DropDown, DateTime, Frame } from '../../components/UI';
+import { Input, DropDown, DateTime, ContainDown, Frame, Move } from '../../components/UI';
 
 export default class index extends Component {
 
@@ -14,16 +14,24 @@ export default class index extends Component {
             s1: null,
             h1: 420,
 
+            // 下拉选择项
             items1: ['张三', '李四', '王五'],
             index1: 0,
 
             items2: ['产品质量', '服务态度', '送货推迟', '包装问题', '安装技术', '货不对版', '产品设计', '建议', '其他'],
             index2: 0,
 
+            items3: ['一', '二', '三'],
+            index3: 0,
+
+            items4: ['AA', 'BB', 'CC'],
+            index4: 0,
+
             field1: '',
             field2: '',
             field3: '',
 
+            // 表单显示内容项
             input1: '',
             input2: '',
             input3: '',
@@ -39,12 +47,33 @@ export default class index extends Component {
             input13: '',
             input14: '',
             input15: '',
+            input16: '',
+            input17: '',
+            input18: '',
+            input19: '',
+            input20: '',
 
+            // 表单下拉条件选项
+            down1: 0,
+            down2: 1,
+            down3: 5,
+            down4: 6,
+            down5: 0,
+            down6: 0,
+            down7: 0,
+            down8: 1,
+
+            // 表单日期项
             time1: '',
             time2: '',
+            time3: '',
+            time4: '',
 
-            alert1: false,
+            // 表单查询内容项
+            search1: '',
+            search2: '',
 
+            // table表头文字列项
             fields1: [
                 {
                     width: 60,
@@ -87,6 +116,51 @@ export default class index extends Component {
                     name: '处理结果',
                 },
             ],
+
+            fields2: [
+                {
+                    width: 50,
+                    name: '序号',
+                },
+                {
+                    width: 120,
+                    name: '货品编码',
+                },
+                {
+                    width: 120,
+                    name: '货品名称',
+                },
+                {
+                    width: 120,
+                    name: '型 号',
+                },
+                {
+                    width: 140,
+                    name: '尺 寸',
+                },
+                {
+                    width: 160,
+                    name: '品牌系列',
+                },
+                {
+                    width: 60,
+                    name: '单位',
+                },
+                {
+                    width: 80,
+                    name: '货品属性',
+                },
+                {
+                    width: 80,
+                    name: '库存数',
+                },
+                {
+                    width: 80,
+                    name: '单价',
+                },
+            ],
+
+            // table表头文字行项
             data1: [
                 {
                     id: 1,
@@ -98,33 +172,55 @@ export default class index extends Component {
                     bianma: 'xxxxxxxxxxxxx',
                     check: false,
                 },
-            ]
-
+            ],
+            data2: [
+                {
+                    id: 1,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+                {
+                    id: 2,
+                    bianma: 'xxxxxxxxxxxxx',
+                    check: false,
+                },
+            ],
 
         }
     }
 
-    riDown = () => {
-        const { bottom_alert } = this.state
-        this.setState({
-            bottom_alert: !bottom_alert
-        })
-    }
+    // 显示或隐藏 底部表单
+        riDown = () => {
+            const { bottom_alert } = this.state
+            this.setState({
+                bottom_alert: !bottom_alert
+            })
+        }
 
-    checkHandle(check, k){
-        const {data1} = this.state
-        data1[k].check = check
-        this.setState({
-            data1: data1
-        })
+    // 表格复选框
+        checkHandle1(check, k){
+            const {data1} = this.state
+            data1[k].check = check
+            this.setState({
+                data1: data1
+            })
     }
+    // 表格复选框2
+        checkHandle2(check, k){
+            const {data2} = this.state
+            data2[k].check = check
+            this.setState({
+                data2: data2
+            })
+        }
 
-    slide = () => {
-        const {alert1} = this.state
-        this.setState({
-            alert1: !alert1
-        })
-    }
+    // 显示或隐藏 弹窗
+        slide = () => {
+            const {alert1} = this.state
+            this.setState({
+                alert1: !alert1
+            })
+        }
 
     render() {
         return (
@@ -194,7 +290,7 @@ export default class index extends Component {
                                     <Li key={k} check={v.check}>
                                         <Box w={this.state.fields1[0].width}>
                                             <label className="pub-check3">
-                                                <input onChange={(e)=>this.checkHandle(e.target.checked, k)} checked={v.check} type="checkbox" />
+                                                <input onChange={(e)=>this.checkHandle1(e.target.checked, k)} checked={v.check} type="checkbox" />
                                                 {k+1}
                                             </label>
                                         </Box>
@@ -259,9 +355,8 @@ export default class index extends Component {
 
                 <div className="add-wrap">
                     <div className="fl">
-                        <a href="/" title=""><img src="img/icon50.png" alt=""/><var className="i1">增加行</var></a>
-                        {/* <a href="/" title=""><img src="img/icon52.png" alt=""/>扫码增行</a> */}
-                        <a href="/" title=""><img src="img/icon53.png" alt=""/><var className="i2">删除行</var></a>
+                        <a href="/" title=""><var className="i1" onClick={(e)=> {e.preventDefault();this.setState({alert1: true})}}>增加行</var></a>
+                        <a href="/" title=""><var className="i3">删除行</var></a>
                     </div>
                     <div className="cg-next">
                         <a className="a1" href="/" title=""><var className="a1">首单</var></a>
@@ -314,17 +409,17 @@ export default class index extends Component {
                     </ul>
                 </div>
 
-                {/* 弹窗 */}
-                <div className="pub-shadow">
-                    <div className="sale-alert">
 
-                        <div className="pub-tit a2">
+                {/* 选取货品 */}
+                <Move model={this.state.alert1}>
+                    <div className="sale-alert move-obj">
+                        <div className="pub-tit add">
                             <i className="ico-xuan"></i>
                             选取送货单货品
                             <div className="fr">
-                                <span className="ico-close"></span>
+                                <span className="ico-close" onClick={(e)=> {e.preventDefault();this.setState({alert1: false})}}></span>
                             </div>
-                            <p>
+                            <p className="mr">
                                 <a className="a1" href="/" title="">选　取</a>
                                 <a className="a2" href="/" title="">查　询</a>
                             </p>
@@ -332,106 +427,46 @@ export default class index extends Component {
 
                         <div className="pub-table">
                             <ul>
-                                <li className="li5">
-                                    <span>货品编码：</span>
-                                    <div className="input-wrap">
-                                        <input type="text" className="a2" />
-                                    </div>
-                                </li>
-                                <li className="li5">
-                                    <span>型号：</span>
-                                    <div className="input-wrap">
-                                        <input type="text" className="a2" />
-                                    </div>
-                                </li>
-                                <li className="li9">
-                                    <span>货品名称：</span>
-                                    <div className="input-wrap">
-                                        <input type="text" className="a2" />
-                                    </div>
-                                </li>
-                                <li className="li5">
-                                    <span>送货单号：</span>
-                                    <div className="input-wrap">
-                                        <input type="text" className="a2" />
-                                    </div>
-                                </li>
-                                <li className="li5">
-                                    <span>送货日期：</span>
-                                <div className="input-wrap J-datepicker-day right">
-                                    <div className="select-down">
-                                        <h2>≥</h2>
-                                        <div className="box">
-                                            <span>含</span>
-                                            <span>=</span>
-                                            <span>≠</span>
-                                            <span>&gt;</span>
-                                            <span>&lt;</span>
-                                            <span>≥</span>
-                                            <span>≤</span>
-                                        </div>
-                                    </div>
-                                    <input type="text" className="two-input" />
-                                </div>
-                                </li>
-                                <li className="li9">
-                                    <span>送货日期：</span>
-                                <div className="input-wrap J-datepicker-day right">
-                                    <div className="select-down">
-                                        <h2>≤</h2>
-                                        <div className="box">
-                                            <span>含</span>
-                                            <span>=</span>
-                                            <span>≠</span>
-                                            <span>&gt;</span>
-                                            <span>&lt;</span>
-                                            <span>≥</span>
-                                            <span>≤</span>
-                                        </div>
-                                    </div>
-                                    <input type="text" className="two-input" />
-                                </div>
-                                </li>
+                                <Input title="送货单号" width="31%" value={this.state.input16} model={(v)=> this.setState({input16: v})} ></Input>
+                                <DateTime title="送货日期" width="31%" model={(v)=> this.setState({time3: v})} left={false}>
+								    <ContainDown index={this.state.down3} Select={(v)=>this.setState({down3: v})}></ContainDown>
+							    </DateTime>
+
+                                <DateTime title="送货日期" width="calc(32% - 6px)" model={(v)=> this.setState({time4: v})} left={false}>
+                                    <ContainDown index={this.state.down4} Select={(v)=>this.setState({down3: v})}></ContainDown>
+                                </DateTime>
+                                <Input title="货品编码" width="31%" value={this.state.input17} model={(v)=> this.setState({input17: v})} ></Input>
+                                <Input title="型号" width="31%" value={this.state.input18} model={(v)=> this.setState({input18: v})} ></Input>
+                                <Input title="货品名称" width="calc(32% - 6px)" value={this.state.input19} model={(v)=> this.setState({input19: v})} ></Input>
                             </ul>
                         </div>
 
                         {/* 表格 */}
-                        <div className="pub-row-style pub-mt-0 pub-no-border">
-                        <div className="table-head">
-                                <div className="slide-bar">
-                                    <span className="sp60">序号</span>
-                                    <span className="sp120">货品编码</span>
-                                    <span className="sp120">货品名称</span>
-                                    <span className="sp120">型 号</span>
-                                    <span className="sp140">尺 寸</span>
-                                    <span className="sp140">送货单号</span>
-                                    <span className="sp120">送货日期</span>
-                                    <span className="sp100">销售数</span>
-                                    <span className="sp100">已送数</span>
-                                    <span className="sp120">单价</span>
-                                </div>
-                            </div>
-                            <div className="table-row">
-                                <ul>
-                                    <li>
-                                        <span className="sp60">
-                                            <label className="pub-check"><input type="checkbox" />1</label>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <span className="sp60">
-                                            <label className="pub-check"><input type="checkbox" />2</label>
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
 
-                        {/* 分页器 */}
+                        <Table fields={this.state.fields2} margin noborder>
+                            {
+                                this.state.data2.map((v, k)=>{
+                                    return (
+                                        <Li key={k} check={v.check}>
+                                            <Box w={this.state.fields2[0].width}>
+                                            <label className="pub-check3">
+                                                <input onChange={(e)=>this.checkHandle2(e.target.checked, k)} checked={v.check} type="checkbox" />{k+1}
+                                                    </label>
+                                            </Box>
+                                            <Box w={this.state.fields2[1].width}>111</Box>
+                                            <Box w={this.state.fields2[2].width}>2222</Box>
+                                        </Li>
+                                    )
+                                })
+                            }
+
+                        </Table>
+
+                        {/* 分页 */}
                         <Pager></Pager>
-
                     </div>
-                </div>
+                </Move>
+
             </>
         )
     }

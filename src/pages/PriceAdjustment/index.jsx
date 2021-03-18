@@ -22,13 +22,7 @@ export default class index extends Component {
             items3: ['菜单一', '菜单二', '菜单三', '菜单四'],
             index3: 4,
 
-            items4: ['菜单一', '菜单二', '菜单三', '菜单四'],
-            index4: 4,
-
-            items5: ['菜单一', '菜单二', '菜单三', '菜单四'],
-            index5: 4,
-
-            items6:
+            items4:
              [
                  '内部货品Internal Goods',
                  '其他家具Other furniture',
@@ -49,7 +43,7 @@ export default class index extends Component {
                  '妆台/妆柜DressingTable,Cabinet',
                  '衣柜Clothing Cabinet',
                 ],
-            index6: 19,
+            index4: 19,
 
             // 表单显示内容项
             input1: '',
@@ -65,9 +59,11 @@ export default class index extends Component {
             // 表单日期项
             time1: '',
             time2: '',
+            time3: '',
 
-            // 跳窗项
-            alert1: false,
+            // 表单查询内容项
+            search1: '',
+            search2: '',
 
             bottom_alert: false,
 
@@ -90,7 +86,7 @@ export default class index extends Component {
                     name: '型 号',
                 },
                 {
-                    width: 140,
+                    width: 160,
                     name: '尺 寸',
                 },
                 {
@@ -103,50 +99,33 @@ export default class index extends Component {
                 },
                 {
                     width: 120,
-                    name: '货品属性',
-                },
-                {
-                    width: 100,
-                    name: '单价',
+                    name: '原零售价',
                 },
                 {
                     width: 80,
-                    name: '采购数',
-                },
-                {
-                    width: 60,
                     name: '折扣%',
                 },
                 {
-                    width: 120,
-                    name: '金 额',
-                },
-                {
-                    width: 100,
-                    name: '原币价',
+                    width: 140,
+                    name: '现零售价',
                 },
                 {
                     width: 120,
-                    name: '原币金额',
+                    name: '原采购价',
                 },
                 {
                     width: 80,
-                    name: '货品单位',
+                    name: '折扣%',
                 },
                 {
-                    width: 80,
-                    name: '已收货数',
-                },
-                {
-                    width: 80,
-                    name: '未收货数',
+                    width: 140,
+                    name: '现采购价',
                 },
                 {
                     width: 160,
                     name: '备 注',
                 },
             ],
-            // table表头文字行项
             data1: [
                 {
                     id: 1,
@@ -269,13 +248,11 @@ export default class index extends Component {
                         <a href="/" title=""><var className="i26">弃审</var></a>
                         <a href="/" title=""><var className="i20">查审</var></a>
                         <a href="/" title=""><var className="i13">完结</var></a>
-                        <a href="/" title=""><var className="i14">作废</var></a>
-                        <a href="/" title=""><var className="i15">启用</var></a>
                         <a href="/" title=""><var className="i16">保存</var></a>
                     </div>
                     <div className="pub-table">
                         <ul>
-                        <Input title="采购单号" value={this.state.input1} model={(v)=> this.setState({input1: v})}>
+                        <Input title="调价单号" value={this.state.input1} model={(v)=> this.setState({input1: v})}>
                                 <i className="ico-sp0"></i>
                             </Input>
 
@@ -287,15 +264,16 @@ export default class index extends Component {
                                 </div>
                             </li> */}
 
-                            <DateTime title="采购日期" model={(v)=> this.setState({time1: v})} required></DateTime>
+                            <DateTime title="调价日期" model={(v)=> this.setState({time1: v})} required></DateTime>
 
-                            <DateTime title="交货日期" model={(v)=> this.setState({time2: v})} required></DateTime>
+                            <DropDown index={this.state.index1} items={this.state.items1} onChange={(index)=> this.setState({index1: index})}required>调价人</DropDown>
 
                             <li></li>
-                            <DropDown index={this.state.index1} items={this.state.items1} onChange={(index)=> this.setState({index1: index})}required>供应商</DropDown>
-                            <DropDown index={this.state.index2} items={this.state.items2} onChange={(index)=> this.setState({index2: index})}required>品牌系列</DropDown>
-                            <Input title="联系电话" value={this.state.input2} model={(v)=> this.setState({input2: v})}></Input>
-                            <DropDown index={this.state.index3} items={this.state.items3} onChange={(index)=> this.setState({index3: index})}required>采购人</DropDown>
+                            <Input title="品牌系列" value={this.state.search1} model={(v)=>this.setState({search1: v})}>
+                                    <button className="pub-search"></button>
+                                </Input>
+                            <Input width="73%" title="调价原因" value={this.state.input2} required model={(v)=> this.setState({input2: v})}></Input>
+
                             <Input width="98%" title="备注" value={this.state.input3} model={(v)=> this.setState({input3: v})}></Input>
                         </ul>
                     </div>
@@ -402,12 +380,12 @@ export default class index extends Component {
 
                         <div className="pub-table">
                             <ul>
-                                <Input title="货品编码" width="31%" value={this.state.input3} model={(v)=> this.setState({input3: v})} ></Input>
-                                <Input title="型号" width="31%" value={this.state.input4} model={(v)=> this.setState({input4: v})} ></Input>
-                                <Input title="货品名称" width="calc(32% - 6px)" value={this.state.input5} model={(v)=> this.setState({input5: v})} ></Input>
-                                <DropDown width="31%" index={this.state.index4} items={this.state.items4} onChange={(index)=> this.setState({index4: index})}>品牌</DropDown>
-                                <DropDown width="31%" index={this.state.index5} items={this.state.items5} onChange={(index)=> this.setState({index5: index})}>系列</DropDown>
-                                <DropDown width="calc(32% - 6px)" index={this.state.index6} items={this.state.items6} onChange={(index)=> this.setState({index6: index})}>货品类别</DropDown>
+                                <Input title="货品编码" width="31%" value={this.state.input4} model={(v)=> this.setState({input4: v})} ></Input>
+                                <Input title="型号" width="31%" value={this.state.input5} model={(v)=> this.setState({input5: v})} ></Input>
+                                <Input title="货品名称" width="calc(32% - 6px)" value={this.state.input6} model={(v)=> this.setState({input6: v})} ></Input>
+                                <DropDown width="31%" index={this.state.index2} items={this.state.items2} onChange={(index)=> this.setState({index2: index})}>品牌</DropDown>
+                                <DropDown width="31%" index={this.state.index3} items={this.state.items3} onChange={(index)=> this.setState({index3: index})}>系列</DropDown>
+                                <DropDown width="calc(32% - 6px)" index={this.state.index4} items={this.state.items4} onChange={(index)=> this.setState({index4: index})}>货品类别</DropDown>
                             </ul>
                         </div>
 

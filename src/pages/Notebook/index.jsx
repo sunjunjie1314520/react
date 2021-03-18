@@ -4,7 +4,7 @@ import E from "wangeditor"
 
 import Table, { Box, Li } from '../../components/Table';
 
-import {Input, DropDown, Frame} from '../../components/UI';
+import {Input, ContainDown, DateTime, Frame} from '../../components/UI';
 
 export default class index extends Component {
 
@@ -29,6 +29,21 @@ export default class index extends Component {
             input3: '',
             input4: '',
 
+            // 表单显示内容项
+            down1: 0,
+            down2: 1,
+            down3: 5,
+            down4: 6,
+            down5: 0,
+            down6: 0,
+            down7: 0,
+            down8: 1,
+
+            // 表单日期项
+            time1: '',
+            time2: '',
+            time3: '',
+
             // table表头文字列项
             fields1: [
                 {
@@ -36,20 +51,12 @@ export default class index extends Component {
                     name: '序号',
                 },
                 {
-                    width: 200,
-                    name: '公告通知标题',
-                },
-                {
-                    width: 110,
-                    name: '发布人',
-                },
-                {
-                    width: 80,
-                    name: '是否已读',
+                    width: 300,
+                    name: '备忘录主题',
                 },
                 {
                     width: 140,
-                    name: '发送日期',
+                    name: '记录日期',
                 },
                 ],
                 // table表头文字行项
@@ -84,7 +91,7 @@ export default class index extends Component {
                 <div className="notice-left">
                         <h2 className="pub-tit">
                             <i className="ico-font54"></i>
-                            已发消息列表
+                            备忘录列表
                             <div className="fr">
                                 <a className="a6" href="/" title="">查询</a>
                             </div>
@@ -92,12 +99,15 @@ export default class index extends Component {
 
                         <div className="pub-table">
                             <ul>
-                                <Input title="公告通知" width="98%" value={this.state.input1} model={(v)=>this.setState({input1: v})}></Input>
-                                <Input title="发布人" width="48%" value={this.state.input2} model={(v)=>this.setState({input2: v})}></Input>
-                                <DropDown width="48%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>类型</DropDown>
-                                <DropDown width="48%" items={this.state.items2} index={this.state.index3} onChange={(index)=> this.setState({index3: index})}>是否已读</DropDown>
-                                <DropDown width="48%" items={this.state.items3} index={this.state.index4} onChange={(index)=> this.setState({index4: index})}>发布期间</DropDown>
+                            <Input title="备忘录主题" width="98%" value={this.state.input1} model={(v)=>this.setState({input1: v})}></Input>
 
+                            <DateTime title="记录日期" width="48%" model={(v)=> this.setState({time1: v})} left={false}>
+								<ContainDown index={this.state.down3} Select={(v)=>this.setState({down3: v})}></ContainDown>
+							</DateTime>
+
+                            <DateTime title="记录日期" width="48%" model={(v)=> this.setState({time2: v})} left={false}>
+								<ContainDown index={this.state.down4} Select={(v)=>this.setState({down3: v})}></ContainDown>
+							</DateTime>
                             </ul>
                         </div>
 
@@ -113,7 +123,6 @@ export default class index extends Component {
                                         </Box>
                                         <Box w={this.state.fields1[1].width}>1111</Box>
                                         <Box w={this.state.fields1[2].width}>2222</Box>
-                                        <Box w={this.state.fields1[3].width}>3333</Box>
                                     </Li>
                                 )
                             })
@@ -126,17 +135,17 @@ export default class index extends Component {
                     <div className="box1">
                         <h2 className="pub-tit">
                             <i className="ico-font57"></i>
-                            公告通知
+                            记事本
                             <div className="fr">
                                 <a className="a2" href="/" title="">新建</a>
                                 <a className="a1" href="/" title="">删除</a>
-                                <a className="a3" href="/" title="">确定</a>
+                                <a className="a3" href="/" title="">保存</a>
                             </div>
                         </h2>
                         <div className="pub-table">
                             <ul>
-                                <Input title="公告通知" width="64%" value={this.state.input4} required model={(v)=>this.setState({input4: v})}></Input>
-                                <DropDown width="32%" items={this.state.items1} index={this.state.index2} onChange={(index)=> this.setState({index2: index})} required>类型</DropDown>
+                                <Input title="备忘录主题" width="64%" value={this.state.input4} required model={(v)=>this.setState({input4: v})}></Input>
+                                <DateTime width="31%" title="提醒日期" model={(v)=> this.setState({time3: v})}></DateTime>
                             </ul>
                         </div>
 
@@ -153,9 +162,6 @@ export default class index extends Component {
                         </div>
                         <div className="pub-delete-btn fr">
                             <a href="/"><i className="ico-i2"></i><input type="file" />上传附件</a>
-                        </div>
-                        <div className="box">
-                            <p><b>未阅读人：</b>李云峰、林婷婷、周驰、陈逸飞</p>
                         </div>
                     </div>
                     </div>

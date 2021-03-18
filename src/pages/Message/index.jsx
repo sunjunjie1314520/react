@@ -9,47 +9,58 @@ export default class index extends Component {
 	constructor(){
         super()
         this.state = {
+
+            // 下拉选择项
 			items1: ['是', '否'],
             index1: 0,
 
+            // 表单显示内容项
 			input1: '',
 			input2: '',
             input3: '',
             input4: '',
 			input5: '',
 
-			d1: 0,
-			d2: 0,
+            // 表单下拉查询条件项
+			down1: 0,
+            down2: 1,
+            down3: 5,
+            down4: 6,
+            down5: 0,
+            down6: 0,
+            down7: 0,
+            down8: 1,
 
-			t1: '',
-			t2: '',
+			// 表单日期项
+            time1: '',
+            time2: '',
+            time3: '',
+            time4: '',
 
+            // table表头文字列项
 			fields1: [
                 {
                     width: 50,
                     name: '序号',
                 },
                 {
-                    width: 120,
-                    name: '商场名称',
+                    width: 200,
+                    name: '消息主题',
                 },
                 {
-                    width: 100,
-                    name: '客户名称',
-                },
-                {
-                    width: 100,
-                    name: '跟进阶段',
+                    width: 110,
+                    name: '接收人',
                 },
                 {
                     width: 80,
-                    name: '跟进人',
+                    name: '是否已读',
                 },
                 {
-                    width: 100,
+                    width: 140,
                     name: '跟进日期',
                 },
             ],
+            // table表头文字行项
             data1: [
                 {
                     id: 1,
@@ -87,12 +98,12 @@ export default class index extends Component {
 
 							<DropDown width="48%" items={this.state.items1} index={this.state.index3} onChange={(index)=> this.setState({index3: index})}>是否已读</DropDown>
 
-							<DateTime title="发送日期" width="48%" model={(v)=> this.setState({time1: v})} left={false}>
-								<ContainDown Select={(v)=>this.setState({d1: v})}></ContainDown>
+							<DateTime title="记录日期" width="48%" model={(v)=> this.setState({time1: v})} left={false}>
+								<ContainDown index={this.state.down3} Select={(v)=>this.setState({down3: v})}></ContainDown>
 							</DateTime>
 
-							<DateTime title="发送日期" width="48%" model={(v)=> this.setState({time2: v})} left={false}>
-								<ContainDown Select={(v)=>this.setState({d2: v})}></ContainDown>
+                            <DateTime title="记录日期" width="48%" model={(v)=> this.setState({time2: v})} left={false}>
+								<ContainDown index={this.state.down4} Select={(v)=>this.setState({down3: v})}></ContainDown>
 							</DateTime>
 
 						</ul>

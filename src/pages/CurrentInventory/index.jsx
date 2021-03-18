@@ -22,7 +22,7 @@ export default class index extends Component {
             items2: ['客厅', '餐厅', '书房', '卧室', '休闲室', '玄关', '户外', '其他' ],
             index2: 9,
 
-            items3: ['asdf64', '4545'],
+            items3: ['深圳宝能家居广场', '深圳第三空间', '深圳南山城', '深圳布吉总仓'],
             index3: 0,
 
             // 表单显示内容项
@@ -45,11 +45,7 @@ export default class index extends Component {
                     name: '序号',
                 },
                 {
-                    width: 120,
-                    name: '图 片',
-                },
-                {
-                    width: 150,
+                    width: 180,
                     name: '商场/仓库',
                 },
                 {
@@ -93,20 +89,20 @@ export default class index extends Component {
                     name: '采购订货',
                 },
                 {
-                    width: 120,
+                    width: 80,
                     name: '经销订货',
                 },
                 {
-                    width: 100,
+                    width: 80,
                     name: '待出库数',
                 },
                 {
-                    width: 120,
+                    width: 80,
                     name: '待入库数',
                 },
                 {
-                    width: 80,
-                    name: '有效数',
+                    width: 100,
+                    name: '可售有效数',
                 },
             ],
             // table表头文字行项
@@ -133,13 +129,23 @@ export default class index extends Component {
     }
 
 
+    checkHandle(check, k){
+        const {data1} = this.state
+        data1[k].check = check
+        this.setState({
+            data1: data1
+        })
+    }
+
+
+
     render() {
         return (
             <>
                 <div className="intention-list">
                     <h2 className="pub-tit">
                     <i className="ico-font3"></i>
-                        图片库存表
+                        当前货品库存表
                     <div className="fr">
                             <a className="a5 w100" href="/" title="">导出</a>
                             <a className="a4 w100" href="/" title="">查询</a>
@@ -171,7 +177,7 @@ export default class index extends Component {
                     </div>
                 </div>
 
-                <Table fields={this.state.fields1} bottom={42} picture={true}>
+                <Table fields={this.state.fields1} bottom={42}>
         {
             this.state.data1.map((v, k)=>{
                 return (
@@ -181,7 +187,7 @@ export default class index extends Component {
                                 {k+1}
                             </label>
                         </Box>
-                        <Box w={this.state.fields1[1].width}><var></var></Box>
+                        <Box w={this.state.fields1[1].width}>1111</Box>
                         <Box w={this.state.fields1[2].width}>2222</Box>
                     </Li>
                 )

@@ -18,7 +18,7 @@ export default class index extends Component {
             sh: null,
             sh1: null,
 
-
+            // 下拉选择项
             items1: ['菜单一', '菜单二'],
             index1: 0,
 
@@ -27,16 +27,18 @@ export default class index extends Component {
 
             field1: '',
             field2: '',
-            time1: '',  // 销售日期
+
+            // 表单日期项
+            time1: '',
+            time2: '',
+            time3: '',
 
             field5: '5',
             field6: '6',
             field7: '7',
             field8: false,
 
-            t1: '',
-            t2: '',
-
+            // 表单显示内容项
             input1: '',
             input2: '',
             input3: '',
@@ -52,7 +54,15 @@ export default class index extends Component {
             input13: '',
             input14: '',
             input15: '',
+            input16: '',
+            input17: '',
+            input18: '',
 
+            // 表单查询内容项
+            search1: '',
+            search2: '',
+
+            // 跳窗项
             alert1: false,
             alert2: false,
 
@@ -117,11 +127,11 @@ export default class index extends Component {
                     name: '序号',
                 },
                 {
-                    width: 180,
+                    width: 220,
                     name: '收款方式',
                 },
                 {
-                    width: 150,
+                    width: 120,
                     name: '收款币种',
                 },
                 {
@@ -129,8 +139,8 @@ export default class index extends Component {
                     name: '收款金额',
                 },
                 {
-                    width: 100,
-                    name: '备注',
+                    width: 180,
+                    name: '备 注',
                 },
             ],
             // Tabel 源数据
@@ -194,11 +204,6 @@ export default class index extends Component {
                     bianma: 'xxxxxxxxxxxxx',
                     check: false,
                 },
-                {
-                    id: 8,
-                    bianma: 'xxxxxxxxxxxxx',
-                    check: false,
-                },
             ]
         }
         this.rihgt_layout = createRef()
@@ -235,7 +240,7 @@ export default class index extends Component {
 
                                 <DropDown width="48%" items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>销售商场</DropDown>
                                 <Input title="销售单号" width="48%" value={this.state.input1} model={(v)=>this.setState({input1: v})}></Input>
-                                <Input width="48%" title="客户名称" value={this.state.input2} model={(v)=>this.setState({input2: v})}>
+                                <Input width="48%" title="客户名称" value={this.state.search1} model={(v)=>this.setState({search1: v})}>
                                     <button className="pub-search"></button>
                                 </Input>
                                 <DateTime width="48%" title="销售日期" model={(v)=> this.setState({time1: v})}></DateTime>
@@ -394,8 +399,10 @@ export default class index extends Component {
                                                     {k+1}
                                                 </label>
                                             </Box>
-                                            <Box w={this.state.fields3[1].width}>111</Box>
-                                            <Box w={this.state.fields3[2].width}>2222</Box>
+                                            <Box w={this.state.fields3[1].width}>现金 Cash</Box>
+                                            <Box w={this.state.fields3[2].width}>￥人民币</Box>
+                                            <Box w={this.state.fields3[3].width}>12680.00</Box>
+                                            <Box w={this.state.fields3[4].width}>预付30%货款</Box>
                                         </Li>
                                     )
                                 })

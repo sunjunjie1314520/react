@@ -24,15 +24,27 @@ export default class index extends Component {
         super()
         this.state = {
 
+            // 下拉选择项
             items1: ['已停产','已停售','销售特价','采购特价'],
             index1: 0,
 
             items2: ['个','张','件','套','组','幅'],
             index2: 0,
 
-            items3: '',
-            index3: 0,
+            items3:
+            [   '00-内部货品Internal Goods',
+                '01-其他家具Other furniture',
+                '02-综合类others',
+                '03-沙发Sofa',
+                '04-茶几coffee table',
+                '05-电视柜TV cabinet',
+                '06-展示柜/酒柜Showcase wine cabinet'],
+            index3: 7,
 
+            items4: ['1','2','3','4','5','6'],
+            index4: 7,
+
+            // 表单显示内容项
             input1: '',
             input2: '',
             input3: '',
@@ -45,6 +57,17 @@ export default class index extends Component {
             input10: '',
             input11: '',
             input12: '',
+            input13: '',
+            input14: '',
+            input15: '',
+            input16: '',
+            input17: '',
+            input18: '',
+            input19: '',
+
+            // 表单查询内容项
+            search1: '',
+            search2: '',
 
             show1: false,
 
@@ -283,7 +306,7 @@ export default class index extends Component {
                             <ul>
                                 <Input title="货品编码" value={this.state.input1} model={(v)=>this.setState({input1: v})}></Input>
                                 <Input title="型号" value={this.state.input2} model={(v)=>this.setState({input2: v})}></Input>
-                                <Input title="品牌系列" value={this.state.input3} model={(v)=>this.setState({input3: v})}>
+                                <Input title="品牌系列" value={this.state.search1} model={(v)=>this.setState({search1: v})}>
                                     <button className="pub-search"></button>
                                 </Input>
                                 <DropDown items={this.state.items1} index={this.state.index0} onChange={(index)=> this.setState({index0: index})}>货品状态</DropDown>
@@ -336,11 +359,11 @@ export default class index extends Component {
                                 <div className="pub-table">
                                     <ul>
                                         <Input title="货品编码" width="48%" placeholder="编码会自动生成" value={this.state.input4} model={(v)=>this.setState({input4: v})}></Input>
-                                        <Input title="品牌系列" width="48%" value={this.state.input3}  required model={(v)=>this.setState({input3: v})}>
+                                        <Input title="品牌系列" width="48%" value={this.state.search2}  required model={(v)=>this.setState({search2: v})}>
                                             <button className="pub-search"></button>
                                         </Input>
-                                        <DropDown width="48%" items={this.state.items1} index={this.state.index4} onChange={(index)=> this.setState({index4: index})} required>系列</DropDown>
-                                        <DropDown width="48%" items={this.state.items1} index={this.state.index3} onChange={(index)=> this.setState({index3: index})} required>货品类别</DropDown>
+                                        <DropDown width="48%" items={this.state.items4} index={this.state.index4} onChange={(index)=> this.setState({index4: index})} required>系列</DropDown>
+                                        <DropDown width="48%" items={this.state.items3} index={this.state.index3} onChange={(index)=> this.setState({index3: index})} required>货品类别</DropDown>
                                         <Input title="货品名称" width="98%" value={this.state.input5} model={(v)=>this.setState({input5: v})} required></Input>
                                         <Input title="型号" width="48%" value={this.state.input6} model={(v)=>this.setState({input6: v})} required></Input>
                                         <Input title="尺寸" width="48%" value={this.state.input7} model={(v)=>this.setState({input7: v})}></Input>

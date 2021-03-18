@@ -29,7 +29,19 @@ import AfterSalesManagement from '../pages/AfterSalesManagement';
 import FollowUpList from '../pages/FollowUpList';
 import PurchaseOrder from '../pages/PurchaseOrder';
 import PaymentMethods from '../pages/PaymentMethods';
-import TheUnitType from '../pages/PaymentMethods';
+import TheUnitType from '../pages/TheUnitType';
+import ReceivedMessage from '../pages/ReceivedMessage';
+import Notebook from '../pages/Notebook';
+import ReturnForm from '../pages/ReturnForm';
+import SalesInquiry from '../pages/SalesInquiry';
+import GoodsSpecials from '../pages/GoodsSpecials';
+import PriceAdjustment from '../pages/PriceAdjustment';
+import SpecialOfferList from '../pages/SpecialOfferList';
+import BatchEdit from '../pages/BatchEdit';
+import StoreWarehouseSettings from '../pages/StoreWarehouseSettings';
+import GoodsCategory from '../pages/GoodsCategory';
+import CurrentInventory from '../pages/CurrentInventory';
+import DeliveryStatistics from '../pages/DeliveryStatistics';
 
 const router = [
 	{
@@ -151,6 +163,66 @@ const router = [
 				path: '/The-unit-type',
 				exact: false,
 				component: TheUnitType,
+			},
+			{
+				path: '/Received-message',
+				exact: false,
+				component: ReceivedMessage,
+			},
+			{
+				path: '/Notebook',
+				exact: false,
+				component: Notebook,
+			},
+			{
+				path: '/Return-form',
+				exact: false,
+				component: ReturnForm,
+			},
+			{
+				path: '/Sales-inquiry',
+				exact: false,
+				component: SalesInquiry,
+			},
+			{
+				path: '/Goods-Specials',
+				exact: false,
+				component: GoodsSpecials,
+			},
+			{
+				path: '/Price-Adjustment',
+				exact: false,
+				component: PriceAdjustment,
+			},
+			{
+				path: '/Special-Offer-List',
+				exact: false,
+				component: SpecialOfferList,
+			},
+			{
+				path: '/Batch-Edit',
+				exact: false,
+				component: BatchEdit,
+			},
+			{
+				path: '/Store-Warehouse-Settings',
+				exact: false,
+				component: StoreWarehouseSettings,
+			},
+			{
+				path: '/Goods-Category',
+				exact: false,
+				component: GoodsCategory,
+			},
+			{
+				path: '/Current-Inventory',
+				exact: false,
+				component: CurrentInventory,
+			},
+			{
+				path: '/Delivery-Statistics',
+				exact: false,
+				component: DeliveryStatistics,
 			},
 			{
 				path: '/*',

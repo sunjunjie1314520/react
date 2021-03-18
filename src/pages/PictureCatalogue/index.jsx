@@ -15,19 +15,29 @@ export default class index extends Component {
             fields1: '1',
             fields2: '2',
 
+            // 下拉选择项
             items1: ['按货品型号', '按货品价格', '按品牌系列', '按新品上市', '按货品类别', '按货品特价'],
             index1: 0,
 
+            // 表单显示内容项
             input1: '',
             input2: '',
             input3: '',
             input4: '',
             input5: '',
-            input6: '',
-            input7: '',
-            input8: '',
-            input9: '',
 
+            // 表单查询内容项
+            search1: '',
+            search2: '',
+            search3: '',
+            search4: '',
+            search5: '',
+            search6: '',
+            search7: '',
+            search8: '',
+            search9: '',
+
+            // 跳窗项
             alert1: false,
         }
     }
@@ -90,7 +100,9 @@ export default class index extends Component {
                             <ul>
                                 <Input title="搜索" width="48%" placeholder="请输入品牌查询" value={this.state.input1} model={(v)=>this.setState({input1: v})}></Input>
 
-                                <Input title="客户手机号" placeholder="请输入..." value={this.state.input2} required model={(v)=>this.setState({input2: v})}></Input>
+                                <Input placeholder="请先选择客户"title="客户名称" required value={this.state.search1} model={(v)=>this.setState({search1: v})}>
+                                    <button type="button" className="pub-search"></button>
+                                </Input>
 
                                 <DropDown items={this.state.items1} index={this.state.index1} onChange={(index)=> this.setState({index1: index})}>排序方式</DropDown>
 
@@ -161,18 +173,15 @@ export default class index extends Component {
                             </div>
                         </div>
                     </Frame>
-                    
 
                     {/* 分页器 */}
                     <Pager></Pager>
 
                 </div>
-                
 
                 {/* 上传图片 */}
                 <Move model={this.state.alert1}>
                     <div className="case-alert move-obj">
-                        
                         <div className="pub-tit add">
                             <i className="ico-up"></i>
                             上传图片
@@ -188,83 +197,35 @@ export default class index extends Component {
 
                             <div className="pub-table">
                                 <ul>
-                                    <li>
-                                        <span>上传图片：</span>
-                                        <div className="input-wrap">
-                                            <input className="in1" type="text" placeholder="图片大小不能超过3M" />
-                                            <a className="upload" href="/">浏览<input type="file" onChange={this.xmTanUploadImg} accept="image/*"/></a>
-                                            <var className="pub-asterisk">*</var>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <span>关联货品：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" />
-                                            <button className="pub-search"></button>
-                                            <var className="pub-asterisk">*</var>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <span>关联货品：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" />
-                                            <button className="pub-search"></button>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <span>关联货品：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" />
-                                            <button className="pub-search"></button>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <span>关联货品：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" />
-                                            <button className="pub-search"></button>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <span>关联货品：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" />
-                                            <button className="pub-search"></button>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <span>关联货品：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" />
-                                            <button className="pub-search"></button>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <span>关联货品：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" />
-                                            <button className="pub-search"></button>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <span>关联货品：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" />
-                                            <button className="pub-search"></button>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <span>上传人：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" className="a2" />
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <span>上传日期：</span>
-                                        <div className="input-wrap">
-                                            <input type="text" className="a2" />
-                                        </div>
-                                    </li>
+                                    <Input title="上传图片" type="text" placeholder="大小不能超过5M" value={this.state.input3} required model={(v)=> this.setState({input3: v})}>
+                                        <a className="upload" href="/" title="">浏览<input type="file" onChange={this.xmTanUploadImg} accept="image/*"/></a>
+                                    </Input>
+                                    <Input placeholder="请选择..."title="关联货品" required value={this.state.search2} model={(v)=>this.setState({search2: v})}>
+                                        <button type="button" className="pub-search"></button>
+                                    </Input>
+                                    <Input placeholder="请选择..."title="关联货品" value={this.state.search3} model={(v)=>this.setState({search3: v})}>
+                                        <button type="button" className="pub-search"></button>
+                                    </Input>
+                                    <Input placeholder="请选择..."title="关联货品" value={this.state.search4} model={(v)=>this.setState({search4: v})}>
+                                        <button type="button" className="pub-search"></button>
+                                    </Input>
+                                    <Input placeholder="请选择..."title="关联货品" value={this.state.search5} model={(v)=>this.setState({search5: v})}>
+                                        <button type="button" className="pub-search"></button>
+                                    </Input>
+                                    <Input placeholder="请选择..."title="关联货品" value={this.state.search6} model={(v)=>this.setState({search6: v})}>
+                                        <button type="button" className="pub-search"></button>
+                                    </Input>
+                                    <Input placeholder="请选择..."title="关联货品" value={this.state.search7} model={(v)=>this.setState({search7: v})}>
+                                        <button type="button" className="pub-search"></button>
+                                    </Input>
+                                    <Input placeholder="请选择..."title="关联货品" value={this.state.search8} model={(v)=>this.setState({search8: v})}>
+                                        <button type="button" className="pub-search"></button>
+                                    </Input>
+                                    <Input placeholder="请选择..."title="关联货品" value={this.state.search9} model={(v)=>this.setState({search9: v})}>
+                                        <button type="button" className="pub-search"></button>
+                                    </Input>
+                                    <Input title="上传人" value={this.state.input4} model={(v)=> this.setState({input4: v})}></Input>
+
                                 </ul>
                             </div>
 
