@@ -172,7 +172,7 @@ const router = [
 		children: []
 	},
 	{
-		path: '/fund',
+		path: '/fund/:uid',
 		exact: false,
 		component: Fund,
 		children: []
